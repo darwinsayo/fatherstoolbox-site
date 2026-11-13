@@ -1,0 +1,10 @@
+{
+  "map": "lexington",
+  "parish": "Our Lady of Perpetual Help",
+  "town": "Williamsburg",
+  "phone": "606-549-2156",
+  "website": "http://williamsburg.cdlex.org/",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "No times. williamsburg.cdlex.org was refused when I tried to read it (the diocese's robots.txt blocks automated reading) and I did not work around that. What I could see of the home page showed no times. The directory text I had has no entry for this parish, but the St. Boniface (Jellico, TN) entry mentions OLPH Sunday 9 AM (not entered). Phone added from the diocese's parish finder (cdlex.org/parish-finder); GCatholic lists the same number. That number is also St. Boniface's in the directory, so it is probably the shared parish office."
+}

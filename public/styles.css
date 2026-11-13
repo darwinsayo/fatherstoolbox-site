@@ -58,7 +58,7 @@ h1 em,h2 em{font-style:normal;color:inherit;font-weight:inherit}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-size:1.45rem;font-weight:500;font-variant-caps:small-caps;letter-spacing:.06em;white-space:nowrap}
 .brand svg{width:28px;height:36px;flex:none}
 nav ul{list-style:none;display:flex;gap:2rem;margin:0;padding:0}
-nav a{text-decoration:none;font-size:1.15rem;font-variant-caps:all-small-caps;letter-spacing:.1em;padding:.3rem 0;border-bottom:1px solid transparent}
+nav a{white-space:nowrap;text-decoration:none;font-size:1.15rem;font-variant-caps:all-small-caps;letter-spacing:.1em;padding:.3rem 0;border-bottom:1px solid transparent}
 nav a:hover{color:var(--lapis);border-bottom-color:currentColor}
 nav a[aria-current=page]{color:var(--lapis);border-bottom:2px solid var(--gold)}
 
@@ -229,6 +229,7 @@ footer .wrap{padding-block:2.6rem 2.2rem}
   body{font-size:1.15rem}
   .wrap{width:calc(100% - 2.5rem)}
   .site-header .wrap{flex-direction:column;gap:.6rem;padding-block:1rem}
+  nav ul{gap:1.1rem}
   .topband .wrap{justify-content:center}
   .topband em{display:none}
   .window{max-width:270px}
