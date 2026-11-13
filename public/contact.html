@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | Father&rsquo;s Tool Box</title>
+<meta name="description" content="Get in touch with Father&rsquo;s Tool Box about communication services for your Catholic parish.">
+<meta name="theme-color" content="#1c1815">
+<meta property="og:title" content="Contact | Father&rsquo;s Tool Box">
+<meta property="og:description" content="Get in touch with Father&rsquo;s Tool Box about communication services for your Catholic parish.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/eb-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="topband"><div class="wrap"><em>Laudetur Iesus Christus</em><span class="season-now">The Church is in&nbsp;<span data-season-name>Ordinary Time</span></span></div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a>
+<nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact" aria-current=page>Contact</a></li></ul></nav>
+</div></header>
+<main>
+<section><div class="wrap contact-grid">
+<div>
+<p class="rubric rise">Contact</p>
+<h1 class="rise">Get in <em>touch.</em></h1>
+<p class="lede rise">Reach out to Father&rsquo;s Tool Box for any inquiries or collaborations. We are here to help you achieve your communication and outreach goals.</p>
+<ul class="notes rise">
+<li>Tell us a little about your parish.</li>
+<li>Share what you hope to accomplish.</li>
+<li>We will reply to you by email.</li>
+</ul>
+<figure class="contact-verse"><blockquote>&ldquo;Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.&rdquo;</blockquote><cite class="cite">Matthew 7:7</cite></figure>
+</div>
+<form id="contact-form" action="/api/contact" method="post">
+<div class="field"><label for="first">First name</label><input id="first" name="first_name" autocomplete="given-name" required></div>
+<div class="field"><label for="last">Last name</label><input id="last" name="last_name" autocomplete="family-name" required></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="phone">Phone <i>(optional)</i></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+<div class="field"><label for="role">Your role <i>(optional)</i></label><select id="role" name="role"><option value="">Choose one</option><option>Pastor</option><option>Parochial vicar</option><option>Deacon</option><option>Parish staff</option><option>Parish volunteer</option><option>Diocesan office</option><option>Other</option></select></div>
+<div class="field"><label for="parish">Parish or diocese <i>(optional)</i></label><input id="parish" name="parish" autocomplete="organization"></div>
+<div class="field full"><label for="message">How can we help?</label><textarea id="message" name="message" required></textarea></div>
+<div class="hp" aria-hidden="true"><label for="website">Leave blank</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="full form-foot"><button class="btn btn-red" type="submit">Send message</button><p class="form-status" role="status" aria-live="polite"></p></div>
+</form>
+</div></section>
+</main>
+<footer><div class="wrap">
+<div class="foot-top"><a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a><nav aria-label="Footer"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li></ul></nav></div>
+<div class="foot-bottom"><span>&copy; <span id="yr">2026</span> Father&rsquo;s Tool Box. Communication services for Catholic parishes.</span><em>Ad maiorem Dei gloriam</em></div>
+<p class="foot-prayer">St. Francis de Sales, patron of writers and the Catholic press, pray for us.</p>
+</div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="/liturgy.js"></script>
+<script>
+const f=document.getElementById('contact-form'),s=f.querySelector('.form-status'),b=f.querySelector('button');
+f.addEventListener('submit',async e=>{e.preventDefault();s.className='form-status';s.textContent='Sending\u2026';b.disabled=true;
+try{const r=await fetch(f.action,{method:'POST',body:new FormData(f)});if(!r.ok)throw 0;
+f.reset();s.classList.add('ok');s.textContent='Thank you. Your message has been sent and we will be in touch soon. God bless you.'}
+catch{s.classList.add('err');s.textContent='Sorry, something went wrong. Please try again in a moment.'}
+b.disabled=false});
+</script>
+</body>
+</html>
