@@ -4,7 +4,7 @@
 //   RESEND_API_KEY  (secret, required)  a Resend API key with sending access
 //   CONTACT_TO      (optional)          defaults to darwin.sayo@gmail.com
 //   CONTACT_FROM    (optional)          must be on a domain verified in Resend;
-//                                       defaults to Father's Tool Box <website@fatherstoolbox.com>
+//                                       defaults to Father's Tool Box <hello@fatherstoolbox.com>
 
 const clean = (v, max = 200) => String(v ?? "").replace(/[\r\n]+/g, " ").trim().slice(0, max);
 
@@ -38,7 +38,7 @@ export async function onRequestPost({ request, env }) {
     method: "POST",
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: env.CONTACT_FROM || "Father's Tool Box <website@fatherstoolbox.com>",
+      from: env.CONTACT_FROM || "Father's Tool Box <hello@fatherstoolbox.com>",
       to: [env.CONTACT_TO || "darwin.sayo@gmail.com"],
       reply_to: email,
       subject: `Website inquiry from ${first} ${last}`,
