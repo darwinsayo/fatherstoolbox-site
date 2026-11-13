@@ -590,12 +590,12 @@ const DATA = {"geo":{"view":{"x":40,"y":55.6412391758131,"w":920,"h":488.7175216
       hl.textContent = M()
         ? (now.length === 1 ? 'One parish has Mass in progress right now.' : now.length + ' parishes have Mass in progress right now.')
         : (now.length === 1 ? 'One parish is hearing confessions right now.' : now.length + ' parishes are hearing confessions right now.');
-      sub.textContent = soon.length ? soon.length + ' more begin within two hours.' : 'Red dots on the map show where.';
+      sub.textContent = soon.length ? soon.length + ' more begin within two hours.' : 'Purple dots on the map show where.';
     } else if (soon.length) {
       hl.textContent = M()
         ? (soon.length === 1 ? 'One parish has Mass within two hours.' : soon.length + ' parishes have Mass within two hours.')
         : (soon.length === 1 ? 'One parish begins confessions within two hours.' : soon.length + ' parishes begin confessions within two hours.');
-      sub.textContent = 'Red dots on the map show where.';
+      sub.textContent = 'Purple dots on the map show where.';
     } else {
       let best = null;
       P.forEach((p, i) => { const n = nextSession(p, cur); if (n && (!best || n.ahead < best.n.ahead)) best = { i, n }; });
