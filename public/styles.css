@@ -242,3 +242,11 @@ footer .wrap{padding-block:2.6rem 2.2rem}
   .call .wrap{width:calc(100% - 1.5rem)}
 }
 .year li[data-season-key="Triduum"]{border-top-color:transparent;background:linear-gradient(90deg,var(--white) 50%,var(--red) 50%) top left/100% 3px no-repeat;background-origin:border-box}
+
+/* What we offer: four parts of one service (not a sequence, so no numbers) */
+.head-offer{align-items:start}
+.head-offer>p{font-size:1.15rem}
+.offers{grid-template-columns:repeat(4,minmax(0,1fr))}
+.offers .service h3{font-size:1.55rem}
+@media (max-width:1100px){.offers{grid-template-columns:repeat(2,minmax(0,1fr))}.offers .service:nth-child(3){border-left:0}.offers .service:nth-child(n+3){border-top:1px solid #e3dccb}}
+@media (max-width:920px){.offers{grid-template-columns:1fr}.offers .service+.service{border-left:0;border-top:1px solid #e3dccb}}
