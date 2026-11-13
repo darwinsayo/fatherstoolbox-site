@@ -25,22 +25,21 @@ A design polish of version 3 (`../fatherstoolbox-site-v3`, left untouched). Word
 - Footer: "Ad maiorem Dei gloriam" and a short invocation of St. Francis de Sales. The 404 page asks St. Anthony's help.
 
 ## What is here
-- `public/`: the static site, `styles.css`, `liturgy.js`, `favicon.svg`, self-hosted fonts (EB Garamond is used; the Inter files are unused leftovers; SIL OFL). Nothing loads from third parties.
-- `src/worker.js`: Cloudflare Worker serving `public/` and handling `/api/contact`.
-- `wrangler.toml`: contact form emails `CONTACT_TO` (darwin.sayo@gmail.com).
-- `previews/`: desktop (1440px) and mobile (iPhone 13) screenshots of each page.
+- `public/`: the static site (pages, `styles.css`, `liturgy.js`, `favicon.svg`, self-hosted EB Garamond under the SIL OFL; the Inter font files are unused leftovers). Nothing loads from third parties.
+- `functions/api/contact.js`: a Cloudflare Pages Function that sends the contact form to darwin.sayo@gmail.com through Resend.
 
-## Preview locally
-`npx wrangler dev`, then open http://localhost:8787.
-
-## Deploy (## Deploy (Cloudflare Workers, connected to this GitHub repo)
+## Deploy (Cloudflare Pages, connected to this GitHub repo)
 Every push to `main` deploys automatically.
 
-**One-time setup**
-1. Cloudflare dashboard, Workers & Pages, Create, Import a repository. Pick `darwinsayo/fatherstoolbox-site`. The project name must be `fatherstoolbox` (it has to match `name` in `wrangler.toml`). Leave the build command empty and the deploy command as `npx wrangler deploy`.
-2. Once it deploys, open the `fatherstoolbox` Worker, then Settings, Domains & Routes, Add, Custom domain. Add `fatherstoolbox.com`, then `www.fatherstoolbox.com`. Confirm if Cloudflare offers to replace existing DNS records for those names.
+1. Cloudflare dashboard, Workers & Pages, Create, Pages, Import an existing Git repository. Pick `darwinsayo/fatherstoolbox-site`.
+2. Build settings: Framework preset None, build command empty, build output directory `public`. Save and Deploy.
+3. Pages project, Custom domains, Set up a custom domain: add `fatherstoolbox.com`, then `www.fatherstoolbox.com`.
 
-**Contact form email (later)**
-The form is switched off until email is set up: it answers "not switched on yet" instead of sending.
-1. Cloudflare, fatherstoolbox.com, Email, Email Routing: turn it on (check first if the domain already receives email elsewhere; this replaces its MX records). Add darwin.sayo@gmail.com as a destination and click the verification link in Gmail.
-2. In `wrangler.toml`, remove the `# ` from the three `send_email` lines and push. Then send a test message from the Contact page.
+## Contact form (Resend)
+1. In Resend, make sure fatherstoolbox.com is a verified sending domain (or use another verified domain; see `CONTACT_FROM`).
+2. Pages project, Settings, Variables and Secrets (Production): add `RESEND_API_KEY` as a secret. Optional: `CONTACT_FROM`, `CONTACT_TO`.
+3. Redeploy (Deployments, latest, Retry deployment), then send a test from the Contact page.
+Until the key is set, the form answers "not set up yet" instead of sending.
+
+## Preview locally
+`npx wrangler pages dev public`, then open http://localhost:8788.
