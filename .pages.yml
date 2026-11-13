@@ -1,0 +1,30 @@
+content:
+  - name: parishcheck
+    label: Parishes to check by hand
+    type: collection
+    path: parishcheck
+    format: json
+    filename: "{fields.map}-{primary}.json"
+    view:
+      fields: [parish, town, map, status, checked_on, phone]
+      primary: parish
+      sort: [status, map, parish]
+      default:
+        sort: status
+        order: desc
+    fields:
+      - { name: map, label: Map, type: select, options: { values: [cincinnati, covington, lexington] } }
+      - { name: parish, label: Parish, type: string, required: true }
+      - { name: town, label: Town, type: string }
+      - { name: phone, label: Phone, type: string }
+      - { name: website, label: Parish website, type: string }
+      - name: status
+        label: Status
+        type: select
+        default: needs_check
+        options:
+          values:
+            - { value: needs_check, label: "Needs checking" }
+            - { value: checked, label: "Checked by hand" }
+      - { name: checked_on, label: Date checked, type: date }
+      - { name: notes, label: Where the data came from / why a time is missing, type: text }
