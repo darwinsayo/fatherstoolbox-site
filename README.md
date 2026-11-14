@@ -53,10 +53,10 @@ Until the key is set, the form answers "not set up yet" instead of sending.
 
 ## Parish times (moved from manymanytoes.com)
 
-- `public/parishtimes/` holds the "All dioceses" page and one live map each for the Diocese of Covington (53 parishes), the Diocese of Lexington (58), the Archdiocese of Cincinnati (93, Cincinnati area) and the Diocese of Kansas City-St. Joseph (88, added 14 Nov 2026). Each map is a single self-contained HTML file; the parish data and times live in the `DATA` object inside its `<script>`.
+- `public/parishtimes/` holds the "All dioceses" page and one live map each for the Diocese of Covington (53 parishes), the Diocese of Lexington (58), the Archdiocese of Cincinnati (93, Cincinnati area) and the Diocese of Kansas City-St. Joseph (88, added 14 Nov 2026) and the Diocese of Oakland (75, California, added 14 Nov 2026). Each map is a single self-contained HTML file; the parish data and times live in the `DATA` object inside its `<script>`.
 - They were ported from the Eleventy site as-is. Only the look changed to match this site (limestone, lapis, EB Garamond), plus links and the site name in the search-engine data.
 - `parishcheck/` is the private list of parishes to check by hand. It sits outside `public/`, so it is never published. `.pages.yml` lets Pages CMS edit it, as before.
-- Rules for the times: only the parish's own website counts (Facebook is not a website), never guess, confession with no end time gets 30 minutes, no communion services. Times are shown as the parish posts them: Eastern for the Kentucky and Cincinnati maps, Central for Kansas City-St. Joseph, whose page labels its times and live clock as Central.
+- Rules for the times: only the parish's own website counts (Facebook is not a website), never guess, confession with no end time gets 30 minutes, no communion services. Times are shown as the parish posts them: Eastern for the Kentucky and Cincinnati maps, Central for Kansas City-St. Joseph and Pacific for Oakland, whose pages label their times and live clocks.
 
 ---
 
