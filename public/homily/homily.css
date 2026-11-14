@@ -1,0 +1,77 @@
+/* The fill-in-the-blank homily (/homily/). Builds on /styles.css. Calm: no animation. */
+.hm-crumb{margin:0 0 1.4rem;font-size:1rem}
+.hm-crumb a{color:var(--lapis);font-weight:600;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+#hm .page-head h1{max-width:20ch}
+.hm-note{max-width:var(--measure);margin:1.4rem 0 0;padding:.2rem 0 .2rem 1.1rem;border-left:3px solid var(--gold);font-style:italic;font-size:1.08rem;color:var(--ink-soft)}
+
+.hm-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2rem,4vw,3.5rem);align-items:start;padding-bottom:clamp(4rem,8vw,6.5rem)}
+#hm-form{align-content:start}
+#hm-form fieldset{border:0;margin:0;padding:0;min-width:0}
+#hm-form legend{padding:0;margin-bottom:.8rem;font-size:1.15rem}
+.hm-help,.hm-suggest{margin:-.2rem 0 1.1rem;font-style:italic;font-size:1.05rem;color:var(--ink-soft)}
+.hm-suggest{margin:.8rem 0 0}
+.hm-suggest:empty{display:none}
+
+/* Template choices */
+.hm-templates{display:grid;gap:.5rem}
+.hm-choice{position:relative}
+.hm-choice input{position:absolute;opacity:0;width:1px;height:1px}
+.hm-choice label{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.1rem 1rem;padding:.6rem .9rem .65rem 2.4rem;border:1px solid #d3cab8;border-radius:2px;cursor:pointer;font-variant-caps:normal;letter-spacing:0;font-size:1.15rem;color:var(--ink);position:relative;background:var(--vellum)}
+.hm-choice label::before{content:"";position:absolute;left:.85rem;top:.95rem;width:.85rem;height:.85rem;border-radius:50%;border:1px solid var(--ink-soft);background:var(--vellum)}
+.hm-choice label b{font-weight:500}
+.hm-choice label span{font-style:italic;font-size:1rem;color:var(--ink-soft)}
+.hm-choice label:hover{border-color:var(--lapis)}
+.hm-choice input:checked+label{border-color:var(--lapis);box-shadow:inset 0 0 0 1px var(--lapis);background:#f1f0f2}
+.hm-choice input:checked+label::before{border-color:var(--lapis);background:var(--lapis);box-shadow:inset 0 0 0 2.5px var(--vellum)}
+.hm-choice input:focus-visible+label{outline:2px solid var(--lapis);outline-offset:3px}
+
+/* Blanks */
+.hm-blanks{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem 1.6rem}
+.hm-hint{font-style:italic;font-size:.95rem;color:var(--ink-soft);opacity:.85}
+.hm-err{font-size:1rem;color:var(--rubric)}
+#hm-form input[aria-invalid=true]{border-bottom-color:var(--rubric);box-shadow:0 1px 0 var(--rubric)}
+.hm-saint{margin-top:1.5rem}
+.hm-saint select{font-size:1.12rem}
+.hm-buttons{display:flex;flex-wrap:wrap;gap:.8rem 1rem;align-items:center}
+
+/* The homily */
+.hm-result{position:sticky;top:1.5rem;scroll-margin-top:1rem}
+.hm-out{scroll-margin-top:1rem}
+.hm-empty{border:1px dashed #c9bfab;border-radius:3px;padding:clamp(2.5rem,6vw,4.5rem) 1.5rem;text-align:center;color:var(--ink-soft)}
+.hm-empty svg{width:40px;height:36px;margin:0 auto 1rem;display:block;color:var(--lapis)}
+.hm-empty p{margin:0;font-size:1.25rem;color:var(--ink)}
+.hm-empty .hm-empty-sub{margin-top:.4rem;font-style:italic;font-size:1.05rem;color:var(--ink-soft)}
+.hm-sheet{background:var(--vellum);border-radius:3px;padding:clamp(1.6rem,4vw,2.8rem);border-top:3px solid var(--gold);box-shadow:0 18px 40px -28px rgba(35,31,28,.45)}
+.hm-sheet h2{font-size:clamp(1.9rem,3.2vw,2.5rem);line-height:1.08;color:var(--lapis-deep);margin:.5rem 0 1.4rem;letter-spacing:-.01em}
+.hm-sheet h2:focus{outline:none}
+.hm-sheet h2::first-letter{color:var(--lapis);font-weight:600}
+.hm-sheet section{margin-top:1.15rem}
+.hm-sheet section p{margin:0}
+.hm-sheet section .rubric{margin-bottom:.15rem;font-size:1rem}
+.hm-sheet section p+p{font-size:1.18rem;line-height:1.55}
+.hm-sheet mark{background:none;color:var(--lapis-deep);font-weight:500;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:.2em}
+.hm-invocation{margin:1.6rem 0 0;padding-top:1.1rem;border-top:1px solid #e3dccb;font-style:italic;text-align:center;color:var(--lapis-deep)}
+.hm-fine{margin:1.1rem 0 0;font-size:.98rem;font-style:italic;color:var(--ink-soft);text-align:center}
+.hm-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
+.hm-actions[hidden]{display:none}
+.hm-actions .btn{padding:.55rem 1.2rem .7rem}
+.hm-status{min-height:1.6em;margin:.8rem 0 0;font-style:italic;font-size:1.05rem;color:var(--ink-soft)}
+
+@media (max-width:920px){
+  .hm-grid{grid-template-columns:1fr}
+  .hm-result{position:static}
+}
+@media (max-width:560px){
+  .hm-blanks{grid-template-columns:1fr}
+  .hm-buttons .btn{flex:1 1 auto;justify-content:center}
+}
+
+/* Print only the homily */
+@media print{
+  body{background:#fff;font-size:12pt}
+  .topband,.site-header,footer,.page-head,#hm-form,.hm-actions,.hm-status,.hm-empty{display:none!important}
+  .hm-grid{display:block;padding:0}
+  .hm-result{position:static}
+  .hm-sheet{box-shadow:none;border:0;padding:0}
+  .hm-sheet mark{color:#000;text-decoration-color:#999}
+}
