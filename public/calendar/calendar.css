@@ -18,15 +18,13 @@
 .lc-today-meta{margin:1rem 0 0;color:var(--ink-soft);font-size:clamp(1.12rem,1.5vw,1.3rem);max-width:40em}
 /* A chasuble in the color of the day */
 /* A Gothic chasuble in the color of the day: column orphrey with a cross, gold trim */
-.lc-chasuble{flex:none;width:88px;height:auto;margin-bottom:.2rem;overflow:visible;--ch:var(--green);--ch-col:#1f4a2b;--ch-cross:var(--gold-lit)}
+.lc-chasuble{flex:none;width:96px;height:auto;margin-bottom:.2rem;overflow:visible;--ch:var(--green);--ch-col:#1f4a2b;--ch-cross:var(--gold-lit)}
 .lc-chasuble.c-white{--ch:#f6f0e0;--ch-col:#c9a24a;--ch-cross:#fbf7ec;box-shadow:none;background:none}
 .lc-chasuble.c-red{--ch:var(--red);--ch-col:#7d1913}
 .lc-chasuble.c-violet{--ch:var(--violet);--ch-col:#3d2654}
 .lc-chasuble.c-rose{--ch:var(--lc-rose);--ch-col:#a95a72}
 .lc-chasuble.c-black{--ch:var(--lc-black);--ch-col:#141210}
 .lc-chasuble[class*=" c-"]{background:none}
-.lc-chasuble .ch-alb{fill:#fdfbf5;stroke:#b5a88f;stroke-width:1.3;stroke-linejoin:round}
-.lc-chasuble .ch-alb-fold{fill:none;stroke:rgba(120,108,88,.28);stroke-width:1}
 .lc-chasuble .ch-body{fill:var(--ch)}
 .lc-chasuble .ch-col{fill:var(--ch-col)}
 .lc-chasuble .ch-edge{stroke:var(--gold);stroke-width:1.6;fill:none}
@@ -162,7 +160,7 @@
 @media (max-width:760px){
   #lc .wrap{padding-top:1.2rem}
   .lc-today{align-items:flex-start}
-  .lc-chasuble{width:52px}
+  .lc-chasuble{width:60px}
   .lc-main{grid-template-columns:1fr}
   .lc-detail{position:static;order:-1}
   .lc-row{display:block}
