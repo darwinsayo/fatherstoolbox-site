@@ -52,36 +52,8 @@
     var meta = [d.kind !== 'Weekday' ? d.kind : null, colorWords(d), seasonText(d), cycleText(d)].filter(Boolean).join(' \u00B7 ');
     if (d.options.length) meta += '. Optional: ' + d.options.map(function (o) { return o.short; }).join('; ');
     $('lc-today-meta').textContent = meta + '.';
-    $('lc-today-color').setAttribute('class', 'lc-chasuble c-' + d.color[0]);
-    $('lc-today').setAttribute('data-color', d.color[0]);
-    drawCount(t);
+    $('lc-today-color').className = 'lc-chasuble c-' + d.color[0];
     document.title = 'Liturgical Calendar for the United States | Father\u2019s Tool Box';
-  }
-
-  /* ---------- Coming up: the next great days, counted down ---------- */
-  var BIG = { 'Ash Wednesday': 'violet', 'Easter Sunday': 'white', 'Pentecost Sunday': 'red', 'First Sunday of Advent': 'violet', 'Christ the King': 'white', 'Palm Sunday': 'red', 'Epiphany of the Lord': 'white' };
-  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function drawCount(t) {
-    var Y = O.ymd(t)[0], ev = [];
-    [Y, Y + 1].forEach(function (y) {
-      O.keyDates(y, opt()).forEach(function (k) { if (BIG[k.name]) ev.push({ name: k.name, n: O.parse(k.date), c: BIG[k.name] }); });
-      ev.push({ name: 'Christmas', n: O.dn(y, 12, 25), c: 'white' });
-    });
-    ev = ev.filter(function (e) { return e.n > t; }).sort(function (a, b) { return a.n - b.n; }).slice(0, 3);
-    $('lc-count').innerHTML = ev.map(function (e, i) {
-      var k = e.n - t;
-      return '<li style="--i:' + i + '"><button type="button" class="lc-cd lc-cd-' + e.c + '" data-go="' + O.iso(e.n) + '">' +
-        '<b data-to="' + k + '">' + (calm ? k : 0) + '</b><span>' + (k === 1 ? 'day' : 'days') + ' to</span><em>' + esc(e.name) + '</em></button></li>';
-    }).join('');
-    if (calm) return;
-    var nums = $('lc-count').querySelectorAll('b[data-to]'), t0 = null;
-    function tick(ts) {
-      if (t0 == null) t0 = ts;
-      var p = Math.min(1, (ts - t0) / 1400), e = 1 - Math.pow(1 - p, 3);
-      nums.forEach(function (b) { b.textContent = Math.round(+b.dataset.to * e); });
-      if (p < 1) requestAnimationFrame(tick);
-    }
-    setTimeout(function () { requestAnimationFrame(tick); }, 350);
   }
 
   /* ---------- Season band: the liturgical year that holds the selected day, to scale ---------- */
@@ -105,10 +77,8 @@
   }
 
   /* ---------- Month ---------- */
-  var shown = null;
   function drawMonth(focus) {
     var a = O.ymd(state.sel), Y = a[0], M = a[1], days = O.month(Y, M, opt()), t = O.today();
-    var key = Y * 12 + M, dir = shown == null ? 0 : key > shown ? 1 : key < shown ? -1 : null; shown = key;
     $('lc-month-title').textContent = MONTHS[M - 1] + ' ' + Y;
     $('lc-month').value = String(M);
     $('lc-yearin').value = String(Y);
@@ -116,7 +86,7 @@
     $('lc-next').disabled = Y === MAX && M === 12;
     var html = '<div class="lc-row lc-head" role="row">' + DAYS.map(function (d) { return '<span role="columnheader" aria-label="' + d + '">' + d.slice(0, 3) + '</span>'; }).join('') + '</div>';
     var lead = days[0].dow, cells = [];
-    for (var i = 0; i < lead; i++) cells.push('<span class="lc-cell lc-pad" role="presentation" style="--i:' + i + '"></span>');
+    for (var i = 0; i < lead; i++) cells.push('<span class="lc-cell lc-pad" role="presentation"></span>');
     days.forEach(function (d) {
       var cls = ['lc-cell'], plain = !d.sanctoral && d.kind === 'Weekday';
       if (d.dow === 0) cls.push('sun');
@@ -129,7 +99,7 @@
       var bars = d.colors.map(function (c) { return '<i class="c-' + c + '"></i>'; }).join('');
       var label = long(d.n) + '. ' + d.title + (d.kind !== 'Weekday' ? ', ' + d.kind : '') + '. ' + colorWords(d) + '.' +
         (opts.length ? ' Optional: ' + opts.map(function (o) { return o.short; }).join('; ') + '.' : '') + (d.holyDay === 'obligation' ? ' Holy day of obligation.' : '');
-      cells.push('<button type="button" role="gridcell" class="' + cls.join(' ') + '" style="--i:' + (lead + d.day - 1) + '" data-n="' + d.n + '" aria-selected="' + (d.n === state.sel) + '" tabindex="' + (d.n === state.sel ? 0 : -1) + '" aria-label="' + esc(label) + '"' + (d.n === t ? ' aria-current="date"' : '') + '>' +
+      cells.push('<button type="button" role="gridcell" class="' + cls.join(' ') + '" data-n="' + d.n + '" aria-selected="' + (d.n === state.sel) + '" tabindex="' + (d.n === state.sel ? 0 : -1) + '" aria-label="' + esc(label) + '"' + (d.n === t ? ' aria-current="date"' : '') + '>' +
         '<span class="lc-bar" aria-hidden="true">' + bars + '</span>' +
         '<span class="lc-num" aria-hidden="true"><span class="lc-dow">' + DAYS[d.dow].slice(0, 3) + '</span>' + d.day + '</span>' +
         '<span class="lc-body" aria-hidden="true">' + title + optHtml +
@@ -138,11 +108,9 @@
         (plain && !opts.length ? '<span class="lc-w">' + esc(d.dow === 0 ? '' : (d.season === 'ordinary' ? 'Weekday' : d.short)) + '</span>' : '') +
         '</span></button>');
     });
-    while ((cells.length) % 7) cells.push('<span class="lc-cell lc-pad" role="presentation" style="--i:' + cells.length + '"></span>');
+    while ((cells.length) % 7) cells.push('<span class="lc-cell lc-pad" role="presentation"></span>');
     for (var r = 0; r < cells.length; r += 7) html += '<div class="lc-row" role="row">' + cells.slice(r, r + 7).join('') + '</div>';
-    var g = $('lc-grid');
-    g.innerHTML = html;
-    if (dir !== null) { g.classList.remove('lc-in', 'lc-in-back'); void g.offsetWidth; g.classList.add(dir < 0 ? 'lc-in-back' : 'lc-in'); }
+    $('lc-grid').innerHTML = html;
     if (focus) { var b = $('lc-grid').querySelector('[data-n="' + state.sel + '"]'); if (b) b.focus(); }
   }
 
@@ -172,10 +140,7 @@
     if (d.notes.length) h += '<div class="lc-notes">' + d.notes.map(function (n) { return '<p class="lc-note">' + esc(n) + '</p>'; }).join('') + '</div>';
     h += '<p class="lc-actions"><a class="btn btn-red" href="' + d.readings + '" target="_blank" rel="noopener">Readings at USCCB<span class="lc-sr"> (opens in a new tab)</span></a>' +
       '<button type="button" class="btn-plain btn lc-copy" id="lc-copy">Copy a link to this day</button></p>';
-    var box = $('lc-detail');
-    box.innerHTML = h;
-    box.setAttribute('data-color', d.color[0]);
-    box.classList.remove('lc-pop'); void box.offsetWidth; box.classList.add('lc-pop');
+    $('lc-detail').innerHTML = h;
     $('lc-copy').addEventListener('click', function () {
       var url = location.origin + location.pathname + '?date=' + O.iso(state.sel) + (state.asc ? '&ascension=thursday' : '');
       var done = function () { $('lc-copy').textContent = 'Link copied'; };
