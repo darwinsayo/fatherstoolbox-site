@@ -35,6 +35,9 @@ Every push to `main` deploys automatically.
 2. Build settings: Framework preset None, build command empty, build output directory `public`. Save and Deploy.
 3. Pages project, Custom domains, Set up a custom domain: add `fatherstoolbox.com`, then `www.fatherstoolbox.com`.
 
+## Pages
+Home (`index.html`), About, Resources (`resources.html`, which lists Parish times under `/parishtimes/`), Contact and a 404 page.
+
 ## Contact form (Resend)
 1. In Resend, make sure fatherstoolbox.com is a verified sending domain (or use another verified domain; see `CONTACT_FROM`).
 2. Pages project, Settings, Variables and Secrets (Production): add `RESEND_API_KEY` as a secret. Optional: `CONTACT_FROM`, `CONTACT_TO`.
