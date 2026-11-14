@@ -118,7 +118,8 @@
 .lc-actions .btn{padding:.6rem 1.1rem .7rem;font-size:1.05rem}
 .lc-actions .btn-plain{padding-inline:0;color:var(--lapis);font-size:1rem}
 
-.lc-legend{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin:1rem 0 0;font-size:1rem;color:var(--ink-soft)}
+.lc-monthcol{min-width:0;display:flex;flex-direction:column}
+.lc-legend{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin:.9rem 0 0;padding:0 .2rem;font-size:1rem;color:var(--ink-soft)}
 .lc-legend-rank{margin-left:auto;display:flex;gap:1rem;flex-wrap:wrap}
 .lc-legend-rank b{font-weight:600;font-variant-caps:small-caps;color:var(--lapis-deep)}
 .lc-legend-rank b.f{font-variant-caps:normal}.lc-legend-rank b.m{font-weight:400;color:var(--ink)}
@@ -179,6 +180,7 @@
   .lc-jump{flex-wrap:wrap}
   .lc-panels{grid-template-columns:1fr}
   .lc-legend-rank{margin-left:0}
+  .lc-monthcol .lc-legend{order:-1;margin:0 0 .9rem}
   .lc-band{height:22px}
 }
 @media print{
