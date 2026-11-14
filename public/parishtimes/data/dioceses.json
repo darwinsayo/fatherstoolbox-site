@@ -1,0 +1,817 @@
+{
+  "$comment": "Diocese registry for Parish times. Field guide: docs/parishtimes/multi-diocese-plan.md",
+  "updated": "2026-11-14",
+  "provinces": [
+    {
+      "id": "louisville",
+      "title": "Province of Louisville",
+      "metropolitan": "louisville",
+      "states": [
+        "KY",
+        "TN"
+      ]
+    },
+    {
+      "id": "cincinnati",
+      "title": "Province of Cincinnati",
+      "metropolitan": "cincinnati",
+      "states": [
+        "OH"
+      ]
+    },
+    {
+      "id": "indianapolis",
+      "title": "Province of Indianapolis",
+      "metropolitan": "indianapolis",
+      "states": [
+        "IN"
+      ]
+    }
+  ],
+  "dioceses": [
+    {
+      "id": "louisville",
+      "kind": "archdiocese",
+      "of": "Louisville",
+      "title": "Archdiocese of Louisville",
+      "province": "louisville",
+      "state": "KY",
+      "timeZone": "America/Kentucky/Louisville",
+      "status": "planned",
+      "website": "https://www.archlou.org/",
+      "parishCountReported": {
+        "value": 107,
+        "note": "107 on the archdiocese home page, 108 parishes and missions on its statistics page; 110 in 2023 directories",
+        "source": "https://www.archlou.org/about-the-archdiocese/history/statistics/",
+        "checked": "2026-11-14"
+      },
+      "counties": {
+        "KY": [
+          "Adair",
+          "Barren",
+          "Bullitt",
+          "Casey",
+          "Clinton",
+          "Cumberland",
+          "Green",
+          "Hardin",
+          "Hart",
+          "Henry",
+          "Jefferson",
+          "Larue",
+          "Marion",
+          "Meade",
+          "Metcalfe",
+          "Monroe",
+          "Nelson",
+          "Oldham",
+          "Russell",
+          "Shelby",
+          "Spencer",
+          "Taylor",
+          "Trimble",
+          "Washington"
+        ]
+      },
+      "cities": [
+        "Louisville",
+        "Elizabethtown",
+        "Bardstown",
+        "Shelbyville",
+        "Glasgow",
+        "Campbellsville"
+      ]
+    },
+    {
+      "id": "covington",
+      "kind": "diocese",
+      "of": "Covington",
+      "title": "Diocese of Covington",
+      "province": "louisville",
+      "state": "KY",
+      "timeZone": "America/New_York",
+      "status": "live",
+      "page": "/parishtimes/covington/",
+      "data": "/parishtimes/covington/",
+      "crest": "/parishtimes/crests/covington.png",
+      "website": "https://covdio.org/",
+      "coverage": {
+        "complete": true,
+        "note": ""
+      },
+      "parishes": 53,
+      "unconfirmed": 17,
+      "timesReadAsOf": "2026-10",
+      "lastHandCheck": "2026-11-06",
+      "counties": {
+        "KY": [
+          "Boone",
+          "Bracken",
+          "Campbell",
+          "Carroll",
+          "Fleming",
+          "Gallatin",
+          "Grant",
+          "Harrison",
+          "Kenton",
+          "Lewis",
+          "Mason",
+          "Owen",
+          "Pendleton",
+          "Robertson"
+        ]
+      },
+      "cities": [
+        "Covington",
+        "Newport",
+        "Florence",
+        "Fort Thomas",
+        "Maysville"
+      ]
+    },
+    {
+      "id": "lexington",
+      "kind": "diocese",
+      "of": "Lexington",
+      "title": "Diocese of Lexington",
+      "province": "louisville",
+      "state": "KY",
+      "timeZone": "America/New_York",
+      "status": "live",
+      "page": "/parishtimes/lexington/",
+      "data": "/parishtimes/lexington/",
+      "crest": "/parishtimes/crests/lexington.png",
+      "website": "https://cdlex.org/",
+      "coverage": {
+        "complete": true,
+        "note": ""
+      },
+      "parishes": 58,
+      "unconfirmed": 31,
+      "timesReadAsOf": "2026-10",
+      "lastHandCheck": "2026-11-14",
+      "counties": {
+        "KY": [
+          "Anderson",
+          "Bath",
+          "Bell",
+          "Bourbon",
+          "Boyd",
+          "Boyle",
+          "Breathitt",
+          "Carter",
+          "Clark",
+          "Clay",
+          "Elliott",
+          "Estill",
+          "Fayette",
+          "Floyd",
+          "Franklin",
+          "Garrard",
+          "Greenup",
+          "Harlan",
+          "Jackson",
+          "Jessamine",
+          "Johnson",
+          "Knott",
+          "Knox",
+          "Laurel",
+          "Lawrence",
+          "Lee",
+          "Leslie",
+          "Letcher",
+          "Lincoln",
+          "Madison",
+          "Magoffin",
+          "Martin",
+          "McCreary",
+          "Menifee",
+          "Mercer",
+          "Montgomery",
+          "Morgan",
+          "Nicholas",
+          "Owsley",
+          "Perry",
+          "Pike",
+          "Powell",
+          "Pulaski",
+          "Rockcastle",
+          "Rowan",
+          "Scott",
+          "Wayne",
+          "Whitley",
+          "Wolfe",
+          "Woodford"
+        ]
+      },
+      "cities": [
+        "Lexington",
+        "Frankfort",
+        "Richmond",
+        "Danville",
+        "Ashland",
+        "Somerset",
+        "Pikeville",
+        "London"
+      ]
+    },
+    {
+      "id": "owensboro",
+      "kind": "diocese",
+      "of": "Owensboro",
+      "title": "Diocese of Owensboro",
+      "province": "louisville",
+      "state": "KY",
+      "timeZone": "America/Chicago",
+      "status": "planned",
+      "website": "https://owensborodiocese.org/",
+      "parishCountReported": {
+        "value": 78,
+        "source": "https://owensborodiocese.org/",
+        "basis": "diocese home page, 2026",
+        "checked": "2026-11-14"
+      },
+      "counties": {
+        "KY": [
+          "Allen",
+          "Ballard",
+          "Breckinridge",
+          "Butler",
+          "Caldwell",
+          "Calloway",
+          "Carlisle",
+          "Christian",
+          "Crittenden",
+          "Daviess",
+          "Edmonson",
+          "Fulton",
+          "Graves",
+          "Grayson",
+          "Hancock",
+          "Henderson",
+          "Hickman",
+          "Hopkins",
+          "Livingston",
+          "Logan",
+          "Lyon",
+          "McCracken",
+          "McLean",
+          "Marshall",
+          "Muhlenberg",
+          "Ohio",
+          "Simpson",
+          "Todd",
+          "Trigg",
+          "Union",
+          "Warren",
+          "Webster"
+        ]
+      },
+      "cities": [
+        "Owensboro",
+        "Bowling Green",
+        "Paducah",
+        "Henderson",
+        "Hopkinsville",
+        "Madisonville"
+      ]
+    },
+    {
+      "id": "knoxville",
+      "kind": "diocese",
+      "of": "Knoxville",
+      "title": "Diocese of Knoxville",
+      "province": "louisville",
+      "state": "TN",
+      "timeZone": "America/New_York",
+      "status": "later",
+      "website": "https://dioknox.org/",
+      "parishCountReported": null,
+      "counties": null
+    },
+    {
+      "id": "memphis",
+      "kind": "diocese",
+      "of": "Memphis",
+      "title": "Diocese of Memphis",
+      "province": "louisville",
+      "state": "TN",
+      "timeZone": "America/Chicago",
+      "status": "later",
+      "website": "https://cdom.org/",
+      "parishCountReported": null,
+      "counties": null
+    },
+    {
+      "id": "nashville",
+      "kind": "diocese",
+      "of": "Nashville",
+      "title": "Diocese of Nashville",
+      "province": "louisville",
+      "state": "TN",
+      "timeZone": "America/Chicago",
+      "status": "later",
+      "website": "https://dioceseofnashville.com/",
+      "parishCountReported": null,
+      "counties": null
+    },
+    {
+      "id": "cincinnati",
+      "kind": "archdiocese",
+      "of": "Cincinnati",
+      "title": "Archdiocese of Cincinnati",
+      "province": "cincinnati",
+      "state": "OH",
+      "timeZone": "America/New_York",
+      "status": "live",
+      "page": "/parishtimes/cincinnati/",
+      "data": "/parishtimes/cincinnati/",
+      "crest": "/parishtimes/crests/cincinnati.png",
+      "website": "https://www.catholicaoc.org/",
+      "coverage": {
+        "complete": false,
+        "note": "Cincinnati area only: Butler, Clermont, Hamilton and Warren counties.",
+        "counties": {
+          "OH": [
+            "Butler",
+            "Clermont",
+            "Hamilton",
+            "Warren"
+          ]
+        }
+      },
+      "parishes": 93,
+      "unconfirmed": 25,
+      "timesReadAsOf": "2026-10",
+      "lastHandCheck": "2026-11-14",
+      "counties": {
+        "OH": [
+          "Adams",
+          "Auglaize",
+          "Brown",
+          "Butler",
+          "Champaign",
+          "Clark",
+          "Clermont",
+          "Clinton",
+          "Darke",
+          "Greene",
+          "Hamilton",
+          "Highland",
+          "Logan",
+          "Mercer",
+          "Miami",
+          "Montgomery",
+          "Preble",
+          "Shelby",
+          "Warren"
+        ]
+      },
+      "parishCountReported": {
+        "value": 209,
+        "source": "https://www.catholic-hierarchy.org/diocese/dcinc.html",
+        "basis": "directory, 2023 row",
+        "checked": "2026-11-14",
+        "note": "Whole archdiocese; the live map covers 93 parishes in 4 counties"
+      },
+      "cities": [
+        "Cincinnati",
+        "Dayton",
+        "Springfield",
+        "Hamilton",
+        "Middletown",
+        "Troy",
+        "Sidney",
+        "Piqua",
+        "Xenia"
+      ]
+    },
+    {
+      "id": "cleveland",
+      "kind": "diocese",
+      "of": "Cleveland",
+      "title": "Diocese of Cleveland",
+      "province": "cincinnati",
+      "state": "OH",
+      "timeZone": "America/New_York",
+      "status": "planned",
+      "website": "https://www.dioceseofcleveland.org/",
+      "parishCountReported": {
+        "value": 184,
+        "source": "https://www.dioceseofcleveland.org/about/our-parishes",
+        "basis": "diocese page, undated",
+        "checked": "2026-11-14",
+        "note": "185 in 2023 directories"
+      },
+      "counties": {
+        "OH": [
+          "Ashland",
+          "Cuyahoga",
+          "Geauga",
+          "Lake",
+          "Lorain",
+          "Medina",
+          "Summit",
+          "Wayne"
+        ]
+      },
+      "cities": [
+        "Cleveland",
+        "Akron",
+        "Lorain",
+        "Elyria",
+        "Medina",
+        "Wooster",
+        "Ashland",
+        "Painesville"
+      ]
+    },
+    {
+      "id": "columbus",
+      "kind": "diocese",
+      "of": "Columbus",
+      "title": "Diocese of Columbus",
+      "province": "cincinnati",
+      "state": "OH",
+      "timeZone": "America/New_York",
+      "status": "planned",
+      "website": "https://columbuscatholic.org/",
+      "parishCountReported": {
+        "value": 78,
+        "source": "https://www.catholic-hierarchy.org/diocese/dcolu.html",
+        "basis": "directory, 2025 row",
+        "checked": "2026-11-14",
+        "note": "Not stated on the diocese site; 103 in the 2023 row, parishes are being merged"
+      },
+      "counties": {
+        "OH": [
+          "Coshocton",
+          "Delaware",
+          "Fairfield",
+          "Fayette",
+          "Franklin",
+          "Hardin",
+          "Hocking",
+          "Holmes",
+          "Jackson",
+          "Knox",
+          "Licking",
+          "Madison",
+          "Marion",
+          "Morrow",
+          "Muskingum",
+          "Perry",
+          "Pickaway",
+          "Pike",
+          "Ross",
+          "Scioto",
+          "Tuscarawas",
+          "Union",
+          "Vinton"
+        ]
+      },
+      "cities": [
+        "Columbus",
+        "Newark",
+        "Zanesville",
+        "Chillicothe",
+        "Portsmouth",
+        "Marion",
+        "Lancaster",
+        "Delaware"
+      ]
+    },
+    {
+      "id": "steubenville",
+      "kind": "diocese",
+      "of": "Steubenville",
+      "title": "Diocese of Steubenville",
+      "province": "cincinnati",
+      "state": "OH",
+      "timeZone": "America/New_York",
+      "status": "planned",
+      "website": "https://diosteub.org/",
+      "parishCountReported": {
+        "value": 50,
+        "source": "https://en.wikipedia.org/wiki/Roman_Catholic_Diocese_of_Steubenville",
+        "basis": "Wikipedia infobox, undated",
+        "checked": "2026-11-14",
+        "note": "Unverified"
+      },
+      "counties": {
+        "OH": [
+          "Athens",
+          "Belmont",
+          "Carroll",
+          "Gallia",
+          "Guernsey",
+          "Harrison",
+          "Jefferson",
+          "Lawrence",
+          "Meigs",
+          "Monroe",
+          "Morgan",
+          "Noble",
+          "Washington"
+        ]
+      },
+      "cities": [
+        "Steubenville",
+        "Marietta",
+        "Athens",
+        "Cambridge",
+        "Ironton",
+        "Gallipolis"
+      ]
+    },
+    {
+      "id": "toledo",
+      "kind": "diocese",
+      "of": "Toledo",
+      "title": "Diocese of Toledo",
+      "province": "cincinnati",
+      "state": "OH",
+      "timeZone": "America/New_York",
+      "status": "planned",
+      "website": "https://www.toledodiocese.org/",
+      "parishCountReported": {
+        "value": 121,
+        "source": "https://en.wikipedia.org/wiki/Roman_Catholic_Diocese_of_Toledo",
+        "basis": "Wikipedia, as of 2026",
+        "checked": "2026-11-14",
+        "note": "Not stated on the diocese site"
+      },
+      "counties": {
+        "OH": [
+          "Allen",
+          "Crawford",
+          "Defiance",
+          "Erie",
+          "Fulton",
+          "Hancock",
+          "Henry",
+          "Huron",
+          "Lucas",
+          "Ottawa",
+          "Paulding",
+          "Putnam",
+          "Richland",
+          "Sandusky",
+          "Seneca",
+          "Van Wert",
+          "Williams",
+          "Wood",
+          "Wyandot"
+        ]
+      },
+      "cities": [
+        "Toledo",
+        "Lima",
+        "Mansfield",
+        "Sandusky",
+        "Findlay",
+        "Bowling Green",
+        "Tiffin",
+        "Fremont"
+      ]
+    },
+    {
+      "id": "youngstown",
+      "kind": "diocese",
+      "of": "Youngstown",
+      "title": "Diocese of Youngstown",
+      "province": "cincinnati",
+      "state": "OH",
+      "timeZone": "America/New_York",
+      "status": "planned",
+      "website": "https://doy.org/",
+      "parishCountReported": {
+        "value": 62,
+        "source": "https://doy.org/about-us/",
+        "basis": "diocese statistics as of 1 Jan 2026",
+        "checked": "2026-11-14"
+      },
+      "counties": {
+        "OH": [
+          "Ashtabula",
+          "Columbiana",
+          "Mahoning",
+          "Portage",
+          "Stark",
+          "Trumbull"
+        ]
+      },
+      "cities": [
+        "Youngstown",
+        "Canton",
+        "Warren",
+        "Kent",
+        "Ashtabula",
+        "Alliance"
+      ]
+    },
+    {
+      "id": "indianapolis",
+      "kind": "archdiocese",
+      "of": "Indianapolis",
+      "title": "Archdiocese of Indianapolis",
+      "province": "indianapolis",
+      "state": "IN",
+      "timeZone": "America/Indiana/Indianapolis",
+      "status": "planned",
+      "website": "https://www.archindy.org/",
+      "parishCountReported": {
+        "value": 126,
+        "source": "https://www.catholic-hierarchy.org/diocese/dindi.html",
+        "basis": "directory, 2023 row",
+        "checked": "2026-11-14",
+        "note": "Not stated on the archdiocese site"
+      },
+      "counties": {
+        "IN": "rest-of-state"
+      },
+      "cities": [
+        "Indianapolis",
+        "Bloomington",
+        "Terre Haute",
+        "Richmond",
+        "Columbus",
+        "New Albany",
+        "Greenwood"
+      ]
+    },
+    {
+      "id": "evansville",
+      "kind": "diocese",
+      "of": "Evansville",
+      "title": "Diocese of Evansville",
+      "province": "indianapolis",
+      "state": "IN",
+      "timeZone": "America/Chicago",
+      "status": "planned",
+      "website": "https://www.evdio.org/",
+      "parishCountReported": {
+        "value": 45,
+        "source": "https://www.catholic-hierarchy.org/diocese/devan.html",
+        "basis": "directory, 2023 row",
+        "checked": "2026-11-14",
+        "note": "Not stated on the diocese site"
+      },
+      "counties": {
+        "IN": [
+          "Daviess",
+          "Dubois",
+          "Gibson",
+          "Greene",
+          "Knox",
+          "Martin",
+          "Pike",
+          "Posey",
+          "Spencer",
+          "Sullivan",
+          "Vanderburgh",
+          "Warrick"
+        ]
+      },
+      "cities": [
+        "Evansville",
+        "Jasper",
+        "Vincennes",
+        "Washington"
+      ]
+    },
+    {
+      "id": "fort-wayne-south-bend",
+      "kind": "diocese",
+      "of": "Fort Wayne-South Bend",
+      "title": "Diocese of Fort Wayne-South Bend",
+      "province": "indianapolis",
+      "state": "IN",
+      "timeZone": "America/Indiana/Indianapolis",
+      "status": "planned",
+      "website": "https://www.diocesefwsb.org/",
+      "parishCountReported": {
+        "value": 79,
+        "source": "https://www.diocesefwsb.org/",
+        "basis": "diocese home page, 2026",
+        "checked": "2026-11-14"
+      },
+      "counties": {
+        "IN": [
+          "Adams",
+          "Allen",
+          "DeKalb",
+          "Elkhart",
+          "Huntington",
+          "Kosciusko",
+          "LaGrange",
+          "Marshall",
+          "Noble",
+          "St. Joseph",
+          "Steuben",
+          "Wabash",
+          "Wells",
+          "Whitley"
+        ]
+      },
+      "cities": [
+        "Fort Wayne",
+        "South Bend",
+        "Elkhart",
+        "Mishawaka",
+        "Warsaw",
+        "Huntington"
+      ]
+    },
+    {
+      "id": "gary",
+      "kind": "diocese",
+      "of": "Gary",
+      "title": "Diocese of Gary",
+      "province": "indianapolis",
+      "state": "IN",
+      "timeZone": "America/Chicago",
+      "status": "planned",
+      "website": "https://www.dcgary.org/",
+      "parishCountReported": {
+        "value": 51,
+        "source": "https://en.wikipedia.org/wiki/Roman_Catholic_Diocese_of_Gary",
+        "basis": "Wikipedia, as of 2025",
+        "checked": "2026-11-14",
+        "note": "A 2026 plan would consolidate parishes"
+      },
+      "counties": {
+        "IN": [
+          "Lake",
+          "LaPorte",
+          "Porter",
+          "Starke"
+        ]
+      },
+      "cities": [
+        "Gary",
+        "Hammond",
+        "Valparaiso",
+        "Michigan City",
+        "La Porte",
+        "Merrillville"
+      ]
+    },
+    {
+      "id": "lafayette",
+      "kind": "diocese",
+      "of": "Lafayette in Indiana",
+      "title": "Diocese of Lafayette in Indiana",
+      "province": "indianapolis",
+      "state": "IN",
+      "timeZone": "America/Indiana/Indianapolis",
+      "status": "planned",
+      "website": "https://www.dol-in.org/",
+      "parishCountReported": {
+        "value": 61,
+        "source": "https://www.catholic-hierarchy.org/diocese/dlain.html",
+        "basis": "directory, 2023 row",
+        "checked": "2026-11-14",
+        "note": "Not stated on the diocese site"
+      },
+      "counties": {
+        "IN": [
+          "Benton",
+          "Blackford",
+          "Boone",
+          "Carroll",
+          "Cass",
+          "Clinton",
+          "Delaware",
+          "Fountain",
+          "Fulton",
+          "Grant",
+          "Hamilton",
+          "Howard",
+          "Jasper",
+          "Jay",
+          "Madison",
+          "Miami",
+          "Montgomery",
+          "Newton",
+          "Pulaski",
+          "Randolph",
+          "Tippecanoe",
+          "Tipton",
+          "Warren",
+          "White"
+        ]
+      },
+      "cities": [
+        "Lafayette",
+        "West Lafayette",
+        "Muncie",
+        "Kokomo",
+        "Anderson",
+        "Carmel",
+        "Noblesville",
+        "Marion"
+      ]
+    }
+  ]
+}
