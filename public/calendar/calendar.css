@@ -118,6 +118,26 @@
 .lc-actions .btn{padding:.6rem 1.1rem .7rem;font-size:1.05rem}
 .lc-actions .btn-plain{padding-inline:0;color:var(--lapis);font-size:1rem}
 
+/* For the celebrant: folded sections in the day panel */
+.lc-guide{margin-top:1.4rem;border-top:1px solid #e7e0d0}
+.lc-fold{border-bottom:1px solid #e7e0d0}
+.lc-fold summary{list-style:none;cursor:pointer;padding:.7rem 1.6rem .7rem 0;position:relative;display:flex;flex-direction:column;gap:.1rem}
+.lc-fold summary::-webkit-details-marker{display:none}
+.lc-fold summary::after{content:"+";position:absolute;right:.1rem;top:.55rem;font-size:1.4rem;line-height:1;color:var(--lapis)}
+.lc-fold[open] summary::after{content:"\2212"}
+.lc-fold-t{font-size:1.15rem;font-weight:500;font-variant-caps:all-small-caps;letter-spacing:.08em;color:var(--rubric)}
+.lc-fold-s{font-size:.98rem;color:var(--ink-soft);line-height:1.35}
+.lc-rules{margin:0 0 .9rem;font-size:1rem;line-height:1.42}
+.lc-rules div{padding:.45rem 0;border-top:1px dotted #e0d8c6}
+.lc-rules div:first-child{border-top:0;padding-top:0}
+.lc-rules dt{font-variant-caps:all-small-caps;letter-spacing:.07em;color:var(--lapis-deep);font-size:1rem}
+.lc-rules dd{margin:0}
+.lc-guide cite{font-style:normal;font-size:.86rem;color:#8a7f70;white-space:nowrap}
+.lc-hours-links{font-size:1rem;margin:0 0 .9rem;line-height:1.5}
+.lc-hours-links a{color:var(--lapis);text-decoration-color:var(--gold)}
+.lc-season{font-size:1rem;line-height:1.45;margin:0 0 .9rem}
+.lc-guide-note{font-size:.9rem;font-style:italic;color:var(--ink-soft);margin:.8rem 0 0;line-height:1.4}
+
 .lc-monthcol{min-width:0;display:flex;flex-direction:column}
 .lc-legend{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin:.9rem 0 0;padding:0 .2rem;font-size:1rem;color:var(--ink-soft)}
 .lc-legend-rank{margin-left:auto;display:flex;gap:1rem;flex-wrap:wrap}
@@ -184,6 +204,7 @@
   .lc-band{height:22px}
 }
 @media print{
+  .lc-guide{display:none}
   .topband,.site-header,footer,.lc-crumb,.lc-toolbar .lc-jump,.lc-asc,.lc-step,.lc-detail,.lc-panels,.lc-sources,.lc-fix,.lc-today,.lc-year{display:none!important}
   body{background:#fff;font-size:11pt}
   .lc-main{display:block}

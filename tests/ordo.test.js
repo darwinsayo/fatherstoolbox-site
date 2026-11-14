@@ -2,7 +2,8 @@
    1. Easter: known dates, and a second, independent computus for every year 1583-4099.
    2. Seasons agree with /liturgy.js (the site's top band) every day from 1970 to 2199.
    3. Rules that only show up in some years (transfers, coincidences), against what the Church actually did.
-   4. Every day of 2025, 2026 and 2027 against the USCCB liturgical calendars (tests/usccb/*.txt). */
+   4. Every day of 2025, 2026 and 2027 against the USCCB liturgical calendars (tests/usccb/*.txt).
+   5. Rubrics (rubrics.js): Gloria, Creed, Alleluia, Masses permitted, penance, psalter week, Evening Prayer. */
 'use strict';
 const fs = require('fs'), path = require('path');
 const O = require('../public/calendar/ordo.js');
@@ -78,6 +79,44 @@ for (let y = 1970; y < 2200; y++) {
      ys.filter(d => d.key === 'saint-12-08').length === 1 && ys.filter(d => d.key === 'saint-06-24').length <= 1, 'solemnities kept exactly once, ' + y);
   const ots = ys.filter(d => d.season === 'ordinary' && d.week != null);
   ok(ots.every(d => d.week >= 1 && d.week <= 34), 'OT weeks within 1-34, ' + y);
+}
+
+/* 5. Rubrics */
+const R = require('../public/calendar/rubrics.js');
+function rub(s, opt) { const d = day(s, opt); return { d, a: R.altar(d), h: R.hours(d, opt || {}) }; }
+const has = (r, t) => r.a.tags.includes(t);
+const item = (r, k, label) => (r[k].items.find(i => i.label === label) || {}).text || '';
+let x;
+x = rub('2026-11-15'); ok(has(x, 'Gloria') && has(x, 'Creed') && has(x, 'Alleluia'), 'OT Sunday: Gloria, Creed, Alleluia');
+x = rub('2026-11-16'); ok(has(x, 'No Gloria') && !has(x, 'Creed'), 'OT weekday: no Gloria, no Creed');
+x = rub('2026-11-29'); ok(has(x, 'No Gloria') && has(x, 'Creed') && has(x, 'No funeral Mass'), 'Advent Sunday: no Gloria, Creed, no funeral Mass');
+x = rub('2026-12-08'); ok(has(x, 'Gloria') && has(x, 'Creed') && has(x, 'No funeral Mass'), 'Immaculate Conception: Gloria, Creed, no funeral Mass (holy day)');
+x = rub('2027-02-10'); ok(has(x, 'No Gloria') && has(x, 'No Alleluia') && has(x, 'Fast and abstinence') && /not permitted/i.test(item(x, 'a', 'Weddings and other ritual Masses')), 'Ash Wednesday');
+x = rub('2027-02-12'); ok(has(x, 'Abstinence'), 'Friday in Lent: abstinence');
+x = rub('2027-03-19'); ok(has(x, 'Gloria') && has(x, 'Creed') && has(x, 'No Alleluia') && /does not apply/.test(item(x, 'a', 'Fasting and abstinence')), 'St Joseph on a Lenten Friday: Gloria, Creed, no Alleluia, no abstinence (2027)');
+x = rub('2027-03-07'); ok(/Rose/.test(item(x, 'a', 'Vestments')) && /Laetare/.test(item(x, 'a', 'Flowers and music')), 'Laetare Sunday: rose, flowers');
+x = rub('2027-03-25'); ok(has(x, 'Gloria') && has(x, 'No Alleluia') && !has(x, 'Creed'), 'Holy Thursday: Gloria, no Alleluia, no Creed');
+x = rub('2027-03-26'); ok(has(x, 'No Mass') && has(x, 'Fast and abstinence'), 'Good Friday: no Mass, fast');
+x = rub('2027-03-28'); ok(has(x, 'Sequence') && has(x, 'Creed') && has(x, 'No funeral Mass'), 'Easter Sunday: Sequence, Creed, no funeral Mass');
+x = rub('2027-03-29'); ok(has(x, 'Gloria') && !has(x, 'Creed') && /Optional/.test(item(x, 'a', 'Sequence')) && /not permitted/i.test(item(x, 'a', 'Weddings and other ritual Masses')), 'Easter Monday: Gloria, no Creed, optional Sequence, no ritual Mass');
+x = rub('2026-12-29'); ok(has(x, 'Gloria') && !has(x, 'Creed'), 'Christmas octave weekday: Gloria, no Creed');
+x = rub('2026-11-02'); ok(has(x, 'No Gloria') && /black/.test(item(x, 'a', 'Vestments')), 'All Souls: no Gloria, black permitted');
+x = rub('2026-11-16'); ok(/^Permitted/.test(item(x, 'a', 'Votive Masses and Masses for various needs')), 'OT weekday: votive Masses permitted');
+x = rub('2026-11-13'); ok(/real necessity/.test(item(x, 'a', 'Votive Masses and Masses for various needs')), 'obligatory memorial: votive only for real necessity');
+x = rub('2026-08-15'); ok(!has(x, 'No funeral Mass'), 'Assumption on Saturday 2026, obligation lifted: funeral Mass permitted');
+x = rub('2026-11-20'); ok(/encouraged/.test(item(x, 'a', 'Fasting and abstinence')), 'ordinary Friday: penance');
+/* Psalter weeks checked against Universalis (US calendar): 2026-11-14 IV, 2026-11-29 I, 2026-12-10 II, 2027-02-10 IV */
+for (const [s, w] of [['2026-11-14', 'IV'], ['2026-11-29', 'I'], ['2026-12-10', 'II'], ['2027-02-10', 'IV'],
+  ['2027-02-14', 'I'], ['2027-03-22', 'II'], ['2027-04-04', 'II'], ['2027-04-25', 'I'], ['2026-05-25', 'IV'], ['2025-06-09', 'II']])
+  ok(R.psalter(day(s)) === w, 'psalter week ' + s + ': ' + w + ' (got ' + R.psalter(day(s)) + ')');
+x = rub('2026-11-21'); ok(/Evening Prayer I of Our Lord Jesus Christ/.test(item(x, 'h', 'This evening')), 'EP I of Christ the King on Saturday');
+x = rub('2026-12-24'); ok(/Evening Prayer I of The Nativity/.test(item(x, 'h', 'This evening')), 'EP I of Christmas');
+x = rub('2026-12-07'); ok(/Evening Prayer I of The Immaculate/.test(item(x, 'h', 'This evening')), 'EP I of the Immaculate Conception');
+x = rub('2026-08-05'); ok(!/Evening Prayer I/.test(item(x, 'h', 'This evening')), 'no EP I before a feast (Transfiguration on Thursday)');
+x = rub('2027-02-13'); ok(/Evening Prayer I of First Sunday of Lent/.test(item(x, 'h', 'This evening')), 'EP I of a Lenten Sunday');
+for (let y = 2020; y < 2040; y++) for (const d of O.year(y)) {
+  const a = R.altar(d), h = R.hours(d, {});
+  ok(a.items.length && h.items.length && a.items.every(i => i.text) && h.items.every(i => i.text), 'rubrics complete ' + d.date);
 }
 
 /* 4. USCCB 2025-2027, day by day */
