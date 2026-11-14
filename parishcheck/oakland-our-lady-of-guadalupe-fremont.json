@@ -1,0 +1,10 @@
+{
+  "map": "oakland",
+  "parish": "Our Lady of Guadalupe",
+  "town": "Fremont",
+  "phone": "510-657-4043",
+  "website": "https://olog.church",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "The Mass schedule is an image (mass_schedule_092026.png); times were read from it. The Friday 7:00 PM Spanish Mass is mentioned only in text ('Benediction before 7pm Spanish Mass') and is not entered. The home page has a 'Diocese clarification regarding our parish' item that could not be read; check it before relying on this entry. Map marker position is approximate; the address did not geocode. Checked 14 Nov 2026."
+}

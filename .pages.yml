@@ -13,7 +13,7 @@ content:
         sort: status
         order: desc
     fields:
-      - { name: map, label: Map, type: select, options: { values: [cincinnati, covington, kansas-city-st-joseph, lexington] } }
+      - { name: map, label: Map, type: select, options: { values: [cincinnati, covington, kansas-city-st-joseph, lexington, oakland] } }
       - { name: parish, label: Parish, type: string, required: true }
       - { name: town, label: Town, type: string }
       - { name: phone, label: Phone, type: string }

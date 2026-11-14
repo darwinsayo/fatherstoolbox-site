@@ -1,0 +1,10 @@
+{
+  "map": "oakland",
+  "parish": "St. Francis of Assisi",
+  "town": "Concord",
+  "phone": "925-682-5447",
+  "website": "https://sfaconcord.com/",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "Portuguese Sunday Mass: home page says 3:30 PM, Mass schedule page says 3:00 PM; left off. Weekday 8:30 AM is Mon to Fri on the home page and Mon to Sat on the schedule page; Saturday is entered because the Mass schedule page and home page both list Saturday 8:30. Special monthly Masses (2nd, 3rd and 4th Thursday Spanish, 4th Wednesday Filipino) and Advent and Lent weekday confession are not on the map. Map marker position is approximate; the address did not geocode. Checked 14 Nov 2026."
+}

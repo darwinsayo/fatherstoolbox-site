@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mass and Confession Times, Diocese of Oakland | Father’s Tool Box</title>
+<meta name="description" content="Live map of Mass and confession times at Catholic parishes in the Diocese of Oakland, California, read from each parish&#x27;s own website. See which parishes have Mass or confession now or within two hours.">
+<link rel="canonical" href="https://fatherstoolbox.com/parishtimes/oakland/">
+<meta name="theme-color" content="#1c1815">
+<meta property="og:title" content="Mass and Confession Times, Diocese of Oakland | Father’s Tool Box">
+<meta property="og:description" content="Live map of Mass and confession times at Catholic parishes in the Diocese of Oakland, California, read from each parish&#x27;s own website. See which parishes have Mass or confession now or within two hours.">
+<meta property="og:url" content="https://fatherstoolbox.com/parishtimes/oakland/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/eb-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=2026111402">
+</head>
+<body>
+<div class="topband"><div class="wrap"><em>Laudetur Iesus Christus</em><span class="season-now">The Church is in&nbsp;<span data-season-name>Ordinary Time</span></span></div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a>
+<nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li class="has-menu"><a href="/resources" aria-current=page>Resources</a><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-resources"><span class="sr-only">Show the Resources menu</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="submenu" id="menu-resources"><li><a href="/parishtimes/" aria-current=page><span class="sm-t">Parish times</span><span class="sm-d">Mass and Confession times</span></a></li><li><a href="/calendar/"><span class="sm-t">Liturgical calendar</span><span class="sm-d">Feasts, colors and the Hours</span></a></li><li><a href="/homily/"><span class="sm-t">Fill-in homily</span><span class="sm-d">A bit of fun about parish life</span></a></li></ul></li><li><a href="/contact">Contact</a></li></ul></nav>
+</div></header>
+<main>
+<style>
+
+/* Layout concept: the Many Many Toes look. Warm paper ground, white cards, a navy header band, gold only as a rule or underline. Map left, live list right; purple marks a confessional or Mass starting soon. */
+#cmap {
+  --paper: #ebe7de;
+  --card: #f8f5ee;
+  --ink: #231f1c;
+  --soft: #544b43;
+  --rule: #d6cfc0;
+  --navy: #1e3a6e;
+  --navy-2: #152a52;
+  --cream: #f1ece1;
+  --gold: #b8913a;
+  --red: #5b3b7a; /* signal color: liturgical purple (name kept from the old red) */
+  --land: #f8f5ee;
+  --out: #dfd9cc;
+  --river: #9DB0CE;
+  --line: #d6cfc0;
+  --display: "EB Garamond", Garamond, "Times New Roman", serif;
+  --body: "EB Garamond", Garamond, "Times New Roman", serif;
+  --mono: "EB Garamond", Garamond, "Times New Roman", serif;
+  color-scheme: light;
+}
+#cmap * { box-sizing: border-box; }
+#cmap {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.5;
+  font-variant-numeric: lining-nums tabular-nums;
+  
+  
+}
+#cmap .cm-wrap { width: min(1160px, 100% - 3rem); max-width: none; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+#cmap header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; background: var(--navy); color: var(--cream); padding: 22px 24px; border-radius: 4px; }
+#cmap .eyebrow { font-size: 15.6px; font-weight: 500; letter-spacing: 0.08em; font-variant-caps: all-small-caps; color: #b3261e; margin: 0 0 6px; }
+#cmap h1 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 4.2vw, 42px); line-height: 1.12; margin: 0; text-wrap: balance; max-width: 30ch; color: var(--cream); }
+#cmap .sub { margin: 6px 0 0; color: #C5CEDD; font-size: 16px; max-width: 60ch; }
+#cmap .clock { font-size: 14px; color: #C5CEDD; text-align: right; min-width: 0; }
+#cmap .clock b { color: var(--cream); font-weight: 600; }
+#cmap .clock .pv { color: var(--gold); font-weight: 600; }
+#cmap .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--rule); }
+#cmap .tab { font-family: var(--display); font-size: 21px; font-weight: 500; background: none; border: 0; border-bottom: 3px solid transparent; border-radius: 0; color: var(--soft); padding: 8px 18px 6px 2px; margin-right: 14px; min-height: 44px; }
+#cmap .tab[aria-selected="true"] { color: var(--navy); border-bottom-color: var(--gold); }
+#cmap .app { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
+@media (max-width: 900px) { #cmap .app { grid-template-columns: minmax(0, 1fr); } #cmap .mapwrap { height: 64vh; min-height: 360px; } #cmap header { padding: 18px 16px; } }
+#cmap .mapwrap { position: relative; border: 1px solid var(--rule); border-radius: 4px; background: var(--out); overflow: hidden; height: min(74vh, 760px); min-height: 380px; }
+#cmap svg#map { width: 100%; height: 100%; display: block; touch-action: pan-x pan-y; cursor: grab; user-select: none; }
+#cmap svg#map.drag { cursor: grabbing; }
+#cmap .county { fill: var(--land); stroke: var(--navy); stroke-opacity: 0.3; }
+#cmap .nbr { fill: var(--out); stroke: #D5CBB9; }
+#cmap .river { fill: none; stroke: var(--river); stroke-opacity: 0.9; stroke-linejoin: round; }
+#cmap .outline { fill: none; stroke: var(--navy); stroke-opacity: 0.85; stroke-linejoin: round; }
+#cmap .starkey { width: 12px; text-align: center; font-size: 11px; color: var(--soft); }
+#cmap .clabel .seat { text-transform: none; letter-spacing: 0.02em; font-weight: 500; font-style: italic; font-size: 0.82em; }
+#cmap .clabel { fill: var(--navy); fill-opacity: 0.42; font-family: var(--body); font-weight: 600; letter-spacing: 0.14em; text-anchor: middle; text-transform: uppercase; pointer-events: none; }
+#cmap .mk { cursor: pointer; outline: none; }
+#cmap .mk .core { stroke: #FFFFFF; }
+#cmap .mk.st-now .core, #cmap .mk.st-soon .core { fill: var(--red); }
+#cmap .mk.st-later .core { fill: var(--gold); stroke: var(--navy); stroke-opacity: 0.55; }
+#cmap .mk.st-done .core { fill: #A9B3C4; }
+#cmap .mk.st-none .core { fill: #FFFFFF; stroke: var(--soft); stroke-opacity: 0.8; }
+#cmap .mk .pulse { fill: var(--red); stroke: none; opacity: 0; transform-box: fill-box; transform-origin: center; }
+#cmap .mk .core { transform-box: fill-box; transform-origin: center; }
+#cmap .mk.st-now .pulse, #cmap .mk.st-soon .pulse { animation: glow 2.6s ease-in-out infinite; }
+#cmap .mk.st-now .core, #cmap .mk.st-soon .core { animation: beat 2.6s ease-in-out infinite; }
+#cmap .mk.st-soon .pulse, #cmap .mk.st-soon .core { animation-duration: 3.6s; }
+@keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+@keyframes glow { 0%, 100% { transform: scale(1.5); opacity: 0.08; } 50% { transform: scale(2.1); opacity: 0.3; } }
+#cmap .mk .halo { fill: none; stroke: var(--navy); opacity: 0; }
+#cmap .mk .ping { fill: none; stroke: var(--navy); stroke-width: 2px; vector-effect: non-scaling-stroke; opacity: 0; pointer-events: none; transform-box: fill-box; transform-origin: center; }
+#cmap .mk.hov .ping { animation: ping 1s ease-out infinite; }
+#cmap .mk.hov .halo { opacity: 1; }
+#cmap .mk.hov text { display: block !important; }
+@keyframes ping { 0% { transform: scale(1); opacity: .85; } 100% { transform: scale(3.4); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { #cmap .mk.hov .ping { animation: none; opacity: 0; } }
+#cmap .mk.sel .halo, #cmap .mk:focus-visible .halo { opacity: 1; }
+#cmap .mk .hit { fill: transparent; }
+#cmap .mk:hover text, #cmap .mk:focus-visible text { display: block !important; }
+#cmap .mk text { fill: var(--ink); font-family: var(--body); font-weight: 600; paint-order: stroke; stroke: #FFFFFF; stroke-linejoin: round; pointer-events: none; }
+#cmap .popup { position: absolute; z-index: 6; width: 240px; max-width: calc(100% - 16px); background: var(--card); border: 1px solid var(--rule); border-top: 3px solid var(--gold); border-radius: 4px; padding: 10px 12px 12px; box-shadow: 0 10px 28px rgba(30, 45, 69, 0.22); }
+#cmap .popup h3 { font-family: var(--display); font-weight: 500; font-size: 20px; line-height: 1.15; margin: 0 24px 1px 0; color: var(--navy); }
+#cmap .popup .pt { color: var(--soft); font-size: 14px; margin: 0 0 8px; }
+#cmap .popup .day { font-size: 15px; font-weight: 500; letter-spacing: 0.08em; font-variant-caps: all-small-caps; color: var(--navy-2); margin: 0 0 6px; }
+#cmap .popup .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+#cmap .chip { font-size: 14px; font-weight: 600; padding: 4px 9px; border: 1px solid var(--rule); border-radius: 3px; color: var(--ink); background: var(--paper); }
+#cmap .chip small { display: block; font-size: 12px; font-weight: 400; color: var(--soft); }
+#cmap .chip.past { opacity: 0.45; }
+#cmap .chip.next { border-color: var(--navy); background: #fff; }
+#cmap .chip.now { border-color: var(--red); color: var(--red); background: #fff; }
+#cmap .popup .none { margin: 0; color: var(--soft); font-size: 15px; }
+#cmap .popup .x { position: absolute; top: 6px; right: 6px; width: 28px; min-height: 28px; padding: 0; font-size: 16px; }
+#cmap .controls { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+#cmap .btns { display: flex; gap: 6px; }
+#cmap button, #cmap select, #cmap input[type="time"] {
+  font: inherit; font-family: var(--body); font-size: 14px; font-weight: 600; color: var(--navy);
+  background: var(--card); border: 1px solid var(--rule); border-radius: 3px; padding: 7px 11px; min-height: 36px;
+}
+#cmap button { cursor: pointer; }
+#cmap button:hover { border-color: var(--gold); background: var(--cream); }
+#cmap button:focus-visible, #cmap select:focus-visible, #cmap input:focus-visible, #cmap a:focus-visible { outline: 2px solid var(--navy-2); outline-offset: 2px; }
+#cmap .sq { width: 36px; padding: 0; font-size: 18px; }
+#cmap .legend { position: absolute; left: 10px; bottom: 10px; background: rgba(255, 255, 255, 0.94); border: 1px solid var(--rule); border-radius: 3px; padding: 8px 10px; font-size: 13.5px; display: grid; gap: 4px; color: var(--soft); max-width: calc(100% - 20px); }
+#cmap .legend div { display: flex; align-items: center; gap: 8px; }
+#cmap .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; border: 1.5px solid #fff; box-shadow: 0 0 0 1px rgba(30, 45, 69, 0.25); }
+#cmap .dot.r { background: var(--red); }
+#cmap .dot.g { background: var(--gold); }
+#cmap .dot.x { background: #A9B3C4; }
+#cmap .cm-curated { margin: 22px 0 18px; padding: 22px 24px; background: var(--navy); color: var(--cream); border-radius: 4px; border-left: 5px solid var(--gold); max-width: 90ch; }
+#cmap .cm-curated .eyebrow { margin: 0 0 8px; }
+#cmap .cm-curated h2 { font-size: clamp(21px, 3.2vw, 28px); line-height: 1.2; margin: 0 0 12px; font-weight: 500; text-wrap: balance; color: var(--cream); }
+#cmap .cm-curated p { margin: 0 0 8px; font-size: 16px; line-height: 1.55; color: var(--cream); }
+#cmap .cm-curated p:last-child { margin-bottom: 0; }
+#cmap .dot.h { background: #fff; box-shadow: 0 0 0 1px var(--soft); }
+#cmap .timebar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 14px; color: var(--soft); }
+#cmap .timebar .pv { color: var(--navy); font-weight: 600; }
+#cmap .panel { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+@media (min-width: 901px) { #cmap .panel { max-height: min(74vh, 760px); overflow-y: auto; padding-right: 4px; } }
+#cmap .card { border: 1px solid var(--rule); border-radius: 4px; background: var(--card); padding: 14px 16px; min-width: 0; }
+#cmap .card h2 { font-family: var(--display); font-weight: 500; font-size: 25px; line-height: 1.15; margin: 0 0 2px; color: var(--navy); }
+#cmap .card .town { color: var(--soft); margin: 0 0 10px; font-size: 15.5px; }
+#cmap .card .links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 12px; font-size: 14.5px; }
+#cmap a { color: var(--navy); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 1px; }
+#cmap a:hover { background: var(--cream); }
+#cmap table.sched { width: 100%; border-collapse: collapse; font-size: 16px; }
+#cmap table.sched td { padding: 5px 0; border-top: 1px solid var(--rule); vertical-align: top; }
+#cmap table.sched td:first-child { font-size: 16.2px; font-weight: 500; letter-spacing: 0.08em; font-variant-caps: all-small-caps; color: var(--navy-2); width: 48px; padding-top: 8px; }
+#cmap table.sched .tag { display: block; color: var(--soft); font-size: 13.5px; }
+#cmap .note { color: var(--soft); font-size: 15px; margin: 10px 0 0; }
+#cmap .close { float: right; }
+#cmap .row[aria-expanded="true"] { border-color: var(--gold); background: var(--cream); }
+#cmap .acc { margin-top: 6px; }
+#cmap .acc .card { border-top: 3px solid var(--gold); }
+#cmap .dsec { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--rule); }
+#cmap .dsec h3 { font-size: 15.6px; font-weight: 500; letter-spacing: 0.08em; font-variant-caps: all-small-caps; margin: 0 0 6px; color: var(--navy-2); }
+#cmap .sec h3 { font-size: 15.6px; font-weight: 500; letter-spacing: 0.08em; font-variant-caps: all-small-caps; margin: 0 0 6px; color: var(--navy-2); display: flex; align-items: center; gap: 8px; }
+#cmap .sec ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+#cmap .row { width: 100%; text-align: left; display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 12px; font-family: var(--body); font-size: 16.5px; font-weight: 600; color: var(--ink); background: var(--card); border-radius: 3px; min-height: 48px; }
+#cmap .row:hover { background: var(--cream); }
+#cmap .row .nm { min-width: 0; }
+#cmap .row .nm small { display: block; color: var(--soft); font-size: 14px; font-weight: 400; }
+#cmap .row .when { font-size: 14px; text-align: right; color: var(--ink); }
+#cmap .row .when em { display: block; color: var(--soft); font-style: normal; font-weight: 400; }
+#cmap .row.red { border-color: rgba(107, 63, 160, 0.55); }
+#cmap .modebar { display: flex; align-items: baseline; gap: 10px; border-bottom: 3px solid var(--gold); padding-bottom: 6px; }
+#cmap .modebar span { font-size: 15px; font-weight: 500; letter-spacing: 0.08em; font-variant-caps: all-small-caps; color: var(--soft); }
+#cmap .modebar b { font-family: var(--display); font-weight: 500; font-size: 25px; color: var(--navy); }
+#cmap .empty { color: var(--soft); font-size: 16px; margin: 0; }
+#cmap footer { color: var(--soft); font-size: 14.5px; max-width: 90ch; }
+@media (prefers-reduced-motion: reduce) { #cmap .mk .pulse, #cmap .mk .core { animation: none !important; } }
+
+.cm-seo{padding:8px 0 56px;color:var(--soft);font-size:16px}.cm-seo h2{font-family:var(--head);font-weight:500;font-size:24px;color:var(--navy);margin:0 0 10px}.cm-seo summary{cursor:pointer;font-weight:600;color:var(--navy)}.cm-seo ul{columns:2 280px;padding-left:18px;margin:12px 0 0}.cm-seo li{margin:0 0 6px;break-inside:avoid}.cm-seo li span{color:var(--soft)}
+#cmap { display: block; }
+#cmap .cm-fix { margin: 0; color: var(--soft); font-size: 15px; }
+#cmap .cm-wrap { padding: 28px 0 48px; }
+@media (max-width: 560px) { #cmap .cm-wrap { width: calc(100% - 2.5rem); } }
+#cmap header { background: none; color: var(--ink); padding: 0 0 4px; border-radius: 0; }
+#cmap h1 { color: var(--navy); }
+#cmap .sub, #cmap .clock { color: var(--soft); }
+#cmap .clock b { color: var(--ink); }
+#cmap .clock .pv { color: #8A6A2A; }
+@media (max-width: 900px) { #cmap header { padding: 0; } }
+
+</style>
+<div id="cmap">
+
+<div class="cm-wrap">
+  <p class="cm-fix"><a href="/parishtimes/">All dioceses</a></p>
+  <header>
+    <div>
+      <p class="eyebrow">Diocese of Oakland, California</p>
+      <h1 id="headline">Finding confessions near you</h1>
+      <p class="sub" id="subline"></p>
+    </div>
+    <div class="clock" id="clock" aria-live="polite"></div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="What to show">
+    <button class="tab" role="tab" id="tab-mass" aria-selected="true">Mass</button>
+    <button class="tab" role="tab" id="tab-conf" aria-selected="false">Confession</button>
+  </div>
+
+  <div class="app">
+    <div style="min-width:0;display:flex;flex-direction:column;gap:10px">
+      <div class="mapwrap" id="mapwrap">
+        <svg id="map" role="group" aria-label="Map of the Diocese of Oakland with every parish marked"></svg>
+        <div class="popup" id="popup" hidden role="dialog" aria-label="Today's Mass times"></div>
+        <div class="controls">
+          <div class="btns">
+            <button class="sq" id="zin" aria-label="Zoom in">+</button>
+            <button class="sq" id="zout" aria-label="Zoom out">&minus;</button>
+          </div>
+          <button id="vmetro">Oakland area</button>
+          <button id="vall">Whole diocese</button>
+        </div>
+        <div class="legend" aria-label="Map key">
+          <div><span class="dot r"></span><span id="lg-red">Hearing confessions now, or within 2 hours</span></div>
+          <div><span class="dot g"></span>Later today, more than 2 hours away</div>
+          <div><span class="dot x"></span>Done for today, next time in the list</div>
+          <div><span class="dot h"></span>Times not verified</div>
+          <div><span class="starkey">&#9733;</span>County seat</div>
+        </div>
+      </div>
+      <div class="timebar">
+        <span id="tlabel">Live, Pacific time</span>
+        <label for="dy" style="margin-left:auto">Try another time</label>
+        <select id="dy" aria-label="Day of the week">
+          <option value="0">Sun</option><option value="1">Mon</option><option value="2">Tue</option><option value="3">Wed</option><option value="4">Thu</option><option value="5">Fri</option><option value="6">Sat</option>
+        </select>
+        <input type="time" id="tm" aria-label="Time of day" value="15:00">
+        <button id="tnow">Now</button>
+      </div>
+    </div>
+
+    <aside class="panel" id="panel" aria-label="Parishes by confession time"></aside>
+  </div>
+
+  <footer>
+    <span id="foot">Parishes change schedules around holy days and in summer, so call ahead if you are making a trip. Any priest will also hear confession by appointment.</span>
+  </footer>
+  <section class="cm-curated" aria-label="Where this data comes from">
+    <p class="eyebrow">Hand-curated data</p>
+    <h2>Every time here was read from the parish&rsquo;s own website.</h2>
+    <p>No third-party Mass-time apps. No scraped directories. We went through the Diocese of Oakland one parish at a time, read each parish&rsquo;s own website, and copied down only what it says, as of November 2026. A Facebook page is not counted as a website.</p>
+    <p>All times are Pacific time, as the parishes post them. The live clock also runs on Pacific time.</p>
+    <p>If a parish&rsquo;s site doesn&rsquo;t post a time, we leave it blank rather than guess. Blanks are being confirmed by hand, and parishes with no website are being confirmed directly.</p>
+  </section>
+  <p class="cm-fix">Spot a wrong time? <a href="/contact">Tell us</a> which parish and what it should say, and we will fix it.</p>
+</div>
+
+<script>
+const SEATS = {"Alameda": "Oakland", "Contra Costa": "Martinez"};
+const DATA = {"geo":{"view":{"x":40,"y":40,"w":900,"h":756.0},"counties":[{"name":"Alameda","d":"M103.8,292.8L127.9,378.2L188.0,498.7L347.1,744.5L400.7,790.1L404.4,790.1L415.5,783.1L451.6,780.8L467.3,787.8L486.8,784.3L495.1,787.8L498.8,785.5L497.9,780.8L499.7,778.4L500.6,781.9L505.3,786.6L512.7,787.8L510.8,794.8L515.4,792.5L518.2,796.0L531.2,786.6L549.7,779.6L552.4,776.1L558.9,776.1L573.7,759.7L938.2,762.1L940.0,753.9L930.8,746.8L928.0,741.0L917.8,739.8L915.0,736.3L914.1,728.1L909.5,721.1L913.2,716.4L910.4,712.9L891.0,712.9L873.4,707.0L858.6,691.8L858.6,372.4L485.8,485.9L474.7,473.0L459.9,469.5L453.5,463.6L447.9,462.5L437.7,453.1L438.7,443.7L451.6,434.4L435.9,414.5L421.1,405.1L407.2,393.4L318.4,385.2L311.0,374.7L303.6,370.0L294.4,375.9L276.8,366.5L275.9,358.3L278.6,351.3L277.7,347.8L268.5,341.9L261.1,331.4L255.5,330.2L244.4,315.0L249.0,310.3L247.2,306.8L237.0,296.3L223.1,293.9L218.5,289.3L217.6,282.2L204.6,269.4L198.2,267.0L182.4,276.4L159.3,277.6Z","cx":476.8,"cy":558.9},{"name":"Contra Costa","d":"M729.1,412.1L858.6,372.4L862.3,368.8L863.2,356.0L866.0,351.3L870.6,352.5L876.2,346.6L876.2,340.8L879.9,333.7L873.4,333.7L873.4,323.2L867.9,326.7L862.3,319.7L860.5,323.2L855.8,322.0L854.0,329.1L850.3,323.2L846.6,323.2L847.5,319.7L839.2,323.2L838.3,320.9L843.8,313.8L838.3,308.0L842.9,293.9L841.0,288.1L848.4,283.4L850.3,276.4L843.8,269.4L853.1,261.2L851.2,251.8L859.5,246.0L856.8,241.3L858.6,236.6L854.9,231.9L854.9,227.2L852.1,223.7L857.7,219.0L849.4,222.6L847.5,217.9L852.1,209.7L842.0,209.7L842.0,207.3L851.2,205.0L842.9,196.8L842.0,188.6L837.3,185.1L844.7,181.6L835.5,176.9L836.4,168.7L841.0,162.9L838.3,159.4L845.7,158.2L847.5,154.7L839.2,152.3L837.3,147.7L840.1,144.2L849.4,143.0L843.8,138.3L844.7,136.0L854.9,139.5L857.7,137.1L852.1,127.8L852.1,121.9L845.7,121.9L845.7,112.6L843.8,107.9L837.3,109.0L838.3,118.4L835.5,119.6L833.6,114.9L835.5,77.4L843.8,70.4L840.1,65.7L838.3,48.2L832.7,44.7L814.2,40.0L793.9,42.3L788.3,52.9L783.7,56.4L761.5,44.7L751.3,47.0L745.8,52.9L743.0,61.1L744.8,76.3L743.9,84.5L726.3,104.4L691.2,125.4L649.6,134.8L632.9,131.3L620.0,132.5L607.9,124.3L598.7,111.4L595.0,96.2L590.4,86.8L583.9,81.0L576.5,79.8L571.9,90.3L564.5,97.3L534.9,104.4L509.0,99.7L470.1,78.6L435.0,83.3L422.9,88.0L392.4,84.5L334.1,114.9L311.0,119.6L296.2,116.1L278.6,93.8L262.9,89.2L222.2,82.1L203.7,86.8L127.9,71.6L101.0,100.9L85.3,125.4L40.0,187.5L40.9,207.3L49.2,238.9L102.9,292.8L159.3,277.6L182.4,276.4L198.2,267.0L204.6,269.4L217.6,282.2L218.5,289.3L223.1,293.9L237.0,296.3L247.2,306.8L249.0,310.3L244.4,315.0L255.5,330.2L261.1,331.4L268.5,341.9L277.7,347.8L278.6,351.3L275.9,358.3L276.8,366.5L294.4,375.9L303.6,370.0L311.0,374.7L318.4,385.2L407.2,393.4L421.1,405.1L435.9,414.5L451.6,434.4L438.7,443.7L437.7,453.1L447.9,462.5L453.5,463.6L459.9,469.5L474.7,473.0L485.8,485.9Z","cx":628.6,"cy":220.1}],"neighbors":"M-479.5,-189.3L-446.3,-213.4L-393.1,-218.5L-237.1,-84.8L-150.8,-54.6L-77.7,-61.6L-4.7,28.8L1.9,73.1L-14.7,119.3L35.1,170.6L-4.7,195.7L-18.0,240.0L45.1,296.3L21.9,310.3L-14.7,281.2L8.6,352.6L-41.2,368.6L-71.1,330.4L-157.4,269.1L-200.6,281.2L-276.9,213.8L-310.1,160.5L-366.6,127.4L-419.7,119.3L-486.1,152.5L-439.6,24.8L-429.7,-23.4L-469.5,-115.9L-446.3,-136.0L-479.5,-189.3ZM141.4,407.9L144.7,410.9L141.4,407.9ZM88.3,498.3L-14.7,498.3L-27.9,413.9L18.5,385.7L71.7,377.7L91.6,401.8L114.8,490.3L88.3,498.3ZM-14.7,498.3L88.3,498.3L121.5,606.9L114.8,634.1L204.5,657.2L294.1,737.6L320.7,732.6L347.2,781.8L297.4,796.9L274.2,822.0L260.9,905.5L287.5,945.7L270.9,954.8L307.4,993.0L307.4,1075.4L224.4,1075.4L224.4,1104.5L154.7,1108.6L177.9,1202.1L138.1,1190.0L131.4,1158.8L75.0,1098.5L61.7,1036.2L78.3,906.5L38.5,817.0L31.8,764.7L-8.0,750.7L-27.9,717.5L-31.3,653.2L-8.0,573.7L-14.7,498.3ZM347.2,781.8L407.0,789.9L496.6,779.8L516.5,795.9L569.7,761.7L938.2,762.7L938.2,832.1L951.5,864.3L994.6,880.4L981.3,907.5L997.9,963.8L948.1,996.0L951.5,1035.2L988.0,1080.4L1011.2,1153.8L1044.4,1111.6L1071.0,1132.7L1114.1,1112.6L1163.9,1169.9L1147.3,1222.2L1180.5,1247.3L1147.3,1297.6L1147.3,1346.8L1173.9,1373.0L988.0,1373.0L954.8,1340.8L921.6,1346.8L855.2,1447.4L835.3,1445.3L835.3,1422.2L775.5,1406.1L672.6,1269.4L576.3,1205.1L549.7,1204.1L456.8,1158.8L420.3,1104.5L367.1,1066.3L307.4,993.0L270.9,954.8L287.5,945.7L260.9,905.5L274.2,822.0L297.4,796.9L347.2,781.8ZM71.7,-25.4L267.5,-24.4L250.9,-53.6L270.9,-92.8L247.6,-150.1L274.2,-161.2L257.6,-212.4L390.4,-212.4L367.1,-292.9L330.6,-345.1L353.9,-443.7L397.0,-448.7L436.9,-414.5L503.3,-466.8L579.6,-472.8L646.0,-454.7L689.2,-471.8L732.3,-459.7L732.3,-211.4L825.3,-209.4L805.4,-71.7L739.0,-29.5L715.7,57.0L685.9,55.0L636.1,86.2L576.3,80.1L516.5,102.2L463.4,78.1L393.7,84.1L317.3,120.3L277.5,94.2L201.1,87.2L171.3,33.9L81.6,-9.4L71.7,-25.4ZM838.6,46.9L831.9,16.8L878.4,-20.4L885.1,-69.7L928.2,-140.0L978.0,-141.0L994.6,-113.9L1054.4,-109.9L1124.1,-138.0L1167.3,-129.0L1213.7,-142.1L1313.3,-193.3L1349.9,-194.3L1376.4,-106.9L1429.5,54.0L1442.8,66.0L1446.1,464.2L1376.4,438.0L1346.5,460.1L1320.0,449.1L1240.3,487.3L1150.7,550.6L938.2,763.7L908.3,711.5L858.5,692.4L858.5,371.7L878.4,332.5L838.6,319.4L858.5,235.9L835.3,175.6L858.5,137.4L831.9,115.3L838.6,46.9ZM825.3,-209.4L835.3,-231.5L891.7,-264.7L881.7,-345.1L908.3,-359.2L905.0,-392.4L871.8,-401.4L861.8,-444.7L888.4,-450.7L901.7,-546.2L861.8,-549.2L851.9,-594.5L825.3,-596.5L788.8,-645.7L815.3,-704.0L924.9,-703.0L1243.6,-675.9L1263.5,-681.9L1349.9,-437.6L1349.9,-194.3L1313.3,-193.3L1213.7,-142.1L1167.3,-129.0L1124.1,-138.0L1054.4,-109.9L994.6,-113.9L978.0,-141.0L928.2,-140.0L885.1,-69.7L878.4,-20.4L831.9,16.8L838.6,46.9L762.2,44.9L742.3,85.1L692.5,125.4L642.7,135.4L602.9,120.3L576.3,80.1L636.1,86.2L685.9,55.0L715.7,57.0L739.0,-29.5L805.4,-71.7L825.3,-209.4ZM-130.9,-624.6L18.5,-667.8L81.6,-783.5L104.9,-799.5L84.9,-854.8L124.8,-820.6L181.2,-825.7L241.0,-661.8L294.1,-609.5L330.6,-526.1L353.9,-443.7L330.6,-345.1L367.1,-292.9L390.4,-212.4L257.6,-212.4L274.2,-161.2L247.6,-150.1L270.9,-92.8L250.9,-53.6L267.5,-24.4L71.7,-25.4L104.9,-27.4L124.8,-69.7L108.2,-132.0L75.0,-172.2L84.9,-199.4L25.2,-272.7L35.1,-286.8L-11.3,-339.1L1.9,-372.3L-41.2,-392.4L-54.5,-451.7L-124.2,-498.9L-147.5,-543.2L-130.9,-624.6ZM938.2,762.7L938.2,763.7L1150.7,550.6L1240.3,487.3L1320.0,449.1L1346.5,460.1L1376.4,438.0L1446.1,464.2L1442.8,66.0L1489.3,123.3L1695.1,353.6L1940.8,585.8L1389.7,859.2L1406.3,922.6L1163.9,1169.9L1114.1,1112.6L1071.0,1132.7L1044.4,1111.6L1011.2,1153.8L988.0,1080.4L951.5,1035.2L948.1,996.0L997.9,963.8L981.3,907.5L994.6,880.4L951.5,864.3L938.2,832.1L938.2,762.7ZM-970.8,-742.2L-937.6,-754.3L-818.1,-752.3L-818.1,-786.5L-602.3,-789.5L-602.3,-825.7L-552.5,-840.8L-310.1,-837.7L-243.7,-784.5L-190.6,-674.9L-150.8,-669.8L-130.9,-624.6L-147.5,-543.2L-124.2,-498.9L-54.5,-451.7L-41.2,-392.4L1.9,-372.3L-11.3,-339.1L35.1,-286.8L25.2,-272.7L84.9,-199.4L75.0,-172.2L108.2,-132.0L124.8,-69.7L104.9,-27.4L71.7,-25.4L81.6,-9.4L41.8,19.8L-4.7,28.8L-77.7,-61.6L-150.8,-54.6L-237.1,-84.8L-393.1,-218.5L-446.3,-213.4L-479.5,-189.3L-535.9,-196.3L-539.2,-263.7L-595.7,-370.3L-662.1,-421.5L-708.5,-440.6L-781.6,-505.0L-904.4,-681.9L-970.8,-742.2ZM1163.9,1169.9L1406.3,922.6L1389.7,859.2L1940.8,585.8L2040.4,790.9L2053.7,858.2L2130.1,985.9L2133.4,1021.1L2219.7,1071.4L2249.6,1112.6L2199.8,1131.7L2086.9,1135.7L1857.8,1214.1L1798.1,1275.4L1744.9,1328.7L1751.6,1383.0L1691.8,1382.0L1449.5,1631.3L1436.2,1617.3L1243.6,1518.7L1233.7,1484.6L1190.5,1427.3L1157.3,1413.2L1173.9,1373.0L1147.3,1346.8L1147.3,1297.6L1180.5,1247.3L1147.3,1222.2L1163.9,1169.9ZM307.4,993.0L367.1,1066.3L420.3,1104.5L456.8,1158.8L549.7,1204.1L576.3,1205.1L672.6,1269.4L775.5,1406.1L835.3,1422.2L835.3,1445.3L792.1,1430.3L778.8,1451.4L725.7,1421.2L646.0,1461.4L622.8,1501.6L576.3,1407.1L536.5,1363.9L503.3,1352.9L473.4,1381.0L350.5,1379.0L257.6,1310.6L177.9,1202.1L154.7,1108.6L224.4,1104.5L224.4,1075.4L307.4,1075.4L307.4,993.0ZM622.8,1501.6L646.0,1461.4L725.7,1421.2L778.8,1451.4L798.7,1507.7L822.0,1517.7L891.7,1595.1L931.5,1605.2L954.8,1651.4L924.9,1663.5L941.5,1695.7L1037.8,1729.9L1077.6,1783.1L1071.0,1848.5L1100.9,1878.6L1084.3,1909.8L1150.7,1905.8L1160.6,1939.0L1303.4,2083.7L1336.6,2135.0L1339.9,2176.2L1363.1,2185.3L1363.1,2185.3L1386.4,2155.1L1416.3,2175.2L1442.8,2136.0L1499.3,2155.1L1595.5,2259.7L1645.3,2258.7L1635.4,2193.3L1608.8,2134.0L1671.9,2184.3L1668.6,2203.4L1718.4,2259.7L1678.5,2304.9L1698.5,2371.3L1741.6,2378.3L1751.6,2413.5L1798.1,2454.7L1854.5,2485.9L1897.7,2534.1L1967.4,2540.1L2007.2,2606.5L2043.7,2607.5L2076.9,2654.8L2060.3,2678.9L2093.5,2709.0L2100.2,2744.2L1266.9,2739.2L1054.4,2737.2L991.3,2666.8L944.8,2631.6L924.9,2532.1L908.3,2496.9L841.9,2467.8L792.1,2363.2L709.1,2268.7L599.5,2204.4L563.0,2159.1L536.5,2078.7L539.8,2036.5L503.3,1934.9L509.9,1842.5L473.4,1826.4L506.6,1752.0L566.3,1790.2L596.2,1760.0L619.5,1698.7L646.0,1556.9L622.8,1501.6ZM778.8,1451.4L792.1,1430.3L835.3,1445.3L855.2,1447.4L921.6,1346.8L954.8,1340.8L988.0,1373.0L1173.9,1373.0L1157.3,1413.2L1190.5,1427.3L1233.7,1484.6L1243.6,1518.7L1436.2,1617.3L1449.5,1631.3L1741.6,1925.9L1748.3,2112.9L1688.5,2128.0L1671.9,2184.3L1608.8,2134.0L1635.4,2193.3L1645.3,2258.7L1595.5,2259.7L1499.3,2155.1L1442.8,2136.0L1416.3,2175.2L1386.4,2155.1L1363.1,2185.3L1363.1,2185.3L1339.9,2176.2L1336.6,2135.0L1303.4,2083.7L1160.6,1939.0L1150.7,1905.8L1084.3,1909.8L1100.9,1878.6L1071.0,1848.5L1077.6,1783.1L1037.8,1729.9L941.5,1695.7L924.9,1663.5L954.8,1651.4L931.5,1605.2L891.7,1595.1L822.0,1517.7L798.7,1507.7L778.8,1451.4ZM1798.1,1275.4L1827.9,1318.7L1881.1,1431.3L1877.7,1487.6L1957.4,1548.9L1957.4,1579.1L2086.9,1597.2L2226.3,1531.8L2272.8,1543.9L2312.7,1513.7L2352.5,1521.8L2405.6,1492.6L2472.0,1502.7L2491.9,1449.4L2545.1,1390.1L2538.4,1361.9L2574.9,1321.7L2604.8,1316.7L2621.4,1278.5L2651.3,1295.6L2664.6,1244.3L2704.4,1249.3L2727.7,1204.1L2701.1,1192.0L2714.4,1157.8L2737.6,1176.9L2770.8,1164.9L2777.5,1198.0L2827.3,1135.7L2867.1,1151.8L2920.2,1082.4L2913.6,960.8L2933.5,915.5L3202.4,642.1L3245.6,675.3L3302.0,683.3L3361.8,770.8L3411.6,755.7L3431.5,785.9L3444.8,818.0L3421.5,875.3L3428.2,934.6L3507.9,975.9L3531.1,1026.1L3514.5,1058.3L3551.0,1163.9L3597.5,1165.9L3657.3,1198.0L3743.6,1263.4L3760.2,1336.8L3810.0,1450.4L3810.0,1514.7L3786.7,1522.8L3816.6,1626.3L3238.9,1629.3L3238.9,1728.9L2943.5,1724.8L2940.1,1826.4L2794.1,1824.4L2694.5,1925.9L2608.1,2007.3L2601.5,1993.3L2531.8,2010.3L2525.1,2027.4L2335.9,2028.4L2335.9,2284.8L2007.2,2606.5L1967.4,2540.1L1897.7,2534.1L1854.5,2485.9L1798.1,2454.7L1751.6,2413.5L1741.6,2378.3L1698.5,2371.3L1678.5,2304.9L1718.4,2259.7L1668.6,2203.4L1671.9,2184.3L1688.5,2128.0L1748.3,2112.9L1741.6,1925.9L1449.5,1631.3L1691.8,1382.0L1751.6,1383.0L1744.9,1328.7L1798.1,1275.4ZM2936.8,416.9L2684.5,671.3L2684.5,748.7L2654.6,748.7L2654.6,786.9L2621.4,787.9L2621.4,838.1L2518.5,839.1L2249.6,1112.6L2219.7,1071.4L2133.4,1021.1L2130.1,985.9L2053.7,858.2L2040.4,790.9L1940.8,585.8L1937.5,527.5L1993.9,566.7L2013.9,549.6L1980.7,477.2L2057.0,468.2L2076.9,433.0L2126.7,426.0L2130.1,396.8L2179.9,412.9L2223.0,358.6L2276.1,377.7L2355.8,434.0L2422.2,422.9L2472.0,441.0L2531.8,419.9L2621.4,367.6L2621.4,345.5L2664.6,323.4L2691.1,279.2L2734.3,282.2L2767.5,317.4L2827.3,313.4L2873.7,344.5L2936.8,416.9Z","river":"","dioceseOutline":"M103.8,292.8L127.9,378.2L188.0,498.7L347.1,744.5L400.7,790.1L404.4,790.1L415.5,783.1L451.6,780.8L467.3,787.8L486.8,784.3L495.1,787.8L498.8,785.5L497.9,780.8L499.7,778.4L500.6,781.9L505.3,786.6L512.7,787.8L510.8,794.8L515.4,792.5L518.2,796.0L531.2,786.6L549.7,779.6L552.4,776.1L558.9,776.1L573.7,759.7L938.2,762.1L940.0,753.9L930.8,746.8L928.0,741.0L917.8,739.8L915.0,736.3L914.1,728.1L909.5,721.1L913.2,716.4L910.4,712.9L891.0,712.9L873.4,707.0L858.6,691.8L858.6,372.4L485.8,485.9L729.1,412.1L858.6,372.4L862.3,368.8L863.2,356.0L866.0,351.3L870.6,352.5L876.2,346.6L876.2,340.8L879.9,333.7L873.4,333.7L873.4,323.2L867.9,326.7L862.3,319.7L860.5,323.2L855.8,322.0L854.0,329.1L850.3,323.2L846.6,323.2L847.5,319.7L839.2,323.2L838.3,320.9L843.8,313.8L838.3,308.0L842.9,293.9L841.0,288.1L848.4,283.4L850.3,276.4L843.8,269.4L853.1,261.2L851.2,251.8L859.5,246.0L856.8,241.3L858.6,236.6L854.9,231.9L854.9,227.2L852.1,223.7L857.7,219.0L849.4,222.6L847.5,217.9L852.1,209.7L842.0,209.7L842.0,207.3L851.2,205.0L842.9,196.8L842.0,188.6L837.3,185.1L844.7,181.6L835.5,176.9L836.4,168.7L841.0,162.9L838.3,159.4L845.7,158.2L847.5,154.7L839.2,152.3L837.3,147.7L840.1,144.2L849.4,143.0L843.8,138.3L844.7,136.0L854.9,139.5L857.7,137.1L852.1,127.8L852.1,121.9L845.7,121.9L845.7,112.6L843.8,107.9L837.3,109.0L838.3,118.4L835.5,119.6L833.6,114.9L835.5,77.4L843.8,70.4L840.1,65.7L838.3,48.2L832.7,44.7L814.2,40.0L793.9,42.3L788.3,52.9L783.7,56.4L761.5,44.7L751.3,47.0L745.8,52.9L743.0,61.1L744.8,76.3L743.9,84.5L726.3,104.4L691.2,125.4L649.6,134.8L632.9,131.3L620.0,132.5L607.9,124.3L598.7,111.4L595.0,96.2L590.4,86.8L583.9,81.0L576.5,79.8L571.9,90.3L564.5,97.3L534.9,104.4L509.0,99.7L470.1,78.6L435.0,83.3L422.9,88.0L392.4,84.5L334.1,114.9L311.0,119.6L296.2,116.1L278.6,93.8L262.9,89.2L222.2,82.1L203.7,86.8L127.9,71.6L101.0,100.9L85.3,125.4L40.0,187.5L40.9,207.3L49.2,238.9L102.9,292.8L159.3,277.6L103.8,292.8"},"parishes":[{"name":"St. Barnabas","town":"Alameda","addr":"1427 Sixth St.","lat":37.77252,"lng":-122.27953,"x":190.3,"y":423.2,"site":"https://sbarnabas.weebly.com/","conf":[[6,930,960,""]],"appt":true,"v":1,"note":"","mass":[[6,990,1050,"",""],[0,540,600,"",""],[0,660,720,"",""],[1,730,765,"",""],[2,730,765,"",""],[3,730,765,"",""],[4,730,765,"",""],[5,730,765,"",""]],"mnote":"On holidays the daily Mass is at 9:00 AM and there is no 12:10.","ph":"510-522-8933","pastor":"","role":"","county":"Alameda"},{"name":"St. Joseph Basilica","town":"Alameda","addr":"1109 Chestnut St.","lat":37.76602,"lng":-122.25457,"x":213.4,"y":430.8,"site":"https://www.sjbalameda.org/","conf":[[6,930,990,""]],"appt":true,"v":1,"note":"","mass":[],"mnote":"","ph":"510-522-0181","pastor":"","role":"","county":"Alameda"},{"name":"St. Philip Neri and St. Albert the Great","town":"Alameda","addr":"3101 Van Buren St.","lat":37.7581,"lng":-122.23338,"x":233.0,"y":440.1,"site":"https://www.spnsa.org/","conf":[[6,990,1020,""],[6,930,960,""]],"appt":true,"v":1,"note":"Confessions are also by appointment at both churches.","mass":[[1,510,545,"","St. Philip Neri church"],[2,510,545,"","St. Philip Neri church"],[3,510,545,"","St. Philip Neri church"],[4,510,545,"","St. Philip Neri church"],[5,510,545,"","St. Philip Neri church"],[6,510,545,"","St. Philip Neri church"],[6,1035,1095,"","St. Philip Neri church"],[0,540,600,"","St. Philip Neri church"],[1,450,485,"","St. Albert the Great church"],[2,450,485,"","St. Albert the Great church"],[3,450,485,"","St. Albert the Great church"],[4,450,485,"","St. Albert the Great church"],[5,450,485,"","St. Albert the Great church"],[6,450,485,"","St. Albert the Great church"],[6,960,1020,"","St. Albert the Great church"],[0,480,540,"","St. Albert the Great church"],[0,630,690,"","St. Albert the Great church"]],"mnote":"Two churches: St. Philip Neri (3100 Van Buren St.) and St. Albert the Great (1022 Holly St.).","ph":"510-373-5200","pastor":"","role":"","county":"Alameda"},{"name":"Most Holy Rosary","town":"Antioch","addr":"21 E 15th Street","lat":38.00725,"lng":-121.80542,"x":628.8,"y":148.5,"site":"https://holyrosaryantioch.org","conf":[[5,960,1020,""],[6,960,1020,""]],"appt":false,"v":1,"note":"","mass":[[6,1050,1110,"","Vigil"],[0,435,495,"",""],[0,525,585,"",""],[0,630,690,"",""],[0,730,790,"","Spanish"],[0,825,885,"","Spanish"],[0,1050,1110,"",""],[1,480,515,"",""],[2,480,515,"",""],[3,480,515,"",""],[4,480,515,"",""],[5,480,515,"",""],[1,1050,1085,"",""],[2,1050,1085,"",""],[3,1050,1085,"",""],[4,1050,1085,"",""],[5,1050,1085,"",""],[6,480,515,"",""]],"mnote":"","ph":"925-757-4020","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Ignatius of Antioch","town":"Antioch","addr":"3351 Contra Loma Blvd.","lat":37.98699,"lng":-121.82375,"x":611.9,"y":172.3,"site":"https://stignatiusofantioch.com/","conf":[[6,870,930,""]],"appt":true,"v":1,"note":"","mass":[[6,960,1020,"","Vigil"],[0,480,540,"",""],[0,600,660,"",""],[2,480,515,"",""],[3,480,515,"",""],[4,480,515,"",""],[5,480,515,"",""]],"mnote":"The site says all liturgies are in English. Monday 8:00 AM is Morning Prayer, not Mass.","ph":"925-778-0768","pastor":"","role":"","county":"Contra Costa"},{"name":"Our Lady Queen of the World","town":"Bay Point","addr":"3155 Winterbrook Dr.","lat":38.02188,"lng":-121.94977,"x":495.3,"y":131.4,"site":"https://olqw.org","conf":[[6,960,1020,""]],"appt":true,"v":1,"note":"","mass":[[1,450,485,"",""],[2,450,485,"",""],[3,450,485,"",""],[4,450,485,"",""],[5,450,485,"",""],[6,480,515,"",""],[6,1140,1200,"","Spanish"],[0,960,1020,"","Vietnamese"]],"mnote":"The English weekend Masses are not shown because the parish's home page and Mass times page disagree.","ph":"925-458-4718","pastor":"","role":"","county":"Contra Costa"},{"name":"Holy Spirit – Newman Hall","town":"Berkeley","addr":"2700 Dwight Way","lat":37.86568,"lng":-122.25388,"x":214.0,"y":314.2,"site":"https://calnewman.org","conf":[[6,660,720,""],[4,1140,1200,"sem"]],"appt":true,"v":1,"note":"Also by appointment with the chaplains.","mass":[[1,730,765,"",""],[2,730,765,"",""],[3,730,765,"",""],[4,730,765,"",""],[5,730,765,"",""],[6,730,765,"",""],[4,1200,1235,"sem","school year only"],[6,1020,1080,"",""],[0,480,540,"",""],[0,600,660,"",""],[0,1020,1080,"",""],[0,1260,1320,"","candlelight"]],"mnote":"Thursday Mass and confession are posted for when UC Berkeley classes are in session.","ph":"510-848-7812","pastor":"","role":"","county":"Alameda"},{"name":"St. Ambrose","town":"Berkeley","addr":"1145 Gilman St.","lat":37.8809,"lng":-122.294,"x":176.9,"y":296.4,"site":"https://saintambroseberkeley.org/","conf":[[6,540,570,""]],"appt":false,"v":1,"note":"","mass":[[0,630,690,"","English"],[0,735,795,"","Spanish"],[2,510,545,"",""],[4,510,545,"",""],[6,510,545,"",""]],"mnote":"First Saturday Mass is with Anointing of the Sick.","ph":"510-525-2620","pastor":"Rev. John C. Prochaska","role":"Parochial Administrator","county":"Alameda"},{"name":"St. Joseph the Worker","town":"Berkeley","addr":"1640 Addison St.","lat":37.86987,"lng":-122.27814,"x":191.6,"y":309.3,"site":"https://stjosephtheworkerchurch.org/","conf":[],"appt":false,"v":1,"note":"","mass":[[6,1140,1200,"","Spanish"],[0,480,540,"","Spanish"],[0,600,660,"",""],[1,735,770,"",""],[3,735,770,"",""],[5,735,770,"",""],[5,1140,1175,"n1","Spanish"]],"mnote":"First Friday Masses (12:15 and 7:00 PM, Spanish) are with Anointing of the Sick.","ph":"510-843-2244","pastor":"Rev. John C. Prochaska","role":"Pastor","county":"Alameda"},{"name":"St. Mary Magdalen","town":"Berkeley","addr":"2005 Berryman St.","lat":37.88359,"lng":-122.27189,"x":197.3,"y":293.3,"site":"https://marymagdalen.org/","conf":[[6,960,990,""]],"appt":true,"v":1,"note":"","mass":[[0,480,540,"",""],[0,570,630,"",""],[0,690,750,"",""],[1,1050,1085,"",""],[3,1050,1085,"",""],[5,1050,1085,"",""],[2,510,545,"",""],[4,510,545,"",""],[6,510,545,"",""],[6,1050,1110,"",""]],"mnote":"","ph":"510-526-4811","pastor":"","role":"","county":"Alameda"},{"name":"Immaculate Heart of Mary","town":"Brentwood","addr":"500 Fairview Ave.","lat":37.93273,"lng":-121.7236,"x":704.5,"y":235.7,"site":"https://www.ihmbrentwood.com","conf":[],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"","English"],[0,450,510,"","English"],[0,540,600,"","English"],[0,645,705,"","Spanish"],[0,750,810,"","English"],[0,840,900,"","Spanish"],[0,1020,1080,"","Latin"],[1,480,515,"","English"],[3,480,515,"","English"],[5,480,515,"","English"],[2,480,515,"","Bilingual"],[4,480,515,"","Bilingual"],[6,480,515,"","Bilingual"]],"mnote":"","ph":"925-634-4154","pastor":"Rev. Quang Dong","role":"Pastor","county":"Contra Costa"},{"name":"Our Lady of Grace","town":"Castro Valley","addr":"3433 Somerset Avenue","lat":37.70166,"lng":-122.08329,"x":371.8,"y":506.2,"site":"https://olgcv.org","conf":[[4,1080,1140,""],[6,540,600,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"","Vietnamese"],[6,1140,1200,"","Vietnamese"],[0,450,510,"",""],[0,540,600,"",""],[0,660,720,"",""],[0,780,840,"",""],[1,420,455,"",""],[2,420,455,"",""],[3,420,455,"",""],[4,420,455,"",""],[5,420,455,"",""],[1,495,530,"",""],[2,495,530,"",""],[3,495,530,"",""],[4,495,530,"",""],[5,495,530,"",""],[6,495,530,"",""]],"mnote":"The page shows '1:00 PM (Spanish)' after the four Sunday times, so Spanish may apply to the 1:00 PM Mass only or to all four; language is left blank.","ph":"510-537-0806","pastor":"","role":"","county":"Alameda"},{"name":"Transfiguration","town":"Castro Valley","addr":"4000 E. Castro Valley Blvd.","lat":37.69597,"lng":-122.05075,"x":401.9,"y":512.8,"site":"https://transfigchurchcv.org/","conf":[[5,1140,1200,""]],"appt":false,"v":1,"note":"","mass":[[1,480,515,"","livestreamed"],[2,480,515,"","livestreamed"],[3,480,515,"","livestreamed"],[4,480,515,"","livestreamed"],[5,480,515,"","livestreamed"],[6,960,1020,"","Vigil"],[0,450,510,"",""],[0,540,600,"",""],[0,660,720,"",""]],"mnote":"The parish's own site announces a closure and merger process with Our Lady of Grace (town hall 27 Oct 2026). No closing date is posted. On First Fridays the morning Mass is at 9:30.","ph":"510-538-7941","pastor":"","role":"","county":"Alameda"},{"name":"Queen of All Saints","town":"Concord","addr":"2390 Grant St.","lat":37.98138,"lng":-122.0359,"x":415.6,"y":178.8,"site":"https://qaschurch.org/","conf":[[6,900,960,""]],"appt":true,"v":1,"note":"","mass":[[6,990,1050,"","English"],[6,1110,1170,"","Spanish"],[0,435,495,"","English"],[0,510,570,"","Spanish"],[0,630,690,"","English"],[0,720,780,"","Spanish"],[0,840,900,"","Spanish"],[0,990,1050,"","English Youth Mass"],[1,510,545,"","English"],[2,510,545,"","English"],[3,510,545,"","English"],[4,510,545,"","English"],[5,510,545,"","English"],[1,1110,1145,"","Spanish"],[3,1110,1145,"","Spanish"],[4,1110,1145,"","Spanish"],[5,1110,1145,"","Spanish"]],"mnote":"","ph":"925-825-0350","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Agnes","town":"Concord","addr":"3966 Chestnut Ave.","lat":37.9718,"lng":-122.00142,"x":447.5,"y":190.0,"site":"https://www.stagnesparish.net/","conf":[[6,930,960,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,420,480,"",""],[0,540,600,"",""],[0,660,720,"",""],[0,1020,1080,"",""],[1,480,515,"",""],[2,480,515,"",""],[4,480,515,"",""],[5,480,515,"",""],[6,480,515,"",""]],"mnote":"The site says there is no Mass on Wednesdays. The 8:00 AM Mass is livestreamed.","ph":"925-689-0838","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Bonaventure","town":"Concord","addr":"5562 Clayton Rd.","lat":37.94883,"lng":-121.95127,"x":493.9,"y":216.9,"site":"https://www.stbonaventure.net/","conf":[[5,480,510,""],[6,930,960,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,450,510,"",""],[0,540,600,"",""],[0,660,720,"",""],[0,765,825,"","Spanish"],[1,540,575,"",""],[2,540,575,"",""],[3,540,575,"",""],[4,540,575,"",""],[5,540,575,"",""],[2,1080,1115,"","Spanish"],[6,480,515,"n1",""]],"mnote":"Saturday 8:00 AM is the First Saturday Mass.","ph":"925-672-5800","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Francis of Assisi","town":"Concord","addr":"860 Oak Grove Rd.","lat":37.96,"lng":-122.02,"x":430.3,"y":203.8,"site":"https://sfaconcord.com/","conf":[[3,1080,1140,""],[4,1080,1140,""],[6,960,1035,""],[5,1050,1110,"n1"]],"appt":true,"v":1,"note":"Confession is also by appointment. No confessions on holidays.","mass":[[0,420,480,"","English"],[0,495,555,"","Spanish"],[0,600,660,"","English"],[0,690,750,"","English"],[0,780,840,"","Spanish"],[0,1140,1200,"","Spanish"],[1,510,545,"","English"],[2,510,545,"","English"],[3,510,545,"","English"],[4,510,545,"","English"],[5,510,545,"","English"],[6,510,545,"","English"],[2,1140,1175,"","Spanish"],[4,1140,1175,"","Spanish"],[6,1050,1110,"","English"],[6,1140,1200,"","Spanish"],[5,1140,1175,"n1","Spanish"]],"mnote":"","ph":"925-682-5447","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Rose of Lima – St. Patrick Mission","town":"Crockett","addr":"555 Third Ave.","lat":38.05413,"lng":-122.22274,"x":242.8,"y":93.7,"site":"","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"510-787-2052","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Isidore","town":"Danville","addr":"440 La Gonda Way","lat":37.82682,"lng":-122.00286,"x":446.2,"y":359.7,"site":"https://stisidoredanville.com/","conf":[[5,1080,1170,"x1"],[5,1110,1170,"n1"],[6,900,930,""],[0,420,450,""],[0,510,540,""],[0,630,660,""],[0,990,1020,""],[1,460,490,""],[2,460,490,""],[3,460,490,""],[4,460,490,""],[5,460,490,""],[6,480,510,""],[6,930,960,""],[5,1050,1080,"n1"]],"appt":true,"v":1,"note":"The site says confession is at least 30 minutes before every Mass, so those windows are worked out from the Mass times. Also by appointment.","mass":[[0,450,510,"",""],[0,540,600,"",""],[0,660,720,"",""],[0,1020,1080,"",""],[1,490,525,"",""],[2,490,525,"",""],[3,490,525,"",""],[4,490,525,"",""],[5,490,525,"",""],[6,510,545,"",""],[6,960,1020,"",""],[5,1080,1115,"n1",""]],"mnote":"Saturday 4:00 PM is the vigil of Sunday.","ph":"925-837-2122","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Raymond","town":"Dublin","addr":"11555 Shannon Ave.","lat":37.71387,"lng":-121.94101,"x":503.4,"y":491.9,"site":"","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"925-828-2460","pastor":"","role":"","county":"Alameda"},{"name":"St. Jerome","town":"El Cerrito","addr":"308 Carmel Ave.","lat":37.9027,"lng":-122.29061,"x":180.0,"y":270.9,"site":"https://www.stjeromeec.org/","conf":[[6,960,990,""]],"appt":true,"v":1,"note":"","mass":[[1,510,545,"",""],[2,510,545,"",""],[3,510,545,"",""],[4,510,545,"",""],[5,510,545,"",""],[6,1020,1080,"",""],[0,480,540,"",""],[0,600,660,"",""]],"mnote":"","ph":"510-525-0876","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Callistus","town":"El Sobrante","addr":"3580 San Pablo Dam Rd.","lat":37.96396,"lng":-122.319,"x":153.8,"y":199.2,"site":"https://www.saintcallistus.org/","conf":[[6,990,1035,""],[0,450,480,""],[0,570,600,""],[0,690,720,""]],"appt":true,"v":1,"note":"The site says confession is a half hour before the Sunday Masses; those windows are worked out from the Mass times. Other times by appointment.","mass":[[0,480,540,"",""],[0,600,660,"",""],[0,720,780,"",""],[6,1050,1110,"",""],[1,540,575,"",""],[2,540,575,"",""],[3,540,575,"",""],[4,540,575,"",""],[5,540,575,"",""],[6,540,575,"",""]],"mnote":"","ph":"510-223-1153","pastor":"","role":"","county":"Contra Costa"},{"name":"Corpus Christi","town":"Fremont","addr":"37968 Third St.","lat":37.574,"lng":-121.97583,"x":471.2,"y":655.6,"site":"https://corpuschristifremont.org","conf":[[6,900,960,""]],"appt":true,"v":1,"note":"Winter hours. Appointments through the parish office.","mass":[[6,960,1020,"","English"],[0,510,570,"","English"],[0,630,690,"","Spanish"],[2,510,545,"","English"],[3,510,545,"","English"],[4,510,545,"","English"],[5,510,545,"","English"]],"mnote":"","ph":"510-790-3207","pastor":"","role":"","county":"Alameda"},{"name":"St. Joseph","town":"Fremont","addr":"","lat":37.53472,"lng":-121.9203,"x":522.6,"y":701.5,"site":"https://www.saintjosephmsj.org/","conf":[[6,960,1020,""],[3,450,480,""],[4,450,480,""],[5,450,480,""]],"appt":true,"v":1,"note":"","mass":[[6,1050,1110,"","Main Church"],[0,480,540,"","Mission Church"],[0,600,660,"","English, Main Church"],[0,720,780,"","Main Church, youth and family"],[0,900,960,"","Vietnamese, Main Church"],[0,1020,1080,"","Mandarin, Main Church"],[0,1140,1200,"n1","Ad Orientem, Mission Church"],[0,1140,1200,"n2","Spanish, Mission Church"],[1,480,515,"","Mission Church"],[2,480,515,"","Mission Church"],[3,480,515,"","Mission Church"],[4,480,515,"","Mission Church"],[5,480,515,"","Mission Church"],[6,480,515,"","Mission Church"],[4,1140,1175,"","Vietnamese, Main Church"]],"mnote":"Main Church and Mission Church. Appointments through 510-656-2364.","ph":"510-656-2364","pastor":"","role":"","county":"Alameda"},{"name":"Holy Spirit","town":"Fremont","addr":"37588 Fremont Blvd.","lat":37.55688,"lng":-122.00413,"x":445.0,"y":675.6,"site":"https://holyspiritfremont.org","conf":[[6,930,990,""],[2,525,570,""],[4,525,570,""],[4,930,990,"bff"]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,435,495,"",""],[0,540,600,"",""],[0,645,705,"",""],[0,750,810,"",""],[0,1020,1080,"",""],[1,420,455,"",""],[2,420,455,"",""],[3,420,455,"",""],[4,420,455,"",""],[5,420,455,"",""],[6,420,455,"",""],[1,495,530,"",""],[2,495,530,"",""],[3,495,530,"",""],[4,495,530,"",""],[5,495,530,"",""],[6,495,530,"",""],[3,1110,1145,"",""],[5,1110,1145,"n1",""]],"mnote":"The site puts an asterisk on the 7:00 AM Mass and on two Sunday times and does not explain it. First Friday also has a 6:30 PM Mass.","ph":"510-797-1660","pastor":"","role":"","county":"Alameda"},{"name":"Our Lady of Guadalupe","town":"Fremont","addr":"41933 Blacow Road","lat":37.536,"lng":-121.981,"x":466.4,"y":700.0,"site":"https://olog.church","conf":[[6,930,990,""]],"appt":true,"v":1,"note":"","mass":[[6,1020,1080,"","English"],[6,1140,1200,"","Spanish"],[0,435,495,"","English"],[0,525,585,"","Spanish"],[0,630,690,"","English, ASL"],[0,750,810,"","Spanish"],[0,1080,1140,"","English"],[1,540,575,"","English"],[2,540,575,"","English"],[3,540,575,"","English"],[4,540,575,"","English"],[5,540,575,"","English"],[6,540,575,"","English"],[3,420,455,"","Spanish"],[5,420,455,"","Spanish"]],"mnote":"Times are read from the parish's schedule image.","ph":"510-657-4043","pastor":"","role":"","county":"Alameda"},{"name":"St. James","town":"Fremont","addr":"34700 Fremont Blvd.","lat":37.57251,"lng":-122.03544,"x":416.1,"y":657.3,"site":"https://sjapostle.net/","conf":[],"appt":false,"v":1,"note":"","mass":[[1,510,545,"",""],[2,510,545,"",""],[3,510,545,"",""],[4,510,545,"",""],[5,510,545,"",""],[6,510,545,"",""],[6,1020,1080,"",""],[0,510,570,"",""],[0,600,660,"",""],[0,720,780,"",""],[5,1170,1205,"n1",""]],"mnote":"","ph":"510-792-1962","pastor":"","role":"","county":"Alameda"},{"name":"All Saints","town":"Hayward","addr":"22824 Second Street","lat":37.67279,"lng":-122.07697,"x":377.6,"y":539.9,"site":"https://allsaintshayward.org/","conf":[[6,930,990,""],[5,1050,1110,"n1"]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,540,600,"",""],[0,660,720,"",""],[0,780,840,"","Spanish"],[3,1110,1145,"","Novena to Our Mother of Perpetual Help"],[5,1110,1145,"n1",""]],"mnote":"First Friday of the month: 8:30 AM Mass and 6:30 PM Mass with Anointing of the Sick.","ph":"510-581-2570","pastor":"","role":"","county":"Alameda"},{"name":"St. Bede","town":"Hayward","addr":"26950 Patrick Ave.","lat":37.63787,"lng":-122.07958,"x":375.2,"y":580.8,"site":"https://stbedecatholic.church/","conf":[[3,1080,1200,""],[6,930,1000,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"","English"],[6,1110,1170,"","Spanish"],[0,450,510,"",""],[0,540,600,"",""],[0,630,690,"",""],[0,750,810,"","Spanish"],[6,480,515,"",""],[5,1140,1175,"n1",""]],"mnote":"First Friday: 7:00 PM Mass, Sacred Heart.","ph":"510-782-2171","pastor":"Father Ruben","role":"Pastor","county":"Alameda"},{"name":"St. Clement","town":"Hayward","addr":"750 Calhoun St.","lat":37.64239,"lng":-122.05865,"x":394.6,"y":575.5,"site":"https://saintclementchurch.com/home/","conf":[[4,540,600,""],[6,930,990,""],[4,1110,1170,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,480,540,"","English"],[0,675,735,"","English"],[0,1110,1170,"","English"],[0,570,630,"","Spanish"],[0,780,840,"","Spanish"],[1,480,515,"",""],[2,480,515,"",""],[4,480,515,"",""],[5,480,515,"",""],[6,480,515,"",""]],"mnote":"Times are read from the parish's schedule image.","ph":"510-582-7282","pastor":"","role":"","county":"Alameda"},{"name":"St. Joachim","town":"Hayward","addr":"21250 Hesperian Blvd.","lat":37.66353,"lng":-122.11663,"x":341.0,"y":550.8,"site":"https://saintjoachim.net/","conf":[[3,1080,1140,""],[6,900,960,""]],"appt":false,"v":1,"note":"","mass":[[6,990,1050,"","English"],[0,450,510,"","English"],[0,540,600,"","English"],[0,630,690,"","English"],[0,735,795,"","English"],[6,1080,1140,"","Spanish"],[0,840,900,"","Spanish"],[0,1080,1140,"","Spanish"],[1,510,545,"","English"],[2,510,545,"","English"],[3,510,545,"","English"],[4,510,545,"","English"],[5,510,545,"","English"],[6,510,545,"","English"],[3,1140,1175,"","Spanish"]],"mnote":"Confession is listed on the About page only.","ph":"510-783-2766","pastor":"Rev. Henry Noga, SVD","role":"Pastor","county":"Alameda"},{"name":"St. Perpetua","town":"Lafayette","addr":"3454 Hamlin Road","lat":37.8818,"lng":-122.11336,"x":344.0,"y":295.4,"site":"https://stperpetua.org","conf":[[0,550,570,""],[0,675,690,""],[1,570,585,""],[3,570,585,""],[5,570,585,""],[6,960,1010,""]],"appt":true,"v":1,"note":"The weekday windows are worked out from the site's 'for 15 minutes after the 9:00 Mass'. Call the office for other times.","mass":[[6,1020,1080,"","English"],[0,570,630,"","English"],[0,690,750,"","English"],[1,540,575,"","English, Chapel"],[3,555,590,"","English, Church"],[5,540,575,"","English, Chapel"]],"mnote":"","ph":"925-283-0272","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Charles Borromeo","town":"Livermore","addr":"1315 Lomitas Ave.","lat":37.65896,"lng":-121.77684,"x":655.3,"y":556.1,"site":"https://stcharleslivermore.org/","conf":[[6,960,990,""]],"appt":false,"v":1,"note":"","mass":[[1,510,545,"","Chapel"],[2,510,545,"","Chapel"],[3,510,545,"","Chapel"],[4,510,545,"","Chapel"],[5,510,545,"","Chapel"],[6,1020,1080,"",""],[0,450,510,"",""],[0,570,630,"","Family Mass"],[0,690,750,"","Youth Mass"]],"mnote":"Mass schedule page updated July 13, 2026.","ph":"925-447-4549","pastor":"","role":"","county":"Alameda"},{"name":"St. Michael","town":"Livermore","addr":"458 Maple St.","lat":37.6818,"lng":-121.7664,"x":664.9,"y":529.4,"site":"https://stmichaellivermore.com","conf":[[3,1065,1125,""],[6,555,630,""],[0,420,480,""]],"appt":true,"v":1,"note":"Also by appointment. No confessions on Tuesdays or Thursdays until further notice.","mass":[[6,1020,1080,"","English"],[6,1140,1200,"","Spanish"],[0,405,465,"","English"],[0,480,540,"","Latin"],[0,570,630,"","English"],[0,660,720,"","English"],[0,750,810,"","Spanish"],[0,1020,1080,"","English"],[0,1140,1200,"","Spanish"],[1,405,440,"",""],[2,405,440,"",""],[3,405,440,"",""],[4,405,440,"",""],[5,405,440,"",""],[6,405,440,"",""],[1,510,545,"",""],[2,510,545,"",""],[3,510,545,"",""],[4,510,545,"",""],[5,510,545,"",""],[6,510,545,"",""],[3,1140,1175,"","Spanish"],[5,1140,1175,"","Spanish"],[1,1140,1175,"n1","Spanish"],[2,1140,1175,"n1","Latin Requiem"],[5,660,695,"n1","Chapel"],[0,915,975,"n24","Vietnamese"],[0,930,990,"n3","Tagalog"],[3,1080,1115,"n4","Our Lady of Perpetual Help, Chapel"]],"mnote":"The 8:00 AM Sunday Mass is the Traditional Latin Mass.","ph":"510-893-4711","pastor":"","role":"","county":"Alameda"},{"name":"St. Catherine of Siena","town":"Martinez","addr":"1125 Ferry Street","lat":38.01543,"lng":-122.13383,"x":325.0,"y":139.0,"site":"https://www.stcmtz.org/","conf":[[1,435,465,""],[6,870,930,""]],"appt":true,"v":1,"note":"By appointment: contact the pastor.","mass":[[6,960,1020,"",""],[0,510,570,"","livestreamed"],[0,660,720,"",""],[1,480,515,"",""],[2,480,515,"",""],[3,480,515,"",""],[4,480,515,"",""],[5,480,515,"",""],[6,480,515,"",""]],"mnote":"","ph":"925-228-2230","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Monica","town":"Moraga","addr":"1001 Camino Pablo","lat":37.82754,"lng":-122.13133,"x":327.4,"y":358.8,"site":"https://stmonicamoraga.com","conf":[[6,930,990,""]],"appt":true,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,540,600,"",""],[0,660,720,"",""],[1,540,575,"",""],[2,540,575,"",""],[3,540,575,"",""],[4,540,575,"",""],[5,540,575,"",""]],"mnote":"","ph":"925-376-6900","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Edward","town":"Newark","addr":"5788 Thornton Ave.","lat":37.53886,"lng":-122.02886,"x":422.1,"y":696.7,"site":"https://www.stedwardcatholic.com/","conf":[[6,900,930,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,435,495,"",""],[0,540,600,"",""],[0,660,720,"",""],[0,750,810,"","Spanish"],[0,1140,1200,"",""],[1,540,575,"",""],[2,540,575,"",""],[3,540,575,"",""],[4,540,575,"",""],[5,540,575,"",""],[6,540,575,"",""],[4,1140,1175,"","Latin"]],"mnote":"","ph":"510-797-0241","pastor":"","role":"","county":"Alameda"},{"name":"Cathedral of Christ the Light","town":"Oakland","addr":"2121 Harrison Street","lat":37.80957,"lng":-122.26302,"x":205.6,"y":379.9,"site":"https://www.ctlcathedral.org/","conf":[[0,600,650,""],[2,660,720,""],[4,660,720,""]],"appt":false,"v":1,"note":"","mass":[[0,480,540,"","Vietnamese"],[0,660,720,"","English"],[0,810,870,"","Spanish"],[1,730,765,"",""],[2,730,765,"",""],[3,730,765,"",""],[4,730,765,"",""],[5,730,765,"",""],[5,1140,1175,"n1","Vietnamese"],[6,450,485,"","Vietnamese"],[6,660,695,"n1","Mausoleum"]],"mnote":"Thursday 12:10 Mass is followed by Adoration.","ph":"510-832-5057","pastor":"","role":"","county":"Alameda"},{"name":"Divine Mercy","town":"Oakland","addr":"3725 High Street","lat":37.78873,"lng":-122.19241,"x":270.9,"y":404.3,"site":"https://divinemercyoak.org","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"510-530-0761","pastor":"","role":"","county":"Alameda"},{"name":"Our Lady of Lourdes","town":"Oakland","addr":"2808 Lakeshore Ave.","lat":37.80764,"lng":-122.24936,"x":218.2,"y":382.1,"site":"","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"510-451-1790","pastor":"","role":"","county":"Alameda"},{"name":"Sacred Heart","town":"Oakland","addr":"4025 Martin Luther King Jr. Way","lat":37.83007,"lng":-122.26853,"x":200.5,"y":355.9,"site":"https://sacredheartoak.org/","conf":[[6,990,1020,""]],"appt":true,"v":1,"note":"Also by appointment through the parish office.","mass":[[6,1020,1080,"",""],[0,450,510,"",""],[0,600,660,"","also by Zoom"],[1,480,515,"",""],[2,480,515,"",""],[3,480,515,"",""],[4,480,515,"",""],[5,480,515,"",""]],"mnote":"First Friday 8:00 AM Mass is a Healing Mass.","ph":"510-655-9209","pastor":"","role":"","county":"Alameda"},{"name":"St. Anthony – Mary Help of Christians","town":"Oakland","addr":"1535 16th Avenue","lat":37.78977,"lng":-122.24295,"x":224.1,"y":403.0,"site":"https://stanthony-maryhelp.org","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"510-534-2117","pastor":"","role":"","county":"Alameda"},{"name":"St. Augustine","town":"Oakland","addr":"400 Alcatraz Ave.","lat":37.8502,"lng":-122.2625,"x":206.0,"y":332.3,"site":"https://staugustineoakland.com/","conf":[[6,960,990,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,600,660,"",""],[0,1080,1140,"",""],[4,510,545,"",""]],"mnote":"Weekday Mass is through the Colby Street gate.","ph":"510-653-8631","pastor":"","role":"","county":"Alameda"},{"name":"St. Benedict","town":"Oakland","addr":"2245 82nd Ave.","lat":37.76054,"lng":-122.16961,"x":292.0,"y":437.3,"site":"https://www.saintbenedictoakland.com/","conf":[],"appt":true,"v":1,"note":"Confession is by appointment only; call the office.","mass":[[6,960,1020,"",""],[0,600,660,"","Gospel Mass"]],"mnote":"No weekday Mass is posted.","ph":"510-632-1847","pastor":"","role":"","county":"Alameda"},{"name":"St. Bernard","town":"Oakland","addr":"1620 62nd Ave.","lat":37.76462,"lng":-122.19619,"x":267.4,"y":432.5,"site":"","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"510-632-3013","pastor":"","role":"","county":"Alameda"},{"name":"St. Columba","town":"Oakland","addr":"6401 San Pablo Ave.","lat":37.8465,"lng":-122.283,"x":187.1,"y":336.7,"site":"https://www.stcolumba-oak.com/","conf":[[6,930,960,""]],"appt":true,"v":1,"note":"Or on request by calling the priest.","mass":[[6,960,1020,"",""],[0,480,540,"",""],[0,630,690,"","also livestreamed"]],"mnote":"Weekday Masses on the site are by Zoom only and are not shown.","ph":"510-654-7600","pastor":"","role":"","county":"Alameda"},{"name":"St. Elizabeth","town":"Oakland","addr":"1500 34th Ave.","lat":37.7784,"lng":-122.2229,"x":242.7,"y":416.4,"site":"https://saintelizabethoak.org/","conf":[[4,600,720,""],[4,900,1020,""],[6,990,1050,""]],"appt":false,"v":1,"note":"","mass":[[6,1080,1140,"","Spanish"],[0,480,540,"","Spanish"],[0,585,645,"","English"],[0,690,750,"","Spanish"],[0,810,870,"","Spanish"],[0,900,960,"","Spanish"],[1,420,455,"","English"],[2,420,455,"","English"],[3,420,455,"","English"],[4,420,455,"","English"],[5,420,455,"","English"],[1,495,530,"","Spanish"],[2,495,530,"","Spanish"],[3,495,530,"","Spanish"],[4,495,530,"","Spanish"],[5,495,530,"","Spanish"],[4,1020,1055,"","Spanish"]],"mnote":"","ph":"510-536-1266","pastor":"","role":"","county":"Alameda"},{"name":"St. Jarlath","town":"Oakland","addr":"2620 Pleasant St.","lat":37.79713,"lng":-122.21708,"x":248.0,"y":394.4,"site":"https://saintjarlath.org/","conf":[[2,1020,1095,""],[5,1020,1095,""],[6,945,1005,""]],"appt":false,"v":1,"note":"","mass":[[1,450,485,"","English"],[2,450,485,"","English"],[3,450,485,"","English"],[4,450,485,"","English"],[5,450,485,"","English"],[2,1110,1145,"","Spanish"],[5,1110,1145,"","Spanish"],[6,450,485,"","English"],[6,1020,1080,"","English"],[0,540,600,"","English"],[0,660,720,"","Spanish"],[0,780,840,"","Spanish"]],"mnote":"","ph":"510-532-2068","pastor":"","role":"","county":"Alameda"},{"name":"St. Leo the Great","town":"Oakland","addr":"4238 Howe St.","lat":37.82876,"lng":-122.25079,"x":216.9,"y":357.4,"site":"","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"510-654-6177","pastor":"","role":"","county":"Alameda"},{"name":"St. Louis Bertrand","town":"Oakland","addr":"1410 100th Ave.","lat":37.74277,"lng":-122.16899,"x":292.5,"y":458.1,"site":"https://www.slboakland.com/","conf":[[4,990,1110,""]],"appt":false,"v":1,"note":"","mass":[[1,1110,1145,"","Spanish"],[2,1110,1145,"","Spanish"],[3,1110,1145,"","Spanish"],[4,1110,1145,"","Spanish"],[5,1110,1145,"","Spanish"],[3,480,515,"","English"],[3,540,575,"","Spanish"],[4,540,575,"","Spanish"],[5,540,575,"","Spanish"],[6,540,575,"","Spanish"],[6,1110,1170,"","Spanish"],[0,420,480,"","Spanish"],[0,540,600,"","English"],[0,660,720,"","Spanish"],[0,1080,1140,"","Spanish"]],"mnote":"Times are read from the parish's schedule flyer, an image.","ph":"510-568-1080","pastor":"","role":"","county":"Alameda"},{"name":"St. Margaret Mary","town":"Oakland","addr":"1219 Excelsior Avenue","lat":37.80419,"lng":-122.23145,"x":234.8,"y":386.2,"site":"https://www.stmargaretmaryoak.org/","conf":[[1,450,480,""],[2,450,480,""],[2,1050,1080,""],[3,450,480,""],[3,1050,1080,""],[4,450,480,""],[4,690,720,""],[5,450,480,""],[5,1050,1080,""],[6,450,480,""],[6,570,600,""],[6,960,1000,""],[0,390,420,""],[0,480,510,""],[0,600,630,""],[0,720,750,""]],"appt":false,"v":1,"note":"The site says confession is 30 minutes before Masses (except Monday evenings) with no clock times; those windows are worked out from the Mass times. Saturday 4:00 to 4:40 PM is posted.","mass":[[1,480,515,"","Ordinary Form"],[2,480,515,"","Ordinary Form"],[3,480,515,"","Ordinary Form"],[4,480,515,"","Ordinary Form"],[5,480,515,"","Ordinary Form"],[6,480,515,"","Ordinary Form"],[1,1080,1115,"","Extraordinary Form"],[2,1080,1115,"","Extraordinary Form"],[3,1080,1115,"","Extraordinary Form"],[5,1080,1115,"","Extraordinary Form"],[4,720,755,"","Extraordinary Form"],[6,600,635,"","Extraordinary Form"],[6,1020,1080,"","Ordinary Form"],[0,420,480,"","Extraordinary Form, Low Mass"],[0,510,570,"","English, Ordinary Form"],[0,630,690,"","Latin, Ordinary Form, chanted"],[0,750,810,"","Extraordinary Form, chanted"]],"mnote":"The site's labels are used: Ordinary Form and Extraordinary Form (Latin).","ph":"510-482-0596","pastor":"","role":"","county":"Alameda"},{"name":"St. Theresa","town":"Oakland","addr":"30 Mandalay Rd.","lat":37.83849,"lng":-122.23225,"x":234.0,"y":346.0,"site":"https://sttheresaoakland.org","conf":[[6,960,990,""]],"appt":true,"v":1,"note":"","mass":[[1,510,545,"",""],[2,510,545,"",""],[3,510,545,"",""],[4,510,545,"",""],[5,510,545,"",""],[6,1020,1080,"",""],[0,540,600,"",""]],"mnote":"","ph":"510-547-2777","pastor":"","role":"","county":"Alameda"},{"name":"St. Anthony","town":"Oakley","addr":"971 O'Hara Ave.","lat":37.99097,"lng":-121.71401,"x":713.4,"y":167.6,"site":"https://stanthonyoakley.org","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"925-625-2048","pastor":"","role":"","county":"Contra Costa"},{"name":"Santa Maria","town":"Orinda","addr":"20 Santa Maria Way","lat":37.88316,"lng":-122.18654,"x":276.3,"y":293.8,"site":"https://www.santamariaorinda.com/","conf":[[6,960,990,""]],"appt":true,"v":1,"note":"","mass":[[0,510,570,"",""],[0,630,690,"",""],[0,1020,1080,"",""],[1,510,545,"",""],[2,510,545,"",""],[3,510,545,"",""],[4,510,545,"",""],[5,510,545,"",""]],"mnote":"","ph":"925-254-2426","pastor":"","role":"","county":"Contra Costa"},{"name":"Church of the Good Shepherd","town":"Pittsburg","addr":"3200 Harbor St.","lat":38.00683,"lng":-121.88619,"x":554.1,"y":149.0,"site":"https://goodshepherdpittsburg.org","conf":[],"appt":false,"v":1,"note":"","mass":[[1,450,485,"",""],[2,450,485,"",""],[3,450,485,"",""],[4,450,485,"",""],[5,450,485,"",""],[6,480,515,"",""],[6,1050,1110,"",""],[0,480,540,"",""],[0,600,660,"",""],[0,720,780,"",""],[0,900,960,"","Spanish"]],"mnote":"Third Sundays at 10:00 AM are a Youth Mass.","ph":"925-432-6404","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Peter Martyr","town":"Pittsburg","addr":"740 Black Diamond St.","lat":38.03038,"lng":-121.8857,"x":554.6,"y":121.5,"site":"","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"925-432-4771","pastor":"","role":"","county":"Contra Costa"},{"name":"Christ the King and St. Stephen","town":"Pleasant Hill","addr":"195-A Brandon Rd.","lat":37.94704,"lng":-122.07779,"x":376.9,"y":219.0,"site":"https://www.ctkph.org/","conf":[[6,900,930,""],[6,990,1020,""]],"appt":false,"v":1,"note":"St. Stephen's confession is worked out from 'Saturday before the 5:00 p.m. Mass'.","mass":[[6,960,1020,"","Christ the King campus"],[6,1020,1080,"","St. Stephen campus"],[0,450,510,"","Christ the King campus"],[0,540,600,"","Christ the King campus"],[0,630,690,"","Christ the King campus"],[0,960,1020,"","Christ the King campus"],[0,570,630,"","St. Stephen campus"],[1,540,575,"","St. Stephen campus"],[3,540,575,"","St. Stephen campus"],[5,540,575,"","St. Stephen campus"],[2,540,575,"","Christ the King campus"],[4,540,575,"","Christ the King campus"],[6,540,575,"","Christ the King campus"]],"mnote":"Two campuses: Christ the King and St. Stephen.","ph":"925-682-2486","pastor":"","role":"","county":"Contra Costa"},{"name":"Catholic Community Pleasanton (St. Augustine and St. Elizabeth Seton)","town":"Pleasanton","addr":"3999 Bernal Avenue","lat":37.6537,"lng":-121.86205,"x":576.4,"y":562.3,"site":"https://www.catholicsofpleasanton.org/","conf":[[6,900,930,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"","St. Augustine"],[0,480,540,"","St. Augustine"],[0,600,660,"","St. Augustine"],[0,720,780,"","St. Augustine"],[0,960,1020,"","St. Augustine"],[0,1080,1140,"","St. Augustine"],[0,570,630,"","Korean, St. Elizabeth Seton"],[0,660,720,"","English, St. Elizabeth Seton"],[1,510,545,"","St. Augustine"],[2,510,545,"","St. Augustine"],[3,510,545,"","St. Augustine"],[4,510,545,"","St. Augustine"],[5,510,545,"","St. Augustine"],[6,510,545,"","St. Augustine"],[1,730,765,"","St. Elizabeth Seton chapel"],[2,730,765,"","St. Elizabeth Seton chapel"],[3,730,765,"","St. Elizabeth Seton chapel"],[4,730,765,"","St. Elizabeth Seton chapel"],[5,730,765,"","St. Elizabeth Seton chapel"],[2,570,605,"","Korean, St. Elizabeth Seton chapel"],[4,570,605,"","Korean, St. Elizabeth Seton chapel"],[5,570,605,"","Korean, St. Elizabeth Seton chapel"]],"mnote":"Two churches, St. Augustine and St. Elizabeth Seton. The Korean-language Masses are run by the Tri-Valley Korean Catholic Community.","ph":"925-846-4489","pastor":"","role":"","county":"Alameda"},{"name":"Our Lady of Mercy","town":"Point Richmond","addr":"301 W. Richmond Ave.","lat":37.9268,"lng":-122.38668,"x":91.2,"y":242.7,"site":"https://pointrichmondcatholic.org/","conf":[],"appt":false,"v":1,"note":"","mass":[[6,990,1050,"",""],[0,600,660,"",""]],"mnote":"","ph":"510-232-1843","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Cornelius","town":"Richmond","addr":"205 28th St.","lat":37.93463,"lng":-122.34209,"x":132.4,"y":233.5,"site":"https://www.stcorneliusrichmond.org/","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"510-233-5215","pastor":"","role":"","county":"Contra Costa"},{"name":"St. David","town":"Richmond","addr":"5641 Esmond Ave.","lat":37.94779,"lng":-122.32249,"x":150.5,"y":218.1,"site":"https://stdavidofwales.com/","conf":[[6,960,1000,""]],"appt":false,"v":1,"note":"","mass":[[1,1110,1145,"","English"],[2,1110,1145,"","English"],[3,1110,1145,"","English"],[4,1110,1145,"","English"],[5,495,530,"","English, with school"],[5,1110,1145,"","English"],[6,480,515,"","English"],[6,540,575,"","KMHMU, as posted"],[6,1020,1080,"","English"],[0,480,540,"","English"],[0,570,630,"","Spanish"],[0,660,720,"","English"],[0,810,870,"n3","Swahili"]],"mnote":"","ph":"510-237-1531","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Mark","town":"Richmond","addr":"159 Harbour Way","lat":37.93341,"lng":-122.36007,"x":115.8,"y":235.0,"site":"https://stmarkrichmond.org","conf":[[3,1140,1260,""],[5,1140,1260,""]],"appt":false,"v":1,"note":"","mass":[[0,480,540,"","Spanish"],[0,570,630,"","Spanish"],[0,660,720,"",""],[0,750,810,"","Spanish"],[3,510,545,"","Spanish"],[4,510,545,"","Spanish"],[5,510,545,"","Spanish"],[6,480,515,"","Spanish"]],"mnote":"Confession on Wednesday and Friday evenings is in English and Spanish; the last person is admitted at 8:50 PM.","ph":"510-234-5886","pastor":"Fr. Arturo Bazan","role":"Parish Administrator","county":"Contra Costa"},{"name":"St. Patrick","town":"Rodeo","addr":"825 Seventh St.","lat":38.02892,"lng":-122.26309,"x":205.5,"y":123.2,"site":"https://stpatrickrodeo.org","conf":[[6,930,990,""]],"appt":true,"v":1,"note":"Or call 510-799-4406 for an appointment.","mass":[[1,450,485,"",""],[2,450,485,"",""],[3,450,485,"",""],[4,450,485,"",""],[5,450,485,"",""],[6,450,485,"",""],[6,1020,1080,"",""],[0,450,510,"",""],[0,570,630,"",""],[0,690,750,"",""]],"mnote":"","ph":"510-799-4406","pastor":"","role":"","county":"Contra Costa"},{"name":"Church of the Assumption","town":"San Leandro","addr":"1100 Fulton Ave.","lat":37.72125,"lng":-122.13676,"x":322.3,"y":483.2,"site":"http://www.assumptionsanleandro.org/","conf":[[6,900,960,""]],"appt":true,"v":1,"note":"","mass":[[1,510,545,"",""],[2,510,545,"",""],[3,510,545,"",""],[4,510,545,"",""],[5,510,545,"",""],[6,510,545,"",""],[6,990,1050,"",""],[0,480,540,"",""],[0,600,660,"","livestreamed"],[0,720,780,"",""]],"mnote":"","ph":"510-352-1537","pastor":"","role":"","county":"Alameda"},{"name":"Our Lady of Good Counsel","town":"San Leandro","addr":"14112 Azores Pl.","lat":37.6947,"lng":-122.18042,"x":282.0,"y":514.3,"site":"https://olgcsanleandro.com/","conf":[[6,960,1005,""]],"appt":true,"v":1,"note":"Or by appointment: call 510-969-7013.","mass":[[0,540,600,"","English"],[0,660,720,"","English"],[1,540,575,"","English"],[2,540,575,"","English"],[3,540,575,"","English"],[4,540,575,"","English"],[5,540,575,"","English"],[6,540,575,"n1","English"]],"mnote":"","ph":"510-614-2765","pastor":"Rev. Jan Rudzewicz","role":"Pastor","county":"Alameda"},{"name":"St. Felicitas","town":"San Leandro","addr":"1662 Manor Blvd.","lat":37.7003,"lng":-122.1446,"x":315.1,"y":507.8,"site":"https://stfelicitassl.org/","conf":[],"appt":true,"v":1,"note":"","mass":[[0,450,510,"","English"],[0,540,600,"","English"],[0,630,690,"","English"],[0,750,810,"","Spanish"],[0,990,1050,"","Vietnamese"],[1,420,455,"",""],[2,420,455,"",""],[3,420,455,"",""],[4,420,455,"",""],[5,420,455,"",""],[1,495,530,"",""],[2,495,530,"",""],[3,495,530,"",""],[4,495,530,"",""],[5,495,530,"",""]],"mnote":"The Mass times page is titled 2023.","ph":"510-351-5244","pastor":"Rev. Peter D. Ngo","role":"Pastor","county":"Alameda"},{"name":"St. Leander","town":"San Leandro","addr":"474 W. Estudillo Ave.","lat":37.72364,"lng":-122.15935,"x":301.4,"y":480.4,"site":"https://stleanderchurch.org/","conf":[[6,900,960,""]],"appt":false,"v":1,"note":"No appointment is needed.","mass":[[1,420,455,"","English"],[2,420,455,"","English"],[3,420,455,"","English"],[5,420,455,"","English"],[4,420,455,"","Spanish"],[1,735,770,"","English"],[2,735,770,"","English"],[3,735,770,"","English"],[4,735,770,"","English"],[5,735,770,"","English"],[6,990,1050,"","English"],[6,1110,1170,"","Spanish"],[0,420,480,"","English"],[0,660,720,"","English"],[0,540,600,"","Spanish"],[0,780,840,"","Spanish"],[0,900,960,"","Chinese"],[0,1020,1080,"n1","Portuguese"]],"mnote":"","ph":"510-895-5631","pastor":"","role":"","county":"Alameda"},{"name":"St. John the Baptist","town":"San Lorenzo","addr":"16642 Ashland Ave.","lat":37.68736,"lng":-122.1189,"x":338.9,"y":522.9,"site":"https://stjohnsanlorenzo.org/","conf":[[2,990,1020,""],[4,990,1020,""]],"appt":false,"v":1,"note":"","mass":[[1,510,545,"","English"],[2,510,545,"","English"],[3,510,545,"","English"],[4,510,545,"","English"],[5,510,545,"","English"],[6,990,1050,"","English"],[0,450,510,"","English"],[0,570,630,"","English"],[2,1080,1115,"","Spanish"],[4,1080,1115,"","Spanish"],[6,1110,1170,"","Spanish"],[0,690,750,"","Spanish"],[0,810,870,"","Spanish"]],"mnote":"","ph":"510-351-5050","pastor":"","role":"","county":"Alameda"},{"name":"St. Paul","town":"San Pablo","addr":"1845 Church Lane","lat":37.95686,"lng":-122.34209,"x":132.4,"y":207.5,"site":"https://www.stpaulchurchsanpablo.org/","conf":[[6,930,990,""]],"appt":true,"v":1,"note":"","mass":[[1,450,485,"","English"],[2,450,485,"","English"],[3,450,485,"","English"],[4,450,485,"","English"],[5,450,485,"","English"],[6,450,485,"","English"],[6,1020,1080,"","English"],[6,1110,1170,"","Spanish"],[0,450,510,"","English"],[0,530,590,"","Spanish"],[0,630,690,"","English"],[0,720,780,"","English"],[0,960,1020,"","Vietnamese"],[0,1080,1140,"","Spanish"],[0,840,900,"n2","Tagalog"]],"mnote":"","ph":"510-232-5931","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Joan of Arc","town":"San Ramon","addr":"2601 San Ramon Valley Blvd.","lat":37.76925,"lng":-121.97227,"x":474.5,"y":427.1,"site":"https://sjasr.org","conf":[[6,900,960,""]],"appt":true,"v":1,"note":"","mass":[[1,540,575,"",""],[2,540,575,"",""],[3,540,575,"",""],[4,540,575,"",""],[5,540,575,"",""],[6,990,1050,"",""],[0,480,540,"",""],[0,600,660,"",""],[0,720,780,"",""]],"mnote":"The 8:00 AM Sunday and 9:00 AM weekday Masses are livestreamed.","ph":"925-830-0600","pastor":"","role":"","county":"Contra Costa"},{"name":"Our Lady of the Rosary","town":"Union City","addr":"703 \"C\" St.","lat":37.60371,"lng":-122.02467,"x":426.0,"y":620.8,"site":"https://olrchurch.org","conf":[],"appt":false,"v":1,"note":"","mass":[],"mnote":"","ph":"510-471-2609","pastor":"","role":"","county":"Alameda"},{"name":"St. Anne","town":"Union City","addr":"32223 Cabello Street","lat":37.58744,"lng":-122.07336,"x":381.0,"y":639.8,"site":"https://saintannecatholic.org","conf":[[6,930,960,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,480,540,"",""],[0,600,660,"",""],[0,720,780,"",""],[0,1020,1080,"",""],[1,480,515,"",""],[2,480,515,"",""],[3,480,515,"",""],[4,480,515,"",""],[5,480,515,"",""],[6,480,515,"",""],[3,1140,1175,"",""],[0,840,900,"n3","Indonesian"],[0,840,900,"n2","Spanish"],[5,1140,1175,"n1",""]],"mnote":"Parish site says Mass schedules vary on feast days and holy days.","ph":"510-471-7766","pastor":"Rev. Fr. Benedict Wonganant","role":"Pastor","county":"Alameda"},{"name":"St. Anne","town":"Walnut Creek","addr":"1600 Rossmoor Parkway","lat":37.8756,"lng":-122.07225,"x":382.0,"y":302.6,"site":"https://www.stanneswc.org/","conf":[[2,540,570,""],[6,930,960,""]],"appt":false,"v":1,"note":"","mass":[[6,1020,1080,"",""],[0,540,600,"",""],[0,660,720,"",""],[1,495,530,"",""],[2,495,530,"",""],[3,495,530,"",""],[4,495,530,"",""],[5,495,530,"",""],[6,495,530,"",""]],"mnote":"","ph":"925-932-2324","pastor":"","role":"","county":"Contra Costa"},{"name":"St. John Vianney","town":"Walnut Creek","addr":"1650 Ygnacio Valley Rd.","lat":37.91552,"lng":-122.04118,"x":410.7,"y":255.9,"site":"https://sjvianney.org","conf":[[1,495,510,""],[2,495,510,""],[3,495,510,""],[4,495,510,""],[5,495,510,"x1"],[6,960,1005,""]],"appt":true,"v":1,"note":"Saturday confession is in the church or by appointment.","mass":[[6,1020,1080,"",""],[0,510,570,"",""],[0,630,690,"",""],[0,1020,1080,"",""],[1,510,545,"",""],[2,510,545,"",""],[3,510,545,"",""],[4,510,545,"",""],[5,510,545,"x1",""],[5,1080,1115,"n1",""]],"mnote":"","ph":"925-939-7911","pastor":"","role":"","county":"Contra Costa"},{"name":"St. Mary","town":"Walnut Creek","addr":"2051 Mt. Diablo Blvd.","lat":37.89686,"lng":-122.06858,"x":385.4,"y":277.7,"site":"https://www.stmary-wc.org/","conf":[[6,900,945,""]],"appt":false,"v":1,"note":"","mass":[[6,960,1020,"",""],[0,420,480,"",""],[0,570,630,"",""],[0,690,750,"",""],[0,810,870,"","Spanish"],[1,390,425,"",""],[2,390,425,"",""],[3,390,425,"",""],[4,390,425,"",""],[5,390,425,"",""],[1,725,760,"",""],[2,725,760,"",""],[3,725,760,"",""],[4,725,760,"",""],[5,725,760,"",""]],"mnote":"","ph":"925-891-8900","pastor":"","role":"","county":"Contra Costa"}]};
+(function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  const SOON = 120; // minutes
+  let MODE = 'mass';
+  const list = (p) => (MODE === 'mass' ? p.mass : p.conf);
+  const callHTML = (p) => (p.ph ? 'Please call <a href="tel:' + p.ph.replace(/[^0-9+]/g, '') + '">' + esc(p.ph) + '</a>.' : 'Please call the parish.');
+  const callTxt = (p) => (p.ph ? 'Please call ' + p.ph : 'Please call the parish');
+  const VF = () => '';
+  const M = () => MODE === 'mass';
+  const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const DAYS_LONG = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const TAGS = { n1: '1st of the month', n2: '2nd of the month', n135: '1st, 3rd and 5th of the month', bff: 'Thursday before First Friday', sem: 'school year only', n13: '1st and 3rd of the month', x3: 'not on 3rd Sundays', n3: '3rd of the month', x1: 'except the 1st of the month', n24: '2nd and 4th of the month', n4: '4th of the month', sm: 'September to May' };
+  const P = DATA.parishes;
+  const $ = (id) => document.getElementById(id);
+  const svg = $('map');
+
+  /* ---------- time helpers (always Pacific time, as the parishes post them) ---------- */
+  const fmtNY = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false });
+  function nyNow() {
+    const o = {};
+    fmtNY.formatToParts(new Date()).forEach((p) => { o[p.type] = p.value; });
+    const h = Number(o.hour) % 24;
+    return { y: +o.year, m: +o.month, d: +o.day, min: h * 60 + Number(o.minute) };
+  }
+  function civil(base, offset) {
+    const t = new Date(Date.UTC(base.y, base.m - 1, base.d + offset));
+    return { y: t.getUTCFullYear(), month: t.getUTCMonth() + 1, date: t.getUTCDate(), dow: t.getUTCDay() };
+  }
+  function t12(min) {
+    const h = Math.floor(min / 60), m = min % 60;
+    const ap = h >= 12 ? 'PM' : 'AM';
+    const hh = h % 12 === 0 ? 12 : h % 12;
+    return hh + (m ? ':' + String(m).padStart(2, '0') : ':00') + ' ' + ap;
+  }
+  function range(s, e) {
+    const a = t12(s), b = t12(e);
+    return a.slice(-2) === b.slice(-2) ? a.slice(0, -3) + '–' + b : a + ' – ' + b;
+  }
+  function flagOK(f, c) {
+    if (!f) return true;
+    const nth = Math.ceil(c.date / 7);
+    if (f === 'n1') return nth === 1;
+    if (f === 'n2') return nth === 2;
+    if (f === 'n135') return nth === 1 || nth === 3 || nth === 5;
+    if (f === 'n13') return nth === 1 || nth === 3;
+    if (f === 'x3') return nth !== 3;
+    if (f === 'n3') return nth === 3;
+    if (f === 'x1') return nth !== 1;
+    if (f === 'n24') return nth === 2 || nth === 4;
+    if (f === 'n4') return nth === 4;
+    if (f === 'sm') return c.month >= 9 || c.month <= 5;
+    if (f === 'bff') {
+      const n = new Date(Date.UTC(c.y, c.month - 1, c.date + 1));
+      return c.dow === 4 && n.getUTCDay() === 5 && n.getUTCDate() <= 7;
+    }
+    if (f === 'sem') {
+      const m = c.month, d = c.date;
+      return (m >= 9 && m <= 11) || (m === 12 && d <= 18) || (m === 1 && d >= 12) || (m >= 2 && m <= 4) || (m === 5 && d <= 10) || (m === 8 && d >= 20);
+    }
+    return true;
+  }
+  const sessionsOn = (p, c) => list(p).filter((s) => s[0] === c.dow && flagOK(s[3], c));
+  function dur(min) {
+    if (min < 60) return min + ' min';
+    const h = Math.floor(min / 60), m = min % 60;
+    return h + ' hr' + (m ? ' ' + m + ' min' : '');
+  }
+
+  /* ---------- clock state ---------- */
+  let override = null; // {dow, min}
+  function current() {
+    const real = nyNow();
+    if (!override) return { base: real, min: real.min, c0: civil(real, 0) };
+    const today = civil(real, 0);
+    const off = (override.dow - today.dow + 7) % 7;
+    return { base: real, min: override.min, c0: civil(real, off), off };
+  }
+  function status(p, cur) {
+    if (!list(p).length) return { state: 'none' };
+    const todays = sessionsOn(p, cur.c0).sort((a, b) => a[1] - b[1]);
+    for (const s of todays) if (s[1] <= cur.min && cur.min < s[2]) return { state: 'now', left: s[2] - cur.min, s };
+    for (const s of todays) if (s[1] > cur.min) {
+      const gap = s[1] - cur.min;
+      return { state: gap <= SOON ? 'soon' : 'later', gap, s };
+    }
+    return { state: 'done' };
+  }
+  function nextSession(p, cur) {
+    for (let off = 0; off < 35; off++) {
+      const c = civil(cur.c0 ? { y: cur.c0.y, m: cur.c0.month, d: cur.c0.date } : cur.base, off);
+      const list = sessionsOn(p, c).sort((a, b) => a[1] - b[1]);
+      for (const s of list) {
+        if (off === 0 && s[1] <= cur.min) continue;
+        return { off, c, s, ahead: off * 1440 + s[1] - cur.min };
+      }
+    }
+    return null;
+  }
+
+  /* ---------- map layers ---------- */
+  const V = DATA.geo.view;
+  const BASE = { x: V.x - 30, y: V.y - 30, w: V.w + 60, h: V.h + 60 };
+  let vb = { cx: BASE.x + BASE.w / 2, cy: BASE.y + BASE.h / 2, w: BASE.w };
+  svg.innerHTML =
+    '<g id="land">' +
+    '<path class="nbr" d="' + DATA.geo.neighbors + '"/>' +
+    DATA.geo.counties.map((c) => '<path class="county" d="' + c.d + '"><title>' + c.name + ' County</title></path>').join('') +
+    '<path class="river" d="' + DATA.geo.river + '"/>' +
+    '<path class="outline" d="' + DATA.geo.dioceseOutline + '"/>' +
+    DATA.geo.counties.map((c) => '<text class="clabel" x="' + c.cx + '" y="' + c.cy + '">' + c.name + (SEATS[c.name] ? '<tspan class="seat" x="' + c.cx + '" dy="1.3em">\u2605 ' + SEATS[c.name] + '</tspan>' : '') + '</text>').join('') +
+    '</g><g id="marks"></g>';
+  const marks = svg.querySelector('#marks');
+  const landPaths = svg.querySelectorAll('.county, .nbr, .river, .outline');
+  const clabels = svg.querySelectorAll('.clabel');
+  const nodes = P.map((p, i) => {
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'mk st-none');
+    g.setAttribute('tabindex', '0');
+    g.setAttribute('role', 'button');
+    g.dataset.i = i;
+    g.innerHTML = '<circle class="pulse"/><circle class="ping"/><circle class="halo"/><circle class="core"/><circle class="hit"/><text></text><title></title>';
+    marks.appendChild(g);
+    return g;
+  });
+
+  function pxScale() {
+    const r = svg.getBoundingClientRect();
+    const a = r.width / Math.max(r.height, 1);
+    const w = vb.w, h = vb.w / a;
+    return Math.max(w / Math.max(r.width, 1), h / Math.max(r.height, 1));
+  }
+  function applyView() {
+    const r = svg.getBoundingClientRect();
+    const a = r.width / Math.max(r.height, 1);
+    const w = vb.w, h = vb.w / a;
+    svg.setAttribute('viewBox', [vb.cx - w / 2, vb.cy - h / 2, w, h].join(' '));
+    const k = pxScale();
+    landPaths.forEach((el) => el.setAttribute('stroke-width', (el.classList.contains('outline') ? 1.6 : el.classList.contains('river') ? 2 : 0.8) * k));
+    clabels.forEach((el) => { el.setAttribute('font-size', 10.5 * k); el.style.display = ''; });
+    const zoomed = vb.w < BASE.w * 0.12;
+    nodes.forEach((g, i) => {
+      const p = P[i];
+      const red = g.classList.contains('st-now') || g.classList.contains('st-soon');
+      const rr = (red ? 6.5 : 5) * k;
+      g.querySelector('.core').setAttribute('r', rr);
+      g.querySelector('.core').setAttribute('cx', p.x); g.querySelector('.core').setAttribute('cy', p.y);
+      g.querySelector('.core').setAttribute('stroke-width', 1.6 * k);
+      ['pulse', 'ping', 'halo'].forEach((n) => {
+        const el = g.querySelector('.' + n);
+        el.setAttribute('cx', p.x); el.setAttribute('cy', p.y);
+        el.setAttribute('r', n === 'halo' ? rr + 4 * k : rr);
+        el.setAttribute('stroke-width', (n === 'halo' ? 2 : 1.5) * k);
+      });
+      const hit = g.querySelector('.hit');
+      hit.setAttribute('cx', p.x); hit.setAttribute('cy', p.y); hit.setAttribute('r', 13 * k);
+      const t = g.querySelector('text');
+      const show = zoomed || g.classList.contains('sel');
+      t.style.display = show ? '' : 'none';
+      t.setAttribute('x', p.x + rr + 5 * k); t.setAttribute('y', p.y + 4 * k);
+      t.setAttribute('font-size', 13 * k); t.setAttribute('stroke-width', 3.5 * k);
+    });
+    updatePopup();
+  }
+  function updatePopup() {
+    const pop = $('popup');
+    if (!M() || selected === null) { pop.hidden = true; return; }
+    const p = P[selected];
+    const cur = current();
+    const todays = sessionsOn(p, cur.c0).sort((a, b) => a[1] - b[1]);
+    const nextIdx = todays.findIndex((s) => s[1] > cur.min);
+    const chips = todays.map((s, i) => {
+      const cls = s[2] <= cur.min ? 'past' : s[1] <= cur.min ? 'now' : i === nextIdx ? 'next' : '';
+      const tg = [s[3] ? TAGS[s[3]] : '', s[4] || ''].filter(Boolean).join(' \u00b7 ');
+      return '<span class="chip ' + cls + '">' + t12(s[1]) + (tg ? '<small>' + esc(tg) + '</small>' : '') + '</span>';
+    }).join('');
+    pop.innerHTML = '<button class="x" id="pclose" aria-label="Close">&times;</button><h3>' + esc(p.name) + '</h3><p class="pt">' + esc(p.town) + '</p>' +
+      '<p class="day">' + (override ? DAYS_LONG[cur.c0.dow] + ' (preview)' : 'Today, ' + DAYS_LONG[cur.c0.dow]) + '</p>' +
+      (todays.length ? '<div class="chips">' + chips + '</div>' : '<p class="none">' + (p.mass.length ? 'No Mass today.' : 'Times not verified. ' + callTxt(p)) + '</p>');
+    pop.hidden = false;
+    const r = svg.getBoundingClientRect();
+    const a = r.width / Math.max(r.height, 1);
+    const h = vb.w / a;
+    const sx = (p.x - (vb.cx - vb.w / 2)) * r.width / vb.w;
+    const sy = (p.y - (vb.cy - h / 2)) * r.height / h;
+    if (sx < -10 || sx > r.width + 10 || sy < -10 || sy > r.height + 10) { pop.hidden = true; return; }
+    const pw = pop.offsetWidth, ph = pop.offsetHeight;
+    const left = Math.min(Math.max(sx - pw / 2, 8), Math.max(r.width - pw - 8, 8));
+    let top = sy - ph - 16;
+    if (top < 8) top = Math.min(sy + 16, Math.max(r.height - ph - 8, 8));
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+  }
+  $('popup').addEventListener('click', (e) => { if (e.target.closest('#pclose')) { selected = null; render(); } });
+  function clampView() {
+    vb.w = Math.min(Math.max(vb.w, BASE.w / 40), BASE.w * 1.15);
+    vb.cx = Math.min(Math.max(vb.cx, BASE.x), BASE.x + BASE.w);
+    vb.cy = Math.min(Math.max(vb.cy, BASE.y), BASE.y + BASE.h);
+  }
+  function setView(cx, cy, w) { vb = { cx, cy, w }; clampView(); applyView(); }
+  function zoomAt(factor, sx, sy) {
+    const r = svg.getBoundingClientRect();
+    const k = pxScale();
+    const px = (sx - r.left - r.width / 2) * k, py = (sy - r.top - r.height / 2) * k;
+    const ux = vb.cx + px, uy = vb.cy + py;
+    const nw = Math.min(Math.max(vb.w * factor, BASE.w / 40), BASE.w * 1.15);
+    const f = nw / vb.w;
+    setView(ux - (ux - vb.cx) * f, uy - (uy - vb.cy) * f, nw);
+  }
+  function viewAll() { setView(BASE.x + BASE.w / 2, BASE.y + BASE.h / 2, BASE.w); }
+  function viewMetro() {
+    const pts = P.filter((p) => p.lat >= 37.7 && p.lat <= 37.92 && p.lng >= -122.34 && p.lng <= -122.15);
+    const xs = pts.map((p) => p.x), ys = pts.map((p) => p.y);
+    const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+    const r = svg.getBoundingClientRect();
+    const a = r.width / Math.max(r.height, 1);
+    const w = Math.max((x1 - x0) * 1.25, (y1 - y0) * 1.25 * a, 40);
+    setView((x0 + x1) / 2, (y0 + y1) / 2, w);
+  }
+  $('zin').onclick = () => { const r = svg.getBoundingClientRect(); zoomAt(0.6, r.left + r.width / 2, r.top + r.height / 2); };
+  $('zout').onclick = () => { const r = svg.getBoundingClientRect(); zoomAt(1 / 0.6, r.left + r.width / 2, r.top + r.height / 2); };
+  $('vall').onclick = viewAll;
+  $('vmetro').onclick = viewMetro;
+
+  // drag + pinch
+  const ptrs = new Map();
+  let moved = false, pinchD = 0;
+  svg.addEventListener('pointerdown', (e) => {
+    ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    moved = false;
+    if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; pinchD = Math.hypot(a.x - b.x, a.y - b.y); }
+  });
+  svg.addEventListener('pointermove', (e) => {
+    const prev = ptrs.get(e.pointerId);
+    if (!prev) return;
+    const cur = { x: e.clientX, y: e.clientY };
+    if (ptrs.size === 1) {
+      if (e.pointerType === 'touch') return; // one finger scrolls the page
+      const dx = cur.x - prev.x, dy = cur.y - prev.y;
+      if (!moved && Math.hypot(dx, dy) < 3) return;
+      if (!moved) { moved = true; svg.classList.add('drag'); try { svg.setPointerCapture(e.pointerId); } catch (_) {} }
+      const k = pxScale();
+      ptrs.set(e.pointerId, cur);
+      setView(vb.cx - dx * k, vb.cy - dy * k, vb.w);
+    } else if (ptrs.size === 2) {
+      const [a0, b0] = [...ptrs.values()];
+      const pmx = (a0.x + b0.x) / 2, pmy = (a0.y + b0.y) / 2;
+      ptrs.set(e.pointerId, cur);
+      const [a, b] = [...ptrs.values()];
+      const d = Math.hypot(a.x - b.x, a.y - b.y);
+      const k = pxScale();
+      moved = true;
+      setView(vb.cx - ((a.x + b.x) / 2 - pmx) * k, vb.cy - ((a.y + b.y) / 2 - pmy) * k, vb.w); // two fingers move the map
+      if (pinchD > 0 && d > 0) zoomAt(pinchD / d, (a.x + b.x) / 2, (a.y + b.y) / 2);
+      pinchD = d;
+    }
+  });
+  const endPtr = (e) => { ptrs.delete(e.pointerId); pinchD = 0; svg.classList.remove('drag'); };
+  svg.addEventListener('pointerup', endPtr);
+  svg.addEventListener('pointercancel', endPtr);
+  svg.addEventListener('click', (e) => {
+    if (moved) { moved = false; return; }
+    const g = e.target.closest ? e.target.closest('.mk') : null;
+    if (g) select(Number(g.dataset.i), false);
+  });
+  svg.addEventListener('keydown', (e) => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('mk')) { e.preventDefault(); select(Number(e.target.dataset.i), false); }
+  });
+  window.addEventListener('resize', applyView);
+
+  /* ---------- panel ---------- */
+  let selected = null;
+  const panel = $('panel');
+  function scheduleTable(p, mode) {
+    const mm = mode ? mode === 'mass' : M();
+    const byDay = [[], [], [], [], [], [], []];
+    (mode ? (mode === 'mass' ? p.mass : p.conf) : list(p)).forEach((s) => byDay[s[0]].push(s));
+    const rows = [];
+    for (let d = 0; d < 7; d++) {
+      if (!byDay[d].length) continue;
+      const cells = byDay[d].sort((a, b) => a[1] - b[1]).map((s) => { const tg = [s[3] ? TAGS[s[3]] : '', s[4] || ''].filter(Boolean).join(' \u00b7 '); return '<div>' + (mm ? t12(s[1]) : range(s[1], s[2])) + (tg ? '<span class="tag">' + esc(tg) + '</span>' : '') + '</div>'; }).join('');
+      rows.push('<tr><td>' + DAYS[d] + '</td><td>' + cells + '</td></tr>');
+    }
+    return rows.length ? '<table class="sched"><tbody>' + rows.join('') + '</tbody></table>' : '';
+  }
+  function dirLink(p) { return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent((p.addr ? p.addr.replace(/\s*\(.*\)/, '') : p.name) + ', ' + p.town + ', CA'); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+  function detailHTML(p, st) {
+    let live = '';
+    if (st.state === 'now') live = '<p class="note" style="color:var(--red)">' + (M() ? 'Mass is in progress. It began at ' + t12(st.s[1]) + '.' : 'Hearing confessions now. Ends in ' + dur(st.left) + '.') + '</p>';
+    else if (st.state === 'soon') live = '<p class="note" style="color:var(--red)">' + (M() ? 'Next Mass is at ' + t12(st.s[1]) + ', in ' : 'Starts in ') + dur(st.gap) + '.</p>';
+    const massSec = '<div class="dsec"><h3>Mass times</h3>' + (p.mass.length ? scheduleTable(p, 'mass') : '<p class="note"><strong>Times not verified</strong></p><p class="note">' + callHTML(p) + '</p>') +
+      (p.mnote ? '<p class="note">' + esc(p.mnote) + '</p>' : '') + '<p class="note">Holy days of obligation have their own schedule.</p></div>';
+    const confSec = '<div class="dsec"><h3>Confession times</h3>' + (p.conf.length ? scheduleTable(p, 'conf') : '<p class="note"><strong>Times not verified</strong></p><p class="note">' + callHTML(p) + '</p>') +
+      (p.note ? '<p class="note">' + esc(p.note) + '</p>' : '') + (p.appt ? '<p class="note">' + (p.conf.length ? 'Also by appointment.' : 'Confession is offered by appointment.') + '</p>' : '') + '</div>';
+    return '<section class="card" id="detail"><button class="close sq" id="dclose" aria-label="Close details">&times;</button>' +
+      '<h2>' + esc(p.name) + '</h2><p class="town">' + esc(p.town) + ', CA' + (p.addr ? ' &middot; ' + esc(p.addr) : '') + '</p>' +
+      '<p class="links"><a href="' + dirLink(p) + '" target="_blank" rel="noopener">Directions</a>' + (p.site ? '<a href="' + esc(p.site) + '" target="_blank" rel="noopener">' + (p.fb ? 'Facebook page' : 'Parish site') + '</a>' : '') + (p.ph ? '<a href="tel:+1' + p.ph.replace(/\D/g, '') + '">Call ' + esc(p.ph) + '</a>' : '') + '</p>' +
+      (p.pastor ? '<p class="note">' + esc(p.role) + ': ' + esc(p.pastor) + '</p>' : '') +
+      live + (M() ? massSec + confSec : confSec + massSec) +
+      '</section>';
+  }
+  function rowHTML(i, st, cls) {
+    const p = P[i];
+    let when = '';
+    const rg = (s) => (M() ? t12(s[1]) : range(s[1], s[2]));
+    if (st.state === 'now') when = rg(st.s) + '<em>' + (M() ? 'in progress' : 'ends in ' + dur(st.left)) + '</em>';
+    else if (st.state === 'soon' || st.state === 'later') when = rg(st.s) + '<em>in ' + dur(st.gap) + '</em>';
+    else if (st.state === 'none') when = 'Times not verified<em>' + esc(callTxt(p)) + '</em>';
+    const dotc = st.state === 'later' ? 'g' : st.state === 'none' ? 'h' : 'r';
+    return '<li><button class="row ' + cls + '" data-i="' + i + '" aria-expanded="' + (i === selected) + '"><span class="dot ' + dotc + '"></span><span class="nm">' + esc(p.name) + VF(p) + '<small>' + esc(p.town) + '</small></span><span class="when">' + when + '</span></button>' + (i === selected ? '<div class="acc">' + detailHTML(p, st) + '</div>' : '') + '</li>';
+  }
+
+  /* ---------- render ---------- */
+  function render() {
+    const cur = current();
+    const sts = P.map((p) => status(p, cur));
+    const now = [], soon = [], later = [];
+    sts.forEach((s, i) => { if (s.state === 'now') now.push(i); else if (s.state === 'soon') soon.push(i); else if (s.state === 'later') later.push(i); });
+    soon.sort((a, b) => sts[a].gap - sts[b].gap);
+    later.sort((a, b) => sts[a].gap - sts[b].gap);
+    now.sort((a, b) => sts[a].left - sts[b].left);
+
+    nodes.forEach((g, i) => {
+      const s = sts[i];
+      g.setAttribute('class', 'mk st-' + s.state + (selected === i ? ' sel' : ''));
+      g.querySelector('text').textContent = P[i].name + ', ' + P[i].town;
+      let tip = P[i].name + ', ' + P[i].town;
+      const W = M() ? 'Mass' : 'confession';
+      if (s.state === 'now') tip += M() ? ': Mass in progress' : ': hearing confessions now';
+      else if (s.state === 'soon') tip += ': ' + W + ' starts in ' + dur(s.gap);
+      else if (s.state === 'later') tip += ': ' + W + ' later today at ' + t12(s.s[1]);
+      else if (s.state === 'none') tip += ': times not verified';
+      g.querySelector('title').textContent = tip;
+      g.setAttribute('aria-label', tip);
+    });
+
+    const nRed = now.length + soon.length;
+    const hl = $('headline'), sub = $('subline');
+    const W2 = M() ? 'Mass' : 'confession';
+    if (now.length) {
+      hl.textContent = M()
+        ? (now.length === 1 ? 'One parish has Mass in progress right now.' : now.length + ' parishes have Mass in progress right now.')
+        : (now.length === 1 ? 'One parish is hearing confessions right now.' : now.length + ' parishes are hearing confessions right now.');
+      sub.textContent = soon.length ? soon.length + ' more begin within two hours.' : 'Purple dots on the map show where.';
+    } else if (soon.length) {
+      hl.textContent = M()
+        ? (soon.length === 1 ? 'One parish has Mass within two hours.' : soon.length + ' parishes have Mass within two hours.')
+        : (soon.length === 1 ? 'One parish begins confessions within two hours.' : soon.length + ' parishes begin confessions within two hours.');
+      sub.textContent = 'Purple dots on the map show where.';
+    } else {
+      let best = null;
+      P.forEach((p, i) => { const n = nextSession(p, cur); if (n && (!best || n.ahead < best.n.ahead)) best = { i, n }; });
+      hl.textContent = best
+        ? 'Next ' + W2 + ': ' + P[best.i].name + ', ' + P[best.i].town + ', ' + (best.n.off === 0 ? 'today' : best.n.off === 1 ? 'tomorrow' : DAYS_LONG[best.n.c.dow]) + ' at ' + t12(best.n.s[1]) + '.'
+        : 'Nothing is posted in the next few weeks.';
+      sub.textContent = 'None in progress or starting within two hours. Every parish’s next time is listed below.';
+    }
+    $('lg-red').textContent = M() ? 'Mass in progress, or starting within 2 hours' : 'Hearing confessions now, or within 2 hours';
+    $('foot').textContent = M()
+      ? 'Weekday Masses change often and holy days of obligation have their own schedules, so call ahead if you are making a trip. A Mass is shown as in progress for about 35 minutes on weekdays and an hour on Sundays and Saturday evenings.'
+      : 'Parishes change schedules around holy days and in summer, so call ahead if you are making a trip. Any priest will also hear confession by appointment.';
+
+    const dayName = DAYS_LONG[cur.c0.dow];
+    $('clock').innerHTML = override ? '<span class="pv">Preview</span> <b>' + DAYS[cur.c0.dow] + ' ' + t12(cur.min) + '</b>' : '<b>' + dayName + ' ' + t12(cur.min) + '</b> Pacific';
+    $('tlabel').textContent = override ? 'Previewing a different time' : 'Live, Pacific time';
+    $('tlabel').className = override ? 'pv' : '';
+
+    let html = '<div class="modebar"><span>Showing</span><b>' + (M() ? 'Mass times' : 'Confession times') + '</b></div>';
+    const sec = (title, list, cls) => list.length ? '<section class="sec"><h3>' + title + '</h3><ul>' + list.map((i) => rowHTML(i, sts[i], cls)).join('') + '</ul></section>' : '';
+    html += sec(M() ? 'Mass in progress' : 'Hearing confessions now', now, 'red');
+    html += sec(M() ? 'Mass within 2 hours' : 'Starting within 2 hours', soon, 'red');
+    const dayWord = (n) => (n.off === 0 ? 'today' : n.off === 1 ? 'tomorrow' : DAYS_LONG[n.c.dow]);
+    const nexts = [];
+    P.forEach((p, i) => { if (sts[i].state === 'now' || sts[i].state === 'soon') return; const n = nextSession(p, cur); if (n) nexts.push({ i, n }); });
+    nexts.sort((a, b) => a.n.ahead - b.n.ahead);
+    if (nexts.length) {
+      html += '<section class="sec"><h3>' + (nRed ? 'Next up, after those' : 'Next up') + '</h3><ul>' + nexts.map((x) => {
+        const p = P[x.i], s = x.n.s;
+        const tm = M() ? t12(s[1]) : range(s[1], s[2]);
+        const em = x.n.off === 0 ? 'today, in ' + dur(x.n.ahead) : dayWord(x.n);
+        return '<li><button class="row" data-i="' + x.i + '" aria-expanded="' + (x.i === selected) + '"><span class="dot ' + (x.n.off === 0 ? 'g' : 'x') + '"></span><span class="nm">' + esc(p.name) + VF(p) + '<small>' + esc(p.town) + '</small></span><span class="when">' + tm + '<em>' + em + '</em></span></button>' + (x.i === selected ? '<div class="acc">' + detailHTML(p, sts[x.i]) + '</div>' : '') + '</li>';
+      }).join('') + '</ul></section>';
+    } else if (!nRed) {
+      html += '<section class="sec"><p class="empty">Nothing is posted in the next few weeks.</p></section>';
+    }
+    const unk = P.map((p, i) => i).filter((i) => !list(P[i]).length);
+    if (unk.length) html += '<section class="sec"><h3>' + (M() ? 'Mass times not confirmed yet' : 'Confession times not confirmed yet') + '</h3><ul>' + unk.map((i) => rowHTML(i, sts[i], '')).join('') + '</ul></section>';
+    if (selected !== null && html.indexOf('class="acc"') < 0) html = html.replace('</div>', '</div>' + detailHTML(P[selected], sts[selected]));
+    panel.innerHTML = html;
+    applyView();
+  }
+
+  function hoverRow(e, on) {
+    const row = e.target.closest && e.target.closest('.row');
+    if (!row || !panel.contains(row)) return;
+    const g = nodes[+row.dataset.i];
+    if (g) g.classList.toggle('hov', on);
+  }
+  panel.addEventListener('mouseover', (e) => hoverRow(e, true));
+  panel.addEventListener('mouseout', (e) => hoverRow(e, false));
+  panel.addEventListener('focusin', (e) => hoverRow(e, true));
+  panel.addEventListener('focusout', (e) => hoverRow(e, false));
+  panel.addEventListener('click', (e) => {
+    if (e.target.closest('#dclose')) { selected = null; render(); return; }
+    const b = e.target.closest('.row');
+    if (b) { const k = Number(b.dataset.i); if (k === selected) { selected = null; render(); } else select(k, true); }
+  });
+  function select(i, pan) {
+    selected = i;
+    if (pan) {
+      const p = P[i];
+      const w = vb.w > BASE.w * 0.42 ? BASE.w * 0.3 : vb.w;
+      setView(p.x, p.y, w);
+    }
+    render();
+    const d = panel.querySelector('.row[aria-expanded="true"]');
+    if (d) {
+      if (window.matchMedia('(max-width: 900px)').matches) d.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      else panel.scrollTo({ top: panel.scrollTop + d.getBoundingClientRect().top - panel.getBoundingClientRect().top - 6, behavior: 'smooth' });
+    }
+  }
+
+  /* ---------- time preview ---------- */
+  function readOverride() {
+    const v = $('tm').value;
+    if (!v) return;
+    const [h, m] = v.split(':').map(Number);
+    override = { dow: Number($('dy').value), min: h * 60 + m };
+    render();
+  }
+  $('dy').onchange = readOverride;
+  $('tm').onchange = readOverride;
+  $('tnow').onclick = () => { override = null; const n = nyNow(); const c = civil(n, 0); $('dy').value = c.dow; $('tm').value = String(Math.floor(n.min / 60)).padStart(2, '0') + ':' + String(n.min % 60).padStart(2, '0'); render(); };
+  { const n = nyNow(); $('dy').value = civil(n, 0).dow; $('tm').value = String(Math.floor(n.min / 60)).padStart(2, '0') + ':' + String(n.min % 60).padStart(2, '0'); }
+
+  function setMode(m) {
+    MODE = m;
+    $('tab-conf').setAttribute('aria-selected', m === 'conf');
+    $('tab-mass').setAttribute('aria-selected', m === 'mass');
+    render();
+  }
+  $('tab-conf').onclick = () => setMode('conf');
+  $('tab-mass').onclick = () => setMode('mass');
+
+  viewAll();
+  render();
+  setInterval(() => { if (!override) render(); }, 30000);
+})();
+</script>
+</div>
+<div class="wrap narrow cm-seo-wrap"><section class="cm-seo"><h2>Mass and confession times at Catholic parishes in the Diocese of Oakland</h2><p>This map covers the parishes of the Diocese of Oakland, which serves Alameda and Contra Costa counties in the East Bay of California, from Berkeley, Oakland and Alameda south to Fremont and east to Livermore, Walnut Creek and Antioch. Switch between Mass and confession, and the map marks the parishes where one is happening now or starting within two hours. Every time comes from the parish&rsquo;s own website and is shown in Pacific time. Many parishes here celebrate Mass in Spanish, Vietnamese, Tagalog, Latin and other languages, and the language is shown where the parish gives it. Schedules change around holy days and in summer, so call the parish before a trip.</p><details><summary>All 75 parishes</summary><ul><li><a href="https://sbarnabas.weebly.com/" rel="noopener">St. Barnabas</a>, Alameda, CA<span> &middot; 1427 Sixth St. &middot; 510-522-8933</span></li><li><a href="https://www.sjbalameda.org/" rel="noopener">St. Joseph Basilica</a>, Alameda, CA<span> &middot; 1109 Chestnut St. &middot; 510-522-0181</span></li><li><a href="https://www.spnsa.org/" rel="noopener">St. Philip Neri and St. Albert the Great</a>, Alameda, CA<span> &middot; 3101 Van Buren St. &middot; 510-373-5200</span></li><li><a href="https://holyrosaryantioch.org" rel="noopener">Most Holy Rosary</a>, Antioch, CA<span> &middot; 21 E 15th Street &middot; 925-757-4020</span></li><li><a href="https://stignatiusofantioch.com/" rel="noopener">St. Ignatius of Antioch</a>, Antioch, CA<span> &middot; 3351 Contra Loma Blvd. &middot; 925-778-0768</span></li><li><a href="https://olqw.org" rel="noopener">Our Lady Queen of the World</a>, Bay Point, CA<span> &middot; 3155 Winterbrook Dr. &middot; 925-458-4718</span></li><li><a href="https://calnewman.org" rel="noopener">Holy Spirit – Newman Hall</a>, Berkeley, CA<span> &middot; 2700 Dwight Way &middot; 510-848-7812</span></li><li><a href="https://saintambroseberkeley.org/" rel="noopener">St. Ambrose</a>, Berkeley, CA<span> &middot; 1145 Gilman St. &middot; 510-525-2620</span></li><li><a href="https://stjosephtheworkerchurch.org/" rel="noopener">St. Joseph the Worker</a>, Berkeley, CA<span> &middot; 1640 Addison St. &middot; 510-843-2244</span></li><li><a href="https://marymagdalen.org/" rel="noopener">St. Mary Magdalen</a>, Berkeley, CA<span> &middot; 2005 Berryman St. &middot; 510-526-4811</span></li><li><a href="https://www.ihmbrentwood.com" rel="noopener">Immaculate Heart of Mary</a>, Brentwood, CA<span> &middot; 500 Fairview Ave. &middot; 925-634-4154</span></li><li><a href="https://olgcv.org" rel="noopener">Our Lady of Grace</a>, Castro Valley, CA<span> &middot; 3433 Somerset Avenue &middot; 510-537-0806</span></li><li><a href="https://transfigchurchcv.org/" rel="noopener">Transfiguration</a>, Castro Valley, CA<span> &middot; 4000 E. Castro Valley Blvd. &middot; 510-538-7941</span></li><li><a href="https://qaschurch.org/" rel="noopener">Queen of All Saints</a>, Concord, CA<span> &middot; 2390 Grant St. &middot; 925-825-0350</span></li><li><a href="https://www.stagnesparish.net/" rel="noopener">St. Agnes</a>, Concord, CA<span> &middot; 3966 Chestnut Ave. &middot; 925-689-0838</span></li><li><a href="https://www.stbonaventure.net/" rel="noopener">St. Bonaventure</a>, Concord, CA<span> &middot; 5562 Clayton Rd. &middot; 925-672-5800</span></li><li><a href="https://sfaconcord.com/" rel="noopener">St. Francis of Assisi</a>, Concord, CA<span> &middot; 860 Oak Grove Rd. &middot; 925-682-5447</span></li><li>St. Rose of Lima – St. Patrick Mission, Crockett, CA<span> &middot; 555 Third Ave. &middot; 510-787-2052</span></li><li><a href="https://stisidoredanville.com/" rel="noopener">St. Isidore</a>, Danville, CA<span> &middot; 440 La Gonda Way &middot; 925-837-2122</span></li><li>St. Raymond, Dublin, CA<span> &middot; 11555 Shannon Ave. &middot; 925-828-2460</span></li><li><a href="https://www.stjeromeec.org/" rel="noopener">St. Jerome</a>, El Cerrito, CA<span> &middot; 308 Carmel Ave. &middot; 510-525-0876</span></li><li><a href="https://www.saintcallistus.org/" rel="noopener">St. Callistus</a>, El Sobrante, CA<span> &middot; 3580 San Pablo Dam Rd. &middot; 510-223-1153</span></li><li><a href="https://corpuschristifremont.org" rel="noopener">Corpus Christi</a>, Fremont, CA<span> &middot; 37968 Third St. &middot; 510-790-3207</span></li><li><a href="https://www.saintjosephmsj.org/" rel="noopener">St. Joseph</a>, Fremont, CA<span> &middot; 510-656-2364</span></li><li><a href="https://holyspiritfremont.org" rel="noopener">Holy Spirit</a>, Fremont, CA<span> &middot; 37588 Fremont Blvd. &middot; 510-797-1660</span></li><li><a href="https://olog.church" rel="noopener">Our Lady of Guadalupe</a>, Fremont, CA<span> &middot; 41933 Blacow Road &middot; 510-657-4043</span></li><li><a href="https://sjapostle.net/" rel="noopener">St. James</a>, Fremont, CA<span> &middot; 34700 Fremont Blvd. &middot; 510-792-1962</span></li><li><a href="https://allsaintshayward.org/" rel="noopener">All Saints</a>, Hayward, CA<span> &middot; 22824 Second Street &middot; 510-581-2570</span></li><li><a href="https://stbedecatholic.church/" rel="noopener">St. Bede</a>, Hayward, CA<span> &middot; 26950 Patrick Ave. &middot; 510-782-2171</span></li><li><a href="https://saintclementchurch.com/home/" rel="noopener">St. Clement</a>, Hayward, CA<span> &middot; 750 Calhoun St. &middot; 510-582-7282</span></li><li><a href="https://saintjoachim.net/" rel="noopener">St. Joachim</a>, Hayward, CA<span> &middot; 21250 Hesperian Blvd. &middot; 510-783-2766</span></li><li><a href="https://stperpetua.org" rel="noopener">St. Perpetua</a>, Lafayette, CA<span> &middot; 3454 Hamlin Road &middot; 925-283-0272</span></li><li><a href="https://stcharleslivermore.org/" rel="noopener">St. Charles Borromeo</a>, Livermore, CA<span> &middot; 1315 Lomitas Ave. &middot; 925-447-4549</span></li><li><a href="https://stmichaellivermore.com" rel="noopener">St. Michael</a>, Livermore, CA<span> &middot; 458 Maple St. &middot; 510-893-4711</span></li><li><a href="https://www.stcmtz.org/" rel="noopener">St. Catherine of Siena</a>, Martinez, CA<span> &middot; 1125 Ferry Street &middot; 925-228-2230</span></li><li><a href="https://stmonicamoraga.com" rel="noopener">St. Monica</a>, Moraga, CA<span> &middot; 1001 Camino Pablo &middot; 925-376-6900</span></li><li><a href="https://www.stedwardcatholic.com/" rel="noopener">St. Edward</a>, Newark, CA<span> &middot; 5788 Thornton Ave. &middot; 510-797-0241</span></li><li><a href="https://www.ctlcathedral.org/" rel="noopener">Cathedral of Christ the Light</a>, Oakland, CA<span> &middot; 2121 Harrison Street &middot; 510-832-5057</span></li><li><a href="https://divinemercyoak.org" rel="noopener">Divine Mercy</a>, Oakland, CA<span> &middot; 3725 High Street &middot; 510-530-0761</span></li><li>Our Lady of Lourdes, Oakland, CA<span> &middot; 2808 Lakeshore Ave. &middot; 510-451-1790</span></li><li><a href="https://sacredheartoak.org/" rel="noopener">Sacred Heart</a>, Oakland, CA<span> &middot; 4025 Martin Luther King Jr. Way &middot; 510-655-9209</span></li><li><a href="https://stanthony-maryhelp.org" rel="noopener">St. Anthony – Mary Help of Christians</a>, Oakland, CA<span> &middot; 1535 16th Avenue &middot; 510-534-2117</span></li><li><a href="https://staugustineoakland.com/" rel="noopener">St. Augustine</a>, Oakland, CA<span> &middot; 400 Alcatraz Ave. &middot; 510-653-8631</span></li><li><a href="https://www.saintbenedictoakland.com/" rel="noopener">St. Benedict</a>, Oakland, CA<span> &middot; 2245 82nd Ave. &middot; 510-632-1847</span></li><li>St. Bernard, Oakland, CA<span> &middot; 1620 62nd Ave. &middot; 510-632-3013</span></li><li><a href="https://www.stcolumba-oak.com/" rel="noopener">St. Columba</a>, Oakland, CA<span> &middot; 6401 San Pablo Ave. &middot; 510-654-7600</span></li><li><a href="https://saintelizabethoak.org/" rel="noopener">St. Elizabeth</a>, Oakland, CA<span> &middot; 1500 34th Ave. &middot; 510-536-1266</span></li><li><a href="https://saintjarlath.org/" rel="noopener">St. Jarlath</a>, Oakland, CA<span> &middot; 2620 Pleasant St. &middot; 510-532-2068</span></li><li>St. Leo the Great, Oakland, CA<span> &middot; 4238 Howe St. &middot; 510-654-6177</span></li><li><a href="https://www.slboakland.com/" rel="noopener">St. Louis Bertrand</a>, Oakland, CA<span> &middot; 1410 100th Ave. &middot; 510-568-1080</span></li><li><a href="https://www.stmargaretmaryoak.org/" rel="noopener">St. Margaret Mary</a>, Oakland, CA<span> &middot; 1219 Excelsior Avenue &middot; 510-482-0596</span></li><li><a href="https://sttheresaoakland.org" rel="noopener">St. Theresa</a>, Oakland, CA<span> &middot; 30 Mandalay Rd. &middot; 510-547-2777</span></li><li><a href="https://stanthonyoakley.org" rel="noopener">St. Anthony</a>, Oakley, CA<span> &middot; 971 O&rsquo;Hara Ave. &middot; 925-625-2048</span></li><li><a href="https://www.santamariaorinda.com/" rel="noopener">Santa Maria</a>, Orinda, CA<span> &middot; 20 Santa Maria Way &middot; 925-254-2426</span></li><li><a href="https://goodshepherdpittsburg.org" rel="noopener">Church of the Good Shepherd</a>, Pittsburg, CA<span> &middot; 3200 Harbor St. &middot; 925-432-6404</span></li><li>St. Peter Martyr, Pittsburg, CA<span> &middot; 740 Black Diamond St. &middot; 925-432-4771</span></li><li><a href="https://www.ctkph.org/" rel="noopener">Christ the King and St. Stephen</a>, Pleasant Hill, CA<span> &middot; 195-A Brandon Rd. &middot; 925-682-2486</span></li><li><a href="https://www.catholicsofpleasanton.org/" rel="noopener">Catholic Community Pleasanton (St. Augustine and St. Elizabeth Seton)</a>, Pleasanton, CA<span> &middot; 3999 Bernal Avenue &middot; 925-846-4489</span></li><li><a href="https://pointrichmondcatholic.org/" rel="noopener">Our Lady of Mercy</a>, Point Richmond, CA<span> &middot; 301 W. Richmond Ave. &middot; 510-232-1843</span></li><li><a href="https://www.stcorneliusrichmond.org/" rel="noopener">St. Cornelius</a>, Richmond, CA<span> &middot; 205 28th St. &middot; 510-233-5215</span></li><li><a href="https://stdavidofwales.com/" rel="noopener">St. David</a>, Richmond, CA<span> &middot; 5641 Esmond Ave. &middot; 510-237-1531</span></li><li><a href="https://stmarkrichmond.org" rel="noopener">St. Mark</a>, Richmond, CA<span> &middot; 159 Harbour Way &middot; 510-234-5886</span></li><li><a href="https://stpatrickrodeo.org" rel="noopener">St. Patrick</a>, Rodeo, CA<span> &middot; 825 Seventh St. &middot; 510-799-4406</span></li><li><a href="http://www.assumptionsanleandro.org/" rel="noopener">Church of the Assumption</a>, San Leandro, CA<span> &middot; 1100 Fulton Ave. &middot; 510-352-1537</span></li><li><a href="https://olgcsanleandro.com/" rel="noopener">Our Lady of Good Counsel</a>, San Leandro, CA<span> &middot; 14112 Azores Pl. &middot; 510-614-2765</span></li><li><a href="https://stfelicitassl.org/" rel="noopener">St. Felicitas</a>, San Leandro, CA<span> &middot; 1662 Manor Blvd. &middot; 510-351-5244</span></li><li><a href="https://stleanderchurch.org/" rel="noopener">St. Leander</a>, San Leandro, CA<span> &middot; 474 W. Estudillo Ave. &middot; 510-895-5631</span></li><li><a href="https://stjohnsanlorenzo.org/" rel="noopener">St. John the Baptist</a>, San Lorenzo, CA<span> &middot; 16642 Ashland Ave. &middot; 510-351-5050</span></li><li><a href="https://www.stpaulchurchsanpablo.org/" rel="noopener">St. Paul</a>, San Pablo, CA<span> &middot; 1845 Church Lane &middot; 510-232-5931</span></li><li><a href="https://sjasr.org" rel="noopener">St. Joan of Arc</a>, San Ramon, CA<span> &middot; 2601 San Ramon Valley Blvd. &middot; 925-830-0600</span></li><li><a href="https://olrchurch.org" rel="noopener">Our Lady of the Rosary</a>, Union City, CA<span> &middot; 703 "C" St. &middot; 510-471-2609</span></li><li><a href="https://saintannecatholic.org" rel="noopener">St. Anne</a>, Union City, CA<span> &middot; 32223 Cabello Street &middot; 510-471-7766</span></li><li><a href="https://www.stanneswc.org/" rel="noopener">St. Anne</a>, Walnut Creek, CA<span> &middot; 1600 Rossmoor Parkway &middot; 925-932-2324</span></li><li><a href="https://sjvianney.org" rel="noopener">St. John Vianney</a>, Walnut Creek, CA<span> &middot; 1650 Ygnacio Valley Rd. &middot; 925-939-7911</span></li><li><a href="https://www.stmary-wc.org/" rel="noopener">St. Mary</a>, Walnut Creek, CA<span> &middot; 2051 Mt. Diablo Blvd. &middot; 925-891-8900</span></li></ul></details></section></div>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://fatherstoolbox.com/parishtimes/oakland/#page","url":"https://fatherstoolbox.com/parishtimes/oakland/","name":"Catholic Mass and Confession Times in the Diocese of Oakland","description":"A live map of Mass and confession times at parishes in the Diocese of Oakland, California.","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"Father’s Tool Box","url":"https://fatherstoolbox.com/"},"about":{"@type":"Organization","name":"Diocese of Oakland"},"mainEntity":{"@id":"https://fatherstoolbox.com/parishtimes/oakland/#parishes"}},{"@type":"ItemList","@id":"https://fatherstoolbox.com/parishtimes/oakland/#parishes","numberOfItems":75,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CatholicChurch","name":"St. Barnabas, Alameda","address":{"@type":"PostalAddress","addressLocality":"Alameda","addressRegion":"CA","addressCountry":"US","streetAddress":"1427 Sixth St."},"url":"https://sbarnabas.weebly.com/"}},{"@type":"ListItem","position":2,"item":{"@type":"CatholicChurch","name":"St. Joseph Basilica, Alameda","address":{"@type":"PostalAddress","addressLocality":"Alameda","addressRegion":"CA","addressCountry":"US","streetAddress":"1109 Chestnut St."},"url":"https://www.sjbalameda.org/"}},{"@type":"ListItem","position":3,"item":{"@type":"CatholicChurch","name":"St. Philip Neri and St. Albert the Great, Alameda","address":{"@type":"PostalAddress","addressLocality":"Alameda","addressRegion":"CA","addressCountry":"US","streetAddress":"3101 Van Buren St."},"url":"https://www.spnsa.org/"}},{"@type":"ListItem","position":4,"item":{"@type":"CatholicChurch","name":"Most Holy Rosary, Antioch","address":{"@type":"PostalAddress","addressLocality":"Antioch","addressRegion":"CA","addressCountry":"US","streetAddress":"21 E 15th Street"},"url":"https://holyrosaryantioch.org"}},{"@type":"ListItem","position":5,"item":{"@type":"CatholicChurch","name":"St. Ignatius of Antioch, Antioch","address":{"@type":"PostalAddress","addressLocality":"Antioch","addressRegion":"CA","addressCountry":"US","streetAddress":"3351 Contra Loma Blvd."},"url":"https://stignatiusofantioch.com/"}},{"@type":"ListItem","position":6,"item":{"@type":"CatholicChurch","name":"Our Lady Queen of the World, Bay Point","address":{"@type":"PostalAddress","addressLocality":"Bay Point","addressRegion":"CA","addressCountry":"US","streetAddress":"3155 Winterbrook Dr."},"url":"https://olqw.org"}},{"@type":"ListItem","position":7,"item":{"@type":"CatholicChurch","name":"Holy Spirit – Newman Hall, Berkeley","address":{"@type":"PostalAddress","addressLocality":"Berkeley","addressRegion":"CA","addressCountry":"US","streetAddress":"2700 Dwight Way"},"url":"https://calnewman.org"}},{"@type":"ListItem","position":8,"item":{"@type":"CatholicChurch","name":"St. Ambrose, Berkeley","address":{"@type":"PostalAddress","addressLocality":"Berkeley","addressRegion":"CA","addressCountry":"US","streetAddress":"1145 Gilman St."},"url":"https://saintambroseberkeley.org/"}},{"@type":"ListItem","position":9,"item":{"@type":"CatholicChurch","name":"St. Joseph the Worker, Berkeley","address":{"@type":"PostalAddress","addressLocality":"Berkeley","addressRegion":"CA","addressCountry":"US","streetAddress":"1640 Addison St."},"url":"https://stjosephtheworkerchurch.org/"}},{"@type":"ListItem","position":10,"item":{"@type":"CatholicChurch","name":"St. Mary Magdalen, Berkeley","address":{"@type":"PostalAddress","addressLocality":"Berkeley","addressRegion":"CA","addressCountry":"US","streetAddress":"2005 Berryman St."},"url":"https://marymagdalen.org/"}},{"@type":"ListItem","position":11,"item":{"@type":"CatholicChurch","name":"Immaculate Heart of Mary, Brentwood","address":{"@type":"PostalAddress","addressLocality":"Brentwood","addressRegion":"CA","addressCountry":"US","streetAddress":"500 Fairview Ave."},"url":"https://www.ihmbrentwood.com"}},{"@type":"ListItem","position":12,"item":{"@type":"CatholicChurch","name":"Our Lady of Grace, Castro Valley","address":{"@type":"PostalAddress","addressLocality":"Castro Valley","addressRegion":"CA","addressCountry":"US","streetAddress":"3433 Somerset Avenue"},"url":"https://olgcv.org"}},{"@type":"ListItem","position":13,"item":{"@type":"CatholicChurch","name":"Transfiguration, Castro Valley","address":{"@type":"PostalAddress","addressLocality":"Castro Valley","addressRegion":"CA","addressCountry":"US","streetAddress":"4000 E. Castro Valley Blvd."},"url":"https://transfigchurchcv.org/"}},{"@type":"ListItem","position":14,"item":{"@type":"CatholicChurch","name":"Queen of All Saints, Concord","address":{"@type":"PostalAddress","addressLocality":"Concord","addressRegion":"CA","addressCountry":"US","streetAddress":"2390 Grant St."},"url":"https://qaschurch.org/"}},{"@type":"ListItem","position":15,"item":{"@type":"CatholicChurch","name":"St. Agnes, Concord","address":{"@type":"PostalAddress","addressLocality":"Concord","addressRegion":"CA","addressCountry":"US","streetAddress":"3966 Chestnut Ave."},"url":"https://www.stagnesparish.net/"}},{"@type":"ListItem","position":16,"item":{"@type":"CatholicChurch","name":"St. Bonaventure, Concord","address":{"@type":"PostalAddress","addressLocality":"Concord","addressRegion":"CA","addressCountry":"US","streetAddress":"5562 Clayton Rd."},"url":"https://www.stbonaventure.net/"}},{"@type":"ListItem","position":17,"item":{"@type":"CatholicChurch","name":"St. Francis of Assisi, Concord","address":{"@type":"PostalAddress","addressLocality":"Concord","addressRegion":"CA","addressCountry":"US","streetAddress":"860 Oak Grove Rd."},"url":"https://sfaconcord.com/"}},{"@type":"ListItem","position":18,"item":{"@type":"CatholicChurch","name":"St. Rose of Lima – St. Patrick Mission, Crockett","address":{"@type":"PostalAddress","addressLocality":"Crockett","addressRegion":"CA","addressCountry":"US","streetAddress":"555 Third Ave."}}},{"@type":"ListItem","position":19,"item":{"@type":"CatholicChurch","name":"St. Isidore, Danville","address":{"@type":"PostalAddress","addressLocality":"Danville","addressRegion":"CA","addressCountry":"US","streetAddress":"440 La Gonda Way"},"url":"https://stisidoredanville.com/"}},{"@type":"ListItem","position":20,"item":{"@type":"CatholicChurch","name":"St. Raymond, Dublin","address":{"@type":"PostalAddress","addressLocality":"Dublin","addressRegion":"CA","addressCountry":"US","streetAddress":"11555 Shannon Ave."}}},{"@type":"ListItem","position":21,"item":{"@type":"CatholicChurch","name":"St. Jerome, El Cerrito","address":{"@type":"PostalAddress","addressLocality":"El Cerrito","addressRegion":"CA","addressCountry":"US","streetAddress":"308 Carmel Ave."},"url":"https://www.stjeromeec.org/"}},{"@type":"ListItem","position":22,"item":{"@type":"CatholicChurch","name":"St. Callistus, El Sobrante","address":{"@type":"PostalAddress","addressLocality":"El Sobrante","addressRegion":"CA","addressCountry":"US","streetAddress":"3580 San Pablo Dam Rd."},"url":"https://www.saintcallistus.org/"}},{"@type":"ListItem","position":23,"item":{"@type":"CatholicChurch","name":"Corpus Christi, Fremont","address":{"@type":"PostalAddress","addressLocality":"Fremont","addressRegion":"CA","addressCountry":"US","streetAddress":"37968 Third St."},"url":"https://corpuschristifremont.org"}},{"@type":"ListItem","position":24,"item":{"@type":"CatholicChurch","name":"St. Joseph, Fremont","address":{"@type":"PostalAddress","addressLocality":"Fremont","addressRegion":"CA","addressCountry":"US"},"url":"https://www.saintjosephmsj.org/"}},{"@type":"ListItem","position":25,"item":{"@type":"CatholicChurch","name":"Holy Spirit, Fremont","address":{"@type":"PostalAddress","addressLocality":"Fremont","addressRegion":"CA","addressCountry":"US","streetAddress":"37588 Fremont Blvd."},"url":"https://holyspiritfremont.org"}},{"@type":"ListItem","position":26,"item":{"@type":"CatholicChurch","name":"Our Lady of Guadalupe, Fremont","address":{"@type":"PostalAddress","addressLocality":"Fremont","addressRegion":"CA","addressCountry":"US","streetAddress":"41933 Blacow Road"},"url":"https://olog.church"}},{"@type":"ListItem","position":27,"item":{"@type":"CatholicChurch","name":"St. James, Fremont","address":{"@type":"PostalAddress","addressLocality":"Fremont","addressRegion":"CA","addressCountry":"US","streetAddress":"34700 Fremont Blvd."},"url":"https://sjapostle.net/"}},{"@type":"ListItem","position":28,"item":{"@type":"CatholicChurch","name":"All Saints, Hayward","address":{"@type":"PostalAddress","addressLocality":"Hayward","addressRegion":"CA","addressCountry":"US","streetAddress":"22824 Second Street"},"url":"https://allsaintshayward.org/"}},{"@type":"ListItem","position":29,"item":{"@type":"CatholicChurch","name":"St. Bede, Hayward","address":{"@type":"PostalAddress","addressLocality":"Hayward","addressRegion":"CA","addressCountry":"US","streetAddress":"26950 Patrick Ave."},"url":"https://stbedecatholic.church/"}},{"@type":"ListItem","position":30,"item":{"@type":"CatholicChurch","name":"St. Clement, Hayward","address":{"@type":"PostalAddress","addressLocality":"Hayward","addressRegion":"CA","addressCountry":"US","streetAddress":"750 Calhoun St."},"url":"https://saintclementchurch.com/home/"}},{"@type":"ListItem","position":31,"item":{"@type":"CatholicChurch","name":"St. Joachim, Hayward","address":{"@type":"PostalAddress","addressLocality":"Hayward","addressRegion":"CA","addressCountry":"US","streetAddress":"21250 Hesperian Blvd."},"url":"https://saintjoachim.net/"}},{"@type":"ListItem","position":32,"item":{"@type":"CatholicChurch","name":"St. Perpetua, Lafayette","address":{"@type":"PostalAddress","addressLocality":"Lafayette","addressRegion":"CA","addressCountry":"US","streetAddress":"3454 Hamlin Road"},"url":"https://stperpetua.org"}},{"@type":"ListItem","position":33,"item":{"@type":"CatholicChurch","name":"St. Charles Borromeo, Livermore","address":{"@type":"PostalAddress","addressLocality":"Livermore","addressRegion":"CA","addressCountry":"US","streetAddress":"1315 Lomitas Ave."},"url":"https://stcharleslivermore.org/"}},{"@type":"ListItem","position":34,"item":{"@type":"CatholicChurch","name":"St. Michael, Livermore","address":{"@type":"PostalAddress","addressLocality":"Livermore","addressRegion":"CA","addressCountry":"US","streetAddress":"458 Maple St."},"url":"https://stmichaellivermore.com"}},{"@type":"ListItem","position":35,"item":{"@type":"CatholicChurch","name":"St. Catherine of Siena, Martinez","address":{"@type":"PostalAddress","addressLocality":"Martinez","addressRegion":"CA","addressCountry":"US","streetAddress":"1125 Ferry Street"},"url":"https://www.stcmtz.org/"}},{"@type":"ListItem","position":36,"item":{"@type":"CatholicChurch","name":"St. Monica, Moraga","address":{"@type":"PostalAddress","addressLocality":"Moraga","addressRegion":"CA","addressCountry":"US","streetAddress":"1001 Camino Pablo"},"url":"https://stmonicamoraga.com"}},{"@type":"ListItem","position":37,"item":{"@type":"CatholicChurch","name":"St. Edward, Newark","address":{"@type":"PostalAddress","addressLocality":"Newark","addressRegion":"CA","addressCountry":"US","streetAddress":"5788 Thornton Ave."},"url":"https://www.stedwardcatholic.com/"}},{"@type":"ListItem","position":38,"item":{"@type":"CatholicChurch","name":"Cathedral of Christ the Light, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"2121 Harrison Street"},"url":"https://www.ctlcathedral.org/"}},{"@type":"ListItem","position":39,"item":{"@type":"CatholicChurch","name":"Divine Mercy, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"3725 High Street"},"url":"https://divinemercyoak.org"}},{"@type":"ListItem","position":40,"item":{"@type":"CatholicChurch","name":"Our Lady of Lourdes, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"2808 Lakeshore Ave."}}},{"@type":"ListItem","position":41,"item":{"@type":"CatholicChurch","name":"Sacred Heart, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"4025 Martin Luther King Jr. Way"},"url":"https://sacredheartoak.org/"}},{"@type":"ListItem","position":42,"item":{"@type":"CatholicChurch","name":"St. Anthony – Mary Help of Christians, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"1535 16th Avenue"},"url":"https://stanthony-maryhelp.org"}},{"@type":"ListItem","position":43,"item":{"@type":"CatholicChurch","name":"St. Augustine, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"400 Alcatraz Ave."},"url":"https://staugustineoakland.com/"}},{"@type":"ListItem","position":44,"item":{"@type":"CatholicChurch","name":"St. Benedict, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"2245 82nd Ave."},"url":"https://www.saintbenedictoakland.com/"}},{"@type":"ListItem","position":45,"item":{"@type":"CatholicChurch","name":"St. Bernard, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"1620 62nd Ave."}}},{"@type":"ListItem","position":46,"item":{"@type":"CatholicChurch","name":"St. Columba, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"6401 San Pablo Ave."},"url":"https://www.stcolumba-oak.com/"}},{"@type":"ListItem","position":47,"item":{"@type":"CatholicChurch","name":"St. Elizabeth, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"1500 34th Ave."},"url":"https://saintelizabethoak.org/"}},{"@type":"ListItem","position":48,"item":{"@type":"CatholicChurch","name":"St. Jarlath, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"2620 Pleasant St."},"url":"https://saintjarlath.org/"}},{"@type":"ListItem","position":49,"item":{"@type":"CatholicChurch","name":"St. Leo the Great, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"4238 Howe St."}}},{"@type":"ListItem","position":50,"item":{"@type":"CatholicChurch","name":"St. Louis Bertrand, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"1410 100th Ave."},"url":"https://www.slboakland.com/"}},{"@type":"ListItem","position":51,"item":{"@type":"CatholicChurch","name":"St. Margaret Mary, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"1219 Excelsior Avenue"},"url":"https://www.stmargaretmaryoak.org/"}},{"@type":"ListItem","position":52,"item":{"@type":"CatholicChurch","name":"St. Theresa, Oakland","address":{"@type":"PostalAddress","addressLocality":"Oakland","addressRegion":"CA","addressCountry":"US","streetAddress":"30 Mandalay Rd."},"url":"https://sttheresaoakland.org"}},{"@type":"ListItem","position":53,"item":{"@type":"CatholicChurch","name":"St. Anthony, Oakley","address":{"@type":"PostalAddress","addressLocality":"Oakley","addressRegion":"CA","addressCountry":"US","streetAddress":"971 O'Hara Ave."},"url":"https://stanthonyoakley.org"}},{"@type":"ListItem","position":54,"item":{"@type":"CatholicChurch","name":"Santa Maria, Orinda","address":{"@type":"PostalAddress","addressLocality":"Orinda","addressRegion":"CA","addressCountry":"US","streetAddress":"20 Santa Maria Way"},"url":"https://www.santamariaorinda.com/"}},{"@type":"ListItem","position":55,"item":{"@type":"CatholicChurch","name":"Church of the Good Shepherd, Pittsburg","address":{"@type":"PostalAddress","addressLocality":"Pittsburg","addressRegion":"CA","addressCountry":"US","streetAddress":"3200 Harbor St."},"url":"https://goodshepherdpittsburg.org"}},{"@type":"ListItem","position":56,"item":{"@type":"CatholicChurch","name":"St. Peter Martyr, Pittsburg","address":{"@type":"PostalAddress","addressLocality":"Pittsburg","addressRegion":"CA","addressCountry":"US","streetAddress":"740 Black Diamond St."}}},{"@type":"ListItem","position":57,"item":{"@type":"CatholicChurch","name":"Christ the King and St. Stephen, Pleasant Hill","address":{"@type":"PostalAddress","addressLocality":"Pleasant Hill","addressRegion":"CA","addressCountry":"US","streetAddress":"195-A Brandon Rd."},"url":"https://www.ctkph.org/"}},{"@type":"ListItem","position":58,"item":{"@type":"CatholicChurch","name":"Catholic Community Pleasanton (St. Augustine and St. Elizabeth Seton), Pleasanton","address":{"@type":"PostalAddress","addressLocality":"Pleasanton","addressRegion":"CA","addressCountry":"US","streetAddress":"3999 Bernal Avenue"},"url":"https://www.catholicsofpleasanton.org/"}},{"@type":"ListItem","position":59,"item":{"@type":"CatholicChurch","name":"Our Lady of Mercy, Point Richmond","address":{"@type":"PostalAddress","addressLocality":"Point Richmond","addressRegion":"CA","addressCountry":"US","streetAddress":"301 W. Richmond Ave."},"url":"https://pointrichmondcatholic.org/"}},{"@type":"ListItem","position":60,"item":{"@type":"CatholicChurch","name":"St. Cornelius, Richmond","address":{"@type":"PostalAddress","addressLocality":"Richmond","addressRegion":"CA","addressCountry":"US","streetAddress":"205 28th St."},"url":"https://www.stcorneliusrichmond.org/"}},{"@type":"ListItem","position":61,"item":{"@type":"CatholicChurch","name":"St. David, Richmond","address":{"@type":"PostalAddress","addressLocality":"Richmond","addressRegion":"CA","addressCountry":"US","streetAddress":"5641 Esmond Ave."},"url":"https://stdavidofwales.com/"}},{"@type":"ListItem","position":62,"item":{"@type":"CatholicChurch","name":"St. Mark, Richmond","address":{"@type":"PostalAddress","addressLocality":"Richmond","addressRegion":"CA","addressCountry":"US","streetAddress":"159 Harbour Way"},"url":"https://stmarkrichmond.org"}},{"@type":"ListItem","position":63,"item":{"@type":"CatholicChurch","name":"St. Patrick, Rodeo","address":{"@type":"PostalAddress","addressLocality":"Rodeo","addressRegion":"CA","addressCountry":"US","streetAddress":"825 Seventh St."},"url":"https://stpatrickrodeo.org"}},{"@type":"ListItem","position":64,"item":{"@type":"CatholicChurch","name":"Church of the Assumption, San Leandro","address":{"@type":"PostalAddress","addressLocality":"San Leandro","addressRegion":"CA","addressCountry":"US","streetAddress":"1100 Fulton Ave."},"url":"http://www.assumptionsanleandro.org/"}},{"@type":"ListItem","position":65,"item":{"@type":"CatholicChurch","name":"Our Lady of Good Counsel, San Leandro","address":{"@type":"PostalAddress","addressLocality":"San Leandro","addressRegion":"CA","addressCountry":"US","streetAddress":"14112 Azores Pl."},"url":"https://olgcsanleandro.com/"}},{"@type":"ListItem","position":66,"item":{"@type":"CatholicChurch","name":"St. Felicitas, San Leandro","address":{"@type":"PostalAddress","addressLocality":"San Leandro","addressRegion":"CA","addressCountry":"US","streetAddress":"1662 Manor Blvd."},"url":"https://stfelicitassl.org/"}},{"@type":"ListItem","position":67,"item":{"@type":"CatholicChurch","name":"St. Leander, San Leandro","address":{"@type":"PostalAddress","addressLocality":"San Leandro","addressRegion":"CA","addressCountry":"US","streetAddress":"474 W. Estudillo Ave."},"url":"https://stleanderchurch.org/"}},{"@type":"ListItem","position":68,"item":{"@type":"CatholicChurch","name":"St. John the Baptist, San Lorenzo","address":{"@type":"PostalAddress","addressLocality":"San Lorenzo","addressRegion":"CA","addressCountry":"US","streetAddress":"16642 Ashland Ave."},"url":"https://stjohnsanlorenzo.org/"}},{"@type":"ListItem","position":69,"item":{"@type":"CatholicChurch","name":"St. Paul, San Pablo","address":{"@type":"PostalAddress","addressLocality":"San Pablo","addressRegion":"CA","addressCountry":"US","streetAddress":"1845 Church Lane"},"url":"https://www.stpaulchurchsanpablo.org/"}},{"@type":"ListItem","position":70,"item":{"@type":"CatholicChurch","name":"St. Joan of Arc, San Ramon","address":{"@type":"PostalAddress","addressLocality":"San Ramon","addressRegion":"CA","addressCountry":"US","streetAddress":"2601 San Ramon Valley Blvd."},"url":"https://sjasr.org"}},{"@type":"ListItem","position":71,"item":{"@type":"CatholicChurch","name":"Our Lady of the Rosary, Union City","address":{"@type":"PostalAddress","addressLocality":"Union City","addressRegion":"CA","addressCountry":"US","streetAddress":"703 \"C\" St."},"url":"https://olrchurch.org"}},{"@type":"ListItem","position":72,"item":{"@type":"CatholicChurch","name":"St. Anne, Union City","address":{"@type":"PostalAddress","addressLocality":"Union City","addressRegion":"CA","addressCountry":"US","streetAddress":"32223 Cabello Street"},"url":"https://saintannecatholic.org"}},{"@type":"ListItem","position":73,"item":{"@type":"CatholicChurch","name":"St. Anne, Walnut Creek","address":{"@type":"PostalAddress","addressLocality":"Walnut Creek","addressRegion":"CA","addressCountry":"US","streetAddress":"1600 Rossmoor Parkway"},"url":"https://www.stanneswc.org/"}},{"@type":"ListItem","position":74,"item":{"@type":"CatholicChurch","name":"St. John Vianney, Walnut Creek","address":{"@type":"PostalAddress","addressLocality":"Walnut Creek","addressRegion":"CA","addressCountry":"US","streetAddress":"1650 Ygnacio Valley Rd."},"url":"https://sjvianney.org"}},{"@type":"ListItem","position":75,"item":{"@type":"CatholicChurch","name":"St. Mary, Walnut Creek","address":{"@type":"PostalAddress","addressLocality":"Walnut Creek","addressRegion":"CA","addressCountry":"US","streetAddress":"2051 Mt. Diablo Blvd."},"url":"https://www.stmary-wc.org/"}}]}]}</script>
+</main>
+<footer><div class="wrap">
+<div class="foot-top"><a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a><nav aria-label="Footer"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/resources">Resources</a></li><li><a href="/contact">Contact</a></li></ul></nav></div>
+<div class="foot-bottom"><span>&copy; <span id="yr">2026</span> Father&rsquo;s Tool Box. Communication services for Catholic parishes.</span><em>Ad maiorem Dei gloriam</em></div>
+<p class="foot-prayer">St. Francis de Sales, patron of writers and the Catholic press, pray for us.</p>
+</div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="/liturgy.js?v=20261114"></script>
+<script src="/menu.js?v=20261114" defer></script>
+</body>
+</html>
