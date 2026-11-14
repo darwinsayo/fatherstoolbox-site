@@ -18,7 +18,7 @@
 .lc-today-meta{margin:1rem 0 0;color:var(--ink-soft);font-size:clamp(1.12rem,1.5vw,1.3rem);max-width:40em}
 /* A chasuble in the color of the day */
 /* A Gothic chasuble in the color of the day: column orphrey with a cross, gold trim */
-.lc-chasuble{flex:none;width:100px;height:auto;margin-bottom:.2rem;overflow:visible;--ch:var(--green);--ch-col:#1f4a2b;--ch-cross:var(--gold-lit)}
+.lc-chasuble{flex:none;width:96px;height:auto;margin-bottom:.2rem;overflow:visible;--ch:var(--green);--ch-col:#1f4a2b;--ch-cross:var(--gold-lit)}
 .lc-chasuble.c-white{--ch:#f6f0e0;--ch-col:#c9a24a;--ch-cross:#fbf7ec;box-shadow:none;background:none}
 .lc-chasuble.c-red{--ch:var(--red);--ch-col:#7d1913}
 .lc-chasuble.c-violet{--ch:var(--violet);--ch-col:#3d2654}
@@ -29,9 +29,10 @@
 .lc-chasuble .ch-col{fill:var(--ch-col)}
 .lc-chasuble .ch-edge{stroke:var(--gold);stroke-width:1.6;fill:none}
 .lc-chasuble .ch-cross{fill:var(--ch-cross);stroke:var(--gold);stroke-width:.6}
-.lc-chasuble .ch-trim{fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linejoin:round}
+.lc-chasuble .ch-trim{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linejoin:round}
 .lc-chasuble .ch-fold{fill:none;stroke:rgba(35,31,28,.18);stroke-width:1}
-.lc-chasuble .ch-neck{fill:#3a332c;stroke:var(--gold);stroke-width:2.4}
+.lc-chasuble .ch-neck{fill:#f6f0e0;stroke:var(--gold);stroke-width:2}
+.lc-chasuble .ch-neck-in{fill:none;stroke:var(--gold);stroke-width:1.2}
 
 /* Season band, drawn to scale (same palette as the home page) */
 .lc-year{margin-bottom:2rem}
