@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Liturgical Calendar for the United States | Father&rsquo;s Tool Box</title>
+<meta name="description" content="The liturgical calendar of the Roman Rite for the dioceses of the United States: solemnities, feasts and memorials, liturgical colors, seasons and the Sunday and weekday cycles, for any year. With links to the daily readings.">
+<link rel="canonical" href="https://fatherstoolbox.com/calendar/">
+<meta name="theme-color" content="#1c1815">
+<meta property="og:title" content="Liturgical Calendar for the United States | Father&rsquo;s Tool Box">
+<meta property="og:description" content="Solemnities, feasts and memorials, liturgical colors, seasons and cycles for any year, for the dioceses of the United States.">
+<meta property="og:url" content="https://fatherstoolbox.com/calendar/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/eb-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/calendar/calendar.css">
+</head>
+<body>
+<div class="topband"><div class="wrap"><em>Laudetur Iesus Christus</em><span class="season-now">The Church is in&nbsp;<span data-season-name>Ordinary Time</span></span></div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a>
+<nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/resources" aria-current=page>Resources</a></li><li><a href="/contact">Contact</a></li></ul></nav>
+</div></header>
+<main id="lc">
+<div class="wrap">
+  <p class="lc-crumb"><a href="/resources">Resources</a></p>
+
+  <section class="lc-today" aria-labelledby="lc-today-title">
+    <div>
+      <p class="rubric" id="lc-today-date">Liturgical calendar</p>
+      <h1 id="lc-today-title">The liturgical calendar for the United States</h1>
+      <p class="lc-today-meta" id="lc-today-meta">Solemnities, feasts and memorials, liturgical colors, seasons and cycles, for any year.</p>
+    </div>
+    <svg class="lc-chasuble c-green" id="lc-today-color" viewBox="0 0 100 152" aria-hidden="true">
+      <defs><clipPath id="lc-ch-clip"><path d="M37 8C24 9 14 15 12 28L0 90Q10 97 19 100L11 142Q50 155 89 142L81 100Q90 97 100 90L88 28C86 15 76 9 63 8Z"/></clipPath></defs>
+      <path class="ch-body" d="M37 8C24 9 14 15 12 28L0 90Q10 97 19 100L11 142Q50 155 89 142L81 100Q90 97 100 90L88 28C86 15 76 9 63 8Z"/>
+      <path class="ch-fold" d="M19 100Q17 66 14 38M81 100Q83 66 86 38M27 104L22 144M73 104L78 144"/>
+      <g clip-path="url(#lc-ch-clip)"><path class="ch-col" d="M38 0H62L64 160H36Z"/><path class="ch-edge" d="M38 0L36 160M62 0L64 160"/></g>
+      <path class="ch-cross" d="M47.6 24h4.8v10h8v4.8h-8V64h-4.8V38.8h-8V34h8z"/>
+      <path class="ch-trim" d="M37 8C24 9 14 15 12 28L0 90Q10 97 19 100L11 142Q50 155 89 142L81 100Q90 97 100 90L88 28C86 15 76 9 63 8Z"/>
+      <ellipse class="ch-neck" cx="50" cy="9" rx="14" ry="5.2"/>
+      <path class="ch-neck-in" d="M39 8.5Q50 14.5 61 8.5"/>
+    </svg>
+  </section>
+
+  <section class="lc-year" aria-label="The liturgical year, drawn to scale">
+    <div class="lc-band" id="lc-band"></div>
+    <p class="lc-band-caption" id="lc-band-caption"></p>
+  </section>
+
+  <div class="lc-toolbar" role="group" aria-label="Choose a month">
+    <div class="lc-nav">
+      <button type="button" class="lc-step" id="lc-prev" aria-label="Previous month"><span aria-hidden="true">&lsaquo;</span></button>
+      <h2 id="lc-month-title" aria-live="polite">Month</h2>
+      <button type="button" class="lc-step" id="lc-next" aria-label="Next month"><span aria-hidden="true">&rsaquo;</span></button>
+    </div>
+    <div class="lc-jump">
+      <label class="lc-sr" for="lc-month">Month</label>
+      <select id="lc-month"></select>
+      <label class="lc-sr" for="lc-yearin">Year</label>
+      <input id="lc-yearin" type="number" inputmode="numeric" min="1970" max="2199" step="1">
+      <button type="button" class="lc-today-btn" id="lc-gotoday">Today</button>
+    </div>
+    <label class="lc-asc"><input type="checkbox" id="lc-asc"> <span>Ascension on Thursday <i>(provinces of Boston, Hartford, New York, Omaha and Philadelphia)</i></span></label>
+  </div>
+
+  <div class="lc-main">
+    <div class="lc-month" id="lc-grid" role="grid" aria-labelledby="lc-month-title"></div>
+    <aside class="lc-detail" id="lc-detail" aria-live="polite" aria-label="Selected day"></aside>
+  </div>
+
+  <div class="lc-legend" aria-label="Key">
+    <span><i class="sw c-white"></i>White</span><span><i class="sw c-red"></i>Red</span><span><i class="sw c-green"></i>Green</span><span><i class="sw c-violet"></i>Violet</span><span><i class="sw c-rose"></i>Rose</span>
+    <span class="lc-legend-rank"><b>Solemnity</b> <b class="f">Feast</b> <b class="m">Memorial</b> <em>Optional memorials in italics</em></span>
+  </div>
+
+  <div class="lc-panels">
+    <section class="lc-panel" aria-labelledby="lc-keys-title">
+      <p class="rubric">At a glance</p>
+      <h2 id="lc-keys-title">Movable dates</h2>
+      <table class="lc-keys" id="lc-keys"></table>
+    </section>
+    <section class="lc-panel" aria-labelledby="lc-holy-title">
+      <p class="rubric">Holy days of obligation</p>
+      <h2 id="lc-holy-title">Holy days</h2>
+      <ul class="lc-holy" id="lc-holy"></ul>
+      <p class="lc-small">Every Sunday is a day of obligation. When January 1, August 15 or November 1 falls on a Saturday or a Monday, the obligation to attend Mass is lifted in the United States. In Hawaii, only Christmas and the Immaculate Conception are holy days of obligation.</p>
+    </section>
+    <section class="lc-panel" aria-labelledby="lc-ics-title">
+      <p class="rubric">For your own calendar</p>
+      <h2 id="lc-ics-title">Download the feasts</h2>
+      <p class="lc-small">A calendar file of the year&rsquo;s solemnities, feasts and holy days, with a link to each day&rsquo;s readings. It opens in Google Calendar, Apple Calendar and Outlook.</p>
+      <div class="lc-ics">
+        <label class="lc-sr" for="lc-ics-year">Year</label>
+        <select id="lc-ics-year"></select>
+        <label class="lc-check"><input type="checkbox" id="lc-ics-mem"> Include memorials</label>
+        <button type="button" class="btn btn-red lc-ics-btn" id="lc-ics">Download .ics</button>
+      </div>
+      <p class="lc-small" id="lc-ics-note"></p>
+    </section>
+  </div>
+
+  <section class="lc-sources" aria-labelledby="lc-sources-title">
+    <p class="rubric">Sources and accuracy</p>
+    <h2 id="lc-sources-title">Worked out from the Church&rsquo;s own rules, then checked against the USCCB.</h2>
+    <p>Every day is calculated in your browser from the General Roman Calendar, the Proper Calendar for the Dioceses of the United States of America, and the Universal Norms on the Liturgical Year and the Calendar: the date of Easter, the First Sunday of Advent, the Epiphany on the Sunday between January 2 and 8, the order of precedence between celebrations, and the rules for moving a solemnity when another day takes its place. Nothing is typed in by hand for one year, so the calendar works for any year.</p>
+    <p>We compared it, day by day, with the USCCB&rsquo;s published liturgical calendars for 2025, 2026 and 2027. For every day we could compare, the celebration, its rank, its liturgical color and the optional memorials agree.</p>
+    <p>Your own calendar will differ in places. The patron saint and title of your parish, the anniversary of the dedication of your church and of your cathedral, and saints proper to your diocese or religious community are added locally and are not shown here. The Ascension follows the setting above. Saints added to the calendar in recent years appear from the year they were added; other past years are shown with today&rsquo;s calendar.</p>
+    <p>The readings are linked, not reproduced. They belong to the USCCB, and the link opens each day&rsquo;s readings on its site.</p>
+  </section>
+  <p class="lc-fix">Spot a mistake? <a href="/contact">Tell us</a> the date and what it should say, and we will correct it.</p>
+</div>
+<noscript><div class="wrap"><p class="lc-fix">This calendar is worked out in your browser, so it needs JavaScript turned on.</p></div></noscript>
+</main>
+<footer><div class="wrap">
+<div class="foot-top"><a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a><nav aria-label="Footer"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/resources">Resources</a></li><li><a href="/contact">Contact</a></li></ul></nav></div>
+<div class="foot-bottom"><span>&copy; <span id="yr">2026</span> Father&rsquo;s Tool Box. Communication services for Catholic parishes.</span><em>Ad maiorem Dei gloriam</em></div>
+<p class="foot-prayer">St. Francis de Sales, patron of writers and the Catholic press, pray for us.</p>
+</div></footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Liturgical Calendar for the United States","url":"https://fatherstoolbox.com/calendar/","applicationCategory":"ReferenceApplication","operatingSystem":"Any","inLanguage":"en-US","isAccessibleForFree":true,"description":"The liturgical calendar of the Roman Rite for the dioceses of the United States, computed for any year.","isPartOf":{"@type":"WebSite","name":"Father’s Tool Box","url":"https://fatherstoolbox.com/"}}</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="/liturgy.js"></script>
+<script src="/calendar/ordo.js"></script>
+<script src="/calendar/calendar.js"></script>
+</body>
+</html>

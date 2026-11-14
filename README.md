@@ -36,7 +36,7 @@ Every push to `main` deploys automatically.
 3. Pages project, Custom domains, Set up a custom domain: add `fatherstoolbox.com`, then `www.fatherstoolbox.com`.
 
 ## Pages
-Home (`index.html`), About, Resources (`resources.html`, which lists Parish times under `/parishtimes/`), Contact and a 404 page.
+Home (`index.html`), About, Resources (`resources.html`, which lists Parish times under `/parishtimes/` and the Liturgical calendar under `/calendar/`), Contact and a 404 page.
 
 ## Contact form (Resend)
 1. In Resend, make sure fatherstoolbox.com is a verified sending domain (or use another verified domain; see `CONTACT_FROM`).
@@ -55,3 +55,13 @@ Until the key is set, the form answers "not set up yet" instead of sending.
 - They were ported from the Eleventy site as-is. Only the look changed to match this site (limestone, lapis, EB Garamond), plus links and the site name in the search-engine data.
 - `parishcheck/` is the private list of parishes to check by hand. It sits outside `public/`, so it is never published. `.pages.yml` lets Pages CMS edit it, as before.
 - Rules for the times: only the parish's own website counts (Facebook is not a website), never guess, confession with no end time gets 30 minutes, no communion services, all times Eastern.
+
+---
+
+## Liturgical calendar (`/calendar/`)
+
+- The Roman Rite as observed in the dioceses of the United States: the General Roman Calendar plus the Proper Calendar for the USA. Month view, day detail (rank, color, season and week, Sunday and weekday cycles, optional memorials, transfers, holy days of obligation), a to-scale season band, the year's movable dates and holy days, and an `.ics` download of solemnities, feasts and holy days (memorials optional).
+- `public/calendar/ordo.js` does all the liturgical work, in the browser, for any year from 1970 to 2199. Movable celebrations come from rules (Easter computus, Advent, Epiphany on the Sunday between Jan 2 and 8, Ascension on Sunday or, as an option, Thursday in the provinces of Boston, Hartford, New York, Omaha and Philadelphia), and precedence and transfers follow the Table of Liturgical Days. Saints are one table, `SAINTS`, at the top of the file.
+- Readings are linked to bible.usccb.org, never copied.
+- `node tests/ordo.test.js` checks the Easter computus against a second algorithm (1583 to 4099), checks the seasons against `liturgy.js` every day 1970 to 2199, checks transfer rules against years when they happened, and compares every day of 2025, 2026 and 2027 with the USCCB calendars (`tests/usccb/*.txt`, facts read from the USCCB PDFs).
+- When the Church adds a saint or the USCCB changes the US calendar: add a line to `SAINTS` (with the first year, so earlier years stay as they were), add the next year's USCCB calendar to `tests/usccb/`, and run the test.

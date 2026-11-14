@@ -1,0 +1,368 @@
+# USCCB Liturgical Calendar for the Dioceses of the United States, 2025 (https://www.usccb.org/resources/2025cal.pdf)
+# Facts only, one line per day: MM-DD | principal | rank | colors as printed | optional memorials
+# Read through a web fetch: Jan 1 to Aug 10 from the PDF's text; lines marked (S) from a machine summary of the rest.
+# Ascension: the line for the provinces that transfer it to Sunday (all but Boston, Hartford, New York, Omaha, Philadelphia).
+01-01 | Mary, Holy Mother of God | Solemnity | white | -
+01-02 | Basil the Great and Gregory Nazianzen | Memorial | white | -
+01-03 | Christmas Weekday | none | white/white | Most Holy Name of Jesus
+01-04 | Elizabeth Ann Seton | Memorial | white | -
+01-05 | Epiphany of the Lord | Solemnity | white | -
+01-06 | Christmas Weekday | none | white/white | André Bessette
+01-07 | Christmas Weekday | none | white/white | Raymond of Penyafort
+01-08 | Christmas Weekday | none | white | -
+01-09 | Christmas Weekday | none | white | -
+01-10 | Christmas Weekday | none | white | -
+01-11 | Christmas Weekday | none | white | -
+01-12 | Baptism of the Lord | Feast | white | -
+01-13 | Weekday | none | green/white | Hilary
+01-14 | Weekday | none | green | -
+01-15 | Weekday | none | green | -
+01-16 | Weekday | none | green | -
+01-17 | Anthony, Abbot | Memorial | white | -
+01-18 | Weekday | none | green/white | BVM
+01-19 | 2nd Sunday in Ordinary Time | none | green | -
+01-20 | Weekday | none | green/red/red | Fabian; Sebastian
+01-21 | Agnes | Memorial | red | -
+01-22 | Day of Prayer for the Legal Protection of Unborn Children | none | white or violet | -
+01-23 | Weekday | none | green/red/white | Vincent; Marianne Cope
+01-24 | Francis de Sales | Memorial | white | -
+01-25 | Conversion of Saint Paul the Apostle | Feast | white | -
+01-26 | 3rd Sunday in Ordinary Time | none | green | -
+01-27 | Weekday | none | green/white | Angela Merici
+01-28 | Thomas Aquinas | Memorial | white | -
+01-29 | Weekday | none | green | -
+01-30 | Weekday | none | green | -
+01-31 | John Bosco | Memorial | white | -
+02-01 | Weekday | none | green/white | BVM
+02-02 | Presentation of the Lord | Feast | white | -
+02-03 | Weekday | none | green/red/white | Blaise; Ansgar
+02-04 | Weekday | none | green | -
+02-05 | Agatha | Memorial | red | -
+02-06 | Paul Miki and Companions | Memorial | red | -
+02-07 | Weekday | none | green | -
+02-08 | Weekday | none | green/white/white/white | Jerome Emiliani; Josephine Bakhita; BVM
+02-09 | 5th Sunday in Ordinary Time | none | green | -
+02-10 | Scholastica | Memorial | white | -
+02-11 | Weekday | none | green/white | Our Lady of Lourdes
+02-12 | Weekday | none | green | -
+02-13 | Weekday | none | green | -
+02-14 | Cyril and Methodius | Memorial | white | -
+02-15 | Weekday | none | green/white | BVM
+02-16 | 6th Sunday in Ordinary Time | none | green | -
+02-17 | Weekday | none | green/white | Seven Holy Founders
+02-18 | Weekday | none | green | -
+02-19 | Weekday | none | green | -
+02-20 | Weekday | none | green | -
+02-21 | Weekday | none | green/white | Peter Damian
+02-22 | Chair of Saint Peter the Apostle | Feast | white | -
+02-23 | 7th Sunday in Ordinary Time | none | green | -
+02-24 | Weekday | none | green | -
+02-25 | Weekday | none | green | -
+02-26 | Weekday | none | green | -
+02-27 | Weekday | none | green/white | Gregory of Narek
+02-28 | Weekday | none | green | -
+03-01 | Weekday | none | green/white | BVM
+03-02 | 8th Sunday in Ordinary Time | none | green | -
+03-03 | Weekday | none | green/white | Katharine Drexel
+03-04 | Weekday | none | green/white | Casimir
+03-05 | Ash Wednesday | none | violet | -
+03-06 | Thursday after Ash Wednesday | none | violet | -
+03-07 | Friday after Ash Wednesday | none | violet | Perpetua and Felicity
+03-08 | Saturday after Ash Wednesday | none | violet | John of God
+03-09 | 1st Sunday of Lent | none | violet | -
+03-10 | Lenten Weekday | none | violet | -
+03-11 | Lenten Weekday | none | violet | -
+03-12 | Lenten Weekday | none | violet | -
+03-13 | Lenten Weekday | none | violet | -
+03-14 | Lenten Weekday | none | violet | -
+03-15 | Lenten Weekday | none | violet | -
+03-16 | 2nd Sunday of Lent | none | violet | -
+03-17 | Lenten Weekday | none | violet | Patrick
+03-18 | Lenten Weekday | none | violet | Cyril of Jerusalem
+03-19 | Joseph, Spouse of the BVM | Solemnity | white | -
+03-20 | Lenten Weekday | none | violet | -
+03-21 | Lenten Weekday | none | violet | -
+03-22 | Lenten Weekday | none | violet | -
+03-23 | 3rd Sunday of Lent | none | violet | -
+03-24 | Lenten Weekday | none | violet | -
+03-25 | Annunciation of the Lord | Solemnity | white | -
+03-26 | Lenten Weekday | none | violet | -
+03-27 | Lenten Weekday | none | violet | -
+03-28 | Lenten Weekday | none | violet | -
+03-29 | Lenten Weekday | none | violet | -
+03-30 | 4th Sunday of Lent | none | violet or rose | -
+03-31 | Lenten Weekday | none | violet | -
+04-01 | Lenten Weekday | none | violet | -
+04-02 | Lenten Weekday | none | violet | Francis of Paola
+04-03 | Lenten Weekday | none | violet | -
+04-04 | Lenten Weekday | none | violet | Isidore
+04-05 | Lenten Weekday | none | violet | Vincent Ferrer
+04-06 | 5th Sunday of Lent | none | violet | -
+04-07 | Lenten Weekday | none | violet | John Baptist de la Salle
+04-08 | Lenten Weekday | none | violet | -
+04-09 | Lenten Weekday | none | violet | -
+04-10 | Lenten Weekday | none | violet | -
+04-11 | Lenten Weekday | none | violet | Stanislaus
+04-12 | Lenten Weekday | none | violet | -
+04-13 | Palm Sunday | none | red | -
+04-14 | Monday of Holy Week | none | violet | -
+04-15 | Tuesday of Holy Week | none | violet | -
+04-16 | Wednesday of Holy Week | none | violet | -
+04-17 | Holy Thursday | none | white | -
+04-18 | Good Friday | none | red | -
+04-19 | Holy Saturday | none | white | -
+04-20 | Easter Sunday | Solemnity | white | -
+04-21 | Octave of Easter | none | white | -
+04-22 | Octave of Easter | none | white | -
+04-23 | Octave of Easter | none | white | -
+04-24 | Octave of Easter | none | white | -
+04-25 | Octave of Easter | none | white | -
+04-26 | Octave of Easter | none | white | -
+04-27 | 2nd Sunday of Easter | none | white | -
+04-28 | Easter Weekday | none | white/red/white | Peter Chanel; Louis Grignion de Montfort
+04-29 | Catherine of Siena | Memorial | white | -
+04-30 | Easter Weekday | none | white/white | Pius V
+05-01 | Easter Weekday | none | white/white | Joseph the Worker
+05-02 | Athanasius | Memorial | white | -
+05-03 | Philip and James, Apostles | Feast | red | -
+05-04 | 3rd Sunday of Easter | none | white | -
+05-05 | Easter Weekday | none | white | -
+05-06 | Easter Weekday | none | white | -
+05-07 | Easter Weekday | none | white | -
+05-08 | Easter Weekday | none | white | -
+05-09 | Easter Weekday | none | white | -
+05-10 | Easter Weekday | none | white/white/white | John of Avila; Damien de Veuster
+05-11 | 4th Sunday of Easter | none | white | -
+05-12 | Easter Weekday | none | white/red/red | Nereus and Achilleus; Pancras
+05-13 | Easter Weekday | none | white/white | Our Lady of Fatima
+05-14 | Matthias, Apostle | Feast | red | -
+05-15 | Easter Weekday | none | white/white | Isidore
+05-16 | Easter Weekday | none | white | -
+05-17 | Easter Weekday | none | white | -
+05-18 | 5th Sunday of Easter | none | white | -
+05-19 | Easter Weekday | none | white | -
+05-20 | Easter Weekday | none | white/white | Bernardine of Siena
+05-21 | Easter Weekday | none | white/red | Christopher Magallanes and Companions
+05-22 | Easter Weekday | none | white/white | Rita of Cascia
+05-23 | Easter Weekday | none | white | -
+05-24 | Easter Weekday | none | white | -
+05-25 | 6th Sunday of Easter | none | white | -
+05-26 | Philip Neri | Memorial | white | -
+05-27 | Easter Weekday | none | white/white | Augustine of Canterbury
+05-28 | Easter Weekday | none | white | -
+05-29 | Easter Weekday | none | white/white | Paul VI
+05-30 | Easter Weekday | none | white | -
+05-31 | Visitation of the BVM | Feast | white | -
+06-01 | Ascension of the Lord | Solemnity | white | -
+06-02 | Easter Weekday | none | white/red | Marcellinus and Peter
+06-03 | Charles Lwanga and Companions | Memorial | red | -
+06-04 | Easter Weekday | none | white | -
+06-05 | Boniface | Memorial | red | -
+06-06 | Easter Weekday | none | white/white | Norbert
+06-07 | Easter Weekday | none | white | -
+06-08 | Pentecost Sunday | Solemnity | red | -
+06-09 | BVM, Mother of the Church | Memorial | white | -
+06-10 | Weekday | none | green | -
+06-11 | Barnabas, Apostle | Memorial | red | -
+06-12 | Weekday | none | green | -
+06-13 | Anthony of Padua | Memorial | white | -
+06-14 | Weekday | none | green/white | BVM
+06-15 | Most Holy Trinity | Solemnity | white | -
+06-16 | Weekday | none | green | -
+06-17 | Weekday | none | green | -
+06-18 | Weekday | none | green | -
+06-19 | Weekday | none | green/white | Romuald
+06-20 | Weekday | none | green | -
+06-21 | Aloysius Gonzaga | Memorial | white | -
+06-22 | Most Holy Body and Blood of Christ | Solemnity | white | -
+06-23 | Weekday | none | green | -
+06-24 | Nativity of Saint John the Baptist | Solemnity | white | -
+06-25 | Weekday | none | green | -
+06-26 | Weekday | none | green | -
+06-27 | Most Sacred Heart of Jesus | Solemnity | white | -
+06-28 | Weekday | none | green/white/red/white | Immaculate Heart; Irenaeus; BVM
+06-29 | Peter and Paul | Solemnity | red | -
+06-30 | Weekday | none | green/red | First Martyrs
+07-01 | Weekday | none | green/white | Junípero Serra
+07-02 | Weekday | none | green | -
+07-03 | Thomas, Apostle | Feast | red | -
+07-04 | Weekday | none | green/white | Independence Day
+07-05 | Weekday | none | green/white/white/white | Anthony Zaccaria; Elizabeth of Portugal; BVM
+07-06 | 14th Sunday in Ordinary Time | none | green | -
+07-07 | Weekday | none | green | -
+07-08 | Weekday | none | green | -
+07-09 | Weekday | none | green/red | Augustine Zhao Rong and Companions
+07-10 | Weekday | none | green | -
+07-11 | Benedict | Memorial | white | -
+07-12 | Weekday | none | green/white | BVM
+07-13 | 15th Sunday in Ordinary Time | none | green | -
+07-14 | Kateri Tekakwitha | Memorial | white | -
+07-15 | Bonaventure | Memorial | white | -
+07-16 | Weekday | none | green/white | Our Lady of Mount Carmel
+07-17 | Weekday | none | green | -
+07-18 | Weekday | none | green/white | Camillus de Lellis
+07-19 | Weekday | none | green/white | BVM
+07-20 | 16th Sunday in Ordinary Time | none | green | -
+07-21 | Weekday | none | green/white | Lawrence of Brindisi
+07-22 | Mary Magdalene | Feast | white | -
+07-23 | Weekday | none | green/white | Bridget
+07-24 | Weekday | none | green/white | Sharbel Makhlūf
+07-25 | James, Apostle | Feast | red | -
+07-26 | Joachim and Anne | Memorial | white | -
+07-27 | 17th Sunday in Ordinary Time | none | green | -
+07-28 | Weekday | none | green | -
+07-29 | Martha, Mary, and Lazarus | Memorial | white | -
+07-30 | Weekday | none | green/white | Peter Chrysologus
+07-31 | Ignatius of Loyola | Memorial | white | -
+08-01 | Alphonsus Liguori | Memorial | white | -
+08-02 | Weekday | none | green/white/white/white | Eusebius of Vercelli; Peter Julian Eymard; BVM
+08-03 | 18th Sunday in Ordinary Time | none | green | -
+08-04 | John Vianney | Memorial | white | -
+08-05 | Weekday | none | green/white | Dedication of St. Mary Major
+08-06 | Transfiguration of the Lord | Feast | white | -
+08-07 | Weekday | none | green/red/white | Sixtus II and Companions; Cajetan
+08-08 | Dominic | Memorial | white | -
+08-09 | Weekday | none | green/red/white | Teresa Benedicta of the Cross; BVM
+08-10 | 19th Sunday in Ordinary Time | none | green | -
+08-11 | Clare | Memorial | white | - (S)
+08-12 | Weekday | none | green/white | Jane Frances de Chantal (S)
+08-13 | Weekday | none | green/red | Pontian and Hippolytus (S)
+08-14 | Maximilian Kolbe | Memorial | red | - (S)
+08-15 | Assumption of the BVM | Solemnity | white | - (S)
+08-16 | Weekday | none | green/white/white | Stephen of Hungary; BVM (S)
+08-17 | 20th Sunday in Ordinary Time | none | green | - (S)
+08-18 | Weekday | none | green | - (S)
+08-19 | Weekday | none | green/white | John Eudes (S)
+08-20 | Bernard | Memorial | white | - (S)
+08-21 | Pius X | Memorial | white | - (S)
+08-22 | Queenship of the BVM | Memorial | white | - (S)
+08-23 | Weekday | none | green/white/white | Rose of Lima; BVM (S)
+08-24 | 21st Sunday in Ordinary Time | none | green | - (S)
+08-25 | Weekday | none | green/white/white | Louis; Joseph Calasanz (S)
+08-26 | Weekday | none | green | - (S)
+08-27 | Monica | Memorial | white | - (S)
+08-28 | Augustine | Memorial | white | - (S)
+08-29 | Passion of Saint John the Baptist | Memorial | red | - (S)
+08-30 | Weekday | none | green/white | BVM (S)
+08-31 | 22nd Sunday in Ordinary Time | none | green | - (S)
+09-01 | Weekday | none | green | - (S)
+09-02 | Weekday | none | green | - (S)
+09-03 | Gregory the Great | Memorial | white | - (S)
+09-04 | Weekday | none | green | - (S)
+09-05 | Weekday | none | green/white | Teresa of Calcutta (S)
+09-06 | Weekday | none | green/white | BVM (S)
+09-07 | 23rd Sunday in Ordinary Time | none | green | - (S)
+09-08 | Nativity of the BVM | Feast | white | - (S)
+09-09 | Peter Claver | Memorial | white | - (S)
+09-10 | Weekday | none | green | - (S)
+09-11 | Weekday | none | green | - (S)
+09-12 | Weekday | none | green/white | Most Holy Name of Mary (S)
+09-13 | John Chrysostom | Memorial | white | - (S)
+09-14 | Exaltation of the Holy Cross | Feast | red | - (S)
+09-15 | Our Lady of Sorrows | Memorial | white | - (S)
+09-16 | Cornelius and Cyprian | Memorial | red | - (S)
+09-17 | Weekday | none | green/white/white | Robert Bellarmine; Hildegard of Bingen (S)
+09-18 | Weekday | none | green | - (S)
+09-19 | Weekday | none | green/red | Januarius (S)
+09-20 | Andrew Kim Tae-gon, Paul Chong Ha-sang and Companions | Memorial | red | - (S)
+09-21 | 25th Sunday in Ordinary Time | none | green | - (S)
+09-22 | Weekday | none | green | - (S)
+09-23 | Pius of Pietrelcina | Memorial | white | - (S)
+09-24 | Weekday | none | green | - (S)
+09-25 | Weekday | none | green | - (S)
+09-26 | Weekday | none | green/red | Cosmas and Damian (S)
+09-27 | Vincent de Paul | Memorial | white | - (S)
+09-28 | 26th Sunday in Ordinary Time | none | green | - (S)
+09-29 | Michael, Gabriel, and Raphael | Feast | white | - (S)
+09-30 | Jerome | Memorial | white | - (S)
+10-01 | Thérèse of the Child Jesus | Memorial | white | - (S)
+10-02 | Holy Guardian Angels | Memorial | white | - (S)
+10-03 | Weekday | none | green | - (S)
+10-04 | Francis of Assisi | Memorial | white | - (S)
+10-05 | 27th Sunday in Ordinary Time | none | green | - (S)
+10-06 | Weekday | none | green/white/white | Bruno; Marie Rose Durocher (S)
+10-07 | Our Lady of the Rosary | Memorial | white | - (S)
+10-08 | Weekday | none | green | - (S)
+10-09 | Weekday | none | green/red/white | Denis and Companions; John Leonardi (S)
+10-10 | Weekday | none | green | - (S)
+10-11 | Weekday | none | green/white/white | John XXIII; BVM (S)
+10-12 | 28th Sunday in Ordinary Time | none | green | - (S)
+10-13 | Weekday | none | green | - (S)
+10-14 | Weekday | none | green/red | Callistus I (S)
+10-15 | Teresa of Jesus | Memorial | white | - (S)
+10-16 | Weekday | none | green/white/white | Hedwig; Margaret Mary Alacoque (S)
+10-17 | Ignatius of Antioch | Memorial | red | - (S)
+10-18 | Luke, Evangelist | Feast | red | - (S)
+10-19 | 29th Sunday in Ordinary Time | none | green | - (S)
+10-20 | Weekday | none | green/white | Paul of the Cross (S)
+10-21 | Weekday | none | green | - (S)
+10-22 | Weekday | none | green/white | John Paul II (S)
+10-23 | Weekday | none | green/white | John of Capistrano (S)
+10-24 | Weekday | none | green/white | Anthony Mary Claret (S)
+10-25 | Weekday | none | green/white | BVM (S)
+10-26 | 30th Sunday in Ordinary Time | none | green | - (S)
+10-27 | Weekday | none | green | - (S)
+10-28 | Simon and Jude | Feast | red | - (S)
+10-29 | Weekday | none | green | - (S)
+10-30 | Weekday | none | green | - (S)
+10-31 | Weekday | none | green | - (S)
+11-01 | All Saints | Solemnity | white | - (S)
+11-02 | All Souls | none | violet or white or black | - (S)
+11-03 | Weekday | none | green/white | Martin de Porres (S)
+11-04 | Charles Borromeo | Memorial | white | - (S)
+11-05 | Weekday | none | green | - (S)
+11-06 | Weekday | none | green | - (S)
+11-07 | Weekday | none | green | - (S)
+11-08 | Weekday | none | green/white | BVM (S)
+11-09 | Dedication of the Lateran Basilica | Feast | white | - (S)
+11-10 | Leo the Great | Memorial | white | - (S)
+11-11 | Martin of Tours | Memorial | white | - (S)
+11-12 | Josaphat | Memorial | red | - (S)
+11-13 | Frances Xavier Cabrini | Memorial | white | - (S)
+11-14 | Weekday | none | green | - (S)
+11-15 | Weekday | none | green/white/white | Albert the Great; BVM (S)
+11-16 | 33rd Sunday in Ordinary Time | none | green | - (S)
+11-17 | Elizabeth of Hungary | Memorial | white | - (S)
+11-18 | Weekday | none | green/white/white | Dedication of the Basilicas of Peter and Paul; Rose Philippine Duchesne (S)
+11-19 | Weekday | none | green | - (S)
+11-20 | Weekday | none | green | - (S)
+11-21 | Presentation of the BVM | Memorial | white | - (S)
+11-22 | Cecilia | Memorial | red | - (S)
+11-23 | Christ the King | Solemnity | white | - (S)
+11-24 | Andrew Dũng-Lạc and Companions | Memorial | red | - (S)
+11-25 | Weekday | none | green/red | Catherine of Alexandria (S)
+11-26 | Weekday | none | green | - (S)
+11-27 | Weekday | none | green/white | Thanksgiving Day (S)
+11-28 | Weekday | none | green | - (S)
+11-29 | Weekday | none | green/white | BVM (S)
+12-01 | Advent Weekday | none | violet | - (S)
+12-02 | Advent Weekday | none | violet | - (S)
+12-03 | Francis Xavier | Memorial | white | - (S)
+12-04 | Advent Weekday | none | violet/white | John Damascene (S)
+12-05 | Advent Weekday | none | violet | - (S)
+12-06 | Advent Weekday | none | violet/white | Nicholas (S)
+12-07 | 2nd Sunday of Advent | none | violet | - (S)
+12-08 | Immaculate Conception | Solemnity | white | - (S)
+12-09 | Advent Weekday | none | violet/white | Juan Diego (S)
+12-10 | Advent Weekday | none | violet/white | Our Lady of Loreto (S)
+12-11 | Advent Weekday | none | violet/white | Damasus I (S)
+12-12 | Our Lady of Guadalupe | Feast | white | - (S)
+12-13 | Lucy | Memorial | red | - (S)
+12-14 | 3rd Sunday of Advent | none | violet or rose | - (S)
+12-15 | Advent Weekday | none | violet | - (S)
+12-16 | Advent Weekday | none | violet | - (S)
+12-17 | Advent Weekday | none | violet | - (S)
+12-18 | Advent Weekday | none | violet | - (S)
+12-19 | Advent Weekday | none | violet | - (S)
+12-20 | Advent Weekday | none | violet | - (S)
+12-21 | 4th Sunday of Advent | none | violet | - (S)
+12-22 | Advent Weekday | none | violet | - (S)
+12-23 | Advent Weekday | none | violet | John of Kanty (S)
+12-24 | Advent Weekday | none | violet | - (S)
+12-25 | Nativity of the Lord | Solemnity | white | - (S)
+12-26 | Stephen, the First Martyr | Feast | red | - (S)
+12-27 | John, Apostle and Evangelist | Feast | white | - (S)
+12-28 | Holy Family | Feast | white | - (S)
+12-29 | Fifth Day within the Octave of the Nativity | none | white | Thomas Becket (S)
+12-30 | Sixth Day within the Octave of the Nativity | none | white | - (S)
+12-31 | Seventh Day within the Octave of the Nativity | none | white | Sylvester I (S)
