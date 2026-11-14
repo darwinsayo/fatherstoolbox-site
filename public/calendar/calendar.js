@@ -114,6 +114,29 @@
     if (focus) { var b = $('lc-grid').querySelector('[data-n="' + state.sel + '"]'); if (b) b.focus(); }
   }
 
+  /* ---------- For the celebrant: At the altar, the Liturgy of the Hours, the season (rubrics.js) ---------- */
+  function isOpen(k) { try { return localStorage.getItem('lc-open-' + k) === '1'; } catch (e) { return false; } }
+  function section(k, title, tags, body) {
+    return '<details class="lc-fold" data-k="' + k + '"' + (isOpen(k) ? ' open' : '') + '><summary><span class="lc-fold-t">' + title + '</span>' +
+      (tags.length ? '<span class="lc-fold-s">' + tags.map(esc).join(' \u00B7 ') + '</span>' : '') + '</summary>' + body + '</details>';
+  }
+  function rows(items) {
+    return '<dl class="lc-rules">' + items.map(function (it) {
+      return '<div><dt>' + esc(it.label) + '</dt><dd>' + esc(it.text) + (it.src ? ' <cite>' + esc(it.src) + '</cite>' : '') + '</dd></div>';
+    }).join('') + '</dl>';
+  }
+  function guide(d) {
+    var R = window.Rubrics; if (!R) return '';
+    var a = R.altar(d), hr = R.hours(d, opt()), se = R.season(d), h = '<div class="lc-guide">';
+    h += section('altar', 'At the altar', a.tags, rows(a.items));
+    h += section('hours', 'Liturgy of the Hours', hr.tags, rows(hr.items) +
+      '<p class="lc-hours-links">Pray the texts at Universalis: ' + hr.links.map(function (l) { return '<a href="' + l.href + '" target="_blank" rel="noopener">' + esc(l.label) + '</a>'; }).join(' \u00B7 ') +
+      '<span class="lc-sr"> (opens in a new tab)</span></p>');
+    if (se) h += section('season', 'The season: ' + se.title, [], '<p class="lc-season">' + esc(se.text) + ' <cite>' + esc(se.src) + '</cite></p>');
+    h += '<p class="lc-guide-note">Drawn from the General Instruction of the Roman Missal and of the Liturgy of the Hours, the Universal Norms and the Code of Canon Law. Your diocesan Ordo and your bishop\u2019s directives take precedence.</p>';
+    return h + '</div>';
+  }
+
   /* ---------- Day detail ---------- */
   function drawDetail() {
     var d = O.day(state.sel, opt()), h = '';
@@ -140,7 +163,11 @@
     if (d.notes.length) h += '<div class="lc-notes">' + d.notes.map(function (n) { return '<p class="lc-note">' + esc(n) + '</p>'; }).join('') + '</div>';
     h += '<p class="lc-actions"><a class="btn btn-red" href="' + d.readings + '" target="_blank" rel="noopener">Readings at USCCB<span class="lc-sr"> (opens in a new tab)</span></a>' +
       '<button type="button" class="btn-plain btn lc-copy" id="lc-copy">Copy a link to this day</button></p>';
+    h += guide(d);
     $('lc-detail').innerHTML = h;
+    $('lc-detail').querySelectorAll('details[data-k]').forEach(function (el) {
+      el.addEventListener('toggle', function () { try { localStorage.setItem('lc-open-' + el.dataset.k, el.open ? '1' : '0'); } catch (e) {} });
+    });
     $('lc-copy').addEventListener('click', function () {
       var url = location.origin + location.pathname + '?date=' + O.iso(state.sel) + (state.asc ? '&ascension=thursday' : '');
       var done = function () { $('lc-copy').textContent = 'Link copied'; };
