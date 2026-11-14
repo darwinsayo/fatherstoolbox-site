@@ -26,13 +26,19 @@
 <div class="wrap">
   <p class="lc-crumb"><a href="/resources">Resources</a></p>
 
-  <section class="lc-today" aria-labelledby="lc-today-title">
-    <div>
+  <section class="lc-today" id="lc-today" aria-labelledby="lc-today-title">
+    <div class="lc-glass" aria-hidden="true">
+      <span class="lc-ray r1"></span><span class="lc-ray r2"></span><span class="lc-ray r3"></span>
+      <span class="lc-tracery"></span>
+      <span class="lc-dust"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    </div>
+    <div class="lc-today-text">
       <p class="rubric" id="lc-today-date">Liturgical calendar</p>
       <h1 id="lc-today-title">The liturgical calendar for the United States</h1>
       <p class="lc-today-meta" id="lc-today-meta">Solemnities, feasts and memorials, liturgical colors, seasons and cycles, for any year.</p>
+      <ol class="lc-count" id="lc-count" aria-label="Coming up"></ol>
     </div>
-    <span class="lc-chasuble" id="lc-today-color" aria-hidden="true"></span>
+    <div class="lc-halo" aria-hidden="true"><span class="lc-chasuble" id="lc-today-color"></span></div>
   </section>
 
   <section class="lc-year" aria-label="The liturgical year, drawn to scale">
