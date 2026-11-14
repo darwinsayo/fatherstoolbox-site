@@ -1,0 +1,46 @@
+{
+  "$comment": "Proposed per-diocese data file (one per diocese, e.g. data/covington.json). Example only: this parish's times are copied from the live Covington map, not re-checked.",
+  "diocese": "covington",
+  "updated": "2026-11-14",
+  "parishes": [
+    {
+      "id": "st-agnes-fort-wright",
+      "name": "St. Agnes",
+      "town": "Fort Wright",
+      "state": "KY",
+      "county": "Kenton",
+      "address": "1680 Dixie Hwy.",
+      "zip": "",
+      "lat": 39.06369,
+      "lng": -84.53768,
+      "phone": "859-431-1802",
+      "website": "http://www.saintagnes.com",
+      "facebook": "",
+      "servedBy": "",
+      "pastor": { "name": "Very Rev. Mark Keene", "role": "Pastor" },
+      "mass": [
+        { "day": "Sun", "start": "08:30", "end": "09:30" },
+        { "day": "Sun", "start": "10:30", "end": "11:30" },
+        { "day": "Sat", "start": "16:00", "end": "17:00", "vigil": true },
+        { "day": "Mon", "start": "06:30", "end": "07:05" }
+      ],
+      "confession": [
+        { "day": "Sat", "start": "09:00", "end": "09:30", "endAssumed": true, "note": "Also after the 8:30 AM Mass" }
+      ],
+      "confessionByAppointment": false,
+      "note": "",
+      "verification": {
+        "status": "verified",
+        "checkedOn": "2026-10",
+        "method": "website",
+        "source": "http://www.saintagnes.com",
+        "sourceDated": "",
+        "confidence": "medium",
+        "checkedBy": ""
+      },
+      "history": [
+        { "date": "2026-10", "change": "First read from the parish website.", "source": "http://www.saintagnes.com" }
+      ]
+    }
+  ]
+}

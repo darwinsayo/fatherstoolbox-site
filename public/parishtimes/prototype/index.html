@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parish times prototype | Father’s Tool Box</title>
+<meta name="description" content="Live maps of Mass and confession times at Catholic parishes in the Diocese of Covington, the Diocese of Lexington and the Cincinnati area of the Archdiocese of Cincinnati, read from each parish&#x27;s own website.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1c1815">
+<meta property="og:title" content="Mass and Confession Times in Kentucky and Cincinnati | Father’s Tool Box">
+<meta property="og:description" content="Live maps of Mass and confession times at Catholic parishes in the Diocese of Covington, the Diocese of Lexington and the Cincinnati area of the Archdiocese of Cincinnati, read from each parish&#x27;s own website.">
+<meta property="og:url" content="https://fatherstoolbox.com/parishtimes/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/eb-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="topband"><div class="wrap"><em>Laudetur Iesus Christus</em><span class="season-now">The Church is in&nbsp;<span data-season-name>Ordinary Time</span></span></div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a>
+<nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/resources" aria-current=page>Resources</a></li><li><a href="/contact">Contact</a></li></ul></nav>
+</div></header>
+<main>
+<style>
+#ptl { --paper:#ebe7de; --card:#f8f5ee; --ink:#231f1c; --soft:#544b43; --rule:#d6cfc0; --navy:#1e3a6e; --navy-2:#152a52; --cream:#f1ece1; --gold:#b8913a; --rubric:#b3261e; --grey:#d9d4c9; --grey-line:#bdb5a5;
+  background:var(--paper); color:var(--ink); font-size:17px; line-height:1.5; }
+#ptl *{box-sizing:border-box}
+#ptl .wrap{padding:36px 0 64px}
+#ptl .proto{background:#fff6d9;border:1px dashed var(--gold);padding:8px 12px;font-size:15px;margin:0 0 18px;color:var(--soft)}
+#ptl .crumb{margin:0 0 14px;font-size:15px}
+#ptl .crumb a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+#ptl .eyebrow{font-size:15.6px;font-weight:500;letter-spacing:.08em;font-variant-caps:all-small-caps;color:var(--rubric);margin:0 0 6px}
+#ptl h1{font-weight:500;font-size:clamp(28px,4.6vw,46px);line-height:1.12;margin:0;color:var(--navy);max-width:22ch}
+#ptl .lede{margin:10px 0 18px;color:var(--soft);font-size:18px;max-width:58ch}
+/* secondary tools: one quiet line */
+#ptl .tools{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:0 0 16px;font-size:16px}
+#ptl .tools input{font:inherit;font-size:16px;padding:6px 10px;border:1px solid var(--rule);background:var(--card);border-radius:3px;width:min(260px,100%)}
+#ptl .chips{display:flex;gap:4px;flex-wrap:wrap}
+#ptl .chip{font:inherit;font-size:15px;font-variant-caps:all-small-caps;letter-spacing:.06em;background:none;border:1px solid var(--rule);border-radius:2px;padding:2px 10px;color:var(--soft);cursor:pointer}
+#ptl .chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:var(--card)}
+#ptl .link{font:inherit;background:none;border:0;padding:0;color:var(--navy);font-weight:600;border-bottom:2px solid var(--gold);cursor:pointer}
+#ptl .msg{color:var(--soft);font-size:15px;margin:-6px 0 14px;min-height:0}
+/* map + panel */
+#ptl .stage{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+@media (max-width:860px){#ptl .stage{grid-template-columns:minmax(0,1fr)}}
+#ptl .map{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--gold);border-radius:4px;padding:8px;position:relative}
+#ptl svg{width:100%;height:auto;display:block}
+#ptl .ctx path{fill:#e4dfd4;stroke:#cfc7b7;stroke-width:1}
+#ptl .dio{cursor:pointer;stroke:#fff;stroke-width:1.6;stroke-linejoin:round;transition:fill .15s}
+#ptl .dio.planned{fill:var(--grey)}
+#ptl .dio.planned:hover,#ptl .dio.planned.sel{fill:#c9c2b3}
+#ptl .dio.live{fill:#8ea0c4}
+#ptl .dio.live.full{fill:#5b74a3}
+#ptl .dio.live:hover,#ptl .dio.live.sel{fill:var(--navy)}
+#ptl .dio.dim{opacity:.35}
+#ptl .partial{fill:#3a5590;pointer-events:none}
+#ptl .sel-ring{fill:none;stroke:var(--gold);stroke-width:4;pointer-events:none}
+#ptl .prov{fill:none;stroke:var(--navy-2);stroke-width:2.6;stroke-linejoin:round;pointer-events:none}
+#ptl .lbl{font-size:19px;font-variant-caps:all-small-caps;letter-spacing:.05em;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:rgba(248,245,238,.85);stroke-width:4px;text-anchor:middle}
+#ptl .lbl.on{fill:#fff;stroke:rgba(21,42,82,.55)}
+#ptl .lbl .soon{font-size:14px;font-style:italic;font-variant-caps:normal;letter-spacing:0}
+#ptl .plbl{font-size:24px;font-variant-caps:all-small-caps;letter-spacing:.12em;fill:var(--rubric);text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:var(--card);stroke-width:5px}
+#ptl .dot{fill:var(--gold-lit,#e8c877);stroke:var(--navy-2);stroke-width:.8;pointer-events:none}
+#ptl .me{fill:var(--rubric);stroke:#fff;stroke-width:2}
+#ptl .near{fill:var(--rubric);stroke:#fff;stroke-width:1}
+@media (max-width:600px){#ptl .lbl{display:none}#ptl .plbl{font-size:34px}}
+#ptl .key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14.5px;color:var(--soft);margin:8px 4px 2px}
+#ptl .key i{display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:6px;border-radius:2px}
+/* panel */
+#ptl .panel{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:20px 22px;position:sticky;top:16px}
+#ptl .panel .of{font-size:15.6px;font-weight:500;letter-spacing:.08em;font-variant-caps:all-small-caps;color:var(--rubric)}
+#ptl .panel h2{font-weight:500;font-size:34px;line-height:1.05;color:var(--navy);margin:0 0 4px}
+#ptl .panel .prov-name{color:var(--soft);font-size:15px;margin:0 0 12px}
+#ptl .panel img{float:right;width:64px;height:auto;margin:0 0 8px 12px}
+#ptl .status{list-style:none;padding:0;margin:0 0 14px;font-size:16px;border-top:1px solid var(--rule)}
+#ptl .status li{padding:5px 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:12px}
+#ptl .status b{font-weight:600;text-align:right}
+#ptl .go{display:inline-block;background:var(--navy);color:var(--card);text-decoration:none;font-variant-caps:all-small-caps;letter-spacing:.1em;font-size:18px;padding:8px 18px 10px;border-radius:2px}
+#ptl .go:hover{background:var(--navy-2)}
+#ptl .small{font-size:15px;color:var(--soft);margin:12px 0 0}
+#ptl .small a{color:var(--navy)}
+#ptl .nearlist{list-style:none;margin:0;padding:0}
+#ptl .nearlist li{padding:7px 0;border-bottom:1px solid var(--rule);font-size:16px}
+#ptl .nearlist .tag{font-size:13.5px;font-variant-caps:all-small-caps;letter-spacing:.06em;color:var(--rubric)}
+/* provinces */
+#ptl .provinces{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:960px){#ptl .provinces{grid-template-columns:minmax(0,1fr)}}
+#ptl .province h2{font-weight:500;font-size:28px;color:var(--navy);margin:0 0 2px}
+#ptl .province .sub{font-size:15px;color:var(--soft);margin:0 0 10px}
+#ptl .province ul{list-style:none;margin:0;padding:0;border-top:2px solid var(--gold)}
+#ptl .province li{border-bottom:1px solid var(--rule)}
+#ptl .province li.hide{display:none}
+#ptl .row{display:block;width:100%;text-align:left;font:inherit;background:none;border:0;padding:9px 2px;cursor:pointer;color:inherit}
+#ptl .row:hover .nm{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold)}
+#ptl .row .nm{font-size:19px;color:var(--ink)}
+#ptl .row.live .nm{color:var(--navy);font-weight:600}
+#ptl .row .met{font-size:13.5px;font-variant-caps:all-small-caps;letter-spacing:.06em;color:var(--rubric);margin-left:6px}
+#ptl .row .st{display:block;font-size:15px;color:var(--soft)}
+#ptl .note{margin:28px 0 0;color:var(--soft);font-size:15px;max-width:70ch}
+#ptl .note a{color:var(--navy)}
+</style>
+<div id="ptl"><div class="wrap">
+  <p class="proto"><strong>Prototype.</strong> A design preview for Parish times across many dioceses. Only Covington, Lexington and Cincinnati have maps today; the others are shown as coming soon.</p>
+  <p class="crumb"><a href="/resources">Resources</a></p>
+  <p class="eyebrow">Mass and confession times</p>
+  <h1>Find a Mass or a confession near you</h1>
+  <p class="lede">Choose a diocese on the map. Dioceses in blue have a live map of Mass and confession times; grey ones are coming.</p>
+
+  <div class="tools" role="search">
+    <input id="q" type="search" placeholder="Diocese, city or county" aria-label="Search for a diocese, city or county" list="qlist"><datalist id="qlist"></datalist>
+    <div class="chips" role="group" aria-label="Show state">
+      <button class="chip" data-st="" aria-pressed="true">All</button><button class="chip" data-st="KY" aria-pressed="false">Kentucky</button><button class="chip" data-st="OH" aria-pressed="false">Ohio</button><button class="chip" data-st="IN" aria-pressed="false">Indiana</button>
+    </div>
+    <button class="link" id="nearme" type="button">Parishes near me</button>
+  </div>
+  <p class="msg" id="msg" aria-live="polite"></p>
+
+  <div class="stage">
+    <div class="map">
+      <svg id="map" role="img" aria-label="Map of the dioceses of Kentucky, Ohio and Indiana"></svg>
+      <div class="key"><span><i style="background:#5b74a3"></i>Live map</span><span><i style="background:#8ea0c4;box-shadow:inset 0 0 0 4px #3a5590"></i>Partly covered</span><span><i style="background:#d9d4c9"></i>Coming soon</span><span><i style="background:none;border:2px solid #152a52"></i>Province</span></div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+
+  <div class="provinces" id="provinces"></div>
+  <p class="note">Hand-curated data. Every time is read from the parish&rsquo;s own website; if a parish doesn&rsquo;t post a time, it is left blank rather than guessed. Parish counts for dioceses not yet mapped are what each diocese or a Catholic directory reports, not our count. <a href="/contact?topic=parish-times">Don&rsquo;t see your diocese? Ask for it.</a></p>
+</div></div>
+<script>
+(async function(){
+  const [reg, geo] = await Promise.all([fetch('/parishtimes/data/dioceses.json').then(r=>r.json()), fetch('/parishtimes/prototype/region-map.json').then(r=>r.json())]);
+  const NS='http://www.w3.org/2000/svg', svg=document.getElementById('map'), panel=document.getElementById('panel'), msg=document.getElementById('msg');
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const D=Object.fromEntries(reg.dioceses.map(d=>[d.id,d])), P=Object.fromEntries(reg.provinces.map(p=>[p.id,p]));
+  const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const fmt=s=>{ if(!s) return ''; const [y,m,d]=s.split('-'); return (d?(+d)+' ':'')+MON[m-1]+' '+y; };
+  const STN={KY:'Kentucky',OH:'Ohio',IN:'Indiana',TN:'Tennessee'};
+  const el=(t,a,p)=>{const e=document.createElementNS(NS,t); for(const k in a) e.setAttribute(k,a[k]); (p||svg).appendChild(e); return e;};
+  svg.setAttribute('viewBox',`0 0 ${geo.w} ${geo.h}`);
+  const gc=el('g',{class:'ctx'}); for(const [k,d] of Object.entries(geo.states)) if(!['KY','OH','IN'].includes(k)) el('path',{d},gc);
+  const gd=el('g',{}), shapes={};
+  for(const [id,s] of Object.entries(geo.dioceses)){ const d=D[id]; const full=d.status==='live'&&d.coverage&&d.coverage.complete;
+    const p=el('path',{d:s.d,class:'dio '+(d.status==='live'?'live':'planned')+(full?' full':''),tabindex:0,role:'button','aria-label':d.title+(d.status==='live'?', live map':', coming soon')},gd);
+    p.addEventListener('click',()=>select(id)); p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(id);}}); shapes[id]=p; }
+  for(const [id,d] of Object.entries(geo.partial)) el('path',{d,class:'partial'});
+  // provinces coincide with state lines in this region
+  for(const k of ['KY','OH','IN']) el('path',{d:geo.states[k],class:'prov'});
+  const ring=el('path',{class:'sel-ring',d:''});
+  const gdot=el('g',{}); for(const p of geo.parishes) el('circle',{cx:p.x,cy:p.y,r:2.6,class:'dot'},gdot);
+  const glbl=el('g',{});
+  const NUDGE={cleveland:[-22,-6],youngstown:[14,40]};
+  for(const [id,s] of Object.entries(geo.dioceses)){ const d=D[id]; const [nx,ny]=NUDGE[id]||[0,0]; const lx=s.label[0]+nx, ly=s.label[1]+ny; const t=el('text',{x:lx,y:ly,class:'lbl'+(d.status==='live'?' on':'')},glbl);
+    const nm=d.of==='Lafayette in Indiana'?'Lafayette':d.of==='Fort Wayne-South Bend'?'Fort Wayne–South Bend':d.of; t.textContent=nm;
+    if(d.status!=='live'){ const s2=el('tspan',{x:lx,dy:17,class:'soon'},t); s2.textContent='coming soon'; } }
+  const PL={louisville:['Province of Louisville',[330,945]],cincinnati:['Province of Cincinnati',[760,90]],indianapolis:['Province of Indianapolis',[235,90]]};
+  for(const [id,[t,[x,y]]] of Object.entries(PL)){ const e=el('text',{x,y,class:'plbl'}); e.textContent=t; }
+  const gnear=el('g',{});
+
+  function statusRows(d){
+    if(d.status==='live'){
+      const rows=[['Parishes on the map',d.parishes],['Times read from parish sites',fmt(d.timesReadAsOf)],['Last hand check',fmt(d.lastHandCheck)],['Times still to confirm',d.unconfirmed+' parishes']];
+      if(d.coverage&&!d.coverage.complete) rows.unshift(['Coverage',d.coverage.note.replace(/:.*/,'')]);
+      return rows; }
+    const r=d.parishCountReported; return [['Status','Coming soon'],['Parishes reported',r?('about '+r.value):'not checked yet'],['Counties',(geo.dioceses[d.id]||{}).counties||'not mapped']];
+  }
+  function select(id,scroll){
+    const d=D[id]; Object.values(shapes).forEach(s=>s.classList.remove('sel')); if(shapes[id]){shapes[id].classList.add('sel'); ring.setAttribute('d',geo.dioceses[id].d);} else ring.setAttribute('d','');
+    const crest=d.crest?`<img src="${d.crest}" alt="Coat of arms of the ${esc(d.title)}">`:'';
+    const rows=statusRows(d).map(([k,v])=>`<li><span>${esc(k)}</span><b>${esc(v)}</b></li>`).join('');
+    const cta=d.status==='live'?`<a class="go" href="${d.page}">Open the map</a>${d.coverage&&!d.coverage.complete?`<p class="small">${esc(d.coverage.note)} The rest of the archdiocese is coming.</p>`:''}`
+      :`<p class="small">We haven&rsquo;t mapped this ${d.kind} yet. <a href="/contact?topic=parish-times&amp;diocese=${d.id}">Ask us to add the ${esc(d.title)}</a>.</p>${d.website?`<p class="small">Meanwhile, the ${d.kind}&rsquo;s own parish finder: <a href="${d.website}" rel="noopener">${esc(d.website.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,''))}</a></p>`:''}`;
+    panel.innerHTML=`${crest}<span class="of">${d.kind==='archdiocese'?'Archdiocese of':'Diocese of'}</span><h2>${esc(d.of)}</h2><p class="prov-name">${esc(P[d.province].title)}${d.id===P[d.province].metropolitan?' &middot; metropolitan see':''} &middot; ${STN[d.state]}</p><ul class="status">${rows}</ul>${cta}`;
+    if(scroll&&matchMedia('(max-width:860px)').matches) panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  function intro(){ panel.innerHTML=`<span class="of">Three dioceses so far</span><h2>Choose a diocese</h2><p class="prov-name">Tap a diocese on the map or in the list below.</p><ul class="status">${['covington','lexington','cincinnati'].map(i=>`<li><span>${esc(D[i].title)}</span><b>${D[i].parishes} parishes</b></li>`).join('')}</ul><p class="small">Grey dioceses are coming. Each one gets the same map page, so adding a diocese means adding its data.</p>`; }
+  intro();
+
+  // provinces list
+  const box=document.getElementById('provinces');
+  for(const pr of reg.provinces){ const ds=reg.dioceses.filter(d=>d.province===pr.id).sort((a,b)=>(b.id===pr.metropolitan)-(a.id===pr.metropolitan)||a.of.localeCompare(b.of));
+    const live=ds.filter(d=>d.status==='live').length;
+    const sec=document.createElement('section'); sec.className='province'; sec.dataset.states=pr.states.join(' ');
+    sec.innerHTML=`<h2>${esc(pr.title)}</h2><p class="sub">${esc(D[pr.metropolitan].title)} and its suffragan dioceses &middot; ${live} of ${ds.length} mapped</p><ul>${ds.map(d=>{
+      const st=d.status==='live'?`${d.parishes} parishes${d.coverage&&!d.coverage.complete?' (Cincinnati area)':''} &middot; read ${fmt(d.timesReadAsOf)} &middot; ${d.unconfirmed} to confirm`
+        :d.status==='later'?`${STN[d.state]} &middot; not on this map yet`:`Coming soon${d.parishCountReported?' &middot; about '+d.parishCountReported.value+' parishes':''}`;
+      return `<li data-st="${d.state}"><button class="row ${d.status}" data-id="${d.id}"><span class="nm">${esc(d.title)}</span>${d.id===pr.metropolitan?'<span class="met">metropolitan</span>':''}<span class="st">${st}</span></button></li>`;}).join('')}</ul>`;
+    box.appendChild(sec); }
+  box.addEventListener('click',e=>{const b=e.target.closest('.row'); if(b){ select(b.dataset.id); document.querySelector('.stage').scrollIntoView({behavior:'smooth'});} });
+
+  // state filter
+  document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{ const st=c.dataset.st;
+    document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c));
+    for(const [id,s] of Object.entries(shapes)) s.classList.toggle('dim',!!st&&D[id].state!==st);
+    document.querySelectorAll('.province li').forEach(li=>li.classList.toggle('hide',!!st&&li.dataset.st!==st));
+    document.querySelectorAll('.province').forEach(sec=>sec.style.display=st&&!sec.querySelector('li:not(.hide)')?'none':''); }));
+
+  // search: diocese, county, city (towns of mapped parishes)
+  const idx=[], seen=new Set(); const add=(label,id,alt)=>{ if(seen.has(label)) return; seen.add(label); idx.push([label,id,alt]); };
+  for(const d of reg.dioceses){ add(d.title,d.id,d.of); for(const c of d.cities||[]) add(c+', '+d.state,d.id,c); if(d.counties) for(const [st,l] of Object.entries(d.counties)) if(Array.isArray(l)) for(const c of l) add(c+' County, '+st,d.id); }
+  for(const p of geo.parishes) add(p.t+', '+D[p.d].state,p.d,p.t);
+  document.getElementById('qlist').innerHTML=idx.map(x=>`<option value="${esc(x[0])}">`).join('');
+  const q=document.getElementById('q');
+  const run=()=>{ const v=q.value.trim().toLowerCase(); if(!v){msg.textContent='';return;}
+    if(/^\d{5}$/.test(v)){ msg.textContent='ZIP search is planned (it needs a ZIP-to-county table). Try a city or county for now.'; return; }
+    let hits=idx.filter(x=>x[0].toLowerCase()===v||(x[2]||'').toLowerCase()===v);
+    if(!hits.length) hits=idx.filter(x=>x[0].toLowerCase().startsWith(v)||(x[2]||'').toLowerCase().startsWith(v));
+    if(!hits.length) hits=idx.filter(x=>x[0].toLowerCase().includes(v));
+    const byD=[...new Map(hits.map(h=>[h[1],h])).values()];
+    if(!byD.length){ msg.textContent='Nothing found in Kentucky, Ohio or Indiana for “'+q.value+'”.'; return; }
+    select(byD[0][1],true);
+    if(byD.length===1) msg.textContent=byD[0][0]+' is in the '+D[byD[0][1]].title+'.';
+    else { msg.innerHTML='More than one match: '+byD.slice(0,4).map(h=>`<button class="link" data-id="${h[1]}">${esc(h[0])}</button> (${esc(D[h[1]].title)})`).join(', ')+'.'; }
+  };
+  msg.addEventListener('click',e=>{const b=e.target.closest('[data-id]'); if(b) select(b.dataset.id,true);});
+  q.addEventListener('change',run); q.addEventListener('keydown',e=>{if(e.key==='Enter')run();});
+
+  // near me: nearest mapped parishes, across diocese lines
+  const km=(a,b,c,d)=>{const r=Math.PI/180,x=Math.sin((c-a)*r/2)**2+Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;return 12742*Math.asin(Math.sqrt(x));};
+  function showNear(lat,lng,label){
+    const list=geo.parishes.map(p=>({...p,km:km(lat,lng,p.lat,p.lng)})).sort((a,b)=>a.km-b.km).slice(0,6);
+    gnear.innerHTML=''; for(const p of list) el('circle',{cx:p.x,cy:p.y,r:6,class:'near'},gnear);
+    Object.values(shapes).forEach(s=>s.classList.remove('sel')); ring.setAttribute('d','');
+    const far=list[0].km>40;
+    panel.innerHTML=`<span class="of">Near ${esc(label)}</span><h2>Nearest parishes</h2><p class="prov-name">${far?'No mapped parish is close to you yet; these are the nearest we have.':'Across diocese lines, nearest first.'}</p><ul class="nearlist">${list.map(p=>`<li><a href="${D[p.d].page}">${esc(p.n)}</a>, ${esc(p.t)} &middot; ${(p.km*0.621).toFixed(1)} mi<br><span class="tag">${esc(D[p.d].title)}</span></li>`).join('')}</ul>`;
+    msg.textContent=''; if(matchMedia('(max-width:860px)').matches) panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  document.getElementById('nearme').addEventListener('click',()=>{
+    if(!navigator.geolocation){msg.textContent='Your browser can’t share a location. Try searching for your city.';return;}
+    msg.textContent='Finding you… (your location stays in your browser)';
+    navigator.geolocation.getCurrentPosition(p=>showNear(p.coords.latitude,p.coords.longitude,'you'),()=>{msg.textContent='Location not shared. Try searching for your city instead.';},{timeout:10000,maximumAge:600000}); });
+  const qs=new URLSearchParams(location.search); if(qs.get('d')&&D[qs.get('d')]) select(qs.get('d'));
+  if(qs.get('near')){ const [a,b]=qs.get('near').split(',').map(Number); showNear(a,b,qs.get('label')||'this point'); }
+})();
+</script>
+</main>
+
+<footer><div class="wrap">
+<div class="foot-top"><a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a><nav aria-label="Footer"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/resources">Resources</a></li><li><a href="/contact">Contact</a></li></ul></nav></div>
+<div class="foot-bottom"><span>&copy; <span id="yr">2026</span> Father&rsquo;s Tool Box. Communication services for Catholic parishes.</span><em>Ad maiorem Dei gloriam</em></div>
+<p class="foot-prayer">St. Francis de Sales, patron of writers and the Catholic press, pray for us.</p>
+</div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="/liturgy.js"></script>
+</body>
+</html>
