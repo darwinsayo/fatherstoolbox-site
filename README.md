@@ -31,6 +31,8 @@ A design polish of version 3 (`../fatherstoolbox-site-v3`, left untouched). Word
 ## Deploy (Cloudflare Pages, connected to this GitHub repo)
 Every push to `main` deploys automatically.
 
+Stylesheets and scripts are linked with a version tag, such as `/styles.css?v=20261114`. When you change a `.css` or `.js` file, change the tag on every page that loads it, so browsers fetch the new copy instead of an old cached one.
+
 1. Cloudflare dashboard, Workers & Pages, Create, Pages, Import an existing Git repository. Pick `darwinsayo/fatherstoolbox-site`.
 2. Build settings: Framework preset None, build command empty, build output directory `public`. Save and Deploy.
 3. Pages project, Custom domains, Set up a custom domain: add `fatherstoolbox.com`, then `www.fatherstoolbox.com`.
