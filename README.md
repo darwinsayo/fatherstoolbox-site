@@ -36,7 +36,7 @@ Every push to `main` deploys automatically.
 3. Pages project, Custom domains, Set up a custom domain: add `fatherstoolbox.com`, then `www.fatherstoolbox.com`.
 
 ## Pages
-Home (`index.html`), About, Resources (`resources.html`, which lists Parish times under `/parishtimes/` and the Liturgical calendar under `/calendar/`), Contact and a 404 page.
+Home (`index.html`), About, Resources (`resources.html`, which lists Parish times under `/parishtimes/` the Liturgical calendar under `/calendar/` and the fill-in-the-blank homily under `/homily/`), Contact and a 404 page.
 
 ## Contact form (Resend)
 1. In Resend, make sure fatherstoolbox.com is a verified sending domain (or use another verified domain; see `CONTACT_FROM`).
@@ -65,3 +65,6 @@ Until the key is set, the form answers "not set up yet" instead of sending.
 - Readings are linked to bible.usccb.org, never copied.
 - `node tests/ordo.test.js` checks the Easter computus against a second algorithm (1583 to 4099), checks the seasons against `liturgy.js` every day 1970 to 2199, checks transfer rules against years when they happened, and compares every day of 2025, 2026 and 2027 with the USCCB calendars (`tests/usccb/*.txt`, facts read from the USCCB PDFs).
 - When the Church adds a saint or the USCCB changes the US calendar: add a line to `SAINTS` (with the first year, so earlier years stay as they were), add the next year's USCCB calendar to `tests/usccb/`, and run the test.
+
+## The fill-in-the-blank homily (`/homily/`)
+A lighthearted word game about parish life. Templates, word lists, patron saints and the word filter are in `public/homily/homily.js`; its content rules are at the top of that file. Everything runs in the browser and nothing is stored. Check it with `node tests/homily.test.js`.
