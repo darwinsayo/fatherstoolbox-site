@@ -262,6 +262,10 @@ footer .wrap{padding-block:2.6rem 2.2rem}
 .crests img{width:auto;height:48px}
 .resource-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.35rem;font-size:1.1rem}
 .resource-links a{color:var(--lapis);text-decoration-color:var(--gold)}
+.resource+.resource{margin-top:1.75rem}
+.lit-colors{display:flex;gap:.45rem;height:48px;align-items:flex-end}
+.lit-colors i{width:22px;height:30px;border-radius:11px 11px 2px 2px;box-shadow:inset 0 0 0 1px rgba(35,31,28,.12)}
+.lit-colors .lc-violet{background:var(--violet)}.lit-colors .lc-white{background:#f3ead2;box-shadow:inset 0 0 0 1px rgba(35,31,28,.28)}.lit-colors .lc-green{background:var(--green)}.lit-colors .lc-red{background:var(--red)}.lit-colors .lc-rose{background:#d38aa0}
 .resources-note{margin:2rem 0 0;font-style:italic;color:var(--ink-soft)}
 .resources-note a{color:var(--lapis);text-decoration-color:var(--gold)}
 .resources-band{padding-block:clamp(3rem,6vw,4.5rem) 0}
