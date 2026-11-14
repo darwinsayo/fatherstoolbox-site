@@ -35,7 +35,8 @@
 #ptv .eyebrow { font-size: 15.6px; font-weight: 500; letter-spacing: 0.08em; font-variant-caps: all-small-caps; color: #b3261e; margin: 0 0 6px; }
 #ptv h1 { font-family: var(--display); font-weight: 500; font-size: clamp(28px, 4.6vw, 46px); line-height: 1.12; margin: 0; color: var(--navy); text-wrap: balance; max-width: 22ch; }
 #ptv .lede { margin: 10px 0 28px; color: var(--soft); font-size: 18px; max-width: 56ch; }
-#ptv .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+#ptv .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 960px) { #ptv .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 720px) { #ptv .tiles { grid-template-columns: minmax(0, 1fr); } }
 #ptv .tile { position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid var(--rule); border-top: 4px solid var(--gold); border-radius: 4px; background: var(--cream); color: var(--navy); text-decoration: none; }
 #ptv .tile:hover, #ptv .tile:focus-visible { border-color: var(--navy-2); box-shadow: 0 10px 28px rgba(30, 58, 110, 0.18); }
