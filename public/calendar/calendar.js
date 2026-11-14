@@ -52,7 +52,7 @@
     var meta = [d.kind !== 'Weekday' ? d.kind : null, colorWords(d), seasonText(d), cycleText(d)].filter(Boolean).join(' \u00B7 ');
     if (d.options.length) meta += '. Optional: ' + d.options.map(function (o) { return o.short; }).join('; ');
     $('lc-today-meta').textContent = meta + '.';
-    $('lc-today-color').className = 'lc-chasuble c-' + d.color[0];
+    $('lc-today-color').setAttribute('class', 'lc-chasuble c-' + d.color[0]);
     document.title = 'Liturgical Calendar for the United States | Father\u2019s Tool Box';
   }
 
