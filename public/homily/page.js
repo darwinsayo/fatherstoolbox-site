@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var H = window.Homily, $ = function (id) { return document.getElementById(id); };
-  var form = $('hm-form'), picker = $('hm-templates'), blanks = $('hm-blanks'), saintSel = $('hm-saint'),
+  var form = $('hm-form'), blanks = $('hm-blanks'), saintSel = $('hm-saint'),
       out = $('hm-out'), status = $('hm-status'), current = null, made = null;
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -15,14 +15,12 @@
     return 'sunday';
   }
 
-  /* Template choices */
+  /* Template choices: one grouped menu */
+  var picker = $('hm-template'), groups = {};
   H.TEMPLATES.forEach(function (t) {
-    var id = 'hm-t-' + t.id, wrap = document.createElement('div');
-    wrap.className = 'hm-choice';
-    wrap.innerHTML = '<input type="radio" name="template" id="' + id + '" value="' + t.id + '"><label for="' + id + '"><b></b><span></span></label>';
-    wrap.querySelector('b').textContent = t.name;
-    wrap.querySelector('span').textContent = t.voice;
-    picker.appendChild(wrap);
+    var g = groups[t.group];
+    if (!g) { g = groups[t.group] = document.createElement('optgroup'); g.label = t.group; picker.appendChild(g); }
+    var o = document.createElement('option'); o.value = t.id; o.textContent = t.name; g.appendChild(o);
   });
   H.SAINTS.forEach(function (s) {
     var o = document.createElement('option'); o.value = s[0]; o.textContent = s[1] + ', patron of ' + s[2]; saintSel.appendChild(o);
@@ -47,13 +45,16 @@
       blanks.appendChild(d);
     });
   }
-  function choose(id, keepSaint) {
+  function choose(id) {
     current = H.TEMPLATES.filter(function (t) { return t.id === id; })[0] || H.TEMPLATES[0];
-    $('hm-t-' + current.id).checked = true;
-    if (!keepSaint) saintSel.value = current.saint;
+    picker.value = current.id;
+    var n = H.fieldsOf(current).length;
+    $('hm-desc').textContent = current.voice + '. ' + current.desc + ' ' + n + ' blanks.';
+    $('hm-saint-wrap').hidden = !current.saint;
+    if (current.saint) saintSel.value = current.saint;
     drawBlanks(current);
   }
-  picker.addEventListener('change', function (e) { if (e.target.name === 'template') choose(e.target.value); });
+  picker.addEventListener('change', function () { choose(picker.value); });
 
   function clearErr(inp) {
     inp.removeAttribute('aria-invalid');
@@ -85,20 +86,21 @@
   function render(h) {
     made = h;
     var art = document.createElement('article');
-    art.className = 'hm-sheet';
+    art.className = 'hm-sheet fmt-' + h.format;
     art.innerHTML = '<p class="rubric hm-kicker"></p><h2 id="hm-title" tabindex="-1"></h2>';
-    art.querySelector('.hm-kicker').textContent = 'Never to be preached' + (seasonName() ? ' · ' + seasonName() : '');
+    art.querySelector('.hm-kicker').textContent = h.kicker || 'A homily, approximately';
     art.querySelector('h2').textContent = h.title;
     h.sections.forEach(function (s) {
       var sec = document.createElement('section'), lab = document.createElement('p'), p = document.createElement('p');
-      lab.className = 'rubric'; lab.textContent = s.label;
+      lab.className = 'rubric'; lab.textContent = s.label; if (!s.label) lab.hidden = true;
       s.pieces.forEach(function (x) {
         if (typeof x === 'string') p.appendChild(document.createTextNode(x));
         else { var b = document.createElement('mark'); b.textContent = x.text; p.appendChild(b); }
       });
       sec.appendChild(lab); sec.appendChild(p); art.appendChild(sec);
     });
-    var inv = document.createElement('p'); inv.className = 'hm-invocation'; inv.textContent = h.invocation; art.appendChild(inv);
+    if (h.closing) { var cl = document.createElement('p'); cl.className = 'hm-closing'; cl.textContent = h.closing; art.appendChild(cl); }
+    if (h.invocation) { var inv = document.createElement('p'); inv.className = 'hm-invocation'; inv.textContent = h.invocation; art.appendChild(inv); }
     var note = document.createElement('p'); note.className = 'hm-fine'; note.textContent = 'Just for fun: a playful look at parish life, not a real homily, and not meant to be preached.'; art.appendChild(note);
     out.innerHTML = ''; out.appendChild(art);
     $('hm-actions').hidden = false;
@@ -116,9 +118,12 @@
   form.addEventListener('submit', make);
 
   $('hm-surprise').addEventListener('click', function () {
-    blanks.querySelectorAll('input').forEach(function (inp) { clearErr(inp); inp.value = H.pick(H.WORDS[inp.name]); });
-    saintSel.value = current.saint;
+    var others = H.TEMPLATES.filter(function (t) { return t.id !== current.id; });
+    choose(H.pick(others).id);
+    var v = H.surprise(current);
+    blanks.querySelectorAll('input').forEach(function (inp) { clearErr(inp); inp.value = v[inp.name]; });
     make();
+    status.textContent = 'Surprise! We chose \u201c' + current.name + '\u201d and filled in the blanks.';
   });
   $('hm-clear').addEventListener('click', function () {
     blanks.querySelectorAll('input').forEach(function (inp) { clearErr(inp); inp.value = ''; });
