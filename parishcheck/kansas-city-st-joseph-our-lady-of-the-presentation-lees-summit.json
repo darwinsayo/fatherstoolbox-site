@@ -1,0 +1,10 @@
+{
+  "map": "kansas-city-st-joseph",
+  "parish": "Our Lady of the Presentation",
+  "town": "Lee's Summit",
+  "phone": "816-251-1100",
+  "website": "https://www.olpls.org/",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "The home page lists times but the rest of it dates from 2018 and 2019, so they were not used. The Mass times page could not be loaded by the fetcher. No times are on the map for this parish. Read from the parish's own website (https://www.olpls.org/) on 14 Nov 2026."
+}
