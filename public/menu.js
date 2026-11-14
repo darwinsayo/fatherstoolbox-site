@@ -1,5 +1,5 @@
-/* The Resources drop-down in the header. Opens on hover or focus where there is a mouse,
-   and on tap of the arrow button everywhere. Arrow keys move through it; Escape closes it. */
+/* The Resources drop-down in the header. Opens on hover or focus where there is a mouse.
+   On touch screens a tap on the word Resources or the arrow opens it; "All resources" inside goes to the page. Arrow keys move through it; Escape closes it. */
 (function () {
   'use strict';
   var li = document.querySelector('.site-header .has-menu');
@@ -13,6 +13,9 @@
     li.addEventListener('mouseenter', function () { clearTimeout(timer); set(true); });
     li.addEventListener('mouseleave', function () { timer = setTimeout(function () { if (!li.contains(document.activeElement)) set(false); }, 200); });
     top.addEventListener('focus', function () { set(true); });
+  } else {
+    top.addEventListener('click', function (e) { e.preventDefault(); set(!isOpen()); });
+    top.setAttribute('aria-haspopup', 'true');
   }
   li.addEventListener('focusout', function () { setTimeout(function () { if (!li.contains(document.activeElement) && !li.matches(':hover')) set(false); }, 0); });
   li.addEventListener('keydown', function (e) {
