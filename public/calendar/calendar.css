@@ -18,7 +18,7 @@
 .lc-today-meta{margin:1rem 0 0;color:var(--ink-soft);font-size:clamp(1.12rem,1.5vw,1.3rem);max-width:40em}
 /* A chasuble in the color of the day */
 /* A Gothic chasuble in the color of the day: column orphrey with a cross, gold trim */
-.lc-chasuble{flex:none;width:96px;height:auto;margin-bottom:.2rem;overflow:visible;--ch:var(--green);--ch-col:#1f4a2b;--ch-cross:var(--gold-lit)}
+.lc-chasuble{flex:none;width:92px;height:auto;margin-bottom:.2rem;overflow:visible;--ch:var(--green);--ch-col:#1f4a2b;--ch-cross:var(--gold-lit)}
 .lc-chasuble.c-white{--ch:#f6f0e0;--ch-col:#c9a24a;--ch-cross:#fbf7ec;box-shadow:none;background:none}
 .lc-chasuble.c-red{--ch:var(--red);--ch-col:#7d1913}
 .lc-chasuble.c-violet{--ch:var(--violet);--ch-col:#3d2654}
