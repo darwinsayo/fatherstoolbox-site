@@ -1,0 +1,10 @@
+{
+  "map": "kansas-city-st-joseph",
+  "parish": "St. Monica",
+  "town": "Kansas City",
+  "phone": "816-471-3696",
+  "website": "https://www.stmonicakc.org",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "www.stmonicakc.org blocks automated reading (robots.txt). Needs a look in a browser. No times are on the map for this parish. Checked 14 Nov 2026."
+}

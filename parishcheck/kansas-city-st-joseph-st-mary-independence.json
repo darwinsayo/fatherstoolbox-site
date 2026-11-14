@@ -1,0 +1,10 @@
+{
+  "map": "kansas-city-st-joseph",
+  "parish": "St. Mary",
+  "town": "Independence",
+  "phone": "816-252-0121",
+  "website": "https://www.saintmarysparish.org",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "The home page has only news and a reflection, no times. The Mass times page could not be loaded by the fetcher. No times are on the map for this parish. Read from the parish's own website (https://www.saintmarysparish.org/) on 14 Nov 2026."
+}

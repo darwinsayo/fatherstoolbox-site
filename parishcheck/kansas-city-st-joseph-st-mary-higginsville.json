@@ -1,0 +1,10 @@
+{
+  "map": "kansas-city-st-joseph",
+  "parish": "St. Mary",
+  "town": "Higginsville",
+  "phone": "660-584-3038",
+  "website": "https://www.stmarysinhigginsville.org/",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "The home page has only a short introduction and a 'Click here to learn more about us!' link, with no Mass or confession times. Inner pages could not be reached by the fetcher. No times are on the map for this parish. Checked 14 Nov 2026."
+}

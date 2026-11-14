@@ -1,0 +1,10 @@
+{
+  "map": "kansas-city-st-joseph",
+  "parish": "Christ the King",
+  "town": "Kansas City",
+  "phone": "816-363-4888",
+  "website": "https://www.ctkkcmo.org",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "www.ctkkcmo.org could not be read by the fetcher (client error). No times are on the map for this parish. Checked 14 Nov 2026."
+}
