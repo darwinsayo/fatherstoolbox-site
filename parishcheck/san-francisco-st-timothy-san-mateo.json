@@ -1,0 +1,10 @@
+{
+  "map": "san-francisco",
+  "parish": "St. Timothy",
+  "town": "San Mateo",
+  "phone": "650-342-2468",
+  "website": "https://sttims.us/",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "Map marker is approximate: 1515 Dolan Ave did not geocode; placed at 1501 Dolan Ave. Checked 15 Nov 2026."
+}
