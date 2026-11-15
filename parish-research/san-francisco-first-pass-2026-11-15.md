@@ -26,10 +26,10 @@ First reading of the parishes in the Archdiocese of San Francisco parish directo
 | Site could not be read, or has no current schedule | 4 | Our Lady of Mt. Carmel, Larkspur, Our Lady of Fatima, San Francisco, St. Emydius, San Francisco, St. Paul of the Shipwreck, San Francisco |
 | No parish website | 3 | St. James, San Francisco, St. Michael Korean, San Francisco, Church of the Assumption, Tomales |
 
-## Decisions for Darwin
+## Decided by Darwin, 15 Nov 2026
 
-- **St. Peter and St. Anthony, Mission District.** The Mission Parishes site (missionparishes.com, St. Charles Borromeo's site) also lists St. Peter (1200 Florida St; Sat 5 PM Spanish; Sun 8 AM Spanish, 9:30 AM English, 11 AM, 1 PM and 5 PM Spanish; Saturday confession 3:30 to 4:30 PM, 3:30 to 5 PM on the Penance page) and St. Anthony (3215 Cesar Chavez St; Sun 11 AM English, 12:30 PM Spanish). Neither church is in the archdiocese directory, so neither is on the map yet. Add them as markers?
-- **Our Lady of Mt. Carmel.** The directory lists it at St. Patrick's address in Larkspur with St. Patrick's website, which posts nothing for it. Star of the Sea, Sausalito, says its confessions are at Our Lady of Mt. Carmel, Mill Valley. Its marker sits beside St. Patrick until the right address is confirmed.
+- **St. Peter and St. Anthony, Mission District.** The Mission Parishes site (missionparishes.com, St. Charles Borromeo's site) also lists St. Peter (1200 Florida St) and St. Anthony (3215 Cesar Chavez St) churches. Neither is in the archdiocese directory. Darwin decided not to list them.
+- **Our Lady of Mt. Carmel.** The directory lists it at St. Patrick's address in Larkspur with St. Patrick's website, which posts nothing for it; Star of the Sea, Sausalito, places it in Mill Valley. Darwin does not know the address, so the marker stays beside St. Patrick (approximate) and the hand-check record stays open.
 
 ## Marker positions that are approximate
 
