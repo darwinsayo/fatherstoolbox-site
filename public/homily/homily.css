@@ -12,18 +12,11 @@
 .hm-suggest{margin:.8rem 0 0}
 .hm-suggest:empty{display:none}
 
-/* Template choices */
-.hm-templates{display:grid;gap:.5rem}
-.hm-choice{position:relative}
-.hm-choice input{position:absolute;opacity:0;width:1px;height:1px}
-.hm-choice label{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.1rem 1rem;padding:.6rem .9rem .65rem 2.4rem;border:1px solid #d3cab8;border-radius:2px;cursor:pointer;font-variant-caps:normal;letter-spacing:0;font-size:1.15rem;color:var(--ink);position:relative;background:var(--vellum)}
-.hm-choice label::before{content:"";position:absolute;left:.85rem;top:.95rem;width:.85rem;height:.85rem;border-radius:50%;border:1px solid var(--ink-soft);background:var(--vellum)}
-.hm-choice label b{font-weight:500}
-.hm-choice label span{font-style:italic;font-size:1rem;color:var(--ink-soft)}
-.hm-choice label:hover{border-color:var(--lapis)}
-.hm-choice input:checked+label{border-color:var(--lapis);box-shadow:inset 0 0 0 1px var(--lapis);background:#f1f0f2}
-.hm-choice input:checked+label::before{border-color:var(--lapis);background:var(--lapis);box-shadow:inset 0 0 0 2.5px var(--vellum)}
-.hm-choice input:focus-visible+label{outline:2px solid var(--lapis);outline-offset:3px}
+/* Template menu */
+.hm-pick label{display:block;margin-bottom:.1rem}
+.hm-pick select{font-size:1.25rem;color:var(--ink);border:1px solid #bfb6a4;border-radius:2px;padding:.55rem 2.2rem .6rem .8rem;background-color:var(--vellum);background-position:right .9rem center}
+.hm-pick select:focus{border-color:var(--lapis);box-shadow:0 0 0 1px var(--lapis)}
+.hm-desc{margin:.8rem 0 0;font-size:1.08rem;color:var(--ink-soft)}
 
 /* Blanks */
 .hm-blanks{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem 1.6rem}
@@ -64,6 +57,33 @@
 @media (max-width:560px){
   .hm-blanks{grid-template-columns:1fr}
   .hm-buttons .btn{flex:1 1 auto;justify-content:center}
+}
+
+/* Shapes: every template reads a little differently */
+.hm-sheet section .rubric[hidden]{display:none}
+.hm-closing{margin:1.6rem 0 0;font-style:italic;color:var(--ink-soft);white-space:pre-line}
+.hm-closing+.hm-invocation{margin-top:1rem}
+/* A letter: no labels, an address, a signature on the right */
+.fmt-letter h2{font-size:clamp(1.7rem,2.8vw,2.1rem)}
+.fmt-letter .hm-closing{text-align:right;color:var(--ink);font-size:1.18rem;margin-top:1.8rem}
+/* Questions and answers: the question leads, in plain type */
+.fmt-qa section .rubric{font-variant-caps:normal;letter-spacing:0;font-size:1.2rem;font-weight:600;color:var(--lapis-deep)}
+.fmt-qa section{padding-top:.9rem;border-top:1px solid #e3dccb}
+.fmt-qa section:first-of-type{border-top:0;padding-top:0}
+.fmt-qa .hm-closing{text-align:center}
+/* Numbered rules, a countdown, a forecast: the label is the beat */
+.fmt-list section,.fmt-countdown section{display:grid;grid-template-columns:8.6rem minmax(0,1fr);gap:0 1.1rem;align-items:baseline}
+.fmt-list section .rubric,.fmt-countdown section .rubric{grid-column:1;color:var(--lapis);font-size:1.1rem}
+.fmt-list section p+p,.fmt-countdown section p+p{grid-column:2}
+.fmt-list .hm-closing,.fmt-countdown .hm-closing{text-align:center}
+.fmt-forecast section .rubric,.fmt-script section .rubric{color:var(--lapis);border-bottom:1px solid var(--gold);display:inline-block;margin-bottom:.35rem}
+.fmt-forecast .hm-closing,.fmt-script .hm-closing,.fmt-story .hm-closing,.fmt-homily .hm-closing{text-align:center}
+.fmt-story section p+p{font-size:1.2rem}
+/* Short enough to read at a glance */
+.fmt-homily section:only-of-type p+p{font-size:1.32rem;line-height:1.6}
+@media (max-width:560px){
+  .fmt-list section,.fmt-countdown section{grid-template-columns:1fr}
+  .fmt-list section p+p,.fmt-countdown section p+p{grid-column:1}
 }
 
 /* Print only the homily */

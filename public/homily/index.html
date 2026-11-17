@@ -26,7 +26,7 @@
 <p class="hm-crumb"><a href="/resources">Resources</a></p>
 <p class="rubric">Just for fun</p>
 <h1>The fill&#8209;in&#8209;the&#8209;blank homily.</h1>
-<p class="lede">Pick a template, fill in a few silly words, and get the homily Father will never preach: about the parking lot, the potluck and the thermostat.</p>
+<p class="lede">Pick a template, fill in a few silly words, and get the homily Father will never preach, or a letter, a weather report or a game show, all about the parking lot, the potluck and the thermostat.</p>
 <p class="hm-note">This is a playful look at parish life, not a real homily, and it is not meant to be preached. The jokes stay with coffee, casseroles and folding chairs; holy things stay out of the blanks. Nothing you type leaves your browser.</p>
 </div></section>
 
@@ -34,14 +34,16 @@
 <form id="hm-form" novalidate>
   <fieldset class="full hm-pick">
     <legend class="rubric">1. Choose a template</legend>
-    <div id="hm-templates" class="hm-templates"></div>
+    <label for="hm-template">Template</label>
+    <select id="hm-template" name="template" aria-describedby="hm-desc"></select>
+    <p class="hm-desc" id="hm-desc"></p>
     <p class="hm-suggest" id="hm-suggest"></p>
   </fieldset>
   <fieldset class="full">
     <legend class="rubric">2. Fill in the blanks</legend>
     <p class="hm-help">Don&rsquo;t peek at the template; that&rsquo;s the fun. Leave a blank empty and we&rsquo;ll fill it in for you.</p>
     <div id="hm-blanks" class="hm-blanks"></div>
-    <div class="field full hm-saint">
+    <div class="field full hm-saint" id="hm-saint-wrap">
       <label for="hm-saint">A patron saint for the closing prayer</label>
       <select id="hm-saint" name="saint"></select>
     </div>
@@ -58,7 +60,7 @@
     <div class="hm-empty">
       <svg viewBox="0 0 40 36" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 13h24v9a10 10 0 0 1-10 10h-4A10 10 0 0 1 5 22z"/><path d="M29 16h3a4 4 0 0 1 0 8h-4"/><path d="M13 3c-2 2.5 2 4.5 0 7M20 3c-2 2.5 2 4.5 0 7"/></svg>
       <p id="hm-out-label">Your homily will appear here.</p>
-      <p class="hm-empty-sub">Three brief points, a story, and a conclusion that keeps concluding.</p>
+      <p class="hm-empty-sub">Fourteen templates, from a two-minute homily to a mystery in three clues.</p>
     </div>
   </div>
   <div class="hm-actions" id="hm-actions" hidden>
