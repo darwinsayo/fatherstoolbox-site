@@ -1,0 +1,10 @@
+{
+  "map": "san-francisco",
+  "parish": "St. Vincent de Paul",
+  "town": "San Francisco",
+  "phone": "415-922-1010",
+  "website": "https://svdpsf.org/",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "Times from the home page Mass Times box only; /mass-times and /confession-times pages failed to load. Home page appeal text dates from 2024. Saturday confession has no end time; shown as 30 minutes. Checked 15 Nov 2026."
+}

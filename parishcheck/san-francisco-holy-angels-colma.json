@@ -1,0 +1,10 @@
+{
+  "map": "san-francisco",
+  "parish": "Holy Angels",
+  "town": "Colma",
+  "phone": "650-488-0240",
+  "website": "https://www.hacolma.org/",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "No website in the archdiocese directory; hacolma.org names Holy Angels at 107 San Pedro Road. Footer says 2022. Phone 650-488-0240 from the parish site (directory gives none). Map marker is approximate: Placed by geocoding the address with Daly City instead of Colma. Checked 15 Nov 2026."
+}

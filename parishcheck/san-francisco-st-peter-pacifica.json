@@ -1,0 +1,10 @@
+{
+  "map": "san-francisco",
+  "parish": "St. Peter",
+  "town": "Pacifica",
+  "phone": "650-359-6313",
+  "website": "https://stpeterpacifica.org/",
+  "status": "needs_check",
+  "checked_on": "",
+  "notes": "Map marker is approximate: 700 Oddstad Blvd did not geocode; placed at 725 Oddstad Blvd. Checked 15 Nov 2026."
+}
