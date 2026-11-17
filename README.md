@@ -72,7 +72,16 @@ Until the key is set, the form answers "not set up yet" instead of sending.
 ## The fill-in-the-blank homily (`/homily/`)
 A lighthearted word game about parish life. Templates, word lists, patron saints and the word filter are in `public/homily/homily.js`; its content rules are at the top of that file. Everything runs in the browser and nothing is stored. Check it with `node tests/homily.test.js`.
 
-## Event RSVPs (`/event/`)
-`public/event/index.html` is the event page. Placeholder text is highlighted in yellow (`class="ph"`); replace it and remove the class. RSVPs post to `functions/api/rsvp.js`, which stores them in a Cloudflare D1 database (no email service needed).
+## Events and RSVPs
+Events are organized by parish:
 
-One-time setup: Cloudflare dashboard, Storage & Databases, D1, create a database (for example `fatherstoolbox-rsvps`); run `db/schema.sql` in its Console tab; then Pages project, Settings, Bindings, add a D1 database binding named `RSVP_DB` (Production, and Preview if wanted) and redeploy. Until the binding exists the form shows an error message. View responses in the D1 console with `SELECT * FROM rsvps ORDER BY id;`.
+- `/events/`: all upcoming events across parishes, with a parish filter (`public/events/index.html`).
+- `/parishes/<parish>/`: one parish's events.
+- `/parishes/<parish>/events/<event>/`: an event page. Each event page is its own hand-designed HTML file (the Advent flyer look lives in `advent-lessons-carols`). Placeholders are highlighted yellow (`class="ph"`).
+- `public/events.json` lists the parishes and events that the two list pages show.
+- `/event/` redirects to the Advent page (`public/_redirects`).
+
+**Add a parish:** add it to `events.json` and copy `public/parishes/st-cecilia/index.html` to `public/parishes/<slug>/index.html` (change the name, text and `data-parish`).
+**Add an event:** copy an existing event folder to `public/parishes/<parish>/events/<event>/`, edit it, change the two hidden `parish` and `event` fields in its RSVP form, and add a matching entry to `events.json`.
+
+RSVPs post to `functions/api/rsvp.js`, which stores them in a Cloudflare D1 database (no email service needed), saved with the parish and event slugs. One-time setup: Cloudflare dashboard, Storage & Databases, D1, create a database (for example `fatherstoolbox-rsvps`); run `db/schema.sql` in its Console tab; then Pages project, Settings, Bindings, add a D1 database binding named `RSVP_DB` (Production, and Preview if wanted) and redeploy. Until the binding exists the form shows an error message. Responses for one parish: `SELECT * FROM rsvps WHERE parish = 'st-cecilia' ORDER BY id;`.

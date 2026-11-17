@@ -1,0 +1,17 @@
+{
+  "_help": "To add a parish, add it under parishes. To add an event, add it under events: copy an existing event page folder to /parishes/<parish>/events/<event>/, then add a matching entry here. date is YYYY-MM-DD (events drop off the lists the day after).",
+  "parishes": [
+    { "slug": "st-cecilia", "name": "St. Cecilia", "place": "Independence, KY", "diocese": "Diocese of Covington" }
+  ],
+  "events": [
+    {
+      "parish": "st-cecilia",
+      "slug": "advent-lessons-carols",
+      "title": "Advent Lessons & Carols",
+      "date": "2026-12-13",
+      "when": "Sunday, December 13, 2026, 6:00 PM",
+      "where": "St. Cecilia Church, Independence, KY",
+      "summary": "An evening of Scripture and song for Gaudete Sunday, followed by a Parish Open House in Urlage Hall. Free and open to all."
+    }
+  ]
+}
