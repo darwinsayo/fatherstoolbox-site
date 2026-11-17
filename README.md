@@ -79,9 +79,9 @@ Events are organized by parish:
 - `/parishes/<parish>/`: one parish's events.
 - `/parishes/<parish>/events/<event>/`: an event page. Each event page is its own hand-designed HTML file (the Advent flyer look lives in `advent-lessons-carols`). Placeholders are highlighted yellow (`class="ph"`).
 - `public/events.json` lists the parishes and events that the two list pages show.
-- `/event/` redirects to the Advent page (`public/_redirects`).
+- Short links in `public/_redirects`: `/event/` and `/adventcarols` (Advent Lessons & Carols), `/openhouse` (Parish Open House), `/christmaswalk` (Warm Up at Urlage Hall during the Christmas Walk).
 
 **Add a parish:** add it to `events.json` and copy `public/parishes/st-cecilia/index.html` to `public/parishes/<slug>/index.html` (change the name, text and `data-parish`).
-**Add an event:** copy an existing event folder to `public/parishes/<parish>/events/<event>/`, edit it, (if it has an RSVP form) change the two hidden `parish` and `event` fields in the form. An event with no RSVP, like the concert, simply has no form, and add a matching entry to `events.json`.
+**Add an event:** copy an existing event folder to `public/parishes/<parish>/events/<event>/`, edit it, (if it has an RSVP form) change the two hidden `parish` and `event` fields in the form. An event with no RSVP, like the concert, simply has no form. Add a matching entry to `events.json` (with `"rsvp": true` if the page has a form).
 
 RSVPs post to `functions/api/rsvp.js`, which stores them in a Cloudflare D1 database (no email service needed), saved with the parish and event slugs. One-time setup: Cloudflare dashboard, Storage & Databases, D1, create a database (for example `fatherstoolbox-rsvps`); run `db/schema.sql` in its Console tab; then Pages project, Settings, Bindings, add a D1 database binding named `RSVP_DB` (Production, and Preview if wanted) and redeploy. Until the binding exists the form shows an error message. Responses for one parish: `SELECT * FROM rsvps WHERE parish = 'st-cecilia' ORDER BY id;`.

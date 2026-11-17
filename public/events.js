@@ -14,7 +14,7 @@
       var f=filter?filter.value:'';
       var rows=evs.filter(function(e){return !f||e.parish===f});
       list.innerHTML=rows.length?rows.map(function(e){var p=names[e.parish]||{name:e.parish,place:''};
-        return '<article class="ev-card"><p class="rubric"><a href="/parishes/'+esc(e.parish)+'/" style="text-decoration:none">'+esc(p.name)+'</a>'+(p.place?' &middot; '+esc(p.place):'')+'</p><h2><a href="/parishes/'+esc(e.parish)+'/events/'+esc(e.slug)+'/">'+esc(e.title)+'</a></h2><p class="ev-when">'+esc(e.when)+'<br>'+esc(e.where)+'</p><p>'+esc(e.summary)+'</p><a class="btn btn-plain" href="/parishes/'+esc(e.parish)+'/events/'+esc(e.slug)+'/">Details and RSVP</a></article>'}).join('')
+        return '<article class="ev-card"><p class="rubric"><a href="/parishes/'+esc(e.parish)+'/" style="text-decoration:none">'+esc(p.name)+'</a>'+(p.place?' &middot; '+esc(p.place):'')+'</p><h2><a href="/parishes/'+esc(e.parish)+'/events/'+esc(e.slug)+'/">'+esc(e.title)+'</a></h2><p class="ev-when">'+esc(e.when)+'<br>'+esc(e.where)+'</p><p>'+esc(e.summary)+'</p><a class="btn btn-plain" href="/parishes/'+esc(e.parish)+'/events/'+esc(e.slug)+'/">Details'+(e.rsvp?' and RSVP':'')+'</a></article>'}).join('')
         :'<p class="ev-empty">No upcoming events right now. Please check back soon.</p>';
     }
     if(filter)filter.addEventListener('change',draw);
