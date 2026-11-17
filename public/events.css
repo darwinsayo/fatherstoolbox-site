@@ -1,0 +1,12 @@
+/* Event hub and parish pages */
+.ev-list-wrap{padding-block:1rem clamp(4rem,8vw,6rem)}
+.ev-filter{display:flex;flex-wrap:wrap;align-items:end;gap:.4rem 1.2rem;margin:0 0 2rem;max-width:30rem}
+.ev-filter .field{flex:1;min-width:14rem}
+#event-list{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,22rem),1fr))}
+.ev-card{background:var(--vellum);border:1px solid var(--stone-deep);border-radius:3px;padding:1.6rem 1.6rem 1.4rem;box-shadow:0 18px 40px -30px rgba(35,31,28,.45)}
+.ev-card h2{margin:.4rem 0 .5rem;font-size:1.8rem;line-height:1.15}
+.ev-card h2 a{text-decoration:none}.ev-card h2 a:hover{color:var(--lapis)}
+.ev-card p{margin:.4rem 0}
+.ev-when{color:var(--lapis-deep);font-size:1.15rem}
+.ev-empty{font-style:italic;color:var(--ink-soft)}
+.parish-note{margin-top:2.5rem;color:var(--ink-soft);max-width:var(--measure)}
