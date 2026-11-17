@@ -67,6 +67,7 @@
 .cw-rsvp .btn-red{background:var(--claret);border-color:var(--claret)}.cw-rsvp .btn-red:hover{background:var(--claret-deep);border-color:var(--claret-deep)}
 .cw-rsvp input:focus,.cw-rsvp textarea:focus{border-bottom-color:var(--night);box-shadow:0 1px 0 var(--night)}
 .cw-reply{display:inline-block;margin-top:1.2rem;color:var(--night);font-variant-caps:all-small-caps;letter-spacing:.22em;font-size:1.1rem;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:.1rem}
+.cw-rsvp .optin{margin-top:-.2rem}.cw-rsvp .chk{display:flex;gap:.7rem;align-items:flex-start;font-variant-caps:normal;letter-spacing:0;font-size:1.15rem;color:var(--ink);cursor:pointer}.cw-rsvp .chk input{width:1.2rem;height:1.2rem;margin:.28rem 0 0;flex:none;accent-color:var(--night)}.cw-rsvp .optin-note{margin:.3rem 0 0 1.9rem;font-style:italic;font-size:1rem;color:var(--ink-soft)}
 .cw-fine{max-width:34em;margin:1.4rem auto 0;text-align:center;font-style:italic;color:var(--ink-soft);line-height:1.5;background:var(--ivory);border:1px solid var(--gold);padding:.9rem 1.2rem}
 @media (max-width:560px){.cw-rsvp .wrap{width:calc(100% - 2rem)}}
 @media print{.ev-note{display:none}.cw-hero{background:#fff}}
@@ -81,7 +82,7 @@
 <main>
 <!--
   Raffle page for the Christmas Walk at Urlage Hall (parish "st-cecilia"). Entries post to /api/rsvp with
-  event "christmas-walk-raffle" (attending is always 1; the optional phone number goes into note).
+  event "christmas-walk-raffle" (attending is always 1; the optional phone number and the emails checkbox go into note, one per line).
   Anything highlighted in yellow is still a placeholder (class="ph"): replace the text and delete class="ph".
   Still needed: the discount amount, when and how the winner is drawn and told, any rules (one entry per person,
   age, being present). Confirm the raffle follows Kentucky charitable gaming rules. Then delete the yellow "Draft" strip.
@@ -106,10 +107,11 @@
 <section class="cw-rsvp" id="enter"><div class="wrap">
 <form id="raffle-form" action="/api/rsvp" method="post">
 <input type="hidden" name="parish" value="st-cecilia"><input type="hidden" name="event" value="christmas-walk-raffle"><input type="hidden" name="attending" value="1">
-<div class="full rsvp-head"><h2>Enter the raffle</h2><p class="rsvp-sub">One entry per person. We use your details only to reach the winner.</p></div>
+<div class="full rsvp-head"><h2>Enter the raffle</h2><p class="rsvp-sub">One entry per person. We use your details to reach the winner.</p></div>
 <div class="field"><label for="r-name">Name</label><input id="r-name" name="name" autocomplete="name" required maxlength="120"></div>
 <div class="field"><label for="r-email">Email</label><input id="r-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
 <div class="field full"><label for="r-phone">Phone <i>(optional)</i></label><input id="r-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+<div class="full optin"><label class="chk" for="r-optin"><input id="r-optin" name="optin" type="checkbox" value="yes"><span>Yes, add me to emails about other Urlage Hall events.</span></label><p class="optin-note">Optional. You can enter the raffle without ticking this box.</p></div>
 <div class="hp" aria-hidden="true"><label for="r-website">Leave blank</label><input id="r-website" name="website" tabindex="-1" autocomplete="off"></div>
 <div class="full form-foot"><button class="btn btn-red" type="submit">Enter raffle</button><p class="form-status" role="status" aria-live="polite"></p></div>
 </form>
@@ -133,7 +135,7 @@
 const f=document.getElementById('raffle-form');
 const s=f.querySelector('.form-status'),b=f.querySelector('button');
 f.addEventListener('submit',async e=>{e.preventDefault();s.className='form-status';s.textContent='Sending\u2026';b.disabled=true;
-try{const d=new FormData(f);const ph=(d.get('phone')||'').toString().trim();d.delete('phone');d.set('note',ph?'Phone: '+ph:'');
+try{const d=new FormData(f);const ph=(d.get('phone')||'').toString().trim();d.delete('phone');var oi=d.get('optin')==='yes';d.delete('optin');d.set('note',[ph?'Phone: '+ph:'',oi?'Urlage Hall emails: yes':''].filter(Boolean).join('\n'));
 const r=await fetch(f.action,{method:'POST',body:d});if(!r.ok)throw 0;
 f.reset();s.classList.add('ok');s.textContent='Thank you. You are entered in the raffle. Good luck, and God bless you.'}
 catch{s.classList.add('err');s.textContent='Sorry, something went wrong. Please try again in a moment.'}
