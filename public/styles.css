@@ -54,9 +54,11 @@ h1 em,h2 em{font-style:normal;color:inherit;font-weight:inherit}
 .season-now::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--season);box-shadow:0 0 0 2px var(--lapis-deep),0 0 0 3px var(--gold-lit)}
 
 /* Header */
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.3rem}
-.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-size:1.45rem;font-weight:500;font-variant-caps:small-caps;letter-spacing:.06em;white-space:nowrap}
-.brand svg{width:68px;height:44px;flex:none}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-size:1.85rem;font-weight:500;font-variant-caps:small-caps;letter-spacing:.06em;white-space:nowrap}
+.brand svg{width:84px;height:54px;flex:none}
+footer .brand{font-size:1.45rem}
+footer .brand svg{width:68px;height:44px}
 nav ul{list-style:none;display:flex;gap:2rem;align-items:baseline;margin:0;padding:0}
 nav a{white-space:nowrap;text-decoration:none;font-size:1.15rem;font-variant-caps:all-small-caps;letter-spacing:.1em;padding:.3rem 0;border-bottom:1px solid transparent}
 nav a:hover{color:var(--lapis);border-bottom-color:currentColor}
@@ -248,6 +250,7 @@ footer .wrap{padding-block:2.6rem 2.2rem}
   body{font-size:1.15rem}
   .wrap{width:calc(100% - 2.5rem)}
   .site-header .wrap{flex-direction:column;gap:.6rem;padding-block:1rem}
+  .brand{font-size:1.5rem;gap:.6rem}.brand svg{width:64px;height:41px}
   nav ul{gap:.8rem}nav a{font-size:1.05rem;letter-spacing:.06em}
   .site-header nav{position:relative}
   .site-header .has-menu{position:static}
