@@ -60,7 +60,6 @@
 .adv-bring{color:var(--gold-lit);font-variant-caps:all-small-caps;letter-spacing:.2em;font-size:1.2rem}
 .ph{background:rgba(232,200,119,.45);border-bottom:1px dashed var(--gold);padding:0 .15em;color:inherit}
 .adv-foot .ph{background:rgba(255,255,255,.18);border-bottom-color:var(--gold-lit)}
-.parts{border:0;margin:0;padding:0;display:grid;gap:.4rem}.parts-hint{margin:0 0 .3rem;font-size:1.05rem;font-style:italic;color:var(--ink-soft)}.parts legend{padding:0;margin-bottom:.4rem;font-variant-caps:all-small-caps;letter-spacing:.08em;font-size:1.05rem;color:var(--ink-soft)}.check{display:flex;align-items:center;gap:.7rem;font-variant-caps:normal;letter-spacing:0;font-size:1.2rem;color:var(--ink)}.check input{width:1.15rem;height:1.15rem;accent-color:var(--adv);flex:none}
 .adv-rsvp-link{display:inline-block;margin-top:.7rem;color:var(--adv);font-variant-caps:all-small-caps;letter-spacing:.14em;text-decoration-color:var(--gold)}
 .ev-note a{color:inherit}.ev-note{margin:0;padding:.6rem 1rem;background:#fff6d9;border-bottom:1px solid #e8d79c;text-align:center;font-size:1.02rem;color:var(--ink-soft)}
 @media (max-width:560px){.adv-over{letter-spacing:.3em}.adv-open{grid-template-columns:minmax(0,1fr)}.adv-lily{display:none}.adv-after{margin-top:.6rem}.arch::after{display:none}}
@@ -112,10 +111,10 @@
 <div class="adv-div" aria-hidden="true"><svg width="14" height="18" viewBox="0 0 22 29"><path d="M11 1v27M3 9h16" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" fill="none"/></svg></div>
 <p class="adv-when">Sunday, December 13, 2026 <span>&middot;</span> 6:00 PM</p>
 <p class="adv-where">St. Cecilia Church &middot; 5313 Madison Pike, Independence, KY</p>
-<p class="adv-free">Free and open to all &middot; Free-will offering for our music programs and a new piano</p>
+<p class="adv-free">Free and open to all &middot; No RSVP needed for the concert &middot; Free-will offering for our music programs and a new piano</p>
 <div class="adv-open">
 <svg class="adv-lily" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 118C30 90 29 70 30 52" fill="none" stroke="#5b8a54" stroke-width="2.4"/><path d="M30 100C18 96 12 86 12 78 24 80 29 88 30 100Z" fill="#6f9c63"/><path d="M30 92C42 88 48 78 48 70 36 72 31 80 30 92Z" fill="#6f9c63"/><path d="M30 52C14 48 6 34 4 22 18 24 28 34 30 52Z" fill="#f6e7c4" stroke="#d5b26b" stroke-width="1.2"/><path d="M30 52C46 48 54 34 56 22 42 24 32 34 30 52Z" fill="#f6e7c4" stroke="#d5b26b" stroke-width="1.2"/><path d="M30 52C24 38 24 20 30 6 36 20 36 38 30 52Z" fill="#fbf1d6" stroke="#d5b26b" stroke-width="1.2"/><g stroke="#c08a2e" stroke-width="1" fill="#c08a2e"><path d="M30 50V24M30 50L20 28M30 50L40 28" fill="none"/><circle cx="30" cy="22" r="1.6"/><circle cx="19.5" cy="26" r="1.6"/><circle cx="40.5" cy="26" r="1.6"/></g></svg>
-<aside class="adv-after"><span class="adv-tag">Stay and celebrate</span><h2>Parish Open House</h2><p>Immediately after, in Urlage Hall</p><p>Food, fellowship and Christmas cheer &middot; All are welcome</p><p><span class="ph">Open House time</span></p><a class="adv-rsvp-link" href="?for=open-house#rsvp">Just coming to the Open House? RSVP here</a></aside>
+<aside class="adv-after"><span class="adv-tag">Stay and celebrate</span><h2>Parish Open House</h2><p>Immediately after, in Urlage Hall</p><p>Food, fellowship and Christmas cheer &middot; All are welcome</p><p><span class="ph">Open House time</span></p><a class="adv-rsvp-link" href="#rsvp">RSVP for the Open House</a></aside>
 <svg class="adv-lily r" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 118C30 90 29 70 30 52" fill="none" stroke="#5b8a54" stroke-width="2.4"/><path d="M30 100C18 96 12 86 12 78 24 80 29 88 30 100Z" fill="#6f9c63"/><path d="M30 92C42 88 48 78 48 70 36 72 31 80 30 92Z" fill="#6f9c63"/><path d="M30 52C14 48 6 34 4 22 18 24 28 34 30 52Z" fill="#f6e7c4" stroke="#d5b26b" stroke-width="1.2"/><path d="M30 52C46 48 54 34 56 22 42 24 32 34 30 52Z" fill="#f6e7c4" stroke="#d5b26b" stroke-width="1.2"/><path d="M30 52C24 38 24 20 30 6 36 20 36 38 30 52Z" fill="#fbf1d6" stroke="#d5b26b" stroke-width="1.2"/><g stroke="#c08a2e" stroke-width="1" fill="#c08a2e"><path d="M30 50V24M30 50L20 28M30 50L40 28" fill="none"/><circle cx="30" cy="22" r="1.6"/><circle cx="19.5" cy="26" r="1.6"/><circle cx="40.5" cy="26" r="1.6"/></g></svg>
 </div>
 </div></section>
@@ -123,14 +122,10 @@
 <section class="adv-rsvp" id="rsvp"><div class="wrap">
 <form id="rsvp-form" class="rsvp" action="/api/rsvp" method="post">
 <input type="hidden" name="parish" value="st-cecilia"><input type="hidden" name="event" value="advent-lessons-carols">
-<div class="full"><h2>RSVP</h2><p class="rsvp-sub">Let us know you are coming so we can plan for you.</p></div>
+<div class="full"><h2>RSVP for the Open House</h2><p class="rsvp-sub">Please let us know you are coming so we can plan the food. The concert needs no RSVP: just come.</p></div>
 <div class="field"><label for="rsvp-name">Name</label><input id="rsvp-name" name="name" autocomplete="name" required maxlength="120"></div>
 <div class="field"><label for="rsvp-email">Email</label><input id="rsvp-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
-<fieldset class="full parts"><legend>I will attend</legend>
-<p class="parts-hint">Come to the concert, the Open House, or both. Neither one requires the other.</p>
-<label class="check"><input type="checkbox" name="parts" value="lessons-carols"> Lessons &amp; Carols, 6:00 PM</label>
-<label class="check"><input type="checkbox" name="parts" value="open-house"> Parish Open House, immediately after</label>
-</fieldset>
+<input type="hidden" name="parts" value="open-house">
 <div class="field"><label for="rsvp-count">Number attending</label><select id="rsvp-count" name="attending" required><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
 <div class="field full"><label for="rsvp-note">Note <i>(optional)</i></label><textarea id="rsvp-note" name="note" maxlength="1000"></textarea></div>
 <div class="hp" aria-hidden="true"><label for="rsvp-website">Leave blank</label><input id="rsvp-website" name="website" tabindex="-1" autocomplete="off"></div>
@@ -153,11 +148,10 @@
 <script src="/menu.js?v=2026111403" defer></script>
 <script>
 const f=document.getElementById('rsvp-form');
-(function(){var w=new URLSearchParams(location.search).get('for');if(w)f.querySelectorAll('input[name=parts]').forEach(function(i){i.checked=i.value===w})})();
 const s=f.querySelector('.form-status'),b=f.querySelector('button');
-f.addEventListener('submit',async e=>{e.preventDefault();if(!f.querySelector('input[name=parts]:checked')){s.className='form-status err';s.textContent='Please choose at least one: the concert, the Open House, or both.';return}s.className='form-status';s.textContent='Sending\u2026';b.disabled=true;
+f.addEventListener('submit',async e=>{e.preventDefault();s.className='form-status';s.textContent='Sending\u2026';b.disabled=true;
 try{const r=await fetch(f.action,{method:'POST',body:new FormData(f)});if(!r.ok)throw 0;
-f.reset();s.classList.add('ok');s.textContent='Thank you. Your RSVP has been received. We look forward to seeing you. God bless you.'}
+f.reset();s.classList.add('ok');s.textContent='Thank you. Your Open House RSVP has been received. We look forward to seeing you. God bless you.'}
 catch{s.classList.add('err');s.textContent='Sorry, something went wrong. Please try again in a moment.'}
 b.disabled=false});
 </script>
