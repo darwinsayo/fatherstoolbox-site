@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Urlage Hall Raffle | Father&rsquo;s Tool Box</title>
+<meta name="description" content="Enter the St. Cecilia Urlage Hall raffle for a discount on a future Hall rental. Free to enter; drawn during the Independence Christmas Walk.">
+<meta name="theme-color" content="#152a52">
+<meta property="og:title" content="Urlage Hall Raffle">
+<meta property="og:description" content="Enter the St. Cecilia Urlage Hall raffle for a discount on a future Hall rental. Free to enter.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/eb-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=2026111701">
+<style>
+/* Warm Up at Urlage Hall during the Independence Christmas Walk.
+   A winter evening: lapis night, ivory card, gold stars, a claret mug of hot chocolate. Garamond; no motion. */
+:root{--night:#152a52;--night-deep:#0d1d3c;--ivory:#fbf7ec;--claret:#7d1a2b;--claret-deep:#5c1220;--pine:#1f5a3d}
+.cw-hero{background:radial-gradient(rgba(232,200,119,.16) 1px,transparent 1.7px) 0 0/34px 34px,radial-gradient(rgba(239,230,207,.08) 1px,transparent 1.5px) 17px 17px/34px 34px,radial-gradient(ellipse 70% 60% at 50% 30%,#24467f 0%,var(--night) 50%,var(--night-deep) 100%);color:var(--ivory);text-align:center;padding:clamp(2rem,5vw,3.4rem) 0 clamp(2.6rem,6vw,4.2rem);border-bottom:3px double var(--gold)}
+.cw-kicker{margin:0 0 1.5rem;color:var(--gold-lit);font-variant-caps:all-small-caps;letter-spacing:.3em;font-size:1.1rem}
+.cw-card{position:relative;max-width:640px;margin:0 auto;background:var(--ivory);color:var(--ink);border:1px solid var(--gold);border-radius:999px 999px 4px 4px / 150px 150px 4px 4px;padding:clamp(1.8rem,5vw,2.8rem) clamp(1.1rem,5vw,3.2rem) clamp(1.8rem,5vw,2.6rem);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.cw-card::before{content:"";position:absolute;inset:9px;border:1px solid rgba(184,145,58,.5);border-radius:inherit;pointer-events:none}
+.cw-mug{display:block;width:clamp(150px,32vw,190px);height:auto;margin:0 auto .3rem}
+.cw-pre{margin:.2rem 0 0;font-style:italic;font-size:clamp(1.3rem,3.2vw,1.6rem);color:var(--claret)}
+.cw-title{margin:.1rem 0 0;line-height:1;color:var(--night)}
+.cw-title span{display:block;font-size:clamp(2.5rem,9vw,4.3rem);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.cw-sub{margin:.7rem auto 0;max-width:22em;font-style:italic;font-size:clamp(1.15rem,2.9vw,1.4rem);line-height:1.4;color:var(--gold)}
+.cw-sub b{font-weight:500;color:var(--night);font-style:normal;font-variant-caps:all-small-caps;letter-spacing:.12em}
+.cw-rule{display:flex;align-items:center;gap:.8rem;max-width:420px;margin:1.3rem auto;color:var(--gold)}
+.cw-rule::before,.cw-rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#cdb57a)}
+.cw-rule::after{background:linear-gradient(90deg,#cdb57a,transparent)}
+.cw-rule svg{width:18px;height:18px;flex:none}
+.cw-date{margin:0;font-variant-caps:all-small-caps;letter-spacing:.16em;font-size:clamp(1.35rem,3.6vw,1.7rem);font-weight:600;color:var(--night);line-height:1.25}
+.cw-time{margin:.2rem 0 0;font-size:clamp(1.2rem,3vw,1.4rem);color:var(--claret)}
+.cw-line{margin:.85rem 0 0;font-size:clamp(1.12rem,2.8vw,1.28rem);line-height:1.45}
+.cw-free{margin:1.1rem 0 0;font-variant-caps:all-small-caps;letter-spacing:.3em;padding-left:.3em;color:var(--claret);font-weight:600;font-size:1.15rem}
+.cw-offer{list-style:none;margin:.3rem 0 0;padding:0;font-size:clamp(1.12rem,2.8vw,1.28rem);line-height:1.5}
+.cw-cheer{margin:1.1rem 0 0;font-style:italic;color:var(--pine);font-size:clamp(1.2rem,3vw,1.4rem)}
+.cw-details{background:var(--ivory);color:var(--ink)}
+.cw-details .wrap{max-width:980px;padding-block:clamp(2.6rem,6vw,4rem) clamp(2.6rem,6vw,3.6rem)}
+.cw-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center}
+.cw-col{padding:.2rem clamp(.8rem,2.4vw,1.8rem)}
+.cw-col+.cw-col{border-left:1px solid #dccca0}
+.cw-col h2{margin:0 0 .6rem;font-size:1.15rem;font-weight:600;font-variant-caps:all-small-caps;letter-spacing:.3em;padding-left:.3em;color:var(--claret)}
+.cw-col p{margin:.15rem 0;line-height:1.45}
+.cw-col .big{font-size:1.32rem;color:var(--night);font-weight:600}
+.cw-more{max-width:40em;margin:clamp(2.2rem,5vw,3rem) auto 0;text-align:center;background:#fff;border:1px solid #dccca0;border-top:3px solid var(--night);padding:1.4rem clamp(1rem,4vw,2rem) 1.3rem}
+.cw-more h2{margin:0 0 .35rem;font-size:1.55rem;font-weight:500;color:var(--night)}
+.cw-more p{margin:0;line-height:1.5}
+.cw-more a{color:var(--claret);text-decoration-color:var(--gold);text-underline-offset:.25em}
+.cw-foot{background:var(--night);color:var(--ivory);border-top:1px solid var(--gold)}
+.cw-foot .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between;align-items:center}
+.cw-foot p{margin:0}.cw-foot a{color:var(--ivory);text-decoration-color:var(--gold-lit);text-underline-offset:.25em}
+.cw-welcome{color:var(--gold-lit);font-variant-caps:all-small-caps;letter-spacing:.2em;font-size:1.2rem}
+.nw{white-space:nowrap}
+.ph{background:rgba(232,200,119,.45);border-bottom:1px dashed var(--gold);padding:0 .15em;color:inherit}
+.ev-note a{color:inherit}.ev-note{margin:0;padding:.6rem 1rem;background:#fff6d9;border-bottom:1px solid #e8d79c;text-align:center;font-size:1.02rem;color:var(--ink-soft)}
+@media (max-width:720px){.cw-cols{grid-template-columns:minmax(0,1fr);gap:1.4rem}.cw-col+.cw-col{border-left:0;border-top:1px solid #dccca0;padding-top:1.4rem}}
+@media (max-width:560px){.cw-hero .wrap{width:calc(100% - 2rem)}.cw-card{border-radius:999px 999px 4px 4px / 90px 90px 4px 4px}.cw-kicker{letter-spacing:.18em;font-size:1rem}.cw-title span{letter-spacing:.03em}.cw-date{letter-spacing:.06em;font-size:1.3rem}}
+.cw-rsvp{background:radial-gradient(rgba(232,200,119,.12) 1px,transparent 1.6px) 13px 13px/26px 26px,var(--night);padding:clamp(2.2rem,5vw,3.4rem) 0 clamp(3rem,7vw,4.4rem)}
+.cw-rsvp .wrap{max-width:760px}
+.cw-rsvp form{position:relative;background:var(--ivory);border:1px solid var(--gold);border-radius:0;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.cw-rsvp form::before{content:"";position:absolute;inset:8px;border:1px solid rgba(184,145,58,.45);pointer-events:none}
+.cw-rsvp .field,.cw-rsvp .full{position:relative;z-index:1}
+.cw-rsvp .rsvp-head{text-align:center}.cw-rsvp h2{margin:0;font-size:clamp(1.9rem,4.4vw,2.5rem);font-weight:500;color:var(--night);line-height:1.1}
+.cw-rsvp .rsvp-sub{margin:.4rem 0 0;font-style:italic;color:var(--ink-soft)}
+.cw-rsvp .btn-red{background:var(--claret);border-color:var(--claret)}.cw-rsvp .btn-red:hover{background:var(--claret-deep);border-color:var(--claret-deep)}
+.cw-rsvp input:focus,.cw-rsvp textarea:focus{border-bottom-color:var(--night);box-shadow:0 1px 0 var(--night)}
+.cw-reply{display:inline-block;margin-top:1.2rem;color:var(--night);font-variant-caps:all-small-caps;letter-spacing:.22em;font-size:1.1rem;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:.1rem}
+.cw-fine{max-width:34em;margin:1.4rem auto 0;text-align:center;font-style:italic;color:var(--ink-soft);line-height:1.5;background:var(--ivory);border:1px solid var(--gold);padding:.9rem 1.2rem}
+@media (max-width:560px){.cw-rsvp .wrap{width:calc(100% - 2rem)}}
+@media print{.ev-note{display:none}.cw-hero{background:#fff}}
+</style>
+</head>
+<body>
+<div class="topband"><div class="wrap"><em>Laudetur Iesus Christus</em><span class="season-now">The Church is in&nbsp;<span data-season-name>Ordinary Time</span></span></div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a>
+<nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li class="has-menu"><a href="/resources">Resources</a><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-resources"><span class="sr-only">Show the Resources menu</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="submenu" id="menu-resources"><li><a href="/resources"><span class="sm-t">All resources</span><span class="sm-d">Everything in one place</span></a></li><li><a href="/parishtimes/"><span class="sm-t">Parish times</span><span class="sm-d">Mass and Confession times</span></a></li><li><a href="/calendar/"><span class="sm-t">Liturgical calendar</span><span class="sm-d">Feasts, colors and the Hours</span></a></li><li><a href="/homily/"><span class="sm-t">Fill-in homily</span><span class="sm-d">A bit of fun about parish life</span></a></li></ul></li><li><a href="/events/" aria-current=page>Events</a></li><li><a href="/contact">Contact</a></li></ul></nav>
+</div></header>
+<main>
+<!--
+  Raffle page for the Christmas Walk at Urlage Hall (parish "st-cecilia"). Entries post to /api/rsvp with
+  event "christmas-walk-raffle" (attending is always 1; the optional phone number goes into note).
+  Anything highlighted in yellow is still a placeholder (class="ph"): replace the text and delete class="ph".
+  Still needed: the discount amount, when and how the winner is drawn and told, any rules (one entry per person,
+  age, being present). Confirm the raffle follows Kentucky charitable gaming rules. Then delete the yellow "Draft" strip.
+-->
+<p class="ev-note"><a href="/events/">Events</a> &rsaquo; <a href="/parishes/st-cecilia/events/christmas-walk/">Christmas Walk</a> &nbsp;&middot;&nbsp; <strong>Draft.</strong> Highlighted text is a placeholder and will be replaced.</p>
+
+<section class="cw-hero"><div class="wrap">
+<p class="cw-kicker">St. Cecilia Parish &middot; Independence, Kentucky</p>
+<div class="cw-card">
+<svg class="cw-mug" viewBox="0 0 240 150" style="width:clamp(170px,36vw,220px)" role="img" aria-label="A raffle ticket with a gold star"><path d="M14 20h212a0 0 0 0 1 0 0v32a14 14 0 0 0 0 28v50H14V80a14 14 0 0 0 0-28z" fill="#7d1a2b"/><path d="M26 32h188v106H26z" fill="none" stroke="#e8c877" stroke-width="2" stroke-dasharray="5 4" transform="translate(0 -6)"/><path d="M120 30l7.4 22.8h24l-19.4 14.1 7.4 22.8L120 79.6 100.6 93.7l7.4-22.8-19.4-14.1h24z" fill="#e8c877" transform="translate(0 -2)"/><text x="120" y="120" text-anchor="middle" font-family="EB Garamond,serif" font-size="15" letter-spacing="4" fill="#efe6cf">ADMIT ONE</text></svg>
+<p class="cw-pre">Enter our</p>
+<h1 class="cw-title"><span>Raffle</span></h1>
+<p class="cw-sub">win a <b>discount</b> on a future rental of Urlage Hall</p>
+<div class="cw-rule" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.1 6.5H19l-5.5 4 2.1 6.5L10 14l-5.6 4 2.1-6.5L1 7.5h6.9z" fill="currentColor"/></svg></div>
+<p class="cw-line">Drawn during the Christmas Walk at Urlage Hall:<br><span class="ph">date, time and how the winner is told</span></p>
+<p class="cw-line">Prize: <span class="ph">discount amount</span> off a future Hall rental. Come see our beautiful renovated Hall!</p>
+<p class="cw-cheer">Free to enter. Everyone is welcome.</p>
+<a class="cw-reply" href="#enter">Enter the raffle</a>
+</div>
+</div></section>
+
+<section class="cw-rsvp" id="enter"><div class="wrap">
+<form id="raffle-form" action="/api/rsvp" method="post">
+<input type="hidden" name="parish" value="st-cecilia"><input type="hidden" name="event" value="christmas-walk-raffle"><input type="hidden" name="attending" value="1">
+<div class="full rsvp-head"><h2>Enter the raffle</h2><p class="rsvp-sub">One entry per person. We use your details only to reach the winner.</p></div>
+<div class="field"><label for="r-name">Name</label><input id="r-name" name="name" autocomplete="name" required maxlength="120"></div>
+<div class="field"><label for="r-email">Email</label><input id="r-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+<div class="field full"><label for="r-phone">Phone <i>(optional)</i></label><input id="r-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+<div class="hp" aria-hidden="true"><label for="r-website">Leave blank</label><input id="r-website" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="full form-foot"><button class="btn btn-red" type="submit">Enter raffle</button><p class="form-status" role="status" aria-live="polite"></p></div>
+</form>
+<p class="cw-fine">Not entering online? Ask at Urlage Hall during the Christmas Walk. <span class="ph">Rules: one entry per person; you need not be present to win?</span></p>
+</div></section>
+
+<section class="cw-foot"><div class="wrap">
+<p class="cw-welcome"><a href="/parishes/st-cecilia/events/christmas-walk/" style="text-decoration:none">&lsaquo; Back to the Christmas Walk</a></p>
+<p>St. Cecilia Church &middot; <a href="tel:+18593634311">(859) 363-4311</a> &middot; <a href="mailto:stcsecretary@stcindependence.org">stcsecretary@stcindependence.org</a></p>
+</div></section>
+</main>
+<footer><div class="wrap">
+<div class="foot-top"><a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a><nav aria-label="Footer"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/resources">Resources</a></li><li><a href="/events/">Events</a></li><li><a href="/contact">Contact</a></li></ul></nav></div>
+<div class="foot-bottom"><span>&copy; <span id="yr">2026</span> Father&rsquo;s Tool Box. Communication services for Catholic parishes.</span><em>Ad maiorem Dei gloriam</em></div>
+<p class="foot-prayer">St. Francis de Sales, patron of writers and the Catholic press, pray for us.</p>
+</div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="/liturgy.js?v=20261114"></script>
+<script src="/menu.js?v=2026111403" defer></script>
+<script>
+const f=document.getElementById('raffle-form');
+const s=f.querySelector('.form-status'),b=f.querySelector('button');
+f.addEventListener('submit',async e=>{e.preventDefault();s.className='form-status';s.textContent='Sending\u2026';b.disabled=true;
+try{const d=new FormData(f);const ph=(d.get('phone')||'').toString().trim();d.delete('phone');d.set('note',ph?'Phone: '+ph:'');
+const r=await fetch(f.action,{method:'POST',body:d});if(!r.ok)throw 0;
+f.reset();s.classList.add('ok');s.textContent='Thank you. You are entered in the raffle. Good luck, and God bless you.'}
+catch{s.classList.add('err');s.textContent='Sorry, something went wrong. Please try again in a moment.'}
+b.disabled=false});
+</script>
+</body>
+</html>

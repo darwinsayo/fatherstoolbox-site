@@ -1,5 +1,5 @@
 {
-  "_help": "To add a parish, add it under parishes. To add an event, add it under events: copy an existing event page folder to /parishes/<parish>/events/<event>/, then add a matching entry here. date is YYYY-MM-DD (events drop off the lists the day after).",
+  "_help": "To add a parish, add it under parishes. To add an event, add it under events: copy an existing event page folder to /parishes/<parish>/events/<event>/, then add a matching entry here. date is YYYY-MM-DD (events drop off the lists the day after). Add \"rsvp\": true when the page has an RSVP form, so the list button says \"Details and RSVP\".",
   "parishes": [
     {
       "slug": "st-cecilia",
@@ -9,6 +9,15 @@
     }
   ],
   "events": [
+    {
+      "parish": "st-cecilia",
+      "slug": "christmas-walk",
+      "title": "Warm Up at Urlage Hall: the Christmas Walk",
+      "date": "2026-12-05",
+      "when": "Saturday, December 5, 2026, 6:00 to 9:00 PM (to be confirmed)",
+      "where": "Urlage Hall, St. Cecilia Church, Independence, KY",
+      "summary": "Stop in during the City of Independence Christmas Walk for free cookies, holiday treats and hot chocolate. Enter the raffle for a discount on a future Hall rental. Everyone is welcome; no RSVP needed."
+    },
     {
       "parish": "st-cecilia",
       "slug": "advent-lessons-carols",
@@ -25,7 +34,8 @@
       "date": "2026-12-13",
       "when": "Sunday, December 13, 2026, right after the concert",
       "where": "Urlage Hall, St. Cecilia Church, Independence, KY",
-      "summary": "Food, fellowship and Christmas cheer after Advent Lessons & Carols. All are welcome; please RSVP."
+      "summary": "Food, fellowship and Christmas cheer after Advent Lessons & Carols. All are welcome; please RSVP.",
+      "rsvp": true
     }
   ]
 }
