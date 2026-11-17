@@ -45,7 +45,7 @@ body{background:var(--stone)}
 <p class="status" id="app-status" role="status"></p>
 </section>
 <section class="panel winner" id="winner-panel" hidden aria-live="polite"><p class="rubric" id="winner-label">Winner</p><p class="nm" id="w-name"></p><p class="em" id="w-email"></p><p class="status" id="w-note"></p></section>
-<section class="panel"><h2 style="margin:0 0 .6rem;font-size:1.5rem" id="count">Entries</h2><table><thead><tr><th>#</th><th>Name</th><th>Email</th><th></th></tr></thead><tbody id="rows"></tbody></table></section>
+<section class="panel"><h2 style="margin:0 0 .6rem;font-size:1.5rem" id="count">Entries</h2><table><thead><tr><th>#</th><th>Name</th><th>Email</th><th>Emails?</th><th></th></tr></thead><tbody id="rows"></tbody></table></section>
 </div>
 </main>
 <script>
@@ -56,10 +56,11 @@ function say(el,msg,err){el.textContent=msg;el.className='status'+(err?' err':''
 function api(opts){opts=opts||{};opts.headers=Object.assign({'x-admin-password':pw},opts.headers||{});opts.cache='no-store';return fetch(ep+(opts.q||''),opts)}
 function render(d){
   var order={};d.draws.forEach(function(x,i){order[x.entry_id]=i+1});
-  $('count').textContent=d.entries.length+' entr'+(d.entries.length===1?'y':'ies')+(d.total>d.entries.length?' ('+(d.total-d.entries.length)+' repeat email'+(d.total-d.entries.length===1?'':'s')+' ignored)':'');
+  var optin=d.entries.filter(function(e){return e.emails}).length;
+  $('count').textContent=d.entries.length+' entr'+(d.entries.length===1?'y':'ies')+', '+optin+' want Urlage Hall emails'+(d.total>d.entries.length?' ('+(d.total-d.entries.length)+' repeat email'+(d.total-d.entries.length===1?'':'s')+' ignored)':'');
   var tb=$('rows');tb.textContent='';
   d.entries.forEach(function(e,i){var tr=document.createElement('tr');if(order[e.id])tr.className='drawn';
-    [i+1,e.name,e.email,order[e.id]?(order[e.id]===1?'Winner':'Alternate '+(order[e.id]-1)):''].forEach(function(v,j){var td=document.createElement('td');if(j===3&&v)td.className='tag';td.textContent=v;tr.appendChild(td)});tb.appendChild(tr)});
+    [i+1,e.name,e.email,e.emails?'Yes':'',order[e.id]?(order[e.id]===1?'Winner':'Alternate '+(order[e.id]-1)):''].forEach(function(v,j){var td=document.createElement('td');if(j===4&&v)td.className='tag';td.textContent=v;tr.appendChild(td)});tb.appendChild(tr)});
 }
 function load(){return api().then(function(r){return r.json().then(function(j){if(!r.ok)throw j;return j})}).then(render)}
 $('login-form').addEventListener('submit',function(e){e.preventDefault();pw=$('pw').value;say($('login-status'),'Checking…');
