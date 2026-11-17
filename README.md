@@ -82,6 +82,6 @@ Events are organized by parish:
 - `/event/` redirects to the Advent page (`public/_redirects`).
 
 **Add a parish:** add it to `events.json` and copy `public/parishes/st-cecilia/index.html` to `public/parishes/<slug>/index.html` (change the name, text and `data-parish`).
-**Add an event:** copy an existing event folder to `public/parishes/<parish>/events/<event>/`, edit it, change the two hidden `parish` and `event` fields in its RSVP form, and add a matching entry to `events.json`.
+**Add an event:** copy an existing event folder to `public/parishes/<parish>/events/<event>/`, edit it, (if it has an RSVP form) change the two hidden `parish` and `event` fields in the form. An event with no RSVP, like the concert, simply has no form, and add a matching entry to `events.json`.
 
 RSVPs post to `functions/api/rsvp.js`, which stores them in a Cloudflare D1 database (no email service needed), saved with the parish and event slugs. One-time setup: Cloudflare dashboard, Storage & Databases, D1, create a database (for example `fatherstoolbox-rsvps`); run `db/schema.sql` in its Console tab; then Pages project, Settings, Bindings, add a D1 database binding named `RSVP_DB` (Production, and Preview if wanted) and redeploy. Until the binding exists the form shows an error message. Responses for one parish: `SELECT * FROM rsvps WHERE parish = 'st-cecilia' ORDER BY id;`.

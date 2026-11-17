@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parish Open House | Father&rsquo;s Tool Box</title>
+<meta name="description" content="Parish Open House at St. Cecilia Church, Independence, KY, after Advent Lessons &amp; Carols on December 13, 2026. RSVP online.">
+<meta name="theme-color" content="#1c1815">
+<meta property="og:title" content="Parish Open House | Father&rsquo;s Tool Box">
+<meta property="og:description" content="Parish Open House at St. Cecilia Church, Independence, KY, after Advent Lessons &amp; Carols on December 13, 2026. RSVP online.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/eb-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=2026111701">
+<style>
+/* Advent Lessons & Carols event page: flyer look, recreated in CSS and inline SVG */
+:root{--adv:#3a1d52;--adv-deep:#2a1240;--adv-mid:#6b3a96;--rose:#d98aa5;--cream:#fbf6ea}
+.adv-hero{background:radial-gradient(ellipse 60% 55% at 50% 38%,#6f4a8c 0%,#4a2a66 45%,var(--adv-deep) 100%);color:#fff;text-align:center;border-bottom-left-radius:50% 70px;border-bottom-right-radius:50% 70px;padding:clamp(1.8rem,4vw,2.6rem) 1rem clamp(4.5rem,9vw,6.5rem);position:relative}
+.adv-kicker{margin:0 0 1.6rem;color:var(--gold-lit);font-variant-caps:all-small-caps;letter-spacing:.28em;font-size:1.1rem}
+.adv-kicker b{color:#e08aa8;font-weight:400;padding:0 .5em}
+.arch{position:relative;max-width:640px;margin:0 auto;border:1px solid rgba(232,200,119,.55);border-bottom:0;border-radius:999px 999px 0 0;padding:clamp(2rem,6vw,3.2rem) clamp(1rem,5vw,3rem) 0}
+.arch::before{content:"";position:absolute;inset:7px 7px 0;border:1px solid rgba(232,200,119,.3);border-bottom:0;border-radius:999px 999px 0 0;pointer-events:none}
+.arch::after{content:"";position:absolute;left:-4px;bottom:34%;width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:calc(min(640px,100vw - 2rem) - 3px) 0 0 var(--gold)}
+.adv-art{width:min(100%,440px);height:auto;margin:0 auto;display:block}
+.adv-over{margin:.6rem 0 0;font-variant-caps:all-small-caps;letter-spacing:.5em;font-size:1.3rem;color:#e7dff0;padding-left:.5em}
+.adv-title{margin:.1rem 0 0;font-size:clamp(2.3rem,8.6vw,4.6rem);font-weight:600;line-height:1;letter-spacing:.05em;text-transform:uppercase;color:#fff}
+.adv-title i{font-style:italic;font-weight:400;color:var(--gold);letter-spacing:0;padding:0 .08em;text-transform:none}
+.adv-latin{margin:1.5rem 0 0;color:var(--gold-lit);font-variant-caps:all-small-caps;letter-spacing:.2em;font-size:1.05rem}
+.adv-trans{margin:.3rem 0 0;font-style:italic;color:#efe6f6;font-size:1.2rem}
+.adv-ref{margin:.4rem 0 0;color:var(--gold-lit);font-variant-caps:all-small-caps;letter-spacing:.22em;font-size:.95rem;padding-bottom:3rem}
+.adv-body{background:var(--cream);text-align:center;color:#2a1c33}
+.adv-body .wrap{max-width:760px;padding-block:2.4rem 1rem}
+.adv-verse{margin:0;color:var(--adv);font-variant-caps:all-small-caps;letter-spacing:.2em;font-size:clamp(1.15rem,3.2vw,1.45rem);font-weight:600}
+.adv-verse-ref{margin:.2rem 0 1.2rem;font-style:italic;color:var(--adv-mid);font-size:1rem}
+.adv-desc{margin:0 auto;max-width:36em;font-size:1.28rem;line-height:1.55}
+.adv-div{display:flex;align-items:center;gap:1rem;margin:1.8rem auto;max-width:520px;color:var(--gold)}
+.adv-div::before,.adv-div::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#d9c79a,transparent)}
+.adv-when{margin:0;color:var(--adv);font-size:clamp(1.5rem,5vw,2.3rem);font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
+.adv-when span{color:var(--gold)}
+.adv-where{margin:.9rem 0 0;font-size:1.4rem}
+.adv-free{margin:.4rem 0 0;font-style:italic;color:var(--adv-mid);font-size:1.15rem}
+.adv-open{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:end;gap:.6rem;max-width:700px;margin:2.6rem auto 0}
+.adv-lily{width:clamp(44px,9vw,64px);height:auto;margin-bottom:.2rem}
+.adv-lily.r{transform:scaleX(-1)}
+.adv-after{position:relative;background:linear-gradient(#fff,#fdeef3);border:1px solid #e3b5c4;border-radius:14px;padding:2.1rem 1.2rem 1.3rem}
+.adv-tag{position:absolute;top:-.85rem;left:50%;transform:translateX(-50%);background:var(--rose);color:#fff;font-variant-caps:all-small-caps;letter-spacing:.2em;font-size:1rem;font-weight:600;padding:.1rem 1.1rem;border-radius:99px;white-space:nowrap}
+.adv-after h2{margin:0;font-size:clamp(1.5rem,4vw,2rem);color:var(--adv);font-variant-caps:all-small-caps;letter-spacing:.08em}
+.adv-after p{margin:.2rem 0 0;line-height:1.45}
+.adv-rsvp{background:var(--cream);padding:2.6rem 0 clamp(3rem,6vw,4.5rem)}
+.adv-rsvp .wrap{max-width:760px}
+.adv-rsvp form{border:1px solid #e2d6b8;box-shadow:0 18px 40px -30px rgba(42,18,64,.5);text-align:left}
+.rsvp h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin:0 0 .4rem;line-height:1.1;color:var(--adv)}
+.rsvp-sub{margin:0 0 1.4rem;color:var(--ink-soft)}
+.adv-rsvp .btn-red{background:var(--adv);border-color:var(--adv)}
+.adv-rsvp .btn-red:hover{background:var(--adv-deep);border-color:var(--adv-deep)}
+.adv-rsvp input:focus,.adv-rsvp textarea:focus,.adv-rsvp select:focus{border-bottom-color:var(--adv-mid);box-shadow:0 1px 0 var(--adv-mid)}
+.adv-foot{background:var(--adv);color:#fff}
+.adv-foot .wrap{padding-block:1.6rem;display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between;align-items:center}
+.adv-foot p{margin:0}
+.adv-bring{color:var(--gold-lit);font-variant-caps:all-small-caps;letter-spacing:.2em;font-size:1.2rem}
+.ph{background:rgba(232,200,119,.45);border-bottom:1px dashed var(--gold);padding:0 .15em;color:inherit}
+.adv-foot .ph{background:rgba(255,255,255,.18);border-bottom-color:var(--gold-lit)}
+.adv-rsvp-link{display:inline-block;margin-top:.7rem;color:var(--adv);font-variant-caps:all-small-caps;letter-spacing:.14em;text-decoration-color:var(--gold)}
+.oh-hero .adv-ref,.oh-hero .adv-latin{display:none}.oh-hero .arch{padding-bottom:0}.oh-hero .adv-trans{font-size:1.3rem;margin-top:1rem}.oh-lilies{display:flex;justify-content:center;gap:clamp(2rem,10vw,5rem);margin-top:2rem}.oh-lilies .adv-lily{width:clamp(48px,10vw,72px)}.oh-hero .adv-trans{padding-bottom:0}
+.oh-concert{max-width:34em;margin:0 auto;background:var(--vellum);border:1px solid #e2d6b8;border-radius:3px;padding:1.4rem 1.4rem 1.2rem}.oh-concert h2{margin:0 0 .3rem;font-size:1.6rem;color:var(--adv)}.oh-concert p{margin:.3rem 0}
+.ev-note a{color:inherit}.ev-note{margin:0;padding:.6rem 1rem;background:#fff6d9;border-bottom:1px solid #e8d79c;text-align:center;font-size:1.02rem;color:var(--ink-soft)}
+@media (max-width:560px){.adv-over{letter-spacing:.3em}.adv-open{grid-template-columns:minmax(0,1fr)}.adv-lily{display:none}.adv-after{margin-top:.6rem}.arch::after{display:none}}
+@media print{.ev-note{display:none}}
+</style>
+</head>
+<body>
+<div class="topband"><div class="wrap"><em>Laudetur Iesus Christus</em><span class="season-now">The Church is in&nbsp;<span data-season-name>Ordinary Time</span></span></div></div>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a>
+<nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li class="has-menu"><a href="/resources">Resources</a><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-resources"><span class="sr-only">Show the Resources menu</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="submenu" id="menu-resources"><li><a href="/resources"><span class="sm-t">All resources</span><span class="sm-d">Everything in one place</span></a></li><li><a href="/parishtimes/"><span class="sm-t">Parish times</span><span class="sm-d">Mass and Confession times</span></a></li><li><a href="/calendar/"><span class="sm-t">Liturgical calendar</span><span class="sm-d">Feasts, colors and the Hours</span></a></li><li><a href="/homily/"><span class="sm-t">Fill-in homily</span><span class="sm-d">A bit of fun about parish life</span></a></li></ul></li><li><a href="/events/" aria-current=page>Events</a></li><li><a href="/contact">Contact</a></li></ul></nav>
+</div></header>
+<main>
+<!--
+  Event "parish-open-house" of parish "st-cecilia" (listed in /events.json). RSVPs are saved with these two names.
+  Anything highlighted in yellow is still a placeholder (class="ph"): replace the text and delete class="ph".
+  Still needed: the Open House time, and the website, phone and email in the purple footer band.
+  When done, delete the yellow "Draft" strip.
+-->
+<p class="ev-note"><a href="/events/">Events</a> &rsaquo; <a href="/parishes/st-cecilia/">St. Cecilia, Independence</a> &nbsp;&middot;&nbsp; <strong>Draft.</strong> Highlighted text is a placeholder and will be replaced.</p>
+<section class="adv-hero oh-hero"><div class="wrap-adv">
+<p class="adv-kicker">Stay and celebrate</p>
+<div class="arch">
+<p class="adv-over">St. Cecilia</p>
+<h1 class="adv-title">Parish <i>Open</i> House</h1>
+<p class="adv-trans">Food, fellowship and Christmas cheer. All are welcome.</p>
+<div class="oh-lilies" aria-hidden="true"><svg class="adv-lily" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 118C30 90 29 70 30 52" fill="none" stroke="#5b8a54" stroke-width="2.4"/><path d="M30 100C18 96 12 86 12 78 24 80 29 88 30 100Z" fill="#6f9c63"/><path d="M30 92C42 88 48 78 48 70 36 72 31 80 30 92Z" fill="#6f9c63"/><path d="M30 52C14 48 6 34 4 22 18 24 28 34 30 52Z" fill="#f6e7c4" stroke="#d5b26b" stroke-width="1.2"/><path d="M30 52C46 48 54 34 56 22 42 24 32 34 30 52Z" fill="#f6e7c4" stroke="#d5b26b" stroke-width="1.2"/><path d="M30 52C24 38 24 20 30 6 36 20 36 38 30 52Z" fill="#fbf1d6" stroke="#d5b26b" stroke-width="1.2"/><g stroke="#c08a2e" stroke-width="1" fill="#c08a2e"><path d="M30 50V24M30 50L20 28M30 50L40 28" fill="none"/><circle cx="30" cy="22" r="1.6"/><circle cx="19.5" cy="26" r="1.6"/><circle cx="40.5" cy="26" r="1.6"/></g></svg><svg class="adv-lily r" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 118C30 90 29 70 30 52" fill="none" stroke="#5b8a54" stroke-width="2.4"/><path d="M30 100C18 96 12 86 12 78 24 80 29 88 30 100Z" fill="#6f9c63"/><path d="M30 92C42 88 48 78 48 70 36 72 31 80 30 92Z" fill="#6f9c63"/><path d="M30 52C14 48 6 34 4 22 18 24 28 34 30 52Z" fill="#f6e7c4" stroke="#d5b26b" stroke-width="1.2"/><path d="M30 52C46 48 54 34 56 22 42 24 32 34 30 52Z" fill="#f6e7c4" stroke="#d5b26b" stroke-width="1.2"/><path d="M30 52C24 38 24 20 30 6 36 20 36 38 30 52Z" fill="#fbf1d6" stroke="#d5b26b" stroke-width="1.2"/><g stroke="#c08a2e" stroke-width="1" fill="#c08a2e"><path d="M30 50V24M30 50L20 28M30 50L40 28" fill="none"/><circle cx="30" cy="22" r="1.6"/><circle cx="19.5" cy="26" r="1.6"/><circle cx="40.5" cy="26" r="1.6"/></g></svg></div>
+</div>
+</div></section>
+
+<section class="adv-body"><div class="wrap">
+<p class="adv-when">Sunday, December 13, 2026</p>
+<p class="adv-where">Immediately after Advent Lessons &amp; Carols &middot; <span class="ph">Open House time</span></p>
+<p class="adv-where">Urlage Hall &middot; St. Cecilia Church, 5313 Madison Pike, Independence, KY</p>
+<p class="adv-free">All are welcome &middot; Please RSVP so we can plan the food</p>
+<div class="adv-div" aria-hidden="true"><svg width="14" height="18" viewBox="0 0 22 29"><path d="M11 1v27M3 9h16" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" fill="none"/></svg></div>
+<aside class="oh-concert"><h2>Come early for the concert</h2><p>The Open House follows <strong>Advent Lessons &amp; Carols</strong> at 6:00 PM in the church: Scripture and song for Gaudete Sunday, free, with no RSVP needed. You are welcome at either one, or both.</p><a class="adv-rsvp-link" href="/parishes/st-cecilia/events/advent-lessons-carols/">About the concert</a></aside>
+</div></section>
+
+<section class="adv-rsvp" id="rsvp"><div class="wrap">
+<form id="rsvp-form" class="rsvp" action="/api/rsvp" method="post">
+<input type="hidden" name="parish" value="st-cecilia"><input type="hidden" name="event" value="parish-open-house">
+<div class="full"><h2>RSVP for the Open House</h2><p class="rsvp-sub">Please let us know you are coming so we can plan the food.</p></div>
+<div class="field"><label for="rsvp-name">Name</label><input id="rsvp-name" name="name" autocomplete="name" required maxlength="120"></div>
+<div class="field"><label for="rsvp-email">Email</label><input id="rsvp-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+<div class="field"><label for="rsvp-count">Number attending</label><select id="rsvp-count" name="attending" required><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
+<div class="field full"><label for="rsvp-note">Note <i>(optional)</i></label><textarea id="rsvp-note" name="note" maxlength="1000"></textarea></div>
+<div class="hp" aria-hidden="true"><label for="rsvp-website">Leave blank</label><input id="rsvp-website" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="full form-foot"><button class="btn btn-red" type="submit">Send RSVP</button><p class="form-status" role="status" aria-live="polite"></p></div>
+</form>
+</div></section>
+
+<section class="adv-foot"><div class="wrap">
+<p class="adv-bring">Bring a friend. Bring the whole family.</p>
+<p><span class="ph">Website &middot; phone &middot; email</span></p>
+</div></section>
+</main>
+<footer><div class="wrap">
+<div class="foot-top"><a class="brand" href="/" aria-label="Father&rsquo;s Tool Box, home"><svg viewBox="0 0 30 38" aria-hidden="true"><path d="M1 37V15Q1 6 15 1Q29 6 29 15v22z" fill="#1e3a6e"/><path d="M15 9v21M8.5 16h13" stroke="#e8c877" stroke-width="2.6" stroke-linecap="square"/></svg><span>Father&rsquo;s Tool Box</span></a><nav aria-label="Footer"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/resources">Resources</a></li><li><a href="/events/">Events</a></li><li><a href="/contact">Contact</a></li></ul></nav></div>
+<div class="foot-bottom"><span>&copy; <span id="yr">2026</span> Father&rsquo;s Tool Box. Communication services for Catholic parishes.</span><em>Ad maiorem Dei gloriam</em></div>
+<p class="foot-prayer">St. Francis de Sales, patron of writers and the Catholic press, pray for us.</p>
+</div></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="/liturgy.js?v=20261114"></script>
+<script src="/menu.js?v=2026111403" defer></script>
+<script>
+const f=document.getElementById('rsvp-form');
+const s=f.querySelector('.form-status'),b=f.querySelector('button');
+f.addEventListener('submit',async e=>{e.preventDefault();s.className='form-status';s.textContent='Sending\u2026';b.disabled=true;
+try{const r=await fetch(f.action,{method:'POST',body:new FormData(f)});if(!r.ok)throw 0;
+f.reset();s.classList.add('ok');s.textContent='Thank you. Your Open House RSVP has been received. We look forward to seeing you. God bless you.'}
+catch{s.classList.add('err');s.textContent='Sorry, something went wrong. Please try again in a moment.'}
+b.disabled=false});
+</script>
+</body>
+</html>

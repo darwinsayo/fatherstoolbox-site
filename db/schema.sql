@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS rsvps (
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   parish TEXT NOT NULL,
   event TEXT NOT NULL,
-  parts TEXT NOT NULL DEFAULT '',  -- which parts of the event, e.g. 'lessons-carols,open-house'
   name TEXT NOT NULL,
   email TEXT NOT NULL,
   attending INTEGER NOT NULL,
