@@ -71,3 +71,8 @@ Until the key is set, the form answers "not set up yet" instead of sending.
 
 ## The fill-in-the-blank homily (`/homily/`)
 A lighthearted word game about parish life. Templates, word lists, patron saints and the word filter are in `public/homily/homily.js`; its content rules are at the top of that file. Everything runs in the browser and nothing is stored. Check it with `node tests/homily.test.js`.
+
+## Event RSVPs (`/event/`)
+`public/event/index.html` is the event page. Placeholder text is highlighted in yellow (`class="ph"`); replace it and remove the class. RSVPs post to `functions/api/rsvp.js`, which stores them in a Cloudflare D1 database (no email service needed).
+
+One-time setup: Cloudflare dashboard, Storage & Databases, D1, create a database (for example `fatherstoolbox-rsvps`); run `db/schema.sql` in its Console tab; then Pages project, Settings, Bindings, add a D1 database binding named `RSVP_DB` (Production, and Preview if wanted) and redeploy. Until the binding exists the form shows an error message. View responses in the D1 console with `SELECT * FROM rsvps ORDER BY id;`.

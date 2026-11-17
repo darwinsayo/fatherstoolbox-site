@@ -248,7 +248,7 @@ footer .wrap{padding-block:2.6rem 2.2rem}
   body{font-size:1.15rem}
   .wrap{width:calc(100% - 2.5rem)}
   .site-header .wrap{flex-direction:column;gap:.6rem;padding-block:1rem}
-  nav ul{gap:1.1rem}
+  nav ul{gap:.8rem}nav a{font-size:1.05rem;letter-spacing:.06em}
   .site-header nav{position:relative}
   .site-header .has-menu{position:static}
   .menu-toggle{width:2.2rem;height:2.2rem;margin-right:-.6rem}
