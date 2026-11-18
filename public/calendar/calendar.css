@@ -162,13 +162,21 @@
 .lc-check{display:flex;gap:.45rem;align-items:center;font-variant-caps:normal;letter-spacing:0;font-size:1.04rem;color:var(--ink)}
 .lc-ics-btn{padding:.6rem 1.1rem .7rem;font-size:1.05rem}
 
-/* Sources and accuracy: the same navy panel as Parish times */
-.lc-sources{margin:3rem 0 1.2rem;padding:clamp(1.4rem,3vw,2rem) clamp(1.4rem,3vw,2.2rem);background:var(--lapis);color:#f1ece1;border-radius:4px;border-left:5px solid var(--gold);max-width:62rem}
-.lc-sources .rubric{color:var(--gold-lit)}
-.lc-sources h2{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.18;margin:.5rem 0 1rem;color:#f8f5ee}
-.lc-sources p{font-size:1.08rem;line-height:1.55;margin:0 0 .75rem;color:#ebe6da;max-width:52em}
-.lc-sources p:last-child{margin:0}
-.lc-fix{font-style:italic;color:var(--ink-soft);margin:0}
+/* Sources and accuracy: a compact note; the details open on request */
+.lc-sources{margin:2.2rem 0 .8rem;max-width:62rem;border-top:1px solid #d8cfbb;padding-top:.8rem}
+.lc-sources details{font-size:.95rem;color:var(--ink-soft);line-height:1.5}
+.lc-sources summary{cursor:pointer;list-style:none;padding:.15rem 0}
+.lc-sources summary::-webkit-details-marker{display:none}
+.lc-src-label{font-variant-caps:all-small-caps;letter-spacing:.08em;color:var(--rubric);font-size:1.05rem;margin-right:.35rem}
+.lc-src-lede{font-style:italic}
+.lc-src-more{white-space:nowrap;margin-left:.3rem;color:var(--lapis);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:2px}
+.lc-src-more::after{content:" \25B8"}
+.lc-sources details[open] .lc-src-more{display:none}
+.lc-sources summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.lc-src-body{border-left:3px solid var(--gold);padding:.2rem 0 .1rem 1rem;margin:.7rem 0 .2rem}
+.lc-src-body p{margin:0 0 .6rem;max-width:52em}
+.lc-src-body p:last-child{margin:0}
+.lc-fix{font-style:italic;color:var(--ink-soft);margin:0;font-size:.95rem}
 .lc-fix a{color:var(--lapis);text-decoration-color:var(--gold)}
 
 @media (max-width:1100px){
