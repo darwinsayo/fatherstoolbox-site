@@ -47,7 +47,8 @@
   /* ---------- Today ---------- */
   function drawToday() {
     var t = O.today(), d = O.day(t, opt());
-    $('lc-today-date').textContent = 'Today, ' + long(t);
+    var holy = d.holyDay === 'obligation' ? 'Holy day of obligation' : d.holyEve ? 'Tomorrow is a holy day of obligation' : '';
+    $('lc-today-date').innerHTML = esc('Today, ' + long(t)) + (holy ? '<span class="lc-today-holy"><span class="lc-dot"> \u00B7 </span>' + esc(holy) + '</span>' : '');
     $('lc-today-title').textContent = d.title;
     var meta = [d.kind !== 'Weekday' ? d.kind : null, colorWords(d), seasonText(d), cycleText(d)].filter(Boolean).join(' \u00B7 ');
     if (d.options.length) meta += '. Optional: ' + d.options.map(function (o) { return o.short; }).join('; ');
@@ -91,6 +92,7 @@
       var cls = ['lc-cell'], plain = !d.sanctoral && d.kind === 'Weekday';
       if (d.dow === 0) cls.push('sun');
       if (d.n === t) cls.push('is-today');
+      if (d.holyDay === 'obligation') cls.push('is-holy');
       if (d.n === state.sel) cls.push('is-sel');
       if (rankClass(d)) cls.push('r-' + rankClass(d));
       var title = plain ? '' : '<span class="lc-t">' + esc(d.short) + '</span>';
@@ -98,12 +100,13 @@
       var optHtml = opts.length ? '<span class="lc-o">' + opts.map(function (o) { return esc(o.short); }).join('; ') + '</span>' : '';
       var bars = d.colors.map(function (c) { return '<i class="c-' + c + '"></i>'; }).join('');
       var label = long(d.n) + '. ' + d.title + (d.kind !== 'Weekday' ? ', ' + d.kind : '') + '. ' + colorWords(d) + '.' +
-        (opts.length ? ' Optional: ' + opts.map(function (o) { return o.short; }).join('; ') + '.' : '') + (d.holyDay === 'obligation' ? ' Holy day of obligation.' : '');
+        (opts.length ? ' Optional: ' + opts.map(function (o) { return o.short; }).join('; ') + '.' : '') + (d.holyDay === 'obligation' ? ' Holy day of obligation.' : d.holyDay === 'abrogated' || d.holyDay === 'transferred' ? ' Not a holy day of obligation this year.' : '');
       cells.push('<button type="button" role="gridcell" class="' + cls.join(' ') + '" data-n="' + d.n + '" aria-selected="' + (d.n === state.sel) + '" tabindex="' + (d.n === state.sel ? 0 : -1) + '" aria-label="' + esc(label) + '"' + (d.n === t ? ' aria-current="date"' : '') + '>' +
         '<span class="lc-bar" aria-hidden="true">' + bars + '</span>' +
         '<span class="lc-num" aria-hidden="true"><span class="lc-dow">' + DAYS[d.dow].slice(0, 3) + '</span>' + d.day + '</span>' +
         '<span class="lc-body" aria-hidden="true">' + title + optHtml +
-        (d.holyDay === 'obligation' ? '<span class="lc-hd">Holy day</span>' : '') +
+        (d.holyDay === 'obligation' ? '<span class="lc-hd"><span class="lc-hd-mark" aria-hidden="true">\u2720</span> Holy day<span class="lc-hd-long"> of obligation</span></span>' : '') +
+        (d.holyDay === 'abrogated' || d.holyDay === 'transferred' ? '<span class="lc-hd lc-hd-off">Not of obligation</span>' : '') +
         (!plain && /^(Solemnity|Feast|Memorial|Commemoration|Day of Prayer|Paschal Triduum)$/.test(d.kind) ? '<span class="lc-k">' + esc(d.kind) + '</span>' : '') +
         (plain && !opts.length ? '<span class="lc-w">' + esc(d.dow === 0 ? '' : (d.season === 'ordinary' ? 'Weekday' : d.short)) + '</span>' : '') +
         '</span></button>');
@@ -186,9 +189,9 @@
     $('lc-holy-title').textContent = 'Holy days in ' + Y;
     var list = O.year(Y, opt()).filter(function (d) { return d.holyDay; });
     $('lc-holy').innerHTML = list.map(function (d) {
-      var a = O.ymd(d.n), status = d.holyDay === 'obligation' ? '' : ' <em>' + esc(holyText(d.holyDay).replace('Falls on a Sunday', 'a Sunday this year')) + '</em>';
+      var a = O.ymd(d.n), status = d.holyDay === 'obligation' ? '' : ' <em>' + esc(d.key === 'ascension' && d.holyDay === 'sunday' ? 'Transferred to Sunday' : holyText(d.holyDay).replace('Falls on a Sunday', 'a Sunday this year')) + '</em>';
       return '<li class="hd-' + d.holyDay + '"><button type="button" class="lc-link" data-go="' + d.date + '">' + esc(d.short) + '</button><span>' + DAYS[d.dow].slice(0, 3) + ', ' + MONTHS[a[1] - 1].slice(0, 3) + ' ' + a[2] + status + '</span></li>';
-    }).join('') + (state.asc ? '' : '<li class="hd-note"><span>The Ascension is a holy day on Thursday only in the provinces of ' + O.ASCENSION_PROVINCES + '.</span></li>');
+    }).join('') + (state.asc ? '' : '<li class="hd-note"><span>The Ascension is a holy day on Thursday only in the provinces of ' + O.ASCENSION_PROVINCES + '. Elsewhere it is kept on the following Sunday.</span></li>');
     $('lc-ics-year').value = String(Y);
     $('lc-ics-note').textContent = state.asc ? 'With the Ascension on Thursday, as you have chosen above.' : 'With the Ascension on Sunday. To have it on Thursday, tick the box above the calendar first.';
   }

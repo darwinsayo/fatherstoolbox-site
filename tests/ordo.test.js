@@ -64,6 +64,34 @@ ok(day('2027-11-01').holyDay === 'abrogated', 'All Saints on Monday: obligation 
 ok(day('2027-12-25').holyDay === 'obligation', 'Christmas on Saturday is still a holy day (2027)');
 ok(day('2022-12-08').holyDay === 'obligation', 'Immaculate Conception on Thursday is a holy day');
 ok(day('2029-12-08').holyDay === 'obligation', 'Immaculate Conception on Saturday is still a holy day (2029)');
+/* Holy days: every US holy day of obligation, 1970-2199, against the rule written out independently here */
+function hasNote(d, re) { return d.notes.some(n => re.test(n)); }
+for (let y = 1970; y < 2200; y++) {
+  for (const asc of [false, true]) {
+    const want = new Map(), add = (n, why) => want.set(n, why);
+    const dw = n => O.dow(n), E = O.easter(y);
+    add(O.dn(y, 12, 25), 'Christmas');                                         // always, whatever the weekday (except Sunday)
+    for (const [m, d] of [[1, 1], [8, 15], [11, 1]]) { const n = O.dn(y, m, d); if (dw(n) !== 6 && dw(n) !== 1) add(n, m + '/' + d); }
+    const nj = O.dn(y + 1, 1, 1); if (dw(nj) !== 6 && dw(nj) !== 1) add(nj, 'next 1/1'); // for the eve on December 31
+    const ic = O.dn(y, 12, 8); add(ic, 'Immaculate Conception');               // a Sunday of Advent moves it to Monday without the obligation
+    if (asc) add(E + 39, 'Ascension Thursday');
+    for (const d of O.year(y, { ascensionThursday: asc })) {
+      const exp = want.has(d.n) && d.dow !== 0;
+      ok((d.holyDay === 'obligation') === exp, 'holy day of obligation ' + d.date + (asc ? ' (Thursday Ascension)' : '') + ': got ' + d.holyDay);
+      if (exp) ok(hasNote(d, /canons 1247 and 1248/), 'holy day note ' + d.date);
+      const tomorrow = want.has(d.n + 1) && dw(d.n + 1) !== 0;
+      ok(!!d.holyEve === tomorrow && hasNote(d, /^Tomorrow is .*holy day of obligation/) === tomorrow, 'eve of a holy day ' + d.date + (asc ? ' (Thursday Ascension)' : ''));
+      if (tomorrow) ok(hasNote(d, /one Mass cannot fulfill both/) === (d.dow === 0), 'Sunday eve note ' + d.date);
+    }
+  }
+}
+ok(day('2026-12-07').notes.some(n => n === 'Tomorrow is the Immaculate Conception of the Blessed Virgin Mary, a holy day of obligation. A Mass this evening fulfills the obligation (canon 1248).'), 'eve wording, Dec 7 2026');
+ok(day('2026-12-24').notes.some(n => /^Tomorrow is Christmas, a holy day/.test(n)), 'eve wording, Christmas Eve');
+ok(day('2026-12-31').holyEve && day('2027-12-31').holyEve !== true, 'New Year\'s Eve: eve in 2026 (Jan 1 2027 is a Friday), not in 2027 (Jan 1 2028 is a Saturday)');
+ok(day('2029-12-08').notes.some(n => /tomorrow is Sunday, one Mass cannot fulfill both/.test(n)), 'Immaculate Conception on Saturday: two Masses (2029)');
+ok(day('2028-12-24').notes.some(n => /today is Sunday, one Mass cannot fulfill both/.test(n)), 'Christmas on Monday: Sunday evening note (2028)');
+ok(day('2026-05-17').holyDay === 'sunday' && day('2026-05-17').key === 'ascension', 'Ascension on Sunday is listed as a Sunday (2026)');
+ok(day('2024-12-08').holyEve !== true && day('2024-12-09').holyDay === 'transferred', 'no eve note before the transferred Immaculate Conception (2024)');
 ok(day('2026-01-01').sundayCycle === 'A' && day('2026-01-01').weekdayCycle === 'II', 'cycles 2026: A, II');
 ok(day('2026-11-29').sundayCycle === 'B' && day('2026-11-29').weekdayCycle === 'I', 'cycles from Advent 2026: B, I');
 ok(day('2026-11-23').week === 34, 'last week of Ordinary Time is the 34th (2026)');
