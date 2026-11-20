@@ -418,6 +418,18 @@
     }
 
     var res = days.map(function (day) { return resolve(day, Y, opt); });
+    // The evening before a holy day of obligation: a Mass that evening fulfills it (can. 1248 §1).
+    // January 1 of next year is worked out directly, so that one year never needs the next.
+    var j1 = dn(Y + 1, 1, 1), j1w = dow(j1);
+    res.forEach(function (d, i) {
+      var next = i + 1 < res.length ? res[i + 1] : null,
+          obl = next ? next.holyDay === 'obligation' : (j1w >= 2 && j1w <= 5),
+          name = !next ? 'Mary, the Holy Mother of God' : next.key === 'christmas' ? 'Christmas' : plain(next.title);
+      if (!obl) return;
+      d.holyEve = true;
+      d.notes.push('Tomorrow is ' + name + ', a holy day of obligation. A Mass this evening fulfills the obligation (canon 1248).' +
+        (d.dow === 0 ? ' Because today is Sunday, one Mass cannot fulfill both obligations: an evening Mass today counts for Sunday or for tomorrow, not for both.' : ''));
+    });
     cache[ck] = res;
     return res;
   }
@@ -481,6 +493,8 @@
     });
 
     out.holyDay = holyDay(out, principal, n, w, opt);
+    if (out.holyDay === 'obligation') notes.push('A holy day of obligation. Catholics are bound to take part in Mass, on this day or on the evening before, and to rest from work and business that hinder the worship owed to God (canons 1247 and 1248).' +
+      (w === 6 ? ' Because tomorrow is Sunday, one Mass cannot fulfill both obligations: an evening Mass today counts for this holy day or for Sunday, not for both.' : ''));
     if (out.holyDay === 'abrogated') notes.push('Not a holy day of obligation this year: when this solemnity falls on a Saturday or a Monday, the obligation to attend Mass is lifted in the United States.');
     if (out.key === 'ascension') notes.push(opt.ascensionThursday
       ? 'Celebrated on Thursday in the ecclesiastical provinces of ' + ASCENSION_PROVINCES + '. Elsewhere in the United States it is transferred to the following Sunday.'
@@ -495,6 +509,7 @@
 
   function holyDay(o, p, n, w, opt) {
     var k = o.key;
+    if (k === 'ascension' && w === 0) return 'sunday'; // transferred to the Seventh Sunday of Easter: the Sunday obligation covers it
     if (k === 'christmas' || k === 'mary-mother-of-god' || k === 'saint-08-15' || k === 'saint-11-01' || k === 'saint-12-08' || (k === 'ascension' && w === 4)) {
       if (w === 0) return 'sunday';
       if (k === 'saint-12-08' && p.transferredFrom != null) return 'transferred';
