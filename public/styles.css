@@ -251,10 +251,10 @@ footer .wrap{padding-block:2.6rem 2.2rem}
   .wrap{width:calc(100% - 2.5rem)}
   .site-header .wrap{flex-direction:column;gap:.6rem;padding-block:1rem}
   .brand{font-size:1.5rem;gap:.6rem}.brand svg{width:64px;height:41px}
-  nav ul{gap:.8rem}nav a{font-size:1.05rem;letter-spacing:.06em}
+  nav ul{gap:.35rem .9rem;flex-wrap:wrap;justify-content:center}nav a{font-size:1.02rem;letter-spacing:.05em}
   .site-header nav{position:relative}
   .site-header .has-menu{position:static}
-  .menu-toggle{width:2.2rem;height:2.2rem;margin-right:-.6rem}
+  .menu-toggle{width:2rem;height:2.2rem;margin-right:-.5rem}
   .site-header .submenu{left:50%;right:auto;transform:translateX(-50%);min-width:15.5rem}
   .topband .wrap{justify-content:center}
   .topband em{display:none}
@@ -274,7 +274,7 @@ footer .wrap{padding-block:2.6rem 2.2rem}
 .head-offer>p{font-size:1.15rem}
 .offers{grid-template-columns:repeat(4,minmax(0,1fr))}
 .offers .service h3{font-size:1.55rem}
-@media (max-width:380px){nav ul{gap:.75rem}nav a{letter-spacing:.06em}}
+@media (max-width:380px){nav ul{gap:.3rem .7rem}nav a{font-size:.98rem;letter-spacing:.03em}.menu-toggle{margin-right:-.7rem}}
 @media (max-width:1100px){.offers{grid-template-columns:repeat(2,minmax(0,1fr))}.offers .service:nth-child(3){border-left:0}.offers .service:nth-child(n+3){border-top:1px solid #e3dccb}}
 @media (max-width:920px){.offers{grid-template-columns:1fr}.offers .service+.service{border-left:0;border-top:1px solid #e3dccb}}
 
