@@ -1,8 +1,8 @@
 """Imports the books of The Library that come from Project Gutenberg plain-text ebooks.
 
-    python3 -I library/import/gutenberg.py <folder with pg1653.txt, pg14552.txt, pg130.txt, pg8300.txt> [book ...]
+    python3 -I library/import/gutenberg.py <folder with pg14552.txt, pg130.txt> [book ...]
 
-Books: imitation, catechism, orthodoxy, bible (default: all four). Each writes library/books/<slug>.json.
+Books: catechism, orthodoxy (default: both). The Imitation comes from challoner.py; the Bible from douay_rheims.py. Each writes library/books/<slug>.json.
 
 The texts were fetched from Archive.org's copies of the Gutenberg ebooks (Project Gutenberg itself was down).
 Everything before the start of the book and after its end (the Gutenberg header, licence and name) is
@@ -93,98 +93,6 @@ def write(book):
             for b in c['blocks']:
                 words += len(re.sub(r'<[^>]+>', ' ', ' '.join(str(b.get(k, '')) for k in ('h', 'q', 'a'))).split())
     print(f"{book['slug']}: {chapters} chapters, {words:,} words -> {os.path.relpath(path)}")
-
-
-# ---------------------------------------------------------------- The Imitation of Christ
-
-IMITATION_HEADS = {
-    'A PRAYER FOR THE SPIRIT OF DEVOTION': 'A prayer for the spirit of devotion',
-    "A PRAYER TO BE ENABLED TO DO GOD'S WILL PERFECTLY": 'A prayer to be enabled to do God’s will perfectly',
-    'A PRAYER AGAINST EVIL THOUGHTS': 'A prayer against evil thoughts',
-    'A PRAYER FOR ENLIGHTENMENT OF THE MIND': 'A prayer for enlightenment of the mind',
-    'A PRAYER FOR CLEANSING OF THE HEART AND FOR HEAVENLY WISDOM': 'A prayer for cleansing of the heart and for heavenly wisdom',
-}
-VOICES = ('The Voice of the Disciple', 'The Voice of the Beloved', 'The Voice of Christ')
-
-
-def footnote_refs(s):
-    return re.sub(r'\((\d+)\)', r'<sup>\1</sup>', s)
-
-
-def imitation_blocks(lines_list):
-    blocks = []
-    for lines in lines_list:
-        first = lines[0].strip()
-        if first in IMITATION_HEADS:
-            blocks.append({'t': 'h', 'h': IMITATION_HEADS[first]})
-            continue
-        if first in VOICES:
-            blocks.append({'t': 'p', 'h': f'<span class="sc">{first}</span>'})
-            continue
-        if re.match(r'\(\d+\) ', first):
-            notes = re.split(r'\s*\((\d+)\)\s+', ' ' + flat(lines))
-            items = [f'<sup>{n}</sup> {html(t)}' for n, t in zip(notes[1::2], notes[2::2])]
-            blocks.append({'t': 'n', 'h': ' '.join(items)})
-            continue
-        if all(re.match(r'[ \t]+\S', l) for l in lines):           # a couplet set off from the text
-            blocks.append({'t': 'bq', 'h': '<br>'.join(footnote_refs(html(l)) for l in lines)})
-            continue
-        blocks.append({'t': 'p', 'h': footnote_refs(html(flat(lines)))})
-    return blocks
-
-
-def imitation(folder):
-    text = read(folder, 'pg1653.txt')
-    body = between(text, 'INTRODUCTORY NOTE', '\n\n\n\n\nProject Gutenberg Etext Imitation of Christ')
-    intro, rest = body.split('\nTHE IMITATION OF CHRIST\n', 1)
-    book_titles = ['FIRST', 'SECOND', 'THIRD', 'FOURTH']
-    sections = [{
-        'title': 'Before the book', 'chapters': [{
-            'path': 'introductory-note', 'title': 'Introductory note',
-            'blocks': [{'t': 'n', 'h': 'From the edition this translation was taken from. It is not part of the <i>Imitation</i>.'}]
-            + imitation_blocks(chunks(intro.split('\n', 1)[1])),
-        }],
-    }]
-    parts = re.split(r'\nTHE (FIRST|SECOND|THIRD|FOURTH) BOOK\n', rest)
-    assert [p for p in parts[1::2]] == book_titles, parts[1::2]
-    for k, part in enumerate(parts[2::2], 1):
-        part_chunks = chunks(part)
-        subtitle = flat(part_chunks.pop(0))
-        sec = {'title': f'The {book_titles[k - 1].title()} Book', 'short': f'Book {"I" * k if k < 4 else "IV"}',
-               'intro': subtitle[0] + subtitle[1:].lower() + '.', 'chapters': []}
-        # anything before Chapter I (Book IV opens with an exhortation)
-        pieces = re.split(r'\n(?=CHAPTER [IVXL]+\n)', part.split('\n', 3)[-1])
-        lead = chunks(pieces[0])
-        if lead and flat(lead[0]).isupper():
-            lead = lead[1:]
-        if lead:
-            title = flat(lead[0])
-            sec['chapters'].append({'path': f'book-{k}/exhortation', 'title': title,
-                                    'nav': f'Book {sec["short"][5:]}: {title}',
-                                    'blocks': imitation_blocks(lead[1:])})
-        for piece in pieces[1:]:
-            cs = chunks(piece)
-            num = re.match(r'CHAPTER ([IVXL]+)$', cs[0][0]).group(1)
-            title = typeset(flat(cs[1]))
-            n = roman(num)
-            sec['chapters'].append({
-                'path': f'book-{k}/chapter-{n}', 'label': f'Chapter {num}', 'title': title, 'num': str(n),
-                'nav': f'Book {sec["short"][5:]}, Chapter {num}: {title}', 'blocks': imitation_blocks(cs[2:]),
-            })
-        sections.append(sec)
-    counts = [len([c for c in s['chapters'] if 'label' in c]) for s in sections[1:]]
-    assert counts == [25, 12, 59, 18], counts
-    write({
-        'slug': 'the-imitation-of-christ', 'order': 2, 'kind': 'prose',
-        'title': 'The Imitation of Christ', 'short': 'The Imitation of Christ', 'author': 'Thomas à Kempis',
-        'about': 'The best-loved book of devotion after the Bible, written in the early fifteenth century for those '
-                 'who want to follow Christ closely. Four short books: counsels for the spiritual life, the inner life, '
-                 'inward consolation, and the Blessed Sacrament.',
-        'edition': '<i>The Imitation of Christ</i>, by Thomas à Kempis, translated from the Latin by the Rev. William Benham '
-                   '(first published in the 1880s). The introductory note is from the Harvard Classics edition, volume 7 '
-                   '(P. F. Collier & Son, New York, 1909). Public domain.',
-        'sections': sections,
-    })
 
 
 # ---------------------------------------------------------------- Orthodoxy
@@ -405,7 +313,7 @@ def catechism(folder):
     })
 
 
-BOOKS = {'imitation': imitation, 'catechism': catechism, 'orthodoxy': orthodoxy}
+BOOKS = {'catechism': catechism, 'orthodoxy': orthodoxy}
 
 if __name__ == '__main__':
     folder = sys.argv[1]

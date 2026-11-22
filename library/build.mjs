@@ -25,7 +25,7 @@ const arg = (name, dflt) => { const i = process.argv.indexOf(name); return i > 0
 const BOOKS = arg('--books', path.join(root, 'library', 'books'));
 const PUBLIC = arg('--public', path.join(root, 'public'));
 const OUT = path.join(PUBLIC, 'library');
-const VERSION = '2026112205';            // change when library.css or a library script changes
+const VERSION = '2026112206';            // change when library.css or a library script changes
 
 /* ---------- the site's own header and footer, taken from the Resources page so they never drift ---------- */
 const shell = fs.readFileSync(path.join(PUBLIC, 'resources.html'), 'utf8');
