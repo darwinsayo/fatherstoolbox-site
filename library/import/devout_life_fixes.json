@@ -1,0 +1,2220 @@
+{
+ "_about": "Hand corrections for devout_life.py. Chapters are numbered from 0 in reading order. \"titles\": chapter titles, checked against the book's table of contents. \"first\": for each chapter, how many of the scan's opening words to replace, the right words, then pairs of [wrong, right] within the first paragraph (the ornamental initial of each chapter cannot be read by a scanner). \"words\": pairs of [wrong, right] for the rest of a chapter; each must match exactly once. Most put right what all three scans misread; a few correct the printer (such as \"devoton\", \"moral sin\" for \"mortal sin\", and the references Gen. xxviii and Ps. xciv, printed as xxxviii and xlv). \"join\": the opening words of a paragraph that belongs to the one before it. \"split\": words at which a paragraph should break. \"notes\": the edition's footnotes, lifted out of the paragraph the scans ran them into, as [start, end] stretches of text. \"lead\": a line shown under a chapter's title.",
+ "titles": {
+  "0": "Abstract of the life of St. Francis of Sales",
+  "1": "A dedicatory prayer of the author",
+  "2": "The author’s preface",
+  "3": "The description of true devotion",
+  "4": "The propriety and excellency of devotion",
+  "5": "Devotion is compatible with every station of life",
+  "6": "Of the necessity of a guide to conduct us in the way of devotion",
+  "7": "That we must begin by purifying the soul",
+  "8": "Of the first purgation, which is that of mortal sin",
+  "9": "Of the second purgation, which is that of affection to sin",
+  "10": "Of the means to make this second purgation",
+  "11": "The first meditation.—On our creation",
+  "12": "Second meditation.—On the end for which we were created",
+  "13": "Third meditation.—On the benefits of God",
+  "14": "Fourth meditation.—On sin",
+  "15": "Fifth meditation.—On death",
+  "16": "Sixth meditation.—On judgment",
+  "17": "Seventh meditation.—On hell",
+  "18": "Eighth meditation.—On heaven",
+  "19": "Ninth meditation.—By way of election and choice of heaven",
+  "20": "Tenth meditation.—By way of election, and choice which the soul makes of a devout life",
+  "21": "How to make a general confession",
+  "22": "An authentic protestation, to engrave in the soul the resolution to serve God, and to conclude the acts of penance",
+  "23": "Inferences drawn from the foregoing protestation",
+  "24": "That we must purify ourselves from affection to venial sins",
+  "25": "That we ought to purify ourselves from an affection to unprofitable amusements",
+  "26": "That we must purge ourselves from our evil inclinations",
+  "27": "Of the necessity of prayer",
+  "28": "A short method for meditation; and first of the presence of God, which is the first point of the preparation",
+  "29": "Of invocation, the second point of the preparation",
+  "30": "Of the third point of preparation, which consists in proposing the subject of the mystery on which we intend to meditate",
+  "31": "Of considerations, which form the second part of meditation",
+  "32": "Of affections and resolutions, the third part of meditation",
+  "33": "Of the conclusion and spiritual nosegay",
+  "34": "Certain profitable advices on the subject of meditation",
+  "35": "Of the dryness which we sometimes experience in meditation",
+  "36": "Of the morning exercise",
+  "37": "Of the evening exercise, and the examination of conscience",
+  "38": "Of spiritual recollection",
+  "39": "Of aspirations, ejaculatory prayers, and good thoughts",
+  "40": "Of the holy sacrifice of Mass, and how we ought to hear it",
+  "41": "Of Vespers, and other public exercises",
+  "42": "Of the honor and invocation of saints",
+  "43": "How we ought to hear and read the word of God",
+  "44": "How we ought to receive inspirations",
+  "45": "Of holy confession",
+  "46": "Of frequent communion",
+  "47": "How we ought to communicate",
+  "48": "Of the choice we ought to make as to the exercise of virtues",
+  "49": "A continuation of the former discourse about the choice of virtues",
+  "50": "Of patience",
+  "51": "Of exterior humility",
+  "52": "Of more internal humility",
+  "53": "That humility makes us love our own abjection",
+  "54": "How we are to preserve our good name in the practice of humility",
+  "55": "Of meekness towards our neighbor, and remedies against anger",
+  "56": "Of meekness towards ourselves",
+  "57": "That we must treat of our affairs with diligence, but without eagerness or solicitude",
+  "58": "Of obedience",
+  "59": "Of the necessity of chastity",
+  "60": "Advice how to preserve chastity",
+  "61": "Of poverty of spirit to be observed in the midst of riches",
+  "62": "How to practise true and real poverty, being, notwithstanding, really rich",
+  "63": "How to practise richness of spirit in real poverty",
+  "64": "Of friendship; first of that which is evil and frivolous",
+  "65": "Of fond love",
+  "66": "Of true friendship",
+  "67": "Of the difference between true and vain friendships",
+  "68": "Advices and remedies against evil friendships",
+  "69": "Other advices on friendships",
+  "70": "Of the exercises of exterior mortification",
+  "71": "Of conversation and solitude",
+  "72": "Of decency in attire",
+  "73": "Of discourse; and, first, how we must speak of God",
+  "74": "Of modesty in our words, and the respect we owe to persons",
+  "75": "Of rash judgment",
+  "76": "Of detraction",
+  "77": "Other advices with respect to conversation",
+  "78": "Of pastimes and recreations; and, first, of such as are lawful and commendable",
+  "79": "Of prohibited games",
+  "80": "Of balls, and pastimes which are lawful, but dangerous",
+  "81": "At what time you may play or dance",
+  "82": "That we must be faithful, both on great and small occasions",
+  "83": "That we must keep our mind just and reasonable",
+  "84": "Of desires",
+  "85": "Instructions for married persons",
+  "86": "Of the sanctity of the marriage bed",
+  "87": "Instructions for widows",
+  "88": "A word to virgins",
+  "89": "That we must disregard the censures of worldlings",
+  "90": "That we must always have good courage",
+  "91": "Of the nature of temptations, and of the difference between feeling temptation and consenting to it",
+  "92": "Two good examples on this subject",
+  "93": "An encouragement to a soul in temptation",
+  "94": "How temptation and delectation may become sinful",
+  "95": "Remedies against great temptations",
+  "96": "That we must resist small temptations",
+  "97": "What remedies we are to apply to small temptations",
+  "98": "How to fortify our hearts against temptations",
+  "99": "Of inquietude",
+  "100": "Of sadness",
+  "101": "Of spiritual and sensible consolations, and how we must behave ourselves in them",
+  "102": "Of spiritual dryness",
+  "103": "A remarkable example in confirmation of the preceding remarks",
+  "104": "That we ought every year to renew our good resolutions by the following exercises",
+  "105": "Considerations on the favor which God does us, in calling us to his service, according to the protestations set down heretofore",
+  "106": "Examination of our soul on its advancement in devotion",
+  "107": "An examination of the state of our soul towards God",
+  "108": "An examination of our state with regard to ourselves",
+  "109": "An examination of the state of our soul towards our neighbor",
+  "110": "An examination of the affections of our soul",
+  "111": "Affections to be formed after this examination",
+  "112": "Considerations proper to renew our good resolutions",
+  "113": "The first consideration.—The excellence of our soul",
+  "114": "The second consideration.—The excellence of virtue",
+  "115": "The third consideration.—The examples of the saints",
+  "116": "The fourth consideration.—The love that Jesus Christ bears us",
+  "117": "The fifth consideration.—The eternal love of God towards us",
+  "118": "General affections on the preceding considerations, and a conclusion of these exercises",
+  "119": "Of our sentiments after this exercise",
+  "120": "An answer to two objections which may be made to this introduction",
+  "121": "The three last and principal advices for this introduction",
+  "122": "A conference between an eminent divine and a poor beggar"
+ },
+ "first": {
+  "0": [
+   1,
+   "Francis"
+  ],
+  "1": [
+   0,
+   ""
+  ],
+  "2": [
+   0,
+   ""
+  ],
+  "3": [
+   1,
+   "You",
+   [
+    "Philothea. because,",
+    "Philothea, because,"
+   ]
+  ],
+  "4": [
+   1,
+   "They",
+   [
+    "from a: going",
+    "from going"
+   ]
+  ],
+  "5": [
+   1,
+   "As"
+  ],
+  "6": [
+   1,
+   "Young"
+  ],
+  "7": [
+   2,
+   "\" The",
+   [
+    "the time \" AS of",
+    "the time of"
+   ]
+  ],
+  "8": [
+   1,
+   "The",
+   [
+    "that S of",
+    "that of"
+   ]
+  ],
+  "9": [
+   1,
+   "Although"
+  ],
+  "10": [
+   8,
+   "Now, the first means, nay, the very foundation,"
+  ],
+  "11": [
+   1,
+   "Place"
+  ],
+  "12": [
+   1,
+   "Place"
+  ],
+  "13": [
+   1,
+   "Place"
+  ],
+  "14": [
+   1,
+   "Place"
+  ],
+  "16": [
+   1,
+   "Place"
+  ],
+  "17": [
+   1,
+   "Place"
+  ],
+  "19": [
+   1,
+   "Place"
+  ],
+  "15": [
+   1,
+   "Place",
+   [
+    "God 2. es Beseech",
+    "God. 2. Beseech"
+   ]
+  ],
+  "18": [
+   1,
+   "Place",
+   [
+    "2. AS Beseech",
+    "2. Beseech"
+   ]
+  ],
+  "20": [
+   1,
+   "Place",
+   [
+    "God, %. Humble",
+    "God. 2. Humble"
+   ]
+  ],
+  "21": [
+   1,
+   "Behold"
+  ],
+  "22": [
+   1,
+   "I,"
+  ],
+  "23": [
+   1,
+   "Having"
+  ],
+  "24": [
+   1,
+   "As"
+  ],
+  "25": [
+   1,
+   "Play,"
+  ],
+  "26": [
+   1,
+   "We"
+  ],
+  "27": [
+   1,
+   "Prayer"
+  ],
+  "28": [
+   1,
+   "But"
+  ],
+  "29": [
+   1,
+   "Being"
+  ],
+  "30": [
+   1,
+   "After"
+  ],
+  "31": [
+   1,
+   "After",
+   [
+    "follows medication,",
+    "follows meditation,"
+   ]
+  ],
+  "32": [
+   2,
+   "Meditation"
+  ],
+  "33": [
+   1,
+   "Last"
+  ],
+  "34": [
+   1,
+   "Above"
+  ],
+  "35": [
+   1,
+   "Should"
+  ],
+  "36": [
+   1,
+   "Besides"
+  ],
+  "37": [
+   1,
+   "As"
+  ],
+  "38": [
+   1,
+   "It"
+  ],
+  "39": [
+   1,
+   "We"
+  ],
+  "40": [
+   1,
+   "Hitherto"
+  ],
+  "41": [
+   1,
+   "Besides",
+   [
+    "holidays, 1 you",
+    "holidays, you"
+   ],
+   [
+    "a' Vespers",
+    "at Vespers"
+   ]
+  ],
+  "42": [
+   1,
+   "Since"
+  ],
+  "43": [
+   1,
+   "Listen",
+   [
+    "God, KA whether",
+    "God, whether"
+   ]
+  ],
+  "44": [
+   1,
+   "By"
+  ],
+  "45": [
+   1,
+   "Our"
+  ],
+  "46": [
+   1,
+   "It"
+  ],
+  "47": [
+   1,
+   "Prepare",
+   [
+    "communicn",
+    "communion"
+   ]
+  ],
+  "48": [
+   1,
+   "As"
+  ],
+  "49": [
+   1,
+   "Young"
+  ],
+  "50": [
+   1,
+   "\" Patience",
+   [
+    "doing As: the",
+    "doing the"
+   ],
+   [
+    "the premise,",
+    "the promise."
+   ]
+  ],
+  "51": [
+   1,
+   "\" Borrow"
+  ],
+  "52": [
+   1,
+   "But"
+  ],
+  "53": [
+   2,
+   "I proceed"
+  ],
+  "54": [
+   1,
+   "Praise,"
+  ],
+  "55": [
+   1,
+   "The"
+  ],
+  "56": [
+   1,
+   "One"
+  ],
+  "57": [
+   1,
+   "The",
+   [
+    "should \" AS attend",
+    "should attend"
+   ]
+  ],
+  "58": [
+   1,
+   "Charity",
+   [
+    "but chastity,",
+    "but obedience, chastity,"
+   ]
+  ],
+  "59": [
+   1,
+   "Chastity,",
+   [
+    "men X almost",
+    "men almost"
+   ]
+  ],
+  "60": [
+   1,
+   "Be"
+  ],
+  "61": [
+   1,
+   "\" Blessed"
+  ],
+  "62": [
+   1,
+   "The"
+  ],
+  "63": [
+   1,
+   "But"
+  ],
+  "64": [
+   1,
+   "Love"
+  ],
+  "65": [
+   1,
+   "When"
+  ],
+  "66": [
+   1,
+   "Love"
+  ],
+  "67": [
+   1,
+   "Observe,"
+  ],
+  "68": [
+   1,
+   "But"
+  ],
+  "69": [
+   2,
+   "I have"
+  ],
+  "70": [
+   1,
+   "They",
+   [
+    "any 'AS word",
+    "any word"
+   ]
+  ],
+  "71": [
+   1,
+   "To"
+  ],
+  "72": [
+   2,
+   "St. Paul"
+  ],
+  "73": [
+   1,
+   "As"
+  ],
+  "74": [
+   1,
+   "\" If"
+  ],
+  "75": [
+   1,
+   "\" Judge"
+  ],
+  "76": [
+   1,
+   "Rash"
+  ],
+  "77": [
+   1,
+   "Let"
+  ],
+  "78": [
+   1,
+   "It"
+  ],
+  "79": [
+   1,
+   "The",
+   [
+    "which S the",
+    "which the"
+   ]
+  ],
+  "80": [
+   1,
+   "Although"
+  ],
+  "81": [
+   1,
+   "In"
+  ],
+  "82": [
+   1,
+   "The"
+  ],
+  "83": [
+   1,
+   "It"
+  ],
+  "84": [
+   1,
+   "Every"
+  ],
+  "85": [
+   1,
+   "\" Matrimony"
+  ],
+  "86": [
+   1,
+   "\" The",
+   [
+    "un defiled, as S the",
+    "undefiled, \" as the"
+   ]
+  ],
+  "87": [
+   2,
+   "Saint Paul"
+  ],
+  "88": [
+   2,
+   "O virgins!",
+   [
+    "say you,",
+    "say to you,"
+   ]
+  ],
+  "89": [
+   1,
+   "As",
+   [
+    "detraction1",
+    "detraction"
+   ]
+  ],
+  "90": [
+   1,
+   "Light,"
+  ],
+  "91": [
+   1,
+   "Imagine",
+   [
+    "derile",
+    "defile"
+   ]
+  ],
+  "92": [
+   1,
+   "As"
+  ],
+  "93": [
+   1,
+   "These",
+   [
+    "extraordinary S temptations, Philothea are",
+    "extraordinary temptations, Philothea, are"
+   ]
+  ],
+  "94": [
+   1,
+   "The",
+   [
+    "could 'AS not",
+    "could not"
+   ]
+  ],
+  "95": [
+   1,
+   "As"
+  ],
+  "96": [
+   1,
+   "Although"
+  ],
+  "97": [
+   1,
+   "Now"
+  ],
+  "98": [
+   1,
+   "Consider"
+  ],
+  "99": [
+   1,
+   "As"
+  ],
+  "100": [
+   1,
+   "\" The",
+   [
+    "St. \" AS Paul,",
+    "St. Paul,"
+   ]
+  ],
+  "101": [
+   1,
+   "God"
+  ],
+  "102": [
+   1,
+   "As"
+  ],
+  "103": [
+   1,
+   "To",
+   [
+    "instruction 1 \" AS will",
+    "instruction I will"
+   ]
+  ],
+  "104": [
+   2,
+   "The"
+  ],
+  "105": [
+   1,
+   "Consider"
+  ],
+  "106": [
+   1,
+   "As"
+  ],
+  "107": [
+   1,
+   "How"
+  ],
+  "108": [
+   1,
+   "How"
+  ],
+  "109": [
+   1,
+   "The"
+  ],
+  "110": [
+   1,
+   "I have"
+  ],
+  "111": [
+   1,
+   "After"
+  ],
+  "112": [
+   1,
+   "After"
+  ],
+  "113": [
+   1,
+   "Consider"
+  ],
+  "114": [
+   1,
+   "Consider",
+   [
+    "devotion J can",
+    "devotion can"
+   ]
+  ],
+  "115": [
+   1,
+   "Consider"
+  ],
+  "116": [
+   1,
+   "Consider"
+  ],
+  "117": [
+   1,
+   "Consider"
+  ],
+  "118": [
+   2,
+   "O dear"
+  ],
+  "119": [
+   1,
+   "On"
+  ],
+  "120": [
+   1,
+   "The",
+   [
+    "that 'AS these",
+    "that these"
+   ]
+  ],
+  "121": [
+   1,
+   "On"
+  ],
+  "122": [
+   1,
+   "There",
+   [
+    "the S space",
+    "the space"
+   ]
+  ]
+ },
+ "words": {
+  "0": [
+   [
+    "contracted, amf who",
+    "contracted, and who"
+   ],
+   [
+    "miracles. with their",
+    "miracles, with their"
+   ]
+  ],
+  "1": [
+   [
+    "ever. Amen-",
+    "ever. Amen."
+   ]
+  ],
+  "2": [
+   [
+    "f^?LYCERA,the nosegay-inaker,",
+    "Glycera, the nosegay-maker,"
+   ],
+   [
+    "devo- Son",
+    "devotion"
+   ],
+   [
+    "which site takes",
+    "which she takes"
+   ],
+   [
+    "1609. Part First.",
+    "1609."
+   ],
+   [
+    "all.”—” It often",
+    "all.”—“It often"
+   ],
+   [
+    "my design. hence you",
+    "my design, hence you"
+   ]
+  ],
+  "3": [
+   [
+    "devoton.",
+    "devotion."
+   ]
+  ],
+  "4": [
+   [
+    "or. in other words",
+    "or, in other words"
+   ]
+  ],
+  "5": [
+   [
+    "peopie",
+    "people"
+   ],
+   [
+    "It is ar error",
+    "It is an error"
+   ],
+   [
+    "St Lewis, blessed Amedseus",
+    "St. Lewis, blessed Amedæus"
+   ]
+  ],
+  "6": [
+   [
+    "deceits ot the",
+    "deceits of the"
+   ],
+   [
+    "to God. submitted their",
+    "to God, submitted their"
+   ],
+   [
+    "Eccli., vi., 14., 16.",
+    "Eccli. vi. 14, 16."
+   ]
+  ],
+  "7": [
+   [
+    "St. Pelalia",
+    "St. Pelagia"
+   ],
+   [
+    "(Ps. cxxvi, 2)",
+    "(Ps. cxxvi. 2)"
+   ]
+  ],
+  "8": [
+   [
+    "appears“necessary",
+    "appears necessary"
+   ]
+  ],
+  "9": [
+   [
+    "aTo understand",
+    "1 To understand"
+   ],
+   [
+    "offencethem regretted",
+    "offence, them regretted"
+   ],
+   [
+    "^.ate",
+    "state"
+   ]
+  ],
+  "11": [
+   [
+    "stray ing",
+    "straying"
+   ],
+   [
+    "Where were we. O my soul",
+    "Where were we, O my soul"
+   ]
+  ],
+  "12": [
+   [
+    "tongue, ‘o praise",
+    "tongue, to praise"
+   ]
+  ],
+  "13": [
+   [
+    "saciaments",
+    "sacraments"
+   ],
+   [
+    "for its use. end recreations",
+    "for its use, and recreations"
+   ]
+  ],
+  "14": [
+   [
+    "grevious",
+    "grievous"
+   ],
+   [
+    "S. Consider in particular",
+    "3. Consider in particular"
+   ],
+   [
+    "your deal spouse",
+    "your dear spouse"
+   ],
+   [
+    "What are be. come of",
+    "What are become of"
+   ]
+  ],
+  "15": [
+   [
+    "world! i will",
+    "world! I will"
+   ]
+  ],
+  "16": [
+   [
+    "shining m re brilliantly",
+    "shining more brilliantly"
+   ],
+   [
+    "confess ny sins",
+    "confess my sins"
+   ]
+  ],
+  "18": [
+   [
+    "sover eign",
+    "sovereign"
+   ],
+   [
+    "be you. says he",
+    "be you, says he"
+   ]
+  ],
+  "19": [
+   [
+    "medL tation",
+    "meditation"
+   ],
+   [
+    "the best: of. your way",
+    "the best of your way"
+   ]
+  ],
+  "20": [
+   [
+    "hent. nnou",
+    "bent upon"
+   ],
+   [
+    "aifections",
+    "affections"
+   ],
+   [
+    "happinness",
+    "happiness"
+   ],
+   [
+    "Dbserve",
+    "Observe"
+   ]
+  ],
+  "22": [
+   [
+    ", [ have",
+    ", I have"
+   ]
+  ],
+  "24": [
+   [
+    "venial sm,",
+    "venial sin,"
+   ],
+   [
+    "offence?; LAY,",
+    "offence?"
+   ]
+  ],
+  "25": [
+   [
+    "con* <lenm",
+    "condemn"
+   ],
+   [
+    "as sisting",
+    "assisting"
+   ]
+  ],
+  "27": [
+   [
+    "enlightenea",
+    "enlightened"
+   ],
+   [
+    "that vou",
+    "that you"
+   ],
+   [
+    "voca, prayers",
+    "vocal prayers"
+   ],
+   [
+    "man’ uals",
+    "manuals"
+   ],
+   [
+    "whole sou) will",
+    "whole soul will"
+   ],
+   [
+    "for him. that we",
+    "for him, that we"
+   ],
+   [
+    "exception. however",
+    "exception, however"
+   ]
+  ],
+  "28": [
+   [
+    "neverthless",
+    "nevertheless"
+   ],
+   [
+    "exxxviii",
+    "cxxxviii"
+   ],
+   [
+    "knewitnot",
+    "knew it not"
+   ],
+   [
+    "Gen. xxxviii.",
+    "Gen. xxviii."
+   ],
+   [
+    "Ps. Ixxii.",
+    "Ps. lxxii."
+   ],
+   [
+    "be mora fully",
+    "be more fully"
+   ],
+   [
+    "nay. in the very",
+    "nay, in the very"
+   ]
+  ],
+  "29": [
+   [
+    "vhy law",
+    "thy law"
+   ],
+   [
+    "Ps. c. vill.",
+    "Ps. cxviii."
+   ]
+  ],
+  "30": [
+   [
+    "which vou",
+    "which you"
+   ]
+  ],
+  "32": [
+   [
+    "time j whereas",
+    "time; whereas"
+   ]
+  ],
+  "33": [
+   [
+    "Our Father, and Hail Mary.",
+    "Our Father, and Hail Mary,"
+   ]
+  ],
+  "34": [
+   [
+    "often miff up",
+    "often puff up"
+   ]
+  ],
+  "35": [
+   [
+    "presencechamber",
+    "presence-chamber"
+   ],
+   [
+    "to oar Lord",
+    "to our Lord"
+   ]
+  ],
+  "36": [
+   [
+    "anger, T will",
+    "anger, I will"
+   ],
+   [
+    "may al) assist",
+    "may all assist"
+   ]
+  ],
+  "37": [
+   [
+    "how wc have",
+    "how we have"
+   ]
+  ],
+  "38": [
+   [
+    "summer, sc shall",
+    "summer, so shall"
+   ],
+   [
+    "Ps. cl.",
+    "Ps. ci."
+   ],
+   [
+    "wounds of ow Lord",
+    "wounds of our Lord"
+   ],
+   [
+    "from time ta time",
+    "from time to time"
+   ],
+   [
+    "Ps. Ixx.",
+    "Ps. lxx."
+   ],
+   [
+    "Phiiothea",
+    "Philothea"
+   ]
+  ],
+  "39": [
+   [
+    "when gnrg with",
+    "when sung with"
+   ],
+   [
+    "soul t^ God",
+    "soul to God"
+   ],
+   [
+    "he pi oceeded",
+    "he proceeded"
+   ],
+   [
+    "me out ol these",
+    "me out of these"
+   ],
+   [
+    "our i.iountains",
+    "our mountains"
+   ],
+   [
+    "burst inU a",
+    "burst into a"
+   ],
+   [
+    "come i-i oven unto",
+    "come in even unto"
+   ],
+   [
+    "Maxmius",
+    "Maximus"
+   ],
+   [
+    "St. Fulgent as,",
+    "St. Fulgentius,"
+   ],
+   [
+    "sighing.:",
+    "sighing."
+   ]
+  ],
+  "40": [
+   [
+    "ho’y",
+    "holy"
+   ],
+   [
+    "thousanc",
+    "thousand"
+   ],
+   [
+    "the Father, an. for your",
+    "the Father, and for your"
+   ]
+  ],
+  "41": [
+   [
+    "cojperate",
+    "co-operate"
+   ],
+   [
+    "For, a? these",
+    "For, as these"
+   ]
+  ],
+  "42": [
+   [
+    "exxxvii",
+    "cxxxvii"
+   ]
+  ],
+  "44": [
+   [
+    "(Ps. xlv.)",
+    "(Ps. xciv.)"
+   ],
+   [
+    "but begitf already",
+    "but begin already"
+   ]
+  ],
+  "45": [
+   [
+    "adva*“tages",
+    "advantages"
+   ],
+   [
+    "you ae cuse",
+    "you accuse"
+   ],
+   [
+    "venia? sins",
+    "venial sins"
+   ],
+   [
+    "or irom the",
+    "or from the"
+   ],
+   [
+    "three day > We",
+    "three days. We"
+   ],
+   [
+    "the c aitinuance",
+    "the continuance"
+   ],
+   [
+    "mortal or denial",
+    "mortal or venial"
+   ],
+   [
+    "to commit. them.",
+    "to commit them."
+   ]
+  ],
+  "46": [
+   [
+    "endeavormg",
+    "endeavoring"
+   ],
+   [
+    "ab solutely",
+    "absolutely"
+   ],
+   [
+    "dis charge",
+    "discharge"
+   ],
+   [
+    "the Son of God “",
+    "the Son of God."
+   ],
+   [
+    "may say. with assurance",
+    "may say, with assurance"
+   ],
+   [
+    "what raply shall",
+    "what reply shall"
+   ]
+  ],
+  "48": [
+   [
+    "frie**3.,",
+    "friend,"
+   ],
+   [
+    "exercises ot prayer",
+    "exercises of prayer"
+   ],
+   [
+    "daughter or the king",
+    "daughter of the king"
+   ],
+   [
+    "Hence it i? that",
+    "Hence it is that"
+   ],
+   [
+    "with great fervor and charity",
+    "with great fervor and charity."
+   ]
+  ],
+  "49": [
+   [
+    "rigoi towards",
+    "rigor towards"
+   ]
+  ],
+  "50": [
+   [
+    "consorious",
+    "censorious"
+   ],
+   [
+    "apply. the remedies",
+    "apply the remedies"
+   ],
+   [
+    "edification. of your",
+    "edification of your"
+   ]
+  ],
+  "51": [
+   [
+    "whether l man",
+    "whether a man"
+   ],
+   [
+    "hawk kind must it be",
+    "hawk kind. must it be"
+   ]
+  ],
+  "52": [
+   [
+    "good m us",
+    "good in us"
+   ],
+   [
+    "easily fe convinced",
+    "easily be convinced"
+   ],
+   [
+    "cause of Wich is",
+    "cause of which is"
+   ]
+  ],
+  "53": [
+   [
+    "lady whf refuses",
+    "lady who refuses"
+   ],
+   [
+    "believe mo,",
+    "believe me,"
+   ]
+  ],
+  "54": [
+   [
+    "we endeavoi to",
+    "we endeavor to"
+   ],
+   [
+    "little Hood",
+    "little flood"
+   ],
+   [
+    "(2 Cor. vi. )",
+    "(2 Cor. vi.)"
+   ]
+  ],
+  "55": [
+   [
+    "sight of i. little",
+    "sight of a little"
+   ],
+   [
+    "thought this anger unjust.",
+    "thought this anger unjust.”"
+   ]
+  ],
+  "56": [
+   [
+    "have beep guilty",
+    "have been guilty"
+   ]
+  ],
+  "57": [
+   [
+    "troubled about many things. You must",
+    "troubled about many things.” You must"
+   ],
+   [
+    "unprofitable fox culture",
+    "unprofitable for culture"
+   ],
+   [
+    "at tie port",
+    "at the port"
+   ]
+  ],
+  "58": [
+   [
+    "plainly tc be seen Let us",
+    "plainly to be seen. Let us"
+   ],
+   [
+    "desires of you? inferiors",
+    "desires of your inferiors"
+   ],
+   [
+    "suffer them to go",
+    "suffer them to go astray."
+   ],
+   [
+    "and thir will",
+    "and this will"
+   ],
+   [
+    "not sin. without being",
+    "not sin, without being"
+   ]
+  ],
+  "59": [
+   [
+    "unspotte^",
+    "unspotted"
+   ],
+   [
+    "^dowhood",
+    "widowhood"
+   ],
+   [
+    "It is neve: lawful",
+    "It is never lawful"
+   ],
+   [
+    "per mission",
+    "permission"
+   ],
+   [
+    "they are. which often",
+    "they are, which often"
+   ]
+  ],
+  "60": [
+   [
+    "wretcheJ",
+    "wretched"
+   ],
+   [
+    "Tertullia^",
+    "Tertullian"
+   ],
+   [
+    "yet I am not a virgin. Certainly",
+    "yet I am not a virgin.” Certainly"
+   ]
+  ],
+  "61": [
+   [
+    "let it be aways their",
+    "let it be always their"
+   ],
+   [
+    "thai base",
+    "that base"
+   ],
+   [
+    "sacred tire",
+    "sacred fire"
+   ],
+   [
+    "natural and and pleasing",
+    "natural and pleasing"
+   ],
+   [
+    "express desire. the wealth",
+    "express desire, the wealth"
+   ]
+  ],
+  "62": [
+   [
+    "if, aen,",
+    "if, then,"
+   ],
+   [
+    "neat you",
+    "near you"
+   ],
+   [
+    "“with whom I am not weak? He might",
+    "“with whom I am not weak?” He might"
+   ],
+   [
+    "Bat beware",
+    "But beware"
+   ]
+  ],
+  "63": [
+   [
+    "‘east of our own",
+    "least of our own"
+   ],
+   [
+    "find her 1 Witness St. Alexins",
+    "find her! Witness St. Alexius"
+   ]
+  ],
+  "65": [
+   [
+    "sus picions",
+    "suspicions"
+   ],
+   [
+    "wproxis",
+    "aproxis"
+   ]
+  ],
+  "66": [
+   [
+    "each otner",
+    "each other"
+   ],
+   [
+    "shall ao eternally",
+    "shall do eternally"
+   ],
+   [
+    "say: ““We should",
+    "say: “We should"
+   ]
+  ],
+  "67": [
+   [
+    "praises hen with",
+    "praises her with"
+   ],
+   [
+    "is not. beloved",
+    "is not beloved"
+   ]
+  ],
+  "68": [
+   [
+    "forsak ai object",
+    "forsaken object"
+   ],
+   [
+    "Ps. ex",
+    "Ps. cxv."
+   ],
+   [
+    "that Iwas?",
+    "that I was?"
+   ],
+   [
+    "Dost thou no. know me",
+    "Dost thou not know me"
+   ]
+  ],
+  "69": [
+   [
+    "be Grounded",
+    "be grounded"
+   ],
+   [
+    "St. Bazil",
+    "St. Basil"
+   ],
+   [
+    "of his own. without",
+    "of his own, without"
+   ]
+  ],
+  "70": [
+   [
+    "suificiently",
+    "sufficiently"
+   ],
+   [
+    "without tne advice",
+    "without the advice"
+   ],
+   [
+    "Cant, v.,",
+    "Cant. v.,"
+   ],
+   [
+    "as a seal upon thy arm. Yes, verily",
+    "as a seal upon thy arm.” Yes, verily"
+   ]
+  ],
+  "71": [
+   [
+    "breath, aud their",
+    "breath, and their"
+   ],
+   [
+    "from Insolence",
+    "from insolence"
+   ],
+   [
+    "ordinary troubles; and afterwards",
+    "ordinary troubles;” and afterwards"
+   ],
+   [
+    "rejoice in cur Lord",
+    "rejoice in our Lord"
+   ]
+  ],
+  "72": [
+   [
+    "decency cf our",
+    "decency of our"
+   ],
+   [
+    "oarticular",
+    "particular"
+   ],
+   [
+    "curled ir Snerlets and",
+    "curled in ringlets and"
+   ],
+   [
+    "dignity. St Lewis",
+    "dignity. St. Lewis"
+   ],
+   [
+    "Phiiothea",
+    "Philothea"
+   ]
+  ],
+  "74": [
+   [
+    "Search l of hearts",
+    "Searcher of hearts"
+   ],
+   [
+    "con: versation",
+    "conversation"
+   ]
+  ],
+  "75": [
+   [
+    "spii tual",
+    "spiritual"
+   ],
+   [
+    "^Ethiopia",
+    "Æthiopia"
+   ],
+   [
+    "firstaiarm",
+    "first alarm"
+   ],
+   [
+    "always de the same",
+    "always do the same"
+   ],
+   [
+    "but this J shall",
+    "but this I shall"
+   ],
+   [
+    "persons: J except",
+    "persons: I except"
+   ],
+   [
+    "doubt of out neighbor",
+    "doubt of our neighbor"
+   ],
+   [
+    "consciences an. not",
+    "consciences are not"
+   ],
+   [
+    "believes, vith an",
+    "believes, with an"
+   ],
+   [
+    "wherefore if says",
+    "wherefore it says"
+   ],
+   [
+    "therewith. Others. to silence",
+    "therewith. Others, to silence"
+   ]
+  ],
+  "76": [
+   [
+    "civii,",
+    "civil,"
+   ],
+   [
+    "ps. cxxxix.",
+    "Ps. cxxxix."
+   ],
+   [
+    "wil I highly",
+    "will highly"
+   ],
+   [
+    "must bave made",
+    "must have made"
+   ],
+   [
+    "lascivousness",
+    "lasciviousness"
+   ],
+   [
+    "fiatter",
+    "flatter"
+   ],
+   [
+    "with i view",
+    "with a view"
+   ],
+   [
+    "and Innocence",
+    "and innocence"
+   ],
+   [
+    "zeal; tor arrogance",
+    "zeal; nor arrogance"
+   ],
+   [
+    "Miilothea",
+    "Philothea"
+   ],
+   [
+    "any rice to spare",
+    "any vice to spare"
+   ],
+   [
+    "some tall, who",
+    "some fall, who"
+   ]
+  ],
+  "77": [
+   [
+    "plain-dealmg",
+    "plain-dealing"
+   ],
+   [
+    "for a more suitable occasion.",
+    "for a more suitable occasion.”"
+   ]
+  ],
+  "78": [
+   [
+    "altogetner",
+    "altogether"
+   ]
+  ],
+  "79": [
+   [
+    "Gautier de Xemours",
+    "Gautier de Nemours"
+   ]
+  ],
+  "80": [
+   [
+    "we Of Wit o-ooa wmc i and I say",
+    "we must drink good wine; and I say"
+   ],
+   [
+    "alas I the true",
+    "alas! the true"
+   ]
+  ],
+  "81": [
+   [
+    "Great tires increase",
+    "Great fires increase"
+   ]
+  ],
+  "82": [
+   [
+    "woula",
+    "would"
+   ],
+   [
+    "with iove,",
+    "with love,"
+   ],
+   [
+    "have m performing",
+    "have in performing"
+   ],
+   [
+    "“shall beset over great things. Perform",
+    "“shall be set over great things.” Perform"
+   ],
+   [
+    "important. things",
+    "important things"
+   ]
+  ],
+  "83": [
+   [
+    "and th ^ther to weigh i in to the detriment of out neighbor",
+    "and the other to weigh in to the detriment of our neighbor"
+   ]
+  ],
+  "84": [
+   [
+    "fight wit* the",
+    "fight with the"
+   ],
+   [
+    "too frequent. they",
+    "too frequent, they"
+   ]
+  ],
+  "85": [
+   [
+    "remeiiber",
+    "remember"
+   ],
+   [
+    "“ervor",
+    "fervor"
+   ],
+   [
+    "agamst",
+    "against"
+   ],
+   [
+    "St. Paul says, f let every",
+    "St. Paul says, ‘let every"
+   ],
+   [
+    "them not te be",
+    "them not to be"
+   ],
+   [
+    "for Ave must",
+    "for we must"
+   ],
+   [
+    "Abimeicch",
+    "Abimelech"
+   ],
+   [
+    "sanctification.’ Bat if",
+    "sanctification.’ But if"
+   ],
+   [
+    "dis graced",
+    "disgraced"
+   ],
+   [
+    "affection pind not",
+    "affection bind not"
+   ],
+   [
+    "commonwealth. for it",
+    "commonwealth, for it"
+   ]
+  ],
+  "86": [
+   [
+    "there nevei had",
+    "there never had"
+   ],
+   [
+    "procreation i children",
+    "procreation of children"
+   ],
+   [
+    "undefiled, “as the Apostle",
+    "undefiled,” as the Apostle"
+   ],
+   [
+    "honor sever think",
+    "honor never think"
+   ],
+   [
+    "till be is",
+    "till he is"
+   ]
+  ],
+  "87": [
+   [
+    "director • by",
+    "director; by"
+   ],
+   [
+    "only!< ve",
+    "only love"
+   ],
+   [
+    "virginity nave any",
+    "virginity have any"
+   ],
+   [
+    "men, sol should",
+    "men, so I should"
+   ],
+   [
+    "I may he all thine",
+    "I may be all thine"
+   ]
+  ],
+  "89": [
+   [
+    "w’thout",
+    "without"
+   ],
+   [
+    "2poil",
+    "spoil"
+   ],
+   [
+    "if Ave neglect",
+    "if we neglect"
+   ],
+   [
+    "to he very wise",
+    "to be very wise"
+   ]
+  ],
+  "90": [
+   [
+    "^eed",
+    "feed"
+   ],
+   [
+    "would you. for the sake",
+    "would you, for the sake"
+   ]
+  ],
+  "91": [
+   [
+    "i/nposvOble",
+    "impossible"
+   ],
+   [
+    "wilh can",
+    "will, can"
+   ],
+   [
+    "war fare",
+    "warfare"
+   ],
+   [
+    "3. In tine,",
+    "3. In fine,"
+   ],
+   [
+    "Angela de Fulgina",
+    "Angela de Fulgino"
+   ]
+  ],
+  "92": [
+   [
+    "tl? Dusand",
+    "thousand"
+   ],
+   [
+    "displeasu* 3",
+    "displeasure"
+   ]
+  ],
+  "93": [
+   [
+    "return tc a",
+    "return to a"
+   ],
+   [
+    "he desire? to",
+    "he desires to"
+   ]
+  ],
+  "94": [
+   [
+    "crime aH a woman",
+    "crime in a woman"
+   ],
+   [
+    "account of the “danger",
+    "account of the danger"
+   ],
+   [
+    "you cold conveniently",
+    "you could conveniently"
+   ]
+  ],
+  "95": [
+   [
+    "refusals ot consent",
+    "refusals of consent"
+   ]
+  ],
+  "96": [
+   [
+    "froiv",
+    "from"
+   ],
+   [
+    "to retrain from",
+    "to refrain from"
+   ]
+  ],
+  "97": [
+   [
+    "enemy of onr souls",
+    "enemy of our souls"
+   ]
+  ],
+  "99": [
+   [
+    "srreat",
+    "great"
+   ],
+   [
+    "ignorance, avidity,",
+    "ignorance, aridity,"
+   ],
+   [
+    "temptation. “When the soul",
+    "temptation. When the soul"
+   ]
+  ],
+  "101": [
+   [
+    "sweetnese",
+    "sweetness"
+   ],
+   [
+    "saying, u Oh, how good am I! “No,",
+    "saying, “Oh, how good am I!” No,"
+   ],
+   [
+    "satisfaction ir some",
+    "satisfaction in some"
+   ],
+   [
+    "as It were",
+    "as it were"
+   ],
+   [
+    "Thou has found",
+    "Thou hast found"
+   ],
+   [
+    "Prov, xxv.",
+    "Prov. xxv."
+   ],
+   [
+    "say, then- that",
+    "say, then, that"
+   ]
+  ],
+  "102": [
+   [
+    "joy ol thy",
+    "joy of thy"
+   ],
+   [
+    "you shad not",
+    "you shall not"
+   ],
+   [
+    "in so so great",
+    "in so great"
+   ]
+  ],
+  "103": [
+   [
+    "Now, m such",
+    "Now, in such"
+   ]
+  ],
+  "105": [
+   [
+    "favors “i We",
+    "favors! We"
+   ],
+   [
+    "all moral sin",
+    "all mortal sin"
+   ],
+   [
+    "this aas happened",
+    "this has happened"
+   ]
+  ],
+  "106": [
+   [
+    "you mus remark",
+    "you must remark"
+   ],
+   [
+    "“OLord!",
+    "“O Lord!"
+   ]
+  ],
+  "107": [
+   [
+    "lovt»",
+    "love"
+   ],
+   [
+    "inclination; or. what would",
+    "inclination; or, what would"
+   ]
+  ],
+  "109": [
+   [
+    "easily perceive it,",
+    "easily perceive it."
+   ]
+  ],
+  "112": [
+   [
+    "i)tid",
+    "and"
+   ]
+  ],
+  "113": [
+   [
+    "not ful of",
+    "not full of"
+   ]
+  ],
+  "115": [
+   [
+    "aiilicted",
+    "afflicted"
+   ]
+  ],
+  "116": [
+   [
+    "sincethouhastbeensodeartoinysweetJesus!",
+    "since thou hast been so dear to my sweet Jesus!"
+   ],
+   [
+    "heart of our Saviour,",
+    "heart of our Saviour."
+   ]
+  ],
+  "119": [
+   [
+    "whep",
+    "when"
+   ],
+   [
+    "“Xo, I am",
+    "“No, I am"
+   ]
+  ],
+  "120": [
+   [
+    "consdierations",
+    "considerations"
+   ]
+  ],
+  "121": [
+   [
+    "Be no\\ ashamed",
+    "Be not ashamed"
+   ],
+   [
+    "conjuie",
+    "conjure"
+   ],
+   [
+    "whicn ne loved",
+    "which he loved"
+   ],
+   [
+    "St. Syim phoriaus mother",
+    "St. Symphorian’s mother"
+   ],
+   [
+    "your approaching en it will",
+    "your approaching end will"
+   ],
+   [
+    "momentary toils, Which lead",
+    "momentary toils,<br>Which lead"
+   ]
+  ],
+  "122": [
+   [
+    "answered, r From God.”",
+    "answered, “From God.”"
+   ],
+   [
+    "covered with sures,",
+    "covered with sores,"
+   ]
+  ]
+ },
+ "split": {},
+ "join": {
+  "9": [
+   "may find him among"
+  ],
+  "33": [
+   "which are the general"
+  ],
+  "51": [
+   "1 Or Kestrel"
+  ]
+ },
+ "notes": {
+  "9": [
+   [
+    "1 To understand",
+    "taken offence,",
+    "we must distinguish",
+    "here inculcates."
+   ]
+  ],
+  "25": [
+   [
+    "1 It is not the meaning",
+    "have always done."
+   ]
+  ],
+  "51": [
+   [
+    "1 Or Kestrel",
+    "hawk kind."
+   ]
+  ]
+ },
+ "lead": {
+  "0": "From the lessons read on his festival in the Roman Breviary.",
+  "122": "A conference between an eminent divine of the fourteenth century and a poor beggar, on the means of attaining to Christian perfection. Translated from the works of J. Thaulerius, D.D., printed at Paris, 1623, p. 833."
+ }
+}

@@ -38,7 +38,7 @@ Stylesheets and scripts are linked with a version tag, such as `/styles.css?v=20
 3. Pages project, Custom domains, Set up a custom domain: add `fatherstoolbox.com`, then `www.fatherstoolbox.com`.
 
 ## Pages
-Home (`index.html`), About, Resources (`resources.html`, which lists Parish times under `/parishtimes/` the Liturgical calendar under `/calendar/` and the fill-in-the-blank homily under `/homily/`), Contact and a 404 page.
+Home (`index.html`), About, Resources (`resources.html`, which lists Parish times under `/parishtimes/` the Liturgical calendar under `/calendar/`, the fill-in-the-blank homily under `/homily/` and The Library under `/library/`), Contact and a 404 page.
 
 ## Contact form (Resend)
 1. In Resend, make sure fatherstoolbox.com is a verified sending domain (or use another verified domain; see `CONTACT_FROM`).
@@ -71,6 +71,17 @@ Until the key is set, the form answers "not set up yet" instead of sending.
 
 ## The fill-in-the-blank homily (`/homily/`)
 A lighthearted word game about parish life. Templates, word lists, patron saints and the word filter are in `public/homily/homily.js`; its content rules are at the top of that file. Everything runs in the browser and nothing is stored. Check it with `node tests/homily.test.js`.
+
+## The Library (`/library/`)
+
+A small shelf of public-domain Catholic books to read on the site, listed under Resources. Each book is split into chapter pages. Readers can search across the books and highlight passages.
+
+- **Where things are.** `library/books/*.json` holds each book as cleaned text (one file per book: its title, author, edition credit, parts and chapters). `library/build.mjs` turns those files into the pages under `public/library/`. `public/library/library.css`, `library.js` and `search.js` are written by hand. Everything else under `public/library/` is generated, and is committed because the site has no build step on Cloudflare.
+- **After any change** to a book file, to `library/build.mjs`, or to the site's header, menu or footer, run `sh library/rebuild.sh` from the repository root (it needs Node 18 or later and downloads Pagefind 1.6.0 the first time). It rewrites the pages, takes the header and footer from `public/resources.html` so they always match the rest of the site, and rebuilds the search index in `public/library/pagefind/`. If `library.css` or a script changes, raise `VERSION` in `library/build.mjs` so browsers fetch the new file.
+- **Search** is [Pagefind](https://pagefind.app): the index is a set of small static files, and the search runs in the reader's browser. Nothing is sent to a server.
+- **Highlights, text size, day or night, and "continue reading"** are saved in the reader's own browser (`localStorage`, keys starting `ftb.library.`). There are no accounts. Clearing site data removes them, so the My highlights page offers a download.
+- **Editions.** Only public-domain editions are used, and each book's pages credit the edition. `library/coming.json` lists the books not yet prepared, which the front page names until they are built.
+- **Introduction to the Devout Life** comes from three library scans of the same printing (Frederick Pustet & Co., undated, about 1900) on the Internet Archive: `introductiontodefran`, `introductiontode00franuoft` and `introductiontode0000fran_h2t6`. `library/import/devout_life.py` compares the three scans word by word and keeps the reading two of them agree on, then applies `library/import/devout_life_fixes.json`: chapter titles, each chapter's opening words (the ornamental initials cannot be read by a scanner), about 300 corrections of words the scans or the printer got wrong, and the edition's three footnotes. To correct a slip in the text, add a `[wrong, right]` pair under that chapter's number in `words` and run the importer again (`pip install english-words`, then `python3 library/import/devout_life.py <folder holding the three scans' *_djvu.html files from archive.org>`), then `sh library/rebuild.sh`. The two corrected Scripture references (Gen. xxviii and Ps. xciv, misprinted in the edition) are in the same file.
 
 ## Events and RSVPs
 Events are organized by parish:
