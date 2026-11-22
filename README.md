@@ -25,7 +25,7 @@ A design polish of version 3 (`../fatherstoolbox-site-v3`, left untouched). Word
 - Footer: "Ad maiorem Dei gloriam" and a short invocation of St. Francis de Sales. The 404 page asks St. Anthony's help.
 
 ## What is here
-- `public/`: the static site (pages, `styles.css`, `liturgy.js`, `favicon.svg`, self-hosted EB Garamond under the SIL OFL; the Inter font files are unused leftovers). Nothing loads from third parties.
+- `public/`: the static site (pages, `styles.css`, `liturgy.js`, `favicon.svg`, self-hosted EB Garamond under the SIL OFL; the Inter font files are unused leftovers). Google Tag Manager (container GTM-NTLT52KS) loads on every public page for analytics; the admin pages are left out. Nothing else loads from third parties.
 - `functions/api/contact.js`: a Cloudflare Pages Function that sends the contact form to darwin.sayo@gmail.com through Resend.
 
 ## Deploy (Cloudflare Pages, connected to this GitHub repo)
