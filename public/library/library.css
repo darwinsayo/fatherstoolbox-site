@@ -182,3 +182,6 @@ html[data-lib-theme=night] .lib-hl-item{border-bottom-color:rgba(255,255,255,.14
   .lib-grid{display:block}
   mark.lib-hl{background:none;border-bottom:1px solid #000}
 }
+
+/* the hidden attribute must win over the display rules above */
+.lib [hidden],.lib-pop[hidden]{display:none!important}
