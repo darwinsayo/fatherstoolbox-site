@@ -1,0 +1,207 @@
+/* The Library: reading pages for the books under /library/.
+   They use the site's own page (limestone, lapis, EB Garamond) and add what long reading needs:
+   a text size control, a night look, a search box and highlights. No motion. */
+
+/* ---------- Night reading. Set on <html> by library.js, on Library pages only. ---------- */
+html[data-lib-theme=night]{
+  --stone:#16181d;--stone-deep:#101216;--vellum:#1f2229;
+  --ink:#e7e0d1;--ink-soft:#b5ad9d;
+  --lapis:#a8c0ee;--rubric:#e58a80;--gold:#c9a24d;
+  color-scheme:dark;
+}
+html[data-lib-theme=night] .topband{background:#0c0e12}
+html[data-lib-theme=night] .season-now::before{box-shadow:0 0 0 2px #0c0e12,0 0 0 3px var(--gold-lit)}
+html[data-lib-theme=night] .sm-t,
+html[data-lib-theme=night] .resource-main h2{color:var(--lapis)}
+html[data-lib-theme=night] .site-header .submenu{box-shadow:0 18px 40px -20px #000,0 0 0 1px rgba(255,255,255,.1)}
+html[data-lib-theme=night] .site-header .submenu a:hover,
+html[data-lib-theme=night] .site-header .submenu a:focus-visible{background:#272b33}
+html[data-lib-theme=night] .foot-top{border-bottom-color:rgba(255,255,255,.14)}
+html[data-lib-theme=night] .resource{box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+html[data-lib-theme=night] .btn-red{background:#2b4a86;border-color:#2b4a86;color:#f3eee2}
+html[data-lib-theme=night] .btn-red:hover{background:#365a9f;border-color:#365a9f}
+html[data-lib-theme=night] .btn:not(.btn-red):hover{background:var(--ink);color:#16181d}
+html[data-lib-theme=night] input{border-bottom-color:#5d594f}
+html[data-lib-theme=night] ::selection{background:#35579b;color:#fff}
+
+/* ---------- Page heads ---------- */
+.lib-head .wrap{padding-block:clamp(2.25rem,5vw,3.75rem) clamp(1.75rem,3.5vw,2.5rem)}
+.lib-head h1{font-size:clamp(2.2rem,4.6vw,3.7rem);max-width:24ch;line-height:1.05}
+.lib-head .lede{margin-top:1.1rem}
+.lib-label{margin:1rem 0 -.55rem;font-size:1.15rem;font-variant-caps:all-small-caps;letter-spacing:.09em;color:var(--ink-soft);font-weight:500;line-height:1.2}
+.lib-crumbs a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.lib-crumbs a:hover{border-bottom-color:currentColor}
+
+/* ---------- The row of reading options ---------- */
+.lib-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.6rem;padding:.55rem 0 .65rem;margin-bottom:2rem;border-block:1px solid rgba(35,31,28,.16);font-size:1.08rem;font-variant-caps:all-small-caps;letter-spacing:.08em}
+html[data-lib-theme=night] .lib-tools{border-color:rgba(255,255,255,.16)}
+.lib-tools a{text-decoration:none;color:var(--ink);border-bottom:1px solid transparent}
+.lib-tools a:hover{color:var(--lapis);border-bottom-color:currentColor}
+.lib-tools-set{margin-left:auto;display:inline-flex;align-items:center;gap:.4rem}
+.lib-tools button{font:inherit;letter-spacing:inherit;color:var(--ink);background:none;border:1px solid rgba(35,31,28,.35);border-radius:2px;min-width:2.6rem;min-height:2.2rem;padding:.1rem .7rem .25rem;cursor:pointer}
+html[data-lib-theme=night] .lib-tools button{border-color:rgba(255,255,255,.35)}
+.lib-tools button:hover{border-color:var(--lapis);color:var(--lapis)}
+.lib-tools button[disabled]{opacity:.4;cursor:default}
+.lib-tools button[aria-pressed=true]{background:var(--ink);color:var(--stone);border-color:var(--ink)}
+
+/* ---------- A chapter ---------- */
+.lib-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,17rem);gap:clamp(2.5rem,6vw,6rem);align-items:start;padding-bottom:clamp(4rem,8vw,6.5rem)}
+.lib-grid>div{min-width:0;max-width:calc(1.32rem*34)}
+.lib-text{font-size:calc(1.32rem*var(--lib-scale,1));line-height:1.62}
+html[data-lib-size="-1"]{--lib-scale:.88}
+html[data-lib-size="1"]{--lib-scale:1.14}
+html[data-lib-size="2"]{--lib-scale:1.3}
+html[data-lib-size="3"]{--lib-scale:1.48}
+.lib-text p{margin:0 0 1em}
+.lib-text h2{font-size:1.3em;line-height:1.2;margin:1.9em 0 .7em;color:var(--lapis-deep);letter-spacing:0}
+html[data-lib-theme=night] .lib-text h2{color:var(--lapis)}
+.lib-text blockquote{margin:0 0 1em;padding-left:1.25em;border-left:3px solid var(--gold);font-style:italic}
+.lib-text blockquote i{font-style:normal}
+.lib-text .sc{font-variant-caps:small-caps;letter-spacing:.03em}
+.lib-text sup{font-size:.7em;line-height:0;color:var(--rubric);font-variant-numeric:lining-nums;margin-left:.08em}
+.lib-note sup{font-size:.75em;margin-left:0}
+.lib-note{font-size:.86em;line-height:1.5;color:var(--ink-soft);padding-left:1.25em;border-left:1px solid var(--gold)}
+/* Scripture: a verse to a line, with its number in the margin colour of a rubric */
+.lib-v{margin:0 0 .5em!important;padding-left:2.2em;text-indent:-2.2em}
+.lib-vn{display:inline-block;min-width:1.75em;text-indent:0;font-weight:500;font-size:.78em;color:var(--rubric);font-variant-numeric:lining-nums;user-select:none;-webkit-user-select:none}
+.lib-v+.lib-note{margin-left:2.2em;margin-top:-.15em}
+/* Catechism: question, then answer */
+.lib-qa{margin:0 0 1.35em}
+.lib-q{margin:0 0 .3em!important;font-weight:600}
+.lib-qn{color:var(--rubric);font-weight:500;font-variant-numeric:lining-nums;user-select:none;-webkit-user-select:none}
+.lib-a{margin:0 0 .45em!important}
+
+/* Highlights and search matches */
+mark.lib-hl{background:#f3dc94;color:inherit;border-radius:1px;cursor:pointer;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+mark.lib-find{background:none;color:inherit;border-bottom:2px solid var(--rubric)}
+html[data-lib-theme=night] mark.lib-hl{background:#6a5415;color:#fbf4e2}
+.lib-target{box-shadow:-.6rem 0 0 var(--stone),-.78rem 0 0 var(--gold)}
+
+.lib-pop{position:absolute;z-index:30;display:flex;gap:.3rem;background:var(--ink);border-radius:3px;padding:.25rem;box-shadow:0 10px 26px -10px rgba(0,0,0,.55)}
+.lib-pop button{font:inherit;font-size:1.05rem;font-variant-caps:all-small-caps;letter-spacing:.08em;color:var(--stone);background:none;border:0;border-radius:2px;padding:.3rem .9rem .45rem;cursor:pointer;white-space:nowrap}
+.lib-pop button:hover,.lib-pop button:focus-visible{background:rgba(255,255,255,.16);outline:0}
+html[data-lib-theme=night] .lib-pop button:hover,html[data-lib-theme=night] .lib-pop button:focus-visible{background:rgba(0,0,0,.14)}
+.lib-pop.lib-pop-bar{position:fixed;left:50%;bottom:max(1rem,env(safe-area-inset-bottom));transform:translateX(-50%);padding:.35rem}
+.lib-pop.lib-pop-bar button{font-size:1.2rem;padding:.55rem 1.4rem .7rem}
+
+.lib-pager{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5rem;margin-top:3rem;padding-top:1.3rem;border-top:1px solid rgba(35,31,28,.16);font-size:1.15rem;line-height:1.3}
+html[data-lib-theme=night] .lib-pager{border-color:rgba(255,255,255,.16)}
+.lib-pager a{text-decoration:none;color:var(--lapis);white-space:normal;overflow-wrap:anywhere;font-variant-caps:normal;letter-spacing:0;border-bottom:0;padding:0}
+.lib-pager a:hover{text-decoration:underline;text-decoration-color:var(--gold)}
+.lib-pager a[rel=next]{text-align:right;grid-column:2}
+.lib-pager span span,.lib-pager a span{display:block;font-variant-caps:all-small-caps;letter-spacing:.09em;font-size:1rem;color:var(--ink-soft)}
+.lib-credit{margin:2.2rem 0 0;font-size:1.02rem;font-style:italic;color:var(--ink-soft);max-width:var(--measure)}
+.lib-credit b{font-style:normal;font-weight:500;font-variant-caps:all-small-caps;letter-spacing:.08em}
+.lib-credit i{font-style:normal}
+
+/* The list of chapters beside the text */
+.lib-side{position:sticky;top:1.5rem;max-height:calc(100vh - 3rem);overflow:auto;padding:1.4rem 1.4rem 1.5rem;background:var(--vellum);border-radius:3px;border-top:2px solid var(--gold);font-size:1.05rem;line-height:1.3}
+.lib-side h2{font-size:1.1rem;font-variant-caps:all-small-caps;letter-spacing:.09em;color:var(--rubric);font-weight:500;margin:0 0 .8rem;line-height:1.25}
+.lib-side h2 a{color:inherit;text-decoration:none}
+.lib-side h2 a:hover{text-decoration:underline}
+.lib-toc{list-style:none;margin:0;padding:0}
+.lib-toc li{margin:0}
+.lib-toc a{display:block;padding:.3rem 0 .3rem .7rem;border-left:2px solid transparent;text-decoration:none;color:var(--ink-soft)}
+.lib-toc a span{font-variant-caps:all-small-caps;letter-spacing:.06em;color:var(--ink-soft)}
+.lib-toc a:hover{color:var(--lapis)}
+.lib-toc a[aria-current]{border-left-color:var(--gold);color:var(--ink)}
+.lib-nums{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(2.6rem,1fr));gap:.3rem;font-variant-numeric:lining-nums}
+.lib-nums a{display:block;text-align:center;padding:.3rem 0 .4rem;text-decoration:none;color:var(--ink-soft);border:1px solid rgba(35,31,28,.14);border-radius:2px}
+html[data-lib-theme=night] .lib-nums a{border-color:rgba(255,255,255,.16)}
+.lib-nums a:hover{color:var(--lapis);border-color:var(--lapis)}
+.lib-nums a[aria-current]{background:var(--lapis-deep);border-color:var(--lapis-deep);color:#f8f5ee}
+
+/* ---------- A book's contents, the search page, My highlights ---------- */
+.lib-contents,.lib-front{padding-bottom:clamp(2.5rem,5vw,3.5rem)}
+.lib-contents{padding-bottom:clamp(4rem,8vw,6.5rem)}
+.lib-front .lib-tools{margin-bottom:1.6rem}
+.lib-start{margin:0 0 .5rem}
+.lib-resume{margin:0 0 1.4rem;font-style:italic;color:var(--ink-soft)}
+.lib-resume a{color:var(--lapis);text-decoration-color:var(--gold);font-style:normal}
+.lib-part{font-size:clamp(1.6rem,2.6vw,2rem);color:var(--lapis-deep);margin:2.6rem 0 .9rem;max-width:var(--measure)}
+html[data-lib-theme=night] .lib-part{color:var(--lapis)}
+.lib-part-intro{color:var(--ink-soft);font-style:italic;max-width:var(--measure);margin:-.3rem 0 1rem}
+.lib-toc-full{max-width:var(--measure);font-size:1.18rem}
+.lib-toc-full a{padding:.5rem 0;border-left:0;border-bottom:1px solid rgba(35,31,28,.12);color:var(--ink)}
+html[data-lib-theme=night] .lib-toc-full a{border-bottom-color:rgba(255,255,255,.12)}
+.lib-toc-full a span{display:inline-block;min-width:6.2rem}
+.lib-books{list-style:none;margin:0;padding:0;columns:3 14rem;column-gap:2.5rem;font-size:1.18rem}
+.lib-books li{break-inside:avoid;padding:.4rem 0;border-bottom:1px solid rgba(35,31,28,.12);display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+html[data-lib-theme=night] .lib-books li{border-bottom-color:rgba(255,255,255,.12)}
+.lib-books a{text-decoration:none;color:var(--ink)}
+.lib-books a:hover{color:var(--lapis)}
+.lib-books span{font-size:.95rem;color:var(--ink-soft);font-style:italic;white-space:nowrap}
+.lib-nums-big{max-width:var(--measure);grid-template-columns:repeat(auto-fill,minmax(3.2rem,1fr));gap:.45rem;font-size:1.2rem}
+
+/* Search */
+form.lib-search{display:block;background:none;padding:0;box-shadow:none;border-radius:0;max-width:var(--measure)}
+.lib-search label{display:block;margin-bottom:.35rem}
+.lib-search-row{display:flex;gap:1rem;align-items:flex-end}
+.lib-search-row input{flex:1;min-width:0;font-size:1.35rem}
+.lib-search-row .btn{padding:.6rem 1.3rem .75rem;flex:none}
+.lib-filter{border:0;margin:1.2rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-size:1.08rem}
+.lib-filter legend{padding:0;margin-bottom:.3rem;font-variant-caps:all-small-caps;letter-spacing:.08em;font-size:1.05rem;color:var(--ink-soft)}
+.lib-filter label{display:inline-flex;align-items:center;gap:.45rem;margin:0;font-variant-caps:normal;letter-spacing:0;color:var(--ink);cursor:pointer}
+.lib-filter input{width:auto;accent-color:var(--lapis)}
+.lib-status{margin:1.8rem 0 0;font-style:italic;color:var(--ink-soft)}
+.lib-results{list-style:none;margin:1rem 0 1.5rem;padding:0;max-width:var(--measure)}
+.lib-results li{padding:1.1rem 0;border-bottom:1px solid rgba(35,31,28,.14)}
+html[data-lib-theme=night] .lib-results li{border-bottom-color:rgba(255,255,255,.14)}
+.lib-results a{text-decoration:none;color:inherit;display:block}
+.lib-results .lib-r-book{font-variant-caps:all-small-caps;letter-spacing:.09em;font-size:1rem;color:var(--rubric)}
+.lib-results .lib-r-title{display:block;font-size:1.4rem;line-height:1.2;color:var(--lapis);margin:.1rem 0 .35rem}
+.lib-results a:hover .lib-r-title{text-decoration:underline;text-decoration-color:var(--gold)}
+.lib-results p{margin:0;font-size:1.12rem;color:var(--ink-soft)}
+.lib-results mark{background:none;color:var(--ink);font-weight:600}
+
+/* My highlights */
+.lib-hl-book{margin:0 0 2.6rem;max-width:var(--measure)}
+.lib-hl-book h2{font-size:clamp(1.6rem,2.6vw,2rem);color:var(--lapis-deep);margin:0 0 .6rem}
+html[data-lib-theme=night] .lib-hl-book h2{color:var(--lapis)}
+.lib-hl-item{padding:1rem 0;border-bottom:1px solid rgba(35,31,28,.14)}
+html[data-lib-theme=night] .lib-hl-item{border-bottom-color:rgba(255,255,255,.14)}
+.lib-hl-item blockquote{margin:0 0 .5rem;padding-left:1rem;border-left:3px solid var(--gold)}
+.lib-hl-item p{margin:0;font-size:1.05rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:.2rem 1.2rem;align-items:baseline}
+.lib-hl-item a{color:var(--lapis);text-decoration-color:var(--gold)}
+.lib-hl-item button{font:inherit;font-size:1rem;font-variant-caps:all-small-caps;letter-spacing:.08em;background:none;border:0;padding:0;color:var(--ink-soft);text-decoration:underline;cursor:pointer;margin-left:auto}
+.lib-hl-item button:hover{color:var(--rubric)}
+.lib-hl-actions{margin-top:1.5rem}
+
+@media (max-width:920px){
+  .lib-grid{grid-template-columns:1fr}
+  .lib-side{position:static;max-height:none}
+}
+@media (max-width:560px){
+  .lib-text{font-size:calc(1.2rem*var(--lib-scale,1))}
+  .lib-tools{gap:.4rem 1.1rem;font-size:1.02rem}
+  .lib-tools-set{margin-left:0;width:100%}
+  .lib-search-row{flex-wrap:wrap}
+  .lib-toc-full a span{min-width:0;display:block}
+  .lib-pager{font-size:1.05rem}
+}
+@media print{
+  .topband,.site-header,footer,.lib-tools,.lib-side,.lib-pager,.lib-pop{display:none!important}
+  .lib-grid{display:block}
+  mark.lib-hl{background:none;border-bottom:1px solid #000}
+}
+
+/* the hidden attribute must win over the display rules above */
+.lib [hidden],.lib-pop[hidden]{display:none!important}
+
+/* book covers on the front page */
+.lib-resource{grid-template-columns:auto minmax(0,1fr) auto;align-items:center}
+.lib-cover-link{display:block;text-decoration:none}
+.lib-cover{display:block;width:9.5rem;aspect-ratio:2/3;background:var(--cover,#1e3a6e);color:var(--gold-lit);border-radius:2px 6px 6px 2px;padding:.55rem;box-shadow:inset 6px 0 0 rgba(0,0,0,.22),0 14px 24px -14px rgba(35,31,28,.7)}
+.lib-cover-frame{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;height:100%;border:1px solid var(--gold);outline:1px solid rgba(232,200,119,.35);outline-offset:-5px;padding:.9rem .6rem;text-align:center;box-sizing:border-box}
+.lib-cover-title{font-size:1.15rem;line-height:1.15;color:#f3ead2;font-weight:500}
+.lib-cover-long .lib-cover-title{font-size:.98rem}
+.lib-cover-rule{width:2.2rem;height:1px;background:var(--gold)}
+.lib-cover-author{font-size:.82rem;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-lit)}
+@media (max-width:760px){
+  .lib-resource{grid-template-columns:7rem minmax(0,1fr)}
+  .lib-resource .resource-links{grid-column:1/-1}
+  .lib-cover{width:7rem}
+  .lib-cover-title{font-size:.95rem}.lib-cover-long .lib-cover-title{font-size:.82rem}
+  .lib-cover-author{font-size:.66rem}
+  .lib-cover-frame{padding:.6rem .35rem;gap:.5rem}
+}

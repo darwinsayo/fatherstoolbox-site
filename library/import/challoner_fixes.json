@@ -1,0 +1,846 @@
+{
+ "_about": "Hand fixes for challoner.py. 'words': whole-word replacements everywhere. 'replace': [chapter 'book.chapter', old text, new text]; old matches exactly once in that chapter; 're:' starts a regular expression; U+2029 in new text splits the paragraph and U+2063 around a text makes it a heading. 'titles' and 'notes' override a chapter's title or add its note.",
+ "words": {
+  "confldest": "confidest",
+  "hut": "but",
+  "shah": "shalt",
+  "Bun": "sun",
+  "Jill": "fill",
+  "Qive": "Give",
+  "hy": "by",
+  "aU": "all",
+  "Qod": "God",
+  "cAarity": "charity",
+  "cm": "am",
+  "Jhyself": "thyself",
+  "dtemean": "demean",
+  "incjuire": "inquire",
+  "wilfolness": "wilfulness",
+  "souPs": "soul’s",
+  "combate": "combat",
+  "thfs": "this",
+  "roast": "must",
+  "raightst": "mightst",
+  "irnibortality": "immortality",
+  "sufiiceth": "sufficeth",
+  "hads": "hadst",
+  "Ecdes": "Eccles",
+  "tvill": "will",
+  "huitible": "humble",
+  "rfeaps": "reaps",
+  "hearirtg": "hearing",
+  "sbowest": "showest",
+  "infbse": "infuse",
+  "aH": "all"
+ },
+ "replace": [
+  [
+   "1.1",
+   "L I. HE that folhweth me, walketk t in darkness",
+   "He that followeth me, walketh not in darkness"
+  ],
+  [
+   "1.1",
+   "be xause",
+   "because"
+  ],
+  [
+   "1.1",
+   "of Christ. J",
+   "of Christ.]"
+  ],
+  [
+   "1.5",
+   "cur iosity",
+   "curiosity"
+  ],
+  [
+   "1.13",
+   "With • 4S stand the beginning",
+   "Withstand the beginning"
+  ],
+  [
+   "1.13",
+   "tempt tions",
+   "temptations"
+  ],
+  [
+   "1.13",
+   "tribulations, & man",
+   "tribulations, a man"
+  ],
+  [
+   "1.13",
+   "imagio nation",
+   "imagination"
+  ],
+  [
+   "1.18",
+   "profits bly",
+   "profitably"
+  ],
+  [
+   "1.19",
+   "— • Verily",
+   "— Verily"
+  ],
+  [
+   "1.24",
+   "oppressedAhem",
+   "oppressed them"
+  ],
+  [
+   "1.25",
+   "Cartku - stans f the Cistercians",
+   "Carthusians, the Cistercians"
+  ],
+  [
+   "2.4",
+   "jntendest",
+   "intendest"
+  ],
+  [
+   "2.6",
+   "wick - ed t saith",
+   "wicked, saith"
+  ],
+  [
+   "2.8",
+   "alone> having",
+   "alone, having"
+  ],
+  [
+   "2.9",
+   "a Ion gf and great",
+   "a long and great"
+  ],
+  [
+   "2.11",
+   "unprof to ble",
+   "unprofitable"
+  ],
+  [
+   "2.12",
+   "joy? - Thou",
+   "joy? Thou"
+  ],
+  [
+   "2.12",
+   "sar vory",
+   "savory"
+  ],
+  [
+   "2.12",
+   "tribular tions",
+   "tribulations"
+  ],
+  [
+   "3.1",
+   "Hap. py",
+   "Happy"
+  ],
+  [
+   "3.2",
+   "si-» lent",
+   "silent"
+  ],
+  [
+   "3.2",
+   "and honor P raiSe> &nd S lor y> and everlasting",
+   "and to thy praise and glory, and everlasting honor."
+  ],
+  [
+   "3.3",
+   "whom thou y O Lord",
+   "whom thou, O Lord"
+  ],
+  [
+   "3.3",
+   "remem her",
+   "remember"
+  ],
+  [
+   "3.3",
+   "thou fittest all things",
+   "thou fillest all things"
+  ],
+  [
+   "3.3",
+   "empty » Remember",
+   "empty. Remember"
+  ],
+  [
+   "3.4",
+   "<10681;",
+   "doest;"
+  ],
+  [
+   "3.5",
+   "pap tient",
+   "patient"
+  ],
+  [
+   "3.6",
+   "{may",
+   "may"
+  ],
+  [
+   "3.6",
+   "incurar ble",
+   "incurable"
+  ],
+  [
+   "3.7",
+   "the/* quickly",
+   "they quickly"
+  ],
+  [
+   "3.9",
+   "faint-- est",
+   "faintest"
+  ],
+  [
+   "3.9",
+   "foun-i tain",
+   "fountain"
+  ],
+  [
+   "3.12",
+   "sh&lt",
+   "shalt"
+  ],
+  [
+   "3.17",
+   "re:th or cI>.*$",
+   " Lord, I will suffer willingly for thee whatsoever thou art pleased should befall me. I will receive with indifference from thy hand good and evil, sweet and bitter, joyful and sorrowful; and will give thee thanks for all that happens to me. Keep me only from all sin, and I will fear neither death nor hell. Cast me not off forever, nor blot me out of the book of life; and what tribulation soever befalleth me shall not hurt me."
+  ],
+  [
+   "3.19",
+   "patience. 2» The better",
+   "patience. The better"
+  ],
+  [
+   "3.19",
+   "sufc ferings",
+   "sufferings"
+  ],
+  [
+   "3.20",
+   " < n.",
+   ""
+  ],
+  [
+   "3.21",
+   "misera ble",
+   "miserable"
+  ],
+  [
+   "3.22",
+   "re: tJ&AP\\..*$",
+   ""
+  ],
+  [
+   "3.23",
+   "fill]",
+   "full"
+  ],
+  [
+   "3.26",
+   "L Lord, this",
+   "Lord, this"
+  ],
+  [
+   "3.26",
+   "c res >",
+   "cares"
+  ],
+  [
+   "3.26",
+   "j”ter",
+   "after"
+  ],
+  [
+   "3.26",
+   "no, cleave",
+   "not cleave"
+  ],
+  [
+   "3.26",
+   "ere ated",
+   "created"
+  ],
+  [
+   "3.27",
+   "of 204 • words",
+   "of words"
+  ],
+  [
+   "3.30",
+   "W ait",
+   "Wait"
+  ],
+  [
+   "3.31",
+   "contemplar tive",
+   "contemplative"
+  ],
+  [
+   "3.31",
+   "who 8 ®ena to be",
+   "who seem to be"
+  ],
+  [
+   "3.32",
+   "Jr nd all",
+   "find all"
+  ],
+  [
+   "3.34",
+   "jof time",
+   "of time"
+  ],
+  [
+   "3.34",
+   "re: <,$",
+   ""
+  ],
+  [
+   "3.40",
+   "vi. - What",
+   "vi. What"
+  ],
+  [
+   "3.45",
+   "liar> (Ps",
+   "liar, (Ps"
+  ],
+  [
+   "3.49",
+   "with} self",
+   "with self"
+  ],
+  [
+   "3.49",
+   "committed • but",
+   "committed; but"
+  ],
+  [
+   "3.50",
+   "and the day when thy lamp shined o»es his and he was covered under the shadow",
+   "and the day before, when thy lamp shined over his head, and he was covered under the shadow"
+  ],
+  [
+   "3.50",
+   "he<veh",
+   "heaven"
+  ],
+  [
+   "3.50",
+   "rnthin",
+   "within"
+  ],
+  [
+   "3.54",
+   "mor- - tiffed",
+   "mortified"
+  ],
+  [
+   "3.54",
+   "com placence",
+   "complacence"
+  ],
+  [
+   "3.54",
+   "toothings eternal",
+   "to things eternal"
+  ],
+  [
+   "3.56",
+   "the tray, the truth",
+   "the way, the truth"
+  ],
+  [
+   "3.16",
+   "thou unit not always he angry",
+   "thou wilt not always be angry"
+  ],
+  [
+   "3.56",
+   "I unit love him 9",
+   "I will love him"
+  ],
+  [
+   "3.20",
+   "confounds mein thy",
+   "confounds me in thy"
+  ],
+  [
+   "4.1",
+   "archan- ~ gels",
+   "archangels"
+  ],
+  [
+   "4.1",
+   "difc ference",
+   "difference"
+  ],
+  [
+   "4.1",
+   "do vout",
+   "devout"
+  ],
+  [
+   "4.2",
+   "Comforter..",
+   "Comforter."
+  ],
+  [
+   "4.2",
+   "un worthiness",
+   "unworthiness"
+  ],
+  [
+   "4.3",
+   "xv> Deal",
+   "xv. Deal"
+  ],
+  [
+   "4.3",
+   "thou hadst i been",
+   "thou hadst been"
+  ],
+  [
+   "4.5",
+   "ho t thou",
+   "Lo! thou"
+  ],
+  [
+   "4.7",
+   "celebrate ing",
+   "celebrating"
+  ],
+  [
+   "4.8",
+   "disciple » Luke",
+   "disciple. Luke"
+  ],
+  [
+   "4.11",
+   "Lord oT Majesty",
+   "Lord of Majesty"
+  ],
+  [
+   "4.11",
+   "projitab le",
+   "profitable"
+  ],
+  [
+   "4.11",
+   "receiv es",
+   "receives"
+  ],
+  [
+   "4.11",
+   "heart of spriest",
+   "heart of a priest"
+  ],
+  [
+   "4.11",
+   "re:fer-? Tentlv",
+   "fervently"
+  ],
+  [
+   "4.12",
+   "diligently not",
+   "diligently, not"
+  ],
+  [
+   "4.17",
+   "inflection and fervor",
+   "affection and fervor"
+  ],
+  [
+   "4.17",
+   "purity, 18 thy",
+   "purity, as thy"
+  ],
+  [
+   "4.18",
+   "re:\\s*360 THE FOLLOWING OF CHRIST\\.",
+   ""
+  ],
+  [
+   "1.19",
+   "ofc fended",
+   "offended"
+  ],
+  [
+   "1.20",
+   "pas set h",
+   "passeth"
+  ],
+  [
+   "3.7",
+   "neg- Iect",
+   "neglect"
+  ],
+  [
+   "3.10",
+   "re:chap, x\\.\\] of ciprfgT\\. 157 ",
+   ""
+  ],
+  [
+   "3.14",
+   "bu C the",
+   "but the"
+  ],
+  [
+   "3.19",
+   "re:THE IroLLOWlNG \\[BOOR III ",
+   ""
+  ],
+  [
+   "3.30",
+   "thy aio burden",
+   "thy burden"
+  ],
+  [
+   "3.47",
+   "ofjGrod",
+   "of God"
+  ],
+  [
+   "3.58",
+   "ex alting",
+   "exalting"
+  ],
+  [
+   "4.5",
+   "coin secrated",
+   "consecrated"
+  ],
+  [
+   "4.12",
+   "de votion",
+   "devotion"
+  ],
+  [
+   "4.10",
+   "dissolute'people",
+   "dissolute people"
+  ],
+  [
+   "3.54",
+   "presume'of",
+   "presume of"
+  ],
+  [
+   "4.10",
+   "Alas I some",
+   "Alas! some"
+  ],
+  [
+   "3.15",
+   "fear II. of God",
+   "fear of God"
+  ],
+  [
+   "1.1",
+   "if thou he void",
+   "if thou be void"
+  ],
+  [
+   "1.13",
+   "we may he able",
+   "we may be able"
+  ],
+  [
+   "3.31",
+   "fly and he at rest",
+   "fly and be at rest"
+  ],
+  [
+   "3.31",
+   "whether he he strong",
+   "whether he be strong"
+  ],
+  [
+   "3.46",
+   "shall he justified",
+   "shall be justified"
+  ],
+  [
+   "3.56",
+   "wilt he perfect",
+   "wilt be perfect"
+  ],
+  [
+   "4.15",
+   "shall he enlarged",
+   "shall be enlarged"
+  ],
+  [
+   "4.8",
+   "cannot he my disciple",
+   "cannot be my disciple"
+  ],
+  [
+   "4.4",
+   "may he wholly",
+   "may be wholly"
+  ],
+  [
+   "1.21",
+   "to out Lord",
+   "to our Lord"
+  ],
+  [
+   "1.2",
+   "art of science",
+   "art or science"
+  ],
+  [
+   "3.19",
+   "man, of one that",
+   "man, or one that"
+  ],
+  [
+   "3.7",
+   "it they will not govern",
+   "if they will not govern"
+  ],
+  [
+   "3.54",
+   "grace loses even",
+   "grace loves even"
+  ],
+  [
+   "2.12",
+   "does affect such",
+   "does effect such"
+  ],
+  [
+   "2.11",
+   "lam all alone",
+   "I am all alone"
+  ],
+  [
+   "3.3",
+   "re:\\s*A? ?PRAYER TO IMPLORE THE GRACE OF DEVOTION\\.?\\s*$",
+   " ⁣A prayer to implore the grace of devotion⁣"
+  ],
+  [
+   "3.15",
+   "re:\\s*A? ?PRAYER FOR THE FULFILLING OF THE WILL OF GOD\\.?\\s*$",
+   " ⁣A prayer for the fulfilling of the will of God⁣"
+  ],
+  [
+   "3.23",
+   "re:\\s*A? ?PRAYER AGAINST EVIL THOUGHTS\\.?\\s*$",
+   " ⁣A prayer against evil thoughts⁣"
+  ],
+  [
+   "3.23",
+   "re:\\s*A? ?PRATER FOR THE ENLIGHTENING THE MINE\\.?\\s*$",
+   " ⁣A prayer for the enlightening of the mind⁣"
+  ],
+  [
+   "3.27",
+   "re:\\s*A? ?PRAYER FOR THE CLEANSING OF THE HEART,? AND THE OBTAINING HEAV-? ?ENLY WISDOM\\.?\\s*$",
+   " ⁣A prayer for the cleansing of the heart, and the obtaining of heavenly wisdom⁣"
+  ],
+  [
+   "1.3",
+   "which is good good conscience",
+   "which is good in itself, and ordained by God; but a good conscience"
+  ],
+  [
+   "1.3",
+   "lit-tie",
+   "little"
+  ],
+  [
+   "2.1",
+   "and taught knows how to walk",
+   "and taught rather by God than men. He who knows how to walk"
+  ],
+  [
+   "2.9",
+   "I am for-poverty",
+   "I am forsaken by grace, and left in my own poverty"
+  ],
+  [
+   "2.10",
+   "springing from minds",
+   "springing from virtue, and infused by God into pure minds"
+  ],
+  [
+   "3.38",
+   "for which they were ordained reign Artist",
+   "for which they were ordained by God, and appointed by that Sovereign Artist"
+  ],
+  [
+   "1.11",
+   "O l if",
+   "O! if"
+  ],
+  [
+   "2.5",
+   "thou-de- sirest",
+   "thou desirest"
+  ],
+  [
+   "3.2",
+   "Q Lord",
+   "O Lord"
+  ],
+  [
+   "3.11",
+   "desired st as",
+   "desiredst as"
+  ],
+  [
+   "3.23",
+   "heavenly things j that",
+   "heavenly things; that"
+  ],
+  [
+   "3.47",
+   "re:^J\\. ",
+   ""
+  ],
+  [
+   "3.55",
+   "that h know",
+   "that I know"
+  ],
+  [
+   "4.11",
+   "a: ad chaste",
+   "and chaste"
+  ],
+  [
+   "2.3",
+   "re: QUA F\\. IV\\.\\] OF CHRIST\\.",
+   ""
+  ],
+  [
+   "1.13",
+   "re: 40 the following \\(hook f\\.",
+   ""
+  ],
+  [
+   "2.9",
+   "thy fact from",
+   "thy face from"
+  ],
+  [
+   "2.9",
+   "with gladness If it",
+   "with gladness. If it"
+  ],
+  [
+   "1.20",
+   "too-secure",
+   "too secure"
+  ],
+  [
+   "4.18",
+   "shall be is able to work",
+   "shall be oppressed by glory. Prov. xxv. God is able to work"
+  ],
+  [
+   "3.34",
+   "gives! tranquillity",
+   "givest tranquillity"
+  ],
+  [
+   "1.14",
+   "labors in rain",
+   "labors in vain"
+  ],
+  [
+   "3.3",
+   "an Inestimable",
+   "an inestimable"
+  ],
+  [
+   "4.1",
+   "is Offered up",
+   "is offered up"
+  ],
+  [
+   "3.50",
+   "is Valuable",
+   "is valuable"
+  ],
+  [
+   "1.13",
+   "made Stronger",
+   "made stronger"
+  ],
+  [
+   "3.54",
+   "loves Idleness",
+   "loves idleness"
+  ],
+  [
+   "3.3",
+   "thy Works",
+   "thy works"
+  ],
+  [
+   "4.3",
+   "thou Wert",
+   "thou wert"
+  ],
+  [
+   "3.13",
+   "thou Wilt",
+   "thou wilt"
+  ],
+  [
+   "3.31",
+   "He Was",
+   "He was"
+  ],
+  [
+   "3.3",
+   "sometimes v frustrated",
+   "sometimes frustrated"
+  ],
+  [
+   "3.5",
+   "O F ather of mercies",
+   "O Father of mercies"
+  ]
+ ],
+ "titles": {
+  "1.1": "Of following Christ, and despising all the vanities of the world",
+  "1.15": "Of works done out of charity",
+  "2.7": "Of the love of Jesus above all things",
+  "2.11": "Of the small number of the lovers of the cross of Jesus",
+  "3.1": "Of the internal speech of Christ to a faithful soul",
+  "3.2": "That truth speaks within us without noise of words",
+  "3.11": "That the desires of the heart are to be examined and moderated",
+  "3.18": "That temporal miseries are to be borne with patience, after the example of Jesus Christ",
+  "3.25": "In what things the firm peace of the heart and true progress doth consist",
+  "3.32": "Of the denying ourselves, and renouncing all cupidity",
+  "3.35": "That there is no being secure from temptation in this life",
+  "3.37": "Of a pure and full resignation of ourselves, for the obtaining freedom of heart",
+  "3.40": "That man hath no good of himself, and that he cannot glory in any thing",
+  "3.45": "That credit is not to be given to all men; and that men are prone to offend in words",
+  "3.47": "That all grievous things are to be endured for life everlasting",
+  "3.50": "How a desolate person ought to offer himself into the hands of God",
+  "3.55": "Of the corruption of nature, and of the efficacy of divine grace",
+  "3.59": "That all hope and confidence is to be fixed in God alone",
+  "4.2": "That the great goodness and charity of God is showed to man in this sacrament",
+  "4.9": "That we must offer ourselves, and all that is ours, to God, and pray for all",
+  "4.14": "Of the ardent desire of some devout persons to receive the body of Christ",
+  "4.15": "That the grace of devotion is obtained by humility and self-denial",
+  "4.18": "That a man be not a curious searcher into this sacrament, but a humble follower of Christ, submitting his sense to holy faith"
+ },
+ "notes": {
+  "1.3": "<sup>1</sup> The author seems here to allude to that passage of St. Paul, 1 Cor. ii. 2, where he says, that he desired to know nothing but Jesus Christ, and him crucified."
+ }
+}
