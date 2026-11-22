@@ -25,7 +25,7 @@ const arg = (name, dflt) => { const i = process.argv.indexOf(name); return i > 0
 const BOOKS = arg('--books', path.join(root, 'library', 'books'));
 const PUBLIC = arg('--public', path.join(root, 'public'));
 const OUT = path.join(PUBLIC, 'library');
-const VERSION = '2026112203';            // change when library.css or a library script changes
+const VERSION = '2026112204';            // change when library.css or a library script changes
 
 /* ---------- the site's own header and footer, taken from the Resources page so they never drift ---------- */
 const shell = fs.readFileSync(path.join(PUBLIC, 'resources.html'), 'utf8');
@@ -215,11 +215,27 @@ ${contents}
   write(bookUrl, page({ url: bookUrl, title: `${book.title} | The Library`, description: clip(`${book.title}, ${book.author}. ${plain(book.about || '')} ${plain(book.edition)}`, 200), body }));
 }
 
+/* book covers: drawn in CSS and SVG from the site's own colours, no outside images */
+const COVER_COLORS = {
+  'introduction-to-the-devout-life': '#1e3a6e', 'the-imitation-of-christ': '#6a2128', 'the-baltimore-catechism': '#2a5139',
+  'orthodoxy': '#2d2823', 'douay-rheims-bible': '#4a2f66',
+};
+function cover(b) {
+  const bg = COVER_COLORS[b.slug] || '#1e3a6e';
+  const small = b.title.length > 28;
+  return `<span class="lib-cover${small ? ' lib-cover-long' : ''}" style="--cover:${bg}" aria-hidden="true"><span class="lib-cover-frame">
+<svg class="lib-cover-cross" viewBox="0 0 24 32" width="22" height="30" focusable="false"><path d="M10 0h4v9h8v4h-8v19h-4V13H2V9h8z" fill="currentColor"/></svg>
+<span class="lib-cover-title">${esc(b.title.replace(/^The Holy Bible, /, ''))}</span>
+<span class="lib-cover-rule"></span>
+<span class="lib-cover-author">${esc(b.author)}</span></span></span>`;
+}
+
 /* the Library's front page */
 {
   const cards = books.map(b => {
     const n = b.sections.reduce((a, s) => a + s.chapters.length, 0);
-    return `<article class="resource">
+    return `<article class="resource lib-resource">
+<a class="lib-cover-link" href="/library/${b.slug}/" tabindex="-1" aria-hidden="true">${cover(b)}</a>
 <a class="resource-main" href="/library/${b.slug}/">
 <p class="rubric">${esc(b.author)}</p>
 <h2>${esc(b.title)}</h2>
