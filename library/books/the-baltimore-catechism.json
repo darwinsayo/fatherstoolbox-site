@@ -1,0 +1,3999 @@
+{
+ "slug": "the-baltimore-catechism",
+ "order": 3,
+ "kind": "catechism",
+ "title": "The Baltimore Catechism",
+ "short": "Baltimore Catechism",
+ "author": "Third Plenary Council of Baltimore",
+ "about": "The catechism that taught the faith to generations of American Catholics. This is No. 2, the edition for Confirmation classes: 421 questions and answers in 37 lessons, with prayers and hymns.",
+ "edition": "<i>A Catechism of Christian Doctrine, Prepared and Enjoined by Order of the Third Plenary Council of Baltimore</i>, No. 2, with prayers and hymns. Approved by Archbishop James Gibbons of Baltimore and John Cardinal McCloskey of New York, April 6, 1885. From a later printing: answer 257, on the fast before Holy Communion, was updated to the rule of 1977, and the Mass prayers follow Father Finn’s <i>Prayer Book for Catholic Youth</i>. Public domain.",
+ "sections": [
+  {
+   "title": "Prayers",
+   "chapters": [
+    {
+     "path": "prayers",
+     "title": "Prayers",
+     "blocks": [
+      {
+       "t": "h",
+       "h": "The Lord’s Prayer"
+      },
+      {
+       "t": "p",
+       "h": "Our Father, who art in heaven, hallowed be Thy name: Thy kingdom come; Thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us: and lead us not into temptation, but deliver us from evil. Amen."
+      },
+      {
+       "t": "h",
+       "h": "The Angelical Salutation"
+      },
+      {
+       "t": "p",
+       "h": "Hail Mary, full of grace! the Lord is with thee: blessed art thou amongst women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen."
+      },
+      {
+       "t": "h",
+       "h": "The Apostles’ Creed"
+      },
+      {
+       "t": "p",
+       "h": "I believe in God, the Father Almighty, Creator of heaven and earth; and in Jesus Christ, His only Son, our Lord; who was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified; died, and was buried. He descended into hell; the third day He arose again from the dead; He ascended into heaven, sitteth at the right hand of God, the Father Almighty; from thence He shall come to judge the living and the dead. I believe in the Holy Ghost the Holy Catholic Church, the communion of Saints, the forgiveness of sins, the resurrection of the body, and the life everlasting. Amen."
+      },
+      {
+       "t": "h",
+       "h": "The Confiteor"
+      },
+      {
+       "t": "p",
+       "h": "I confess to Almighty God, to blessed Mary, ever Virgin, to blessed Michael the Archangel, to blessed John the Baptist, to the holy Apostles Peter and Paul, and to all the Saints, that I have sinned exceedingly in thought, word and deed, through my fault, through my fault, through my most grievous fault. Therefore, I beseech blessed Mary, ever Virgin, blessed Michael the Archangel, blessed John the Baptist, the holy Apostles Peter and Paul, and all the Saints, to pray to the Lord our God for me."
+      },
+      {
+       "t": "p",
+       "h": "May the Almighty God have mercy on me, and forgive me my sins, and bring me to everlasting life. Amen."
+      },
+      {
+       "t": "p",
+       "h": "May the Almighty and merciful Lord grant me pardon, absolution, and remission of all my sins. Amen."
+      },
+      {
+       "t": "h",
+       "h": "An Act of Faith"
+      },
+      {
+       "t": "p",
+       "h": "O my God! I firmly believe that Thou art one God in three Divine Persons, Father, Son, and Holy Ghost; I believe that Thy Divine Son became man, and died for our sins, and that he will come to judge the living and the dead. I believe these and all the truths which the Holy Catholic Church teaches, because Thou hast revealed them, who canst neither deceive nor be deceived."
+      },
+      {
+       "t": "h",
+       "h": "An Act of Hope"
+      },
+      {
+       "t": "p",
+       "h": "O my God! relying on Thy infinite goodness and promises, I hope to obtain pardon of my sins, the help of Thy grace, and life everlasting, through the merits of Jesus Christ, my Lord and Redeemer."
+      },
+      {
+       "t": "h",
+       "h": "An Act of Love"
+      },
+      {
+       "t": "p",
+       "h": "O my God! I love Thee above all things, with my whole heart and soul, because Thou art all-good and worthy of all love. I love my neighbor as myself for the love of Thee. I forgive all who have injured me, and ask pardon of all whom I have injured."
+      },
+      {
+       "t": "h",
+       "h": "An Act of Contrition"
+      },
+      {
+       "t": "p",
+       "h": "O my God! I am heartily sorry for having offended Thee, and I detest all my sins, because I dread the loss of heaven and the pains of hell, but most of all because they offend Thee, my God, who art all-good and deserving of all my love. I firmly resolve, with the help of Thy grace, to confess my sins, to do penance, and to amend my life."
+      },
+      {
+       "t": "h",
+       "h": "The Blessing Before Meals"
+      },
+      {
+       "t": "p",
+       "h": "+ Bless us, O Lord! and these Thy gifts, which we are about to receive from Thy bounty, through Christ our Lord. Amen."
+      },
+      {
+       "t": "h",
+       "h": "Grace After Meals"
+      },
+      {
+       "t": "p",
+       "h": "+ We give Thee thanks for all Thy benefits, O Almighty God, who livest and reignest forever, and may the souls of the faithful departed through the mercy of God, rest in peace. Amen."
+      },
+      {
+       "t": "h",
+       "h": "The Manner in Which a Lay Person Is to Baptize in Case of Necessity"
+      },
+      {
+       "t": "p",
+       "h": "Pour common water on the head or face of the person to be baptized, and say while pouring it:"
+      },
+      {
+       "t": "p",
+       "h": "“I baptize thee in the name of the Father, and of the Son, and of the Holy Ghost.”"
+      },
+      {
+       "t": "p",
+       "h": "N.B. Any person of either sex who has reached the use of reason can baptize in case of necessity, but the same person must say the words while pouring the water."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The Catechism",
+   "short": "The Catechism",
+   "intro": "421 questions and answers in 37 lessons.",
+   "chapters": [
+    {
+     "path": "lesson-1",
+     "label": "Lesson First",
+     "title": "On the End of Man",
+     "num": "1",
+     "nav": "Lesson First: On the End of Man",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "1",
+       "q": "Who made the world?",
+       "a": "God made the world."
+      },
+      {
+       "t": "q",
+       "n": "2",
+       "q": "Who is God?",
+       "a": "God is the Creator of heaven and earth, and of all things."
+      },
+      {
+       "t": "q",
+       "n": "3",
+       "q": "What is man?",
+       "a": "Man is a creature composed of body and soul, and made to the image and likeness of God."
+      },
+      {
+       "t": "q",
+       "n": "4",
+       "q": "Is this likeness in the body or in the soul?",
+       "a": "This likeness is chiefly in the soul."
+      },
+      {
+       "t": "q",
+       "n": "5",
+       "q": "How is the soul like to God?",
+       "a": "The soul is like God because it is a spirit that will never die, and has understanding and free will."
+      },
+      {
+       "t": "q",
+       "n": "6",
+       "q": "Why did God make you?",
+       "a": "God made me to know Him, to love Him, and to serve Him in this world, and to be happy with Him forever in the next."
+      },
+      {
+       "t": "q",
+       "n": "7",
+       "q": "Of which must we take more care, our soul or our body?",
+       "a": "We must take more care of our soul than of our body."
+      },
+      {
+       "t": "q",
+       "n": "8",
+       "q": "Why must we take more care of our soul than of our body?",
+       "a": "We must take more care of our soul than of our body, because in losing our soul we lose God and everlasting happiness."
+      },
+      {
+       "t": "q",
+       "n": "9",
+       "q": "What must we do to save our souls?",
+       "a": "To save our souls we must worship God by faith, hope, and charity; that is, we must believe in Him, hope in Him, and love Him with all our heart."
+      },
+      {
+       "t": "q",
+       "n": "10",
+       "q": "How shall we know the things which we are to believe?",
+       "a": "We shall know the things which we are to believe from the Catholic Church, through which God speaks to us."
+      },
+      {
+       "t": "q",
+       "n": "11",
+       "q": "Where shall we find the chief truths which the Church teaches?",
+       "a": "We shall find the chief truths which the Church teaches in the Apostles’ Creed."
+      },
+      {
+       "t": "q",
+       "n": "12",
+       "q": "Say the Apostles’ Creed.",
+       "a": "I believe in God, the Father Almighty, Creator of heaven and earth; and in Jesus Christ, His only Son, our Lord; who was conceived by the Holy Ghost, born of the Virgin Mary, suffered under Pontius Pilate, was crucified; died, and was buried. He descended into hell: the third day He arose again from the dead: He ascended into heaven, and sitteth at the right hand of God, the Father Almighty; from thence He shall come to judge the living and the dead. I believe in the Holy Ghost, the Holy Catholic Church, the communion of Saints, the forgiveness of sins, the resurrection of the body, and the life everlasting. Amen."
+      }
+     ]
+    },
+    {
+     "path": "lesson-2",
+     "label": "Lesson Second",
+     "title": "On God and His Perfections",
+     "num": "2",
+     "nav": "Lesson Second: On God and His Perfections",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "13",
+       "q": "What is God?",
+       "a": "God is a spirit infinitely perfect."
+      },
+      {
+       "t": "q",
+       "n": "14",
+       "q": "Had God a beginning?",
+       "a": "God had no beginning; He always was and He always will be."
+      },
+      {
+       "t": "q",
+       "n": "15",
+       "q": "Where is God?",
+       "a": "God is everywhere."
+      },
+      {
+       "t": "q",
+       "n": "16",
+       "q": "If God is everywhere, why do we not see Him?",
+       "a": "We do not see God, because He is a pure spirit and cannot be seen with bodily eyes."
+      },
+      {
+       "t": "q",
+       "n": "17",
+       "q": "Does God see us?",
+       "a": "God sees us and watches over us."
+      },
+      {
+       "t": "q",
+       "n": "18",
+       "q": "Does God know all things?",
+       "a": "God knows all things, even our most secret thoughts, words, and actions."
+      },
+      {
+       "t": "q",
+       "n": "19",
+       "q": "Can God do all things?",
+       "a": "God can do all things, and nothing is hard or impossible to Him."
+      },
+      {
+       "t": "q",
+       "n": "20",
+       "q": "Is God just, holy, and merciful?",
+       "a": "God is all just, all holy, all merciful, as He is infinitely perfect."
+      }
+     ]
+    },
+    {
+     "path": "lesson-3",
+     "label": "Lesson Third",
+     "title": "On the Unity and Trinity of God",
+     "num": "3",
+     "nav": "Lesson Third: On the Unity and Trinity of God",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "21",
+       "q": "Is there but one God?",
+       "a": "Yes; there is but one God."
+      },
+      {
+       "t": "q",
+       "n": "22",
+       "q": "Why can there be but one God?",
+       "a": "There can be but one God, because God, being supreme and infinite, cannot have an equal."
+      },
+      {
+       "t": "q",
+       "n": "23",
+       "q": "How many Persons are there in God?",
+       "a": "In God there are three Divine Persons, really distinct, and equal in all things—the Father, the Son, and the Holy Ghost."
+      },
+      {
+       "t": "q",
+       "n": "24",
+       "q": "Is the Father God?",
+       "a": "The Father is God and the first Person of the Blessed Trinity."
+      },
+      {
+       "t": "q",
+       "n": "25",
+       "q": "Is the Son God?",
+       "a": "The Son is God and the second Person of the Blessed Trinity."
+      },
+      {
+       "t": "q",
+       "n": "26",
+       "q": "Is the Holy Ghost God?",
+       "a": "The Holy Ghost is God and the third Person of the Blessed Trinity."
+      },
+      {
+       "t": "q",
+       "n": "27",
+       "q": "What do you mean by the Blessed Trinity?",
+       "a": "By the Blessed Trinity I mean one God in three Divine Persons."
+      },
+      {
+       "t": "q",
+       "n": "28",
+       "q": "Are the three Divine Persons equal in all things?",
+       "a": "The three Divine Persons are equal in all things."
+      },
+      {
+       "t": "q",
+       "n": "29",
+       "q": "Are the three Divine Persons one and the same God?",
+       "a": "The three Divine Persons are one and the same God, having one and the same Divine nature and substance."
+      },
+      {
+       "t": "q",
+       "n": "30",
+       "q": "Can we fully understand how the three Divine Persons are one and the same God?",
+       "a": "We cannot fully understand how the three Divine Persons are one and the same God, because this is a mystery."
+      },
+      {
+       "t": "q",
+       "n": "31",
+       "q": "What is a mystery?",
+       "a": "A mystery is a truth which we cannot fully understand."
+      }
+     ]
+    },
+    {
+     "path": "lesson-4",
+     "label": "Lesson Fourth",
+     "title": "On Creation",
+     "num": "4",
+     "nav": "Lesson Fourth: On Creation",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "32",
+       "q": "Who created heaven and earth, and all things?",
+       "a": "God created heaven and earth, and all things."
+      },
+      {
+       "t": "q",
+       "n": "33",
+       "q": "How did God create heaven and earth?",
+       "a": "God created heaven and earth from nothing by His word only; that is, by a single act of His all-powerful will."
+      },
+      {
+       "t": "q",
+       "n": "34",
+       "q": "Which are the chief creatures of God?",
+       "a": "The chief creatures of God are angels and men."
+      },
+      {
+       "t": "q",
+       "n": "35",
+       "q": "What are angels?",
+       "a": "Angels are pure spirits without a body, created to adore and enjoy God in heaven."
+      },
+      {
+       "t": "q",
+       "n": "36",
+       "q": "Were the angels created for any other purpose?",
+       "a": "The angels were also created to assist before the throne of God and to minister unto Him; they have often been sent as messengers from God to man; and are also appointed our guardians."
+      },
+      {
+       "t": "q",
+       "n": "37",
+       "q": "Were the angels, as God created them, good and happy?",
+       "a": "The angels, as God created them, were good and happy."
+      },
+      {
+       "t": "q",
+       "n": "38",
+       "q": "Did all the angels remain good and happy?",
+       "a": "All the angels did not remain good and happy; many of them sinned and were cast into hell, and these are called devils or bad angels."
+      }
+     ]
+    },
+    {
+     "path": "lesson-5",
+     "label": "Lesson Fifth",
+     "title": "On Our First Parents and the Fall",
+     "num": "5",
+     "nav": "Lesson Fifth: On Our First Parents and the Fall",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "39",
+       "q": "Who were the first man and woman?",
+       "a": "The first man and woman were Adam and Eve."
+      },
+      {
+       "t": "q",
+       "n": "40",
+       "q": "Were Adam and Eve innocent and holy when they came from the hand of God?",
+       "a": "Adam and Eve were innocent and holy when they came from the hand of God."
+      },
+      {
+       "t": "q",
+       "n": "41",
+       "q": "Did God give any command to Adam and Eve?",
+       "a": "To try their obedience God commanded Adam and Eve not to eat of a certain fruit which grew in the garden of Paradise."
+      },
+      {
+       "t": "q",
+       "n": "42",
+       "q": "Which were the chief blessings intended for Adam and Eve had they remained faithful to God?",
+       "a": "The chief blessings intended for Adam and Eve, had they remained faithful to God, were a constant state of happiness in this life and everlasting glory in the next."
+      },
+      {
+       "t": "q",
+       "n": "43",
+       "q": "Did Adam and Eve remain faithful to God?",
+       "a": "Adam and Eve did not remain faithful to God; but broke His command by eating the forbidden fruit."
+      },
+      {
+       "t": "q",
+       "n": "44",
+       "q": "What befell Adam and Eve on account of their sin?",
+       "a": "Adam and Eve, on account of their sin, lost innocence and holiness, and were doomed to sickness and death."
+      },
+      {
+       "t": "q",
+       "n": "45",
+       "q": "What evil befell us on account of the disobedience of our first parents?",
+       "a": "On account of the disobedience of our first parents, we all share in their sin and punishment, as we should have shared in their happiness if they had remained faithful."
+      },
+      {
+       "t": "q",
+       "n": "46",
+       "q": "What other effects followed from the sin of our first parents?",
+       "a": "Our nature was corrupted by the sin of our first parents, which darkened our understanding, weakened our will, and left in us a strong inclination to evil."
+      },
+      {
+       "t": "q",
+       "n": "47",
+       "q": "What is the sin called which we inherit from our first parents?",
+       "a": "The sin which we inherit from our first parents is called original sin."
+      },
+      {
+       "t": "q",
+       "n": "48",
+       "q": "Why is this sin called original?",
+       "a": "This sin is called original because it comes down to us from our first parents, and we are brought into the world with its guilt on our soul."
+      },
+      {
+       "t": "q",
+       "n": "49",
+       "q": "Does this corruption of our nature remain in us after original sin is forgiven?",
+       "a": "This corruption of our nature and other punishments remain in us after original sin is forgiven."
+      },
+      {
+       "t": "q",
+       "n": "50",
+       "q": "Was any one ever preserved from original sin?",
+       "a": "The Blessed Virgin Mary, through the merits of her Divine Son, was preserved free from the guilt of original sin, and this privilege is called her Immaculate Conception."
+      }
+     ]
+    },
+    {
+     "path": "lesson-6",
+     "label": "Lesson Sixth",
+     "title": "On Sin and Its Kinds",
+     "num": "6",
+     "nav": "Lesson Sixth: On Sin and Its Kinds",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "51",
+       "q": "Is original sin the only kind of sin?",
+       "a": "Original sin is not the only kind of sin; there is another kind of sin, which we commit ourselves, called actual sin."
+      },
+      {
+       "t": "q",
+       "n": "52",
+       "q": "What is actual sin?",
+       "a": "Actual sin is any wilful thought, word, deed, or omission contrary to the law of God."
+      },
+      {
+       "t": "q",
+       "n": "53",
+       "q": "How many kinds of actual sin are there?",
+       "a": "There are two kinds of actual sin—mortal and venial."
+      },
+      {
+       "t": "q",
+       "n": "54",
+       "q": "What is mortal sin?",
+       "a": "Mortal sin is a grievous offense against the law of God."
+      },
+      {
+       "t": "q",
+       "n": "55",
+       "q": "Why is this sin called mortal?",
+       "a": "This sin is called mortal because it deprives us of spiritual life, which is sanctifying grace, and brings everlasting death and damnation on the soul."
+      },
+      {
+       "t": "q",
+       "n": "56",
+       "q": "How many things are necessary to make a sin mortal?",
+       "a": "To make a sin mortal three things are necessary: a grievous matter, sufficient reflection, and full consent of the will."
+      },
+      {
+       "t": "q",
+       "n": "57",
+       "q": "What is venial sin?",
+       "a": "Venial sin is a slight offense against the law of God in matters of less importance, or in matters of great importance it is an offense committed without sufficient reflection or full consent of the will."
+      },
+      {
+       "t": "q",
+       "n": "58",
+       "q": "Which are the effects of venial sin?",
+       "a": "The effects of venial sin are the lessening of the love of God in our heart, the making us less worthy of His help, and the weakening of the power to resist mortal sin."
+      },
+      {
+       "t": "q",
+       "n": "59",
+       "q": "Which are the chief sources of sin?",
+       "a": "The chief sources of sin are seven: Pride, Covetousness, Lust, Anger, Gluttony, Envy, and Sloth; and they are commonly called capital sins."
+      }
+     ]
+    },
+    {
+     "path": "lesson-7",
+     "label": "Lesson Seventh",
+     "title": "On the Incarnation and Redemption",
+     "num": "7",
+     "nav": "Lesson Seventh: On the Incarnation and Redemption",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "60",
+       "q": "Did God abandon man after he fell into sin?",
+       "a": "God did not abandon man after he fell into sin, but promised him a Redeemer, who was to satisfy for man’s sin and reopen to him the gates of heaven."
+      },
+      {
+       "t": "q",
+       "n": "61",
+       "q": "Who is the Redeemer?",
+       "a": "Our Blessed Lord and Saviour Jesus Christ is the Redeemer of mankind."
+      },
+      {
+       "t": "q",
+       "n": "62",
+       "q": "What do you believe of Jesus Christ?",
+       "a": "I believe that Jesus Christ is the Son of God, the second Person of the Blessed Trinity, true God and true man."
+      },
+      {
+       "t": "q",
+       "n": "63",
+       "q": "Why is Jesus Christ true God?",
+       "a": "Jesus Christ is true God because He is the true and only Son of God the Father."
+      },
+      {
+       "t": "q",
+       "n": "64",
+       "q": "Why is Jesus Christ true man?",
+       "a": "Jesus Christ is true man because He is the Son of the Blessed Virgin Mary and has a body and soul like ours."
+      },
+      {
+       "t": "q",
+       "n": "65",
+       "q": "How many natures are there in Jesus Christ?",
+       "a": "In Jesus Christ there are two natures, the nature of God and the nature of man."
+      },
+      {
+       "t": "q",
+       "n": "66",
+       "q": "Is Jesus Christ more than one person?",
+       "a": "No, Jesus Christ is but one Divine Person."
+      },
+      {
+       "t": "q",
+       "n": "67",
+       "q": "Was Jesus Christ always God?",
+       "a": "Jesus Christ was always God, as He is the second Person of the Blessed Trinity, equal to His Father from all eternity."
+      },
+      {
+       "t": "q",
+       "n": "68",
+       "q": "Was Jesus Christ always man?",
+       "a": "Jesus Christ was not always man, but became man at the time of His Incarnation."
+      },
+      {
+       "t": "q",
+       "n": "69",
+       "q": "What do you mean by the Incarnation?",
+       "a": "By the Incarnation I mean that the Son of God was made man."
+      },
+      {
+       "t": "q",
+       "n": "70",
+       "q": "How was the Son of God made man?",
+       "a": "The Son of God was conceived and made man by the power of the Holy Ghost, in the womb of the Blessed Virgin Mary."
+      },
+      {
+       "t": "q",
+       "n": "71",
+       "q": "Is the Blessed Virgin Mary truly the Mother of God?",
+       "a": "The Blessed Virgin Mary is truly the Mother of God, because the same Divine Person who is the Son of God is also the Son of the Blessed Virgin Mary."
+      },
+      {
+       "t": "q",
+       "n": "72",
+       "q": "Did the Son of God become man immediately after the sin of our first parents?",
+       "a": "The Son of God did not become man immediately after the sin of our first parents, but was promised to them as a Redeemer."
+      },
+      {
+       "t": "q",
+       "n": "73",
+       "q": "How could they be saved who lived before the Son of God became man?",
+       "a": "They who lived before the Son of God became man could be saved by believing in a Redeemer to come, and by keeping the commandments."
+      },
+      {
+       "t": "q",
+       "n": "74",
+       "q": "On what day was the Son of God conceived and made man?",
+       "a": "The Son of God was conceived and made man on Annunciation day—the day on which the Angel Gabriel announced to the Blessed Virgin Mary that she was to be the Mother of God."
+      },
+      {
+       "t": "q",
+       "n": "75",
+       "q": "On what day was Christ born?",
+       "a": "Christ was born on Christmas day in a stable at Bethlehem, over nineteen hundred years ago."
+      },
+      {
+       "t": "q",
+       "n": "76",
+       "q": "How long did Christ live on earth?",
+       "a": "Christ lived on earth about thirty-three years, and led a most holy life in poverty and suffering."
+      },
+      {
+       "t": "q",
+       "n": "77",
+       "q": "Why did Christ live so long on earth?",
+       "a": "Christ lived so long on earth to show us the way to heaven by His teachings and example."
+      }
+     ]
+    },
+    {
+     "path": "lesson-8",
+     "label": "Lesson Eighth",
+     "title": "On Our Lord's Passion, Death, Resurrection, and Ascension",
+     "num": "8",
+     "nav": "Lesson Eighth: On Our Lord's Passion, Death, Resurrection, and Ascension",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "78",
+       "q": "What did Jesus Christ suffer?",
+       "a": "Jesus Christ suffered a bloody sweat, a cruel scourging, was crowned with thorns, and was crucified."
+      },
+      {
+       "t": "q",
+       "n": "79",
+       "q": "On what day did Christ die?",
+       "a": "Christ died on Good Friday."
+      },
+      {
+       "t": "q",
+       "n": "80",
+       "q": "Why do you call that day “good” on which Christ died so sorrowful a death?",
+       "a": "We call that day “good” on which Christ died because by His death He showed His great love for man, and purchased for him every blessing."
+      },
+      {
+       "t": "q",
+       "n": "81",
+       "q": "Where did Christ die?",
+       "a": "Christ died on Mount Calvary."
+      },
+      {
+       "t": "q",
+       "n": "82",
+       "q": "How did Christ die?",
+       "a": "Christ was nailed to the Cross and died on it between two thieves."
+      },
+      {
+       "t": "q",
+       "n": "83",
+       "q": "Why did Christ suffer and die?",
+       "a": "Christ suffered and died for our sins."
+      },
+      {
+       "t": "q",
+       "n": "84",
+       "q": "What lessons do we learn from the sufferings and death of Christ?",
+       "a": "From the sufferings and death of Christ we learn the great evil of sin, the hatred God bears to it, and the necessity of satisfying for it."
+      },
+      {
+       "t": "q",
+       "n": "85",
+       "q": "Where did Christ’s soul go after His death?",
+       "a": "After Christ’s death His soul descended into hell."
+      },
+      {
+       "t": "q",
+       "n": "86",
+       "q": "Did Christ’s soul descend into the hell of the damned?",
+       "a": "The hell into which Christ’s soul descended was not the hell of the damned, but a place or state of rest called Limbo, where the souls of the just were waiting for Him."
+      },
+      {
+       "t": "q",
+       "n": "87",
+       "q": "Why did Christ descend into Limbo?",
+       "a": "Christ descended into Limbo to preach to the souls who were in prison—that is, to announce to them the joyful tidings of their redemption."
+      },
+      {
+       "t": "q",
+       "n": "88",
+       "q": "Where was Christ’s body while His soul was in Limbo?",
+       "a": "While Christ’s soul was in Limbo His body was in the holy sepulchre."
+      },
+      {
+       "t": "q",
+       "n": "89",
+       "q": "On what day did Christ rise from the dead?",
+       "a": "Christ rose from the dead, glorious and immortal, on Easter Sunday, the third day after His death."
+      },
+      {
+       "t": "q",
+       "n": "90",
+       "q": "How long did Christ stay on earth after His resurrection?",
+       "a": "Christ stayed on earth forty days after His resurrection to show that He was truly risen from the dead, and to instruct His Apostles."
+      },
+      {
+       "t": "q",
+       "n": "91",
+       "q": "After Christ had remained forty days on earth whither did He go?",
+       "a": "After forty days Christ ascended into heaven, and the day on which He ascended into heaven is called Ascension day."
+      },
+      {
+       "t": "q",
+       "n": "92",
+       "q": "Where is Christ in heaven?",
+       "a": "In heaven Christ sits at the right hand of God the Father Almighty."
+      },
+      {
+       "t": "q",
+       "n": "93",
+       "q": "What do you mean by saying that Christ sits at the right hand of God?",
+       "a": "When I say that Christ sits at the right hand of God I mean that Christ as God is equal to His Father in all things, and that as man He is in the highest place in heaven next to God."
+      }
+     ]
+    },
+    {
+     "path": "lesson-9",
+     "label": "Lesson Ninth",
+     "title": "On the Holy Ghost and His Descent upon the Apostles",
+     "num": "9",
+     "nav": "Lesson Ninth: On the Holy Ghost and His Descent upon the Apostles",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "94",
+       "q": "Who is the Holy Ghost?",
+       "a": "The Holy Ghost is the third Person of the Blessed Trinity."
+      },
+      {
+       "t": "q",
+       "n": "95",
+       "q": "From whom does the Holy Ghost proceed?",
+       "a": "The Holy Ghost proceeds from the Father and the Son."
+      },
+      {
+       "t": "q",
+       "n": "96",
+       "q": "Is the Holy Ghost equal to the Father and the Son?",
+       "a": "The Holy Ghost is equal to the Father and the Son, being the same Lord and God as They are."
+      },
+      {
+       "t": "q",
+       "n": "97",
+       "q": "On what day did the Holy Ghost come down upon the Apostles?",
+       "a": "The Holy Ghost came down upon the Apostles ten days after the Ascension of our Lord; and the day on which He came down upon the Apostles is called Whitsunday, or Pentecost."
+      },
+      {
+       "t": "q",
+       "n": "98",
+       "q": "How did the Holy Ghost come down upon the Apostles?",
+       "a": "The Holy Ghost came down upon the Apostles in the form of tongues of fire."
+      },
+      {
+       "t": "q",
+       "n": "99",
+       "q": "Who sent the Holy Ghost upon the Apostles?",
+       "a": "Our Lord Jesus Christ sent the Holy Ghost upon the Apostles."
+      },
+      {
+       "t": "q",
+       "n": "100",
+       "q": "Why did Christ send the Holy Ghost?",
+       "a": "Christ sent the Holy Ghost to sanctify His Church, to enlighten and strengthen the Apostles, and to enable them to preach the Gospel."
+      },
+      {
+       "t": "q",
+       "n": "101",
+       "q": "Will the Holy Ghost abide with the Church forever?",
+       "a": "The Holy Ghost will abide with the Church forever, and guide it in the way of holiness and truth."
+      }
+     ]
+    },
+    {
+     "path": "lesson-10",
+     "label": "Lesson Tenth",
+     "title": "On the Effects of the Redemption",
+     "num": "10",
+     "nav": "Lesson Tenth: On the Effects of the Redemption",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "102",
+       "q": "Which are the chief effects of the Redemption?",
+       "a": "The chief effects of the Redemption are two: The satisfaction of God’s justice by Christ’s sufferings and death, and the gaining of grace for men."
+      },
+      {
+       "t": "q",
+       "n": "103",
+       "q": "What do you mean by grace?",
+       "a": "By grace I mean a supernatural gift of God bestowed on us, through the merits of Jesus Christ, for our salvation."
+      },
+      {
+       "t": "q",
+       "n": "104",
+       "q": "How many kinds of grace are there?",
+       "a": "There are two kinds of grace, sanctifying grace and actual grace."
+      },
+      {
+       "t": "q",
+       "n": "105",
+       "q": "What is sanctifying grace?",
+       "a": "Sanctifying grace is that grace which makes the soul holy and pleasing to God."
+      },
+      {
+       "t": "q",
+       "n": "106",
+       "q": "What do you call those graces or gifts of God by which we believe in Him, hope in Him, and love Him?",
+       "a": "Those graces or gifts of God by which we believe in Him, and hope in Him, and love Him, are called the Divine virtues of Faith, Hope, and Charity."
+      },
+      {
+       "t": "q",
+       "n": "107",
+       "q": "What is Faith?",
+       "a": "Faith is a Divine virtue by which we firmly believe the truths which God has revealed."
+      },
+      {
+       "t": "q",
+       "n": "108",
+       "q": "What is Hope?",
+       "a": "Hope is a Divine virtue by which we firmly trust that God will give us eternal life and the means to obtain it."
+      },
+      {
+       "t": "q",
+       "n": "109",
+       "q": "What is Charity?",
+       "a": "Charity is a Divine virtue by which we love God above all things for His own sake, and our neighbor as ourselves for the love of God."
+      },
+      {
+       "t": "q",
+       "n": "110",
+       "q": "What is actual grace?",
+       "a": "Actual grace is that help of God which enlightens our mind and moves our will to shun evil and do good."
+      },
+      {
+       "t": "q",
+       "n": "111",
+       "q": "Is grace necessary to salvation?",
+       "a": "Grace is necessary to salvation, because without grace we can do nothing to merit heaven."
+      },
+      {
+       "t": "q",
+       "n": "112",
+       "q": "Can we resist the grace of God?",
+       "a": "We can and unfortunately often do resist the grace of God."
+      },
+      {
+       "t": "q",
+       "n": "113",
+       "q": "What is the grace of perseverance?",
+       "a": "The grace of perseverance is a particular gift of God which enables us to continue in the state of grace till death."
+      }
+     ]
+    },
+    {
+     "path": "lesson-11",
+     "label": "Lesson Eleventh",
+     "title": "On the Church",
+     "num": "11",
+     "nav": "Lesson Eleventh: On the Church",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "114",
+       "q": "Which are the means instituted by our Lord to enable men at all times to share in the fruits of the Redemption?",
+       "a": "The means instituted by our Lord to enable men at all times to share in the fruits of His Redemption are the Church and the Sacraments."
+      },
+      {
+       "t": "q",
+       "n": "115",
+       "q": "What is the Church?",
+       "a": "The Church is the congregation of all those who profess the faith of Christ, partake of the same Sacraments, and are governed by their lawful pastors under one visible head."
+      },
+      {
+       "t": "q",
+       "n": "116",
+       "q": "Who is the invisible Head of the Church?",
+       "a": "Jesus Christ is the invisible Head of the Church."
+      },
+      {
+       "t": "q",
+       "n": "117",
+       "q": "Who is the visible Head of the Church?",
+       "a": "Our Holy Father the Pope, the Bishop of Rome, is the Vicar of Christ on earth and the visible Head of the Church."
+      },
+      {
+       "t": "q",
+       "n": "118",
+       "q": "Why is the Pope, the Bishop of Rome, the visible Head of the Church?",
+       "a": "The Pope, the Bishop of Rome, is the visible Head of the Church because he is the successor of St. Peter, whom Christ made the chief of the Apostles and the visible Head of the Church."
+      },
+      {
+       "t": "q",
+       "n": "119",
+       "q": "Who are the successors of the other Apostles?",
+       "a": "The successors of the other Apostles are the bishops of the Holy Catholic Church."
+      },
+      {
+       "t": "q",
+       "n": "120",
+       "q": "Why did Christ found the Church?",
+       "a": "Christ founded the Church to teach, govern, sanctify, and save all men."
+      },
+      {
+       "t": "q",
+       "n": "121",
+       "q": "Are all bound to belong to the Church?",
+       "a": "All are bound to belong to the Church, and he who knows the Church to be the true Church and remains out of it cannot be saved."
+      }
+     ]
+    },
+    {
+     "path": "lesson-12",
+     "label": "Lesson Twelfth",
+     "title": "On the Attributes and Marks of the Church",
+     "num": "12",
+     "nav": "Lesson Twelfth: On the Attributes and Marks of the Church",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "122",
+       "q": "Which are the attributes of the Church?",
+       "a": "The attributes of the Church are three: authority infallibility, and indefectibility."
+      },
+      {
+       "t": "q",
+       "n": "123",
+       "q": "What do you mean by the authority of the Church?",
+       "a": "By the authority of the Church I mean the right and power which the Pope and the bishops, as the successors of the Apostles, have to teach and to govern the faithful."
+      },
+      {
+       "t": "q",
+       "n": "124",
+       "q": "What do you mean by the infallibility of the Church?",
+       "a": "By the infallibility of the Church I mean that the Church cannot err when it teaches a doctrine of faith or morals."
+      },
+      {
+       "t": "q",
+       "n": "125",
+       "q": "When does the Church teach infallibly?",
+       "a": "The Church teaches infallibly when it speaks through the Pope and the bishops, united in general council, or through the Pope alone when he proclaims to all the faithful a doctrine of faith or morals."
+      },
+      {
+       "t": "q",
+       "n": "126",
+       "q": "What do you mean by the indefectibility of the Church?",
+       "a": "By the indefectibility of the Church I mean that the Church, as Christ founded it, will last till the end of time."
+      },
+      {
+       "t": "q",
+       "n": "127",
+       "q": "In whom are these attributes found in their fullness?",
+       "a": "These attributes are found in their fullness in the Pope, the visible Head of the Church, whose infallible authority to teach bishops, priests, and people in matters of faith or morals will last till the end of the world."
+      },
+      {
+       "t": "q",
+       "n": "128",
+       "q": "Has the Church any marks by which it may be known?",
+       "a": "The Church has four marks by which it may be known: it is One; it is Holy; it is Catholic; it is Apostolic."
+      },
+      {
+       "t": "q",
+       "n": "129",
+       "q": "How is the Church One?",
+       "a": "The Church is One because all its members agree in one faith, are all in one communion, and are all under one Head."
+      },
+      {
+       "t": "q",
+       "n": "130",
+       "q": "How is the Church Holy?",
+       "a": "The Church is Holy because its founder, Jesus Christ, is holy; because it teaches a holy doctrine; invites all to a holy life; and because of the eminent holiness of so many thousands of its children."
+      },
+      {
+       "t": "q",
+       "n": "131",
+       "q": "How is the Church Catholic or universal?",
+       "a": "The Church is Catholic or universal because it subsists in all ages, teaches all nations, and maintains all truth."
+      },
+      {
+       "t": "q",
+       "n": "132",
+       "q": "How is the Church Apostolic?",
+       "a": "The Church is Apostolic because it was founded by Christ on His Apostles, and is governed by their lawful successors, and because it has never ceased, and never will cease, to teach their doctrine."
+      },
+      {
+       "t": "q",
+       "n": "133",
+       "q": "In which Church are these attributes and marks found?",
+       "a": "These attributes and marks are found in the Holy Roman Catholic Church alone."
+      },
+      {
+       "t": "q",
+       "n": "134",
+       "q": "From whom does the Church derive its undying life and infallible authority?",
+       "a": "The Church derives its undying life and infallible authority from the Holy Ghost, the spirit of truth, who abides with it forever."
+      },
+      {
+       "t": "q",
+       "n": "135",
+       "q": "By whom is the Church made and kept One, Holy, and Catholic?",
+       "a": "The Church is made and kept One, Holy, and Catholic by the Holy Ghost, the spirit of love and holiness, who unites and sanctifies its members throughout the world."
+      }
+     ]
+    },
+    {
+     "path": "lesson-13",
+     "label": "Lesson Thirteenth",
+     "title": "On the Sacraments in General",
+     "num": "13",
+     "nav": "Lesson Thirteenth: On the Sacraments in General",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "136",
+       "q": "What is a Sacrament?",
+       "a": "A Sacrament is an outward sign instituted by Christ to give grace."
+      },
+      {
+       "t": "q",
+       "n": "137",
+       "q": "How many Sacraments are there?",
+       "a": "There are seven Sacraments: Baptism, Confirmation, Holy Eucharist, Penance, Extreme Unction, Holy Orders, and Matrimony."
+      },
+      {
+       "t": "q",
+       "n": "138",
+       "q": "Whence have the Sacraments the power of giving grace?",
+       "a": "The Sacraments have the power of giving grace from the merits of Jesus Christ."
+      },
+      {
+       "t": "q",
+       "n": "139",
+       "q": "What grace do the Sacraments give?",
+       "a": "Some of the Sacraments give sanctifying grace, and others increase it in our souls."
+      },
+      {
+       "t": "q",
+       "n": "140",
+       "q": "Which are the Sacraments that give sanctifying grace?",
+       "a": "The Sacraments that give sanctifying grace are Baptism and Penance; and they are called Sacraments of the dead."
+      },
+      {
+       "t": "q",
+       "n": "141",
+       "q": "Why are Baptism and Penance called Sacraments of the dead?",
+       "a": "Baptism and Penance are called Sacraments of the dead, because they take away sin, which is the death of the soul, and give grace, which is its life."
+      },
+      {
+       "t": "q",
+       "n": "142",
+       "q": "Which are the Sacraments that increase sanctifying grace in our soul?",
+       "a": "The Sacraments that increase sanctifying grace in our soul are: Confirmation, Holy Eucharist, Extreme Unction, Holy Orders, and Matrimony; and they are called Sacraments of the living."
+      },
+      {
+       "t": "q",
+       "n": "143",
+       "q": "Why are Confirmation, Holy Eucharist, Extreme Unction, Holy Orders, and Matrimony called Sacraments of the living?",
+       "a": "Confirmation, Holy Eucharist, Extreme Unction, Holy Orders, and Matrimony are called Sacraments of the living, because those who receive them worthily are already living the life of grace."
+      },
+      {
+       "t": "q",
+       "n": "144",
+       "q": "What sin does he commit who receives the Sacraments of the living in mortal sin?",
+       "a": "He who receives the Sacraments of the living in mortal sin commits a sacrilege, which is a great sin, because it is an abuse of a sacred thing."
+      },
+      {
+       "t": "q",
+       "n": "145",
+       "q": "Besides sanctifying grace do the Sacraments give any other grace?",
+       "a": "Besides sanctifying grace the Sacraments give another grace, called sacramental."
+      },
+      {
+       "t": "q",
+       "n": "146",
+       "q": "What is sacramental grace?",
+       "a": "Sacramental grace is a special help which God gives, to attain the end for which He instituted each Sacrament."
+      },
+      {
+       "t": "q",
+       "n": "147",
+       "q": "Do the Sacraments always give grace?",
+       "a": "The Sacraments always give grace, if we receive them with the right dispositions."
+      },
+      {
+       "t": "q",
+       "n": "148",
+       "q": "Can we receive the Sacraments more than once?",
+       "a": "We can receive the Sacraments more than once, except Baptism, Confirmation, and Holy Orders."
+      },
+      {
+       "t": "q",
+       "n": "149",
+       "q": "Why can we not receive Baptism, Confirmation, and Holy Orders more than once?",
+       "a": "We cannot receive Baptism, Confirmation, and Holy Orders more than once, because they imprint a character in the soul."
+      },
+      {
+       "t": "q",
+       "n": "150",
+       "q": "What is the character which these Sacraments imprint in the soul?",
+       "a": "The character which these Sacraments imprint in the soul is a spiritual mark which remains forever."
+      },
+      {
+       "t": "q",
+       "n": "151",
+       "q": "Does this character remain in the soul even after death?",
+       "a": "This character remains in the soul even after death: for the honor and glory of those who are saved; for the shame and punishment of those who are lost."
+      }
+     ]
+    },
+    {
+     "path": "lesson-14",
+     "label": "Lesson Fourteenth",
+     "title": "On Baptism",
+     "num": "14",
+     "nav": "Lesson Fourteenth: On Baptism",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "152",
+       "q": "What is Baptism?",
+       "a": "Baptism is a Sacrament which cleanses us from original sin, makes us Christians, children of God, and heirs of heaven."
+      },
+      {
+       "t": "q",
+       "n": "153",
+       "q": "Are actual sins ever remitted by Baptism?",
+       "a": "Actual sins and all the punishment due to them are remitted by Baptism, if the person baptized be guilty of any."
+      },
+      {
+       "t": "q",
+       "n": "154",
+       "q": "Is Baptism necessary to salvation?",
+       "a": "Baptism is necessary to salvation, because without it we cannot enter into the kingdom of heaven."
+      },
+      {
+       "t": "q",
+       "n": "155",
+       "q": "Who can administer Baptism?",
+       "a": "The priest is the ordinary minister of Baptism; but in case of necessity any one who has the use of reason may baptize."
+      },
+      {
+       "t": "q",
+       "n": "156",
+       "q": "How is Baptism given?",
+       "a": "Whoever baptizes should pour water on the head of the person to be baptized, and say, while pouring the water: I baptize thee in the name of the Father, and of the Son, and of the Holy Ghost."
+      },
+      {
+       "t": "q",
+       "n": "157",
+       "q": "How many kinds of Baptism are there?",
+       "a": "There are three kinds of Baptism: Baptism of water, of desire, and of blood."
+      },
+      {
+       "t": "q",
+       "n": "158",
+       "q": "What is Baptism of water?",
+       "a": "Baptism of water is that which is given by pouring water on the head of the person to be baptized, and saying at the same time: I baptize thee in the name of the Father, and of the Son, and of the Holy Ghost."
+      },
+      {
+       "t": "q",
+       "n": "159",
+       "q": "What is Baptism of desire?",
+       "a": "Baptism of desire is an ardent wish to receive Baptism, and to do all that God has ordained for our salvation."
+      },
+      {
+       "t": "q",
+       "n": "160",
+       "q": "What is Baptism of blood?",
+       "a": "Baptism of blood is the shedding of one’s blood for the faith of Christ."
+      },
+      {
+       "t": "q",
+       "n": "161",
+       "q": "Is Baptism of desire or of blood sufficient to produce the effects of Baptism of water?",
+       "a": "Baptism of desire or of blood is sufficient to produce the effects of the Baptism of water, if it is impossible to receive the Baptism of water."
+      },
+      {
+       "t": "q",
+       "n": "162",
+       "q": "What do we promise in Baptism?",
+       "a": "In Baptism we promise to renounce the devil with all his works and pomps."
+      },
+      {
+       "t": "q",
+       "n": "163",
+       "q": "Why is the name of a saint given in Baptism?",
+       "a": "The name of a saint is given in Baptism in order that the person baptized may imitate his virtues and have him for a protector."
+      },
+      {
+       "t": "q",
+       "n": "164",
+       "q": "Why are godfathers and godmothers given in Baptism?",
+       "a": "Godfathers and godmothers are given in Baptism in order that they may promise, in the name of the child, what the child itself would promise if it had the use of reason."
+      },
+      {
+       "t": "q",
+       "n": "165",
+       "q": "What is the obligation of a godfather and a godmother?",
+       "a": "The obligation of a godfather and a godmother is to instruct the child in its religious duties, if the parents neglect to do so or die."
+      }
+     ]
+    },
+    {
+     "path": "lesson-15",
+     "label": "Lesson Fifteenth",
+     "title": "On Confirmation",
+     "num": "15",
+     "nav": "Lesson Fifteenth: On Confirmation",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "166",
+       "q": "What is Confirmation?",
+       "a": "Confirmation is a Sacrament through which we receive the Holy Ghost to make us strong and perfect Christians and soldiers of Jesus Christ."
+      },
+      {
+       "t": "q",
+       "n": "167",
+       "q": "Who administers Confirmation?",
+       "a": "The bishop is the ordinary minister of Confirmation."
+      },
+      {
+       "t": "q",
+       "n": "168",
+       "q": "How does the bishop give Confirmation?",
+       "a": "The bishop extends his hands over those who are to be confirmed, prays that they may receive the Holy Ghost, and anoints the forehead of each with holy chrism in the form of a cross."
+      },
+      {
+       "t": "q",
+       "n": "169",
+       "q": "What is holy chrism?",
+       "a": "Holy chrism is a mixture of olive-oil and balm, consecrated by the bishop."
+      },
+      {
+       "t": "q",
+       "n": "170",
+       "q": "What does the bishop say in anointing the person he confirms?",
+       "a": "In anointing the person he confirms the bishop says: I sign thee with the sign of the cross, and I confirm thee with the chrism of salvation, in the name of the Father, and of the Son, and of the Holy Ghost."
+      },
+      {
+       "t": "q",
+       "n": "171",
+       "q": "What is meant by anointing the forehead with chrism in the form of a cross?",
+       "a": "By anointing the forehead with chrism in the form of a cross is meant, that the Christian who is confirmed must openly profess and practice his faith, never be ashamed of it, and rather die than deny it."
+      },
+      {
+       "t": "q",
+       "n": "172",
+       "q": "Why does the bishop give the person he confirms a slight blow on the cheek?",
+       "a": "The bishop gives the person he confirms a slight blow on the cheek, to put him in mind that he must be ready to suffer everything, even death, for the sake of Christ."
+      },
+      {
+       "t": "q",
+       "n": "173",
+       "q": "To receive Confirmation worthily is it necessary to be in the state of grace?",
+       "a": "To receive Confirmation worthily it is necessary to be in the state of grace."
+      },
+      {
+       "t": "q",
+       "n": "174",
+       "q": "What special preparation should be made to receive Confirmation?",
+       "a": "Persons of an age to learn should know the chief mysteries of faith and the duties of a Christian, and be instructed in the nature and effects of this Sacrament."
+      },
+      {
+       "t": "q",
+       "n": "175",
+       "q": "Is it a sin to neglect Confirmation?",
+       "a": "It is a sin to neglect Confirmation, especially in these evil days when faith and morals are exposed to so many and such violent temptations."
+      }
+     ]
+    },
+    {
+     "path": "lesson-16",
+     "label": "Lesson Sixteenth",
+     "title": "On the Gifts and Fruits of the Holy Ghost",
+     "num": "16",
+     "nav": "Lesson Sixteenth: On the Gifts and Fruits of the Holy Ghost",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "176",
+       "q": "Which are the effects of Confirmation?",
+       "a": "The effects of Confirmation are an increase of sanctifying grace, the strengthening of our faith, and the gifts of the Holy Ghost."
+      },
+      {
+       "t": "q",
+       "n": "177",
+       "q": "Which are the gifts of the Holy Ghost?",
+       "a": "The gifts of the Holy Ghost are Wisdom, Understanding, Counsel, Fortitude, Knowledge, Piety and Fear of the Lord."
+      },
+      {
+       "t": "q",
+       "n": "178",
+       "q": "Why do we receive the gift of Fear of the Lord?",
+       "a": "We receive the gift of Fear of the Lord to fill us with a dread of sin."
+      },
+      {
+       "t": "q",
+       "n": "179",
+       "q": "Why do we receive the gift of Piety?",
+       "a": "We receive the gift of Piety to make us love God as a Father and obey Him because we love Him."
+      },
+      {
+       "t": "q",
+       "n": "180",
+       "q": "Why do we receive the gift of Knowledge?",
+       "a": "We receive the gift of Knowledge to enable us to discover the will of God in all things."
+      },
+      {
+       "t": "q",
+       "n": "181",
+       "q": "Why do we receive the gift of Fortitude?",
+       "a": "We receive the gift of Fortitude to strengthen us to do the will of God in all things."
+      },
+      {
+       "t": "q",
+       "n": "182",
+       "q": "Why do we receive the gift of Counsel?",
+       "a": "We receive the gift of Counsel to warn us of the deceits of the devil, and of the dangers to salvation."
+      },
+      {
+       "t": "q",
+       "n": "183",
+       "q": "Why do we receive the gift of Understanding?",
+       "a": "We receive the gift of Understanding to enable us to know more clearly the mysteries of faith."
+      },
+      {
+       "t": "q",
+       "n": "184",
+       "q": "Why do we receive the gift of Wisdom?",
+       "a": "We receive the gift of Wisdom to give us a relish for the things of God, and to direct our whole life and all our actions to His honor and glory."
+      },
+      {
+       "t": "q",
+       "n": "185",
+       "q": "Which are the Beatitudes?",
+       "a": "The Beatitudes are:\n\n1. Blessed are the poor in spirit, for theirs is the kingdom of heaven.<br>2. Blessed are the meek, for they shall possess the land.<br>3. Blessed are they that mourn, for they shall be comforted.<br>4. Blessed are they that hunger and thirst after justice, for they shall be filled.<br>5. Blessed are the merciful, for they shall obtain mercy.<br>6. Blessed are the clean of heart, for they shall see God.<br>7. Blessed are the peacemakers, for they shall be called the children of God.<br>8. Blessed are they that suffer persecution for justice sake, for theirs is the kingdom of heaven."
+      },
+      {
+       "t": "q",
+       "n": "186",
+       "q": "Which are the twelve fruits of the Holy Ghost?",
+       "a": "The twelve fruits of the Holy Ghost are Charity, Joy, Peace, Patience, Benignity, Goodness, Long-suffering, Mildness, Faith, Modesty, Continency, and Chastity."
+      }
+     ]
+    },
+    {
+     "path": "lesson-17",
+     "label": "Lesson Seventeenth",
+     "title": "On the Sacrament of Penance",
+     "num": "17",
+     "nav": "Lesson Seventeenth: On the Sacrament of Penance",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "187",
+       "q": "What is the Sacrament of Penance?",
+       "a": "Penance is a Sacrament in which the sins committed after Baptism are forgiven."
+      },
+      {
+       "t": "q",
+       "n": "188",
+       "q": "How does the Sacrament of Penance remit sin, and restore to the soul the friendship of God?",
+       "a": "The Sacrament of Penance remits sins and restores the friendship of God to the soul by means of the absolution of the priest."
+      },
+      {
+       "t": "q",
+       "n": "189",
+       "q": "How do you know that the priest has the power of absolving from the sins committed after Baptism?",
+       "a": "I know that the priest has the power of absolving from the sins committed after Baptism, because Jesus Christ granted that power to the priests of His Church when He said: “Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them; whose sins you shall retain, they are retained.”"
+      },
+      {
+       "t": "q",
+       "n": "190",
+       "q": "How do the priests of the Church exercise the power of forgiving sins?",
+       "a": "The priests of the Church exercise the power of forgiving sins by hearing the confession of sins, and granting pardon for them as ministers of God and in His name."
+      },
+      {
+       "t": "q",
+       "n": "191",
+       "q": "What must we do to receive the Sacrament of Penance worthily?",
+       "a": "To receive the Sacrament of Penance worthily we must do five things:\n\n1. We must examine our conscience.<br>2. We must have sorrow for our sins.<br>3. We must make a firm resolution never more to offend God.<br>4. We must confess our sins to the priest.<br>5. We must accept the penance which the priest gives us."
+      },
+      {
+       "t": "q",
+       "n": "192",
+       "q": "What is the examination of conscience?",
+       "a": "The examination of conscience is an earnest effort to recall to mind all the sins we have committed since our last worthy confession."
+      },
+      {
+       "t": "q",
+       "n": "193",
+       "q": "How can we make a good examination of conscience?",
+       "a": "We can make a good examination of conscience by calling to memory the commandments of God, the precepts of the Church, the seven capital sins, and the particular duties of our state in life, to find out the sins we have committed."
+      },
+      {
+       "t": "q",
+       "n": "194",
+       "q": "What should we do before beginning the examination of conscience?",
+       "a": "Before beginning the examination of conscience we should pray to God to give us light to know our sins and grace to detest them."
+      }
+     ]
+    },
+    {
+     "path": "lesson-18",
+     "label": "Lesson Eighteenth",
+     "title": "On Contrition",
+     "num": "18",
+     "nav": "Lesson Eighteenth: On Contrition",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "195",
+       "q": "What is contrition, or sorrow for sin?",
+       "a": "Contrition, or sorrow for sin, is a hatred of sin and a true grief of the soul for having offended God, with a firm purpose of sinning no more."
+      },
+      {
+       "t": "q",
+       "n": "196",
+       "q": "What kind of sorrow should we have for our sins?",
+       "a": "The sorrow we should have for our sins should be interior, supernatural, universal, and sovereign."
+      },
+      {
+       "t": "q",
+       "n": "197",
+       "q": "What do you mean by saying that our sorrow should be interior?",
+       "a": "When I say that our sorrow should be interior, I mean that it should come from the heart, and not merely from the lips."
+      },
+      {
+       "t": "q",
+       "n": "198",
+       "q": "What do you mean by saying that our sorrow should be supernatural?",
+       "a": "When I say that our sorrow should be supernatural, I mean that it should be prompted by the grace of God, and excited by motives which spring from faith, and not by merely natural motives."
+      },
+      {
+       "t": "q",
+       "n": "199",
+       "q": "What do you mean by saying that our sorrow should be universal?",
+       "a": "When I say that our sorrow should be universal, I mean that we should be sorry for all our mortal sins without exception."
+      },
+      {
+       "t": "q",
+       "n": "200",
+       "q": "What do you mean when you say that our sorrow should be sovereign?",
+       "a": "When I say that our sorrow should be sovereign, I mean that we should grieve more for having offended God than for any other evil that can befall us."
+      },
+      {
+       "t": "q",
+       "n": "201",
+       "q": "Why should we be sorry for our sins?",
+       "a": "We should be sorry for our sins, because sin is the greatest of evils and an offense against God our Creator, Preserver, and Redeemer, and because it shuts us out of heaven and condemns us to the eternal pains of hell."
+      },
+      {
+       "t": "q",
+       "n": "202",
+       "q": "How many kinds of contrition are there?",
+       "a": "There are two kinds of contrition: perfect contrition and imperfect contrition."
+      },
+      {
+       "t": "q",
+       "n": "203",
+       "q": "What is perfect contrition?",
+       "a": "Perfect contrition is that which fills us with sorrow and hatred for sin, because it offends God, who is infinitely good in Himself and worthy of all love."
+      },
+      {
+       "t": "q",
+       "n": "204",
+       "q": "What is imperfect contrition?",
+       "a": "Imperfect contrition is that by which we hate what offends God, because by it we lose heaven and deserve hell; or because sin is so hateful in itself."
+      },
+      {
+       "t": "q",
+       "n": "205",
+       "q": "Is imperfect contrition sufficient for a worthy confession?",
+       "a": "Imperfect contrition is sufficient for a worthy confession, but we should endeavor to have perfect contrition."
+      },
+      {
+       "t": "q",
+       "n": "206",
+       "q": "What do you mean by a firm purpose of sinning no more?",
+       "a": "By a firm purpose of sinning no more I mean a fixed resolve not only to avoid all mortal sin, but also its near occasions."
+      },
+      {
+       "t": "q",
+       "n": "207",
+       "q": "What do you mean by the near occasions of sin?",
+       "a": "By the near occasions of sin I mean all the persons, places, and things that may easily lead us into sin."
+      }
+     ]
+    },
+    {
+     "path": "lesson-19",
+     "label": "Lesson Nineteenth",
+     "title": "On Confession",
+     "num": "19",
+     "nav": "Lesson Nineteenth: On Confession",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "208",
+       "q": "What is Confession?",
+       "a": "Confession is the telling of our sins to a duly authorized priest, for the purpose of obtaining forgiveness."
+      },
+      {
+       "t": "q",
+       "n": "209",
+       "q": "What sins are we bound to confess?",
+       "a": "We are bound to confess all our mortal sins, but it is well also to confess our venial sins."
+      },
+      {
+       "t": "q",
+       "n": "210",
+       "q": "Which are the chief qualities of a good Confession?",
+       "a": "The chief qualities of a good Confession are three: it must be humble, sincere, and entire."
+      },
+      {
+       "t": "q",
+       "n": "211",
+       "q": "When is our Confession humble?",
+       "a": "Our Confession is humble, when we accuse our selves of our sins, with a deep sense of shame and sorrow for having offended God."
+      },
+      {
+       "t": "q",
+       "n": "212",
+       "q": "When is our Confession sincere?",
+       "a": "Our Confession is sincere, when we tell our sins honestly and truthfully, neither exaggerating nor excusing them."
+      },
+      {
+       "t": "q",
+       "n": "213",
+       "q": "When is our Confession entire?",
+       "a": "Our Confession is entire, when we tell the number and kinds of our sins and the circumstances which change their nature."
+      },
+      {
+       "t": "q",
+       "n": "214",
+       "q": "What should we do if we cannot remember the number of our sins?",
+       "a": "If we cannot remember the number of our sins, we should tell the number as nearly as possible, and say how often we may have sinned in a day, a week, or a month, and how long the habit or practice has lasted."
+      },
+      {
+       "t": "q",
+       "n": "215",
+       "q": "Is our Confession worthy if, without our fault, we forget to confess a mortal sin?",
+       "a": "If without our fault we forget to confess a mortal sin, our Confession is worthy, and the sin is forgiven; but it must be told in Confession if it again comes to our mind."
+      },
+      {
+       "t": "q",
+       "n": "216",
+       "q": "Is it a grievous offense wilfully to conceal a mortal sin in Confession?",
+       "a": "It is a grievous offense wilfully to conceal a mortal sin in Confession, because we thereby tell a lie to the Holy Ghost, and make our Confession worthless."
+      },
+      {
+       "t": "q",
+       "n": "217",
+       "q": "What must he do who has wilfully concealed a mortal sin in Confession?",
+       "a": "He who has wilfully concealed a mortal sin in Confession must not only confess it, but must also repeat all the sins he has committed since his last worthy Confession."
+      },
+      {
+       "t": "q",
+       "n": "218",
+       "q": "Why does the priest give us a penance after Confession?",
+       "a": "The priest gives us a penance after Confession, that we may satisfy God for the temporal punishment due to our sins."
+      },
+      {
+       "t": "q",
+       "n": "219",
+       "q": "Does not the Sacrament of Penance remit all punishment due to sin?",
+       "a": "The Sacrament of Penance remits the eternal punishment due to sin, but it does not always remit the temporal punishment which God requires as satisfaction for our sins."
+      },
+      {
+       "t": "q",
+       "n": "220",
+       "q": "Why does God require a temporal punishment as a satisfaction for sin?",
+       "a": "God requires a temporal punishment as a satisfaction for sin, to teach us the great evil of sin and to prevent us from falling again."
+      },
+      {
+       "t": "q",
+       "n": "221",
+       "q": "Which are the chief means by which we satisfy God for the temporal punishment due to sin?",
+       "a": "The chief means by which we satisfy God for the temporal punishment due to sin are: Prayer, Fasting, Almsgiving, all spiritual and corporal works of mercy, and the patient suffering of the ills of life."
+      },
+      {
+       "t": "q",
+       "n": "222",
+       "q": "Which are the chief spiritual works of mercy?",
+       "a": "The chief spiritual works of mercy are seven: To admonish the sinner, to instruct the ignorant, to counsel the doubtful, to comfort the sorrowful, to bear wrongs patiently, to forgive all injuries, and to pray for the living and the dead."
+      },
+      {
+       "t": "q",
+       "n": "223",
+       "q": "Which are the chief corporal works of mercy?",
+       "a": "The chief corporal works of mercy are seven: To feed the hungry, to give drink to the thirsty, to clothe the naked, to ransom the captive, to harbor the harborless, to visit the sick, and to bury the dead."
+      }
+     ]
+    },
+    {
+     "path": "lesson-20",
+     "label": "Lesson Twentieth",
+     "title": "On the Manner of Making a Good Confession",
+     "num": "20",
+     "nav": "Lesson Twentieth: On the Manner of Making a Good Confession",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "224",
+       "q": "What should we do on entering the confessional?",
+       "a": "On entering the confessional we should kneel, make the sign of the Cross, and say to the priest, Bless me, Father; then add, I confess to Almighty God and to you, Father, that I have sinned."
+      },
+      {
+       "t": "q",
+       "n": "225",
+       "q": "Which are the first things we should tell the priest in Confession?",
+       "a": "The first things we should tell the priest in Confession are the time of our last Confession, and whether we said the penance and went to Holy Communion."
+      },
+      {
+       "t": "q",
+       "n": "226",
+       "q": "After telling the time of our last Confession and Communion what should we do?",
+       "a": "After telling the time of our last Confession and Communion we should confess all the mortal sins we have since committed, and all the venial sins we may wish to mention."
+      },
+      {
+       "t": "q",
+       "n": "227",
+       "q": "What must we do when the confessor asks us questions?",
+       "a": "When the confessor asks us questions we must answer them truthfully and clearly."
+      },
+      {
+       "t": "q",
+       "n": "228",
+       "q": "What should we do after telling our sins?",
+       "a": "After telling our sins we should listen with attention to the advice which the confessor may think proper to give."
+      },
+      {
+       "t": "q",
+       "n": "229",
+       "q": "How should we end our Confession?",
+       "a": "We should end our Confession by saying, I also accuse myself of all the sins of my past life, telling, if we choose, one or several of our past sins."
+      },
+      {
+       "t": "q",
+       "n": "230",
+       "q": "What should we do while the priest is giving us absolution?",
+       "a": "While the priest is giving us absolution we should from our heart renew the Act of Contrition."
+      }
+     ]
+    },
+    {
+     "path": "lesson-21",
+     "label": "Lesson Twenty-First",
+     "title": "On Indulgences",
+     "num": "21",
+     "nav": "Lesson Twenty-First: On Indulgences",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "231",
+       "q": "What is an Indulgence?",
+       "a": "An Indulgence is the remission in whole or in part of the temporal punishment due to sin."
+      },
+      {
+       "t": "q",
+       "n": "232",
+       "q": "Is an Indulgence a pardon of sin, or a license to commit sin?",
+       "a": "An Indulgence is not a pardon of sin, nor a license to commit sin, and one who is in a state of mortal sin cannot gain an Indulgence."
+      },
+      {
+       "t": "q",
+       "n": "233",
+       "q": "How many kinds of Indulgences are there?",
+       "a": "There are two kinds of Indulgences—Plenary and Partial."
+      },
+      {
+       "t": "q",
+       "n": "234",
+       "q": "What is a Plenary Indulgence?",
+       "a": "A Plenary Indulgence is the full remission of the temporal punishment due to sin."
+      },
+      {
+       "t": "q",
+       "n": "235",
+       "q": "What is a Partial Indulgence?",
+       "a": "A Partial Indulgence is the remission of a part of the temporal punishment due to sin."
+      },
+      {
+       "t": "q",
+       "n": "236",
+       "q": "How does the Church by means of Indulgences remit the temporal punishment due to sin?",
+       "a": "The Church by means of Indulgences remits the temporal punishment due to sin by applying to us the merits of Jesus Christ, and the superabundant satisfactions of the Blessed Virgin Mary and of the saints; which merits and satisfactions are its spiritual treasury."
+      },
+      {
+       "t": "q",
+       "n": "237",
+       "q": "What must we do to gain an Indulgence?",
+       "a": "To gain an Indulgence we must be in the state of grace and perform the works enjoined."
+      }
+     ]
+    },
+    {
+     "path": "lesson-22",
+     "label": "Lesson Twenty-Second",
+     "title": "On the Holy Eucharist",
+     "num": "22",
+     "nav": "Lesson Twenty-Second: On the Holy Eucharist",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "238",
+       "q": "What is the Holy Eucharist?",
+       "a": "The Holy Eucharist is the Sacrament which contains the body and blood, soul and divinity, of our Lord Jesus Christ under the appearances of bread and wine."
+      },
+      {
+       "t": "q",
+       "n": "239",
+       "q": "When did Christ institute the Holy Eucharist?",
+       "a": "Christ instituted the Holy Eucharist at the Last Supper, the night before He died."
+      },
+      {
+       "t": "q",
+       "n": "240",
+       "q": "Who were present when our Lord instituted the Holy Eucharist?",
+       "a": "When our Lord instituted the Holy Eucharist the twelve Apostles were present."
+      },
+      {
+       "t": "q",
+       "n": "241",
+       "q": "How did our Lord institute the Holy Eucharist?",
+       "a": "Our Lord instituted the Holy Eucharist by taking bread, blessing, breaking, and giving to His Apostles, saying: Take ye and eat. This is My body; and then by taking the cup of wine, blessing and giving it, saying to them: Drink ye all of this. This is My blood which shall be shed for the remission of sins. Do this for a commemoration of Me."
+      },
+      {
+       "t": "q",
+       "n": "242",
+       "q": "What happened when our Lord said, This is My body; this is My blood?",
+       "a": "When our Lord said, This is My body, the substance of the bread was changed into the substance of His body; when He said, This is My blood, the substance of the wine was changed into the substance of His blood."
+      },
+      {
+       "t": "q",
+       "n": "243",
+       "q": "Is Jesus Christ whole and entire both under the form of bread and under the form of wine?",
+       "a": "Jesus Christ is whole and entire both under the form of bread and under the form of wine."
+      },
+      {
+       "t": "q",
+       "n": "244",
+       "q": "Did anything remain of the bread and wine after their substance had been changed into the substance of the body and blood of our Lord?",
+       "a": "After the substance of the bread and wine had been changed into the substance of the body and blood of our Lord there remained only the appearances of bread and wine."
+      },
+      {
+       "t": "q",
+       "n": "245",
+       "q": "What do you mean by the appearances of bread and wine?",
+       "a": "By the appearances of bread and wine I mean the figure, the color, the taste, and whatever appears to the senses."
+      },
+      {
+       "t": "q",
+       "n": "246",
+       "q": "What is this change of the bread and wine into the body and blood of our Lord called?",
+       "a": "This change of the bread and wine into the body and blood of our Lord is called Transubstantiation."
+      },
+      {
+       "t": "q",
+       "n": "247",
+       "q": "How was the substance of the bread and wine changed into the substance of the body and blood of Christ?",
+       "a": "The substance of the bread and wine was changed into the substance of the body and blood of Christ by His almighty power."
+      },
+      {
+       "t": "q",
+       "n": "248",
+       "q": "Does this change of bread and wine into the body and blood of Christ continue to be made in the Church?",
+       "a": "This change of bread and wine into the body and blood of Christ continues to be made in the Church by Jesus Christ through the ministry of His priests."
+      },
+      {
+       "t": "q",
+       "n": "249",
+       "q": "When did Christ give His priests the power to change bread and wine into His body and blood?",
+       "a": "Christ gave His priests the power to change bread and wine into His body and blood when He said to the Apostles, Do this in commemoration of Me."
+      },
+      {
+       "t": "q",
+       "n": "250",
+       "q": "How do the priests exercise this power of changing bread and wine into the body and blood of Christ?",
+       "a": "The priests exercise this power of changing bread and wine into the body and blood of Christ through the words of consecration in the Mass, which are the words of Christ: This is My body; this is My blood."
+      }
+     ]
+    },
+    {
+     "path": "lesson-23",
+     "label": "Lesson Twenty-Third",
+     "title": "On the Ends for Which the Holy Eucharist Was Instituted",
+     "num": "23",
+     "nav": "Lesson Twenty-Third: On the Ends for Which the Holy Eucharist Was Instituted",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "251",
+       "q": "Why did Christ institute the Holy Eucharist?",
+       "a": "Christ instituted the Holy Eucharist—\n\n1. To unite us to Himself and to nourish our soul with His divine life.<br>2. To increase sanctifying grace and all virtues in our soul.<br>3. To lessen our evil inclinations.<br>4. To be a pledge of everlasting life.<br>5. To fit our bodies for a glorious resurrection.<br>6. To continue the sacrifice of the Cross in His Church."
+      },
+      {
+       "t": "q",
+       "n": "252",
+       "q": "How are we united to Jesus Christ in the Holy Eucharist?",
+       "a": "We are united to Jesus Christ in the Holy Eucharist by means of Holy Communion."
+      },
+      {
+       "t": "q",
+       "n": "253",
+       "q": "What is Holy Communion?",
+       "a": "Holy Communion is the receiving of the body and blood of Christ."
+      },
+      {
+       "t": "q",
+       "n": "254",
+       "q": "What is necessary to make a good Communion?",
+       "a": "To make a good Communion it is necessary to be in the state of sanctifying grace, to have a right intention, and to obey the laws of fasting. (See Q. 257.)"
+      },
+      {
+       "t": "q",
+       "n": "255",
+       "q": "Does he who receives Communion in mortal sin receive the body and blood of Christ?",
+       "a": "He who receives Communion in mortal sin receives the body and blood of Christ, but does not receive His grace, and he commits a great sacrilege."
+      },
+      {
+       "t": "q",
+       "n": "256",
+       "q": "Is it enough to be free from mortal sin to receive plentifully the graces of Holy Communion?",
+       "a": "To receive plentifully the graces of Holy Communion it is not enough to be free from mortal sin, but we should be free from all affection to venial sin, and should make acts of faith, hope, and love."
+      },
+      {
+       "t": "q",
+       "n": "257",
+       "q": "What is the fast necessary for Holy Communion?",
+       "a": "The fast necessary for Holy Communion is to abstain from all food, beverages, and alcoholic drinks for one hour before Holy Communion. Water may be taken at any time. The sick may take food, non-alcoholic drinks, and any medicine up to Communion time."
+      },
+      {
+       "t": "n",
+       "h": "This answer has been changed in the 1977 printing to bring it up to date with the current rules."
+      },
+      {
+       "t": "q",
+       "n": "258",
+       "q": "Is any one ever allowed to receive Holy Communion when not fasting?",
+       "a": "Any one in danger of death is allowed to receive Holy Communion when not fasting or when it is necessary to save the Blessed Sacrament from insult or injury."
+      },
+      {
+       "t": "q",
+       "n": "259",
+       "q": "When are we bound to receive Holy Communion?",
+       "a": "We are bound to receive Holy Communion, under pain of mortal sin, during the Easter time and when in danger of death."
+      },
+      {
+       "t": "q",
+       "n": "260",
+       "q": "Is it well to receive Holy Communion often?",
+       "a": "It is well to receive Holy Communion often, as nothing is a greater aid to a holy life than often to receive the Author of all grace and the Source of all good."
+      },
+      {
+       "t": "q",
+       "n": "261",
+       "q": "What should we do after Holy Communion?",
+       "a": "After Holy Communion we should spend some time in adoring our Lord, in thanking Him for the grace we have received, and in asking Him for the blessings we need."
+      }
+     ]
+    },
+    {
+     "path": "lesson-24",
+     "label": "Lesson Twenty-Fourth",
+     "title": "On the Sacrifice of the Mass",
+     "num": "24",
+     "nav": "Lesson Twenty-Fourth: On the Sacrifice of the Mass",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "262",
+       "q": "When and where are the bread and wine changed into the body and blood of Christ?",
+       "a": "The bread and wine are changed into the body and blood of Christ at the Consecration in the Mass."
+      },
+      {
+       "t": "q",
+       "n": "263",
+       "q": "What is the Mass?",
+       "a": "The Mass is the unbloody sacrifice of the body and blood of Christ."
+      },
+      {
+       "t": "q",
+       "n": "264",
+       "q": "What is a sacrifice?",
+       "a": "A sacrifice is the offering of an object by a priest to God alone, and the consuming of it to acknowledge that He is the Creator and Lord of all things."
+      },
+      {
+       "t": "q",
+       "n": "265",
+       "q": "Is the Mass the same sacrifice as that of the Cross?",
+       "a": "The Mass is the same sacrifice as that of the Cross."
+      },
+      {
+       "t": "q",
+       "n": "266",
+       "q": "How is the Mass the same sacrifice as that of the Cross?",
+       "a": "The Mass is the same sacrifice as that of the Cross because the offering and the priest are the same—Christ our Blessed Lord; and the ends for which the sacrifice of the Mass is offered are the same as those of the sacrifice of the Cross."
+      },
+      {
+       "t": "q",
+       "n": "267",
+       "q": "What were the ends for which the sacrifice of the Cross was offered?",
+       "a": "The ends for which the sacrifice of the Cross was offered were: 1st, To honor and glorify God; 2d, To thank Him for all the graces bestowed on the whole world; 3d, To satisfy God’s justice for the sins of men; 4th, To obtain all graces and blessings."
+      },
+      {
+       "t": "q",
+       "n": "268",
+       "q": "Is there any difference between the sacrifice of the Cross and the sacrifice of the Mass?",
+       "a": "Yes; the manner in which the sacrifice is offered is different. On the Cross Christ really shed His blood and was really slain; in the Mass there is no real shedding of blood nor real death, because Christ can die no more; but the sacrifice of the Mass, through the separate consecration of the bread and the wine, represents His death on the Cross."
+      },
+      {
+       "t": "q",
+       "n": "269",
+       "q": "How should we assist at Mass?",
+       "a": "We should assist at Mass with great interior recollection and piety and with every outward mark of respect and devotion."
+      },
+      {
+       "t": "q",
+       "n": "270",
+       "q": "Which is the best manner of hearing Mass?",
+       "a": "The best manner of hearing Mass is to offer it to God with the priest for the same purpose for which it is said, to meditate on Christ’s sufferings and death, and to go to Holy Communion."
+      }
+     ]
+    },
+    {
+     "path": "lesson-25",
+     "label": "Lesson Twenty-Fifth",
+     "title": "On Extreme Unction and Holy Orders",
+     "num": "25",
+     "nav": "Lesson Twenty-Fifth: On Extreme Unction and Holy Orders",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "271",
+       "q": "What is the Sacrament of Extreme Unction?",
+       "a": "Extreme Unction is the Sacrament which, through the anointing and prayer of the priest, gives health and strength to the soul, and sometimes to the body, when we are in danger of death from sickness."
+      },
+      {
+       "t": "q",
+       "n": "272",
+       "q": "When should we receive Extreme Unction?",
+       "a": "We should receive Extreme Unction when we are in danger of death from sickness, or from a wound or accident."
+      },
+      {
+       "t": "q",
+       "n": "273",
+       "q": "Should we wait until we are in extreme danger before we receive Extreme Unction?",
+       "a": "We should not wait until we are in extreme danger before we receive Extreme Unction, but if possible we should receive it whilst we have the use of our senses."
+      },
+      {
+       "t": "q",
+       "n": "274",
+       "q": "Which are the effects of the Sacrament of Extreme Unction?",
+       "a": "The effects of Extreme Unction are: 1st, To comfort us in the pains of sickness and to strengthen us against temptation; 2d, To remit venial sins and to cleanse our soul from the remains of sin; 3d, To restore us to health, when God sees fit."
+      },
+      {
+       "t": "q",
+       "n": "275",
+       "q": "What do you mean by the remains of sin?",
+       "a": "By the remains of sin I mean the inclination to evil and the weakness of the will which are the result of our sins, and which remain after our sins have been forgiven."
+      },
+      {
+       "t": "q",
+       "n": "276",
+       "q": "How should we receive the Sacrament of Extreme Unction?",
+       "a": "We should receive the Sacrament of Extreme Unction in the state of grace, and with lively faith and resignation to the will of God."
+      },
+      {
+       "t": "q",
+       "n": "277",
+       "q": "Who is the minister of the Sacrament of Extreme Unction?",
+       "a": "The priest is the minister of the Sacrament of Extreme Unction."
+      },
+      {
+       "t": "q",
+       "n": "278",
+       "q": "What is the Sacrament of Holy Orders?",
+       "a": "Holy Orders is a Sacrament by which bishops, priests, and other ministers of the Church are ordained and receive the power and grace to perform their sacred duties."
+      },
+      {
+       "t": "q",
+       "n": "279",
+       "q": "What is necessary to receive Holy Orders worthily?",
+       "a": "To receive Holy Orders worthily it is necessary to be in the state of grace, to have the necessary knowledge and a divine call to this sacred office."
+      },
+      {
+       "t": "q",
+       "n": "280",
+       "q": "How should Christians look upon the priests of the Church?",
+       "a": "Christians should look upon the priests of the Church as the messengers of God and the dispensers of His mysteries."
+      },
+      {
+       "t": "q",
+       "n": "281",
+       "q": "Who can confer the Sacrament of Holy Orders?",
+       "a": "Bishops can confer the Sacrament of Holy Orders."
+      }
+     ]
+    },
+    {
+     "path": "lesson-26",
+     "label": "Lesson Twenty-Sixth",
+     "title": "On Matrimony",
+     "num": "26",
+     "nav": "Lesson Twenty-Sixth: On Matrimony",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "282",
+       "q": "What is the Sacrament of Matrimony?",
+       "a": "The Sacrament of Matrimony is the Sacrament which unites a Christian man and woman in lawful marriage."
+      },
+      {
+       "t": "q",
+       "n": "283",
+       "q": "Can a Christian man and woman be united in lawful marriage in any other way than by the Sacrament of Matrimony?",
+       "a": "A Christian man and woman cannot be united in lawful marriage in any other way than by the Sacrament of Matrimony, because Christ raised marriage to the dignity of a Sacrament."
+      },
+      {
+       "t": "q",
+       "n": "284",
+       "q": "Can the bond of Christian marriage be dissolved by any human power?",
+       "a": "The bond of Christian marriage cannot be dissolved by any human power."
+      },
+      {
+       "t": "q",
+       "n": "285",
+       "q": "Which are the effects of the Sacrament of Matrimony?",
+       "a": "The effects of the Sacrament of Matrimony are: 1st, To sanctify the love of husband and wife; 2d, To give them grace to bear with each other’s weaknesses; 3d, To enable them to bring up their children in the fear and love of God."
+      },
+      {
+       "t": "q",
+       "n": "286",
+       "q": "To receive the Sacrament of matrimony worthily is it necessary to be in the state of grace?",
+       "a": "To receive the Sacrament of Matrimony worthily it is necessary to be in the state of grace, and it is necessary also to comply with the laws of the Church."
+      },
+      {
+       "t": "q",
+       "n": "287",
+       "q": "Who has the right to make laws concerning the Sacrament of marriage?",
+       "a": "The Church alone has the right to make laws concerning the Sacrament of marriage, though the state also has the right to make laws concerning the civil effects of the marriage contract."
+      },
+      {
+       "t": "q",
+       "n": "288",
+       "q": "Does the Church forbid the marriage of Catholics with persons who have a different religion or no religion at all?",
+       "a": "The Church does forbid the marriage of Catholics with persons who have a different religion or no religion at all."
+      },
+      {
+       "t": "q",
+       "n": "289",
+       "q": "Why does the Church forbid the marriage of Catholics with persons who have a different religion or no religion at all?",
+       "a": "The Church forbids the marriage of Catholics with persons who have a different religion or no religion at all, because such marriages generally lead to indifference, loss of faith, and to the neglect of the religious education of the children."
+      },
+      {
+       "t": "q",
+       "n": "290",
+       "q": "Why do many marriages prove unhappy?",
+       "a": "Many marriages prove unhappy because they are entered into hastily and without worthy motives."
+      },
+      {
+       "t": "q",
+       "n": "291",
+       "q": "How should Christians prepare for a holy and happy marriage?",
+       "a": "Christians should prepare for a holy and happy marriage by receiving the Sacraments of Penance and Holy Eucharist; by begging God to grant them a pure intention and to direct their choice; and by seeking the advice of their parents and the blessing of their pastors."
+      }
+     ]
+    },
+    {
+     "path": "lesson-27",
+     "label": "Lesson Twenty-Seventh",
+     "title": "On the Sacramentals",
+     "num": "27",
+     "nav": "Lesson Twenty-Seventh: On the Sacramentals",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "292",
+       "q": "What is a sacramental?",
+       "a": "A sacramental is anything set apart or blessed by the Church to excite good thoughts and to increase devotion, and through these movements of the heart to remit venial sin."
+      },
+      {
+       "t": "q",
+       "n": "293",
+       "q": "What is the difference between the Sacraments and the sacramentals?",
+       "a": "The difference between the Sacraments and the sacramentals is: 1st, The Sacraments were instituted by Jesus Christ and the sacramentals were instituted by the Church; 2d, The Sacraments give grace of themselves when we place no obstacle in the way; the sacramentals excite in us pious dispositions, by means of which we may obtain grace."
+      },
+      {
+       "t": "q",
+       "n": "294",
+       "q": "Which is the chief sacramental used in the Church?",
+       "a": "The chief sacramental used in the Church is the sign of the Cross."
+      },
+      {
+       "t": "q",
+       "n": "295",
+       "q": "How do we make the sign of the Cross?",
+       "a": "We make the sign of the Cross by putting the right hand to the forehead, then on the breast, and then to the left and right shoulders, saying, In the name of the Father, and of the Son, and of the Holy Ghost. Amen."
+      },
+      {
+       "t": "q",
+       "n": "296",
+       "q": "Why do we make the sign of the Cross?",
+       "a": "We make the sign of the Cross to show that we are Christians and to profess our belief in the chief mysteries of our religion."
+      },
+      {
+       "t": "q",
+       "n": "297",
+       "q": "How is the sign of the Cross a profession of faith in the chief mysteries of our religion?",
+       "a": "The sign of the Cross is a profession of faith in the chief mysteries of our religion because it expresses the mysteries of the Unity and Trinity of God and of the Incarnation and death of our Lord."
+      },
+      {
+       "t": "q",
+       "n": "298",
+       "q": "How does the sign of the Cross express the mystery of the Unity and Trinity of God?",
+       "a": "The words, In the name, express the Unity of God; the words that follow, of the Father, and of the Son, and of the Holy Ghost, express the mystery of the Trinity."
+      },
+      {
+       "t": "q",
+       "n": "299",
+       "q": "How does the sign of the Cross express the mystery of the Incarnation and death of our Lord?",
+       "a": "The sign of the Cross expresses the mystery of the Incarnation by reminding us that the Son of God, having become man, suffered death on the cross."
+      },
+      {
+       "t": "q",
+       "n": "300",
+       "q": "What other sacramental is in very frequent use?",
+       "a": "Another sacramental in very frequent use is holy water."
+      },
+      {
+       "t": "q",
+       "n": "301",
+       "q": "What is holy water?",
+       "a": "Holy water is water blessed by the priest with solemn prayer to beg God’s blessing on those who use it, and protection from the powers of darkness."
+      },
+      {
+       "t": "q",
+       "n": "302",
+       "q": "Are there other sacramentals besides the sign of the Cross and holy water?",
+       "a": "Besides the sign of the Cross and holy water there are many other sacramentals, such as blessed candles, ashes, palms, crucifixes, images of the Blessed Virgin and of the saints, rosaries, and scapulars."
+      }
+     ]
+    },
+    {
+     "path": "lesson-28",
+     "label": "Lesson Twenty-Eighth",
+     "title": "On Prayer",
+     "num": "28",
+     "nav": "Lesson Twenty-Eighth: On Prayer",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "303",
+       "q": "Is there any other means of obtaining God’s grace than the Sacraments?",
+       "a": "There is another means of obtaining God’s grace, and it is prayer."
+      },
+      {
+       "t": "q",
+       "n": "304",
+       "q": "What is prayer?",
+       "a": "Prayer is the lifting up of our minds and hearts to God to adore Him, to thank Him for His benefits, to ask His forgiveness, and to beg of Him all the graces we need whether for soul or body."
+      },
+      {
+       "t": "q",
+       "n": "305",
+       "q": "Is prayer necessary to salvation?",
+       "a": "Prayer is necessary to salvation, and without it no one having the use of reason can be saved."
+      },
+      {
+       "t": "q",
+       "n": "306",
+       "q": "At what particular times should we pray?",
+       "a": "We should pray particularly on Sundays and holydays, every morning and night, in all dangers, temptations, and afflictions."
+      },
+      {
+       "t": "q",
+       "n": "307",
+       "q": "How should we pray?",
+       "a": "We should pray: 1st, With attention; 2d, With a sense of our own helplessness and dependence upon God; 3d, With a great desire for the graces we beg of God; 4th, With trust in God’s goodness; 5th, With perseverance."
+      },
+      {
+       "t": "q",
+       "n": "308",
+       "q": "Which are the prayers most recommended to us?",
+       "a": "The prayers most recommended to us are the Lord’s Prayer, the Hail Mary, the Apostles’ Creed, the Confiteor, and the Acts of Faith, Hope, Love, and Contrition."
+      },
+      {
+       "t": "q",
+       "n": "309",
+       "q": "Are prayers said with distractions of any avail?",
+       "a": "Prayers said with wilful distractions are of no avail."
+      }
+     ]
+    },
+    {
+     "path": "lesson-29",
+     "label": "Lesson Twenty-Ninth",
+     "title": "On the Commandments of God",
+     "num": "29",
+     "nav": "Lesson Twenty-Ninth: On the Commandments of God",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "310",
+       "q": "Is it enough to belong to God’s Church in order to be saved?",
+       "a": "It is not enough to belong to the Church in order to be saved, but we must also keep the Commandments of God and of the Church."
+      },
+      {
+       "t": "q",
+       "n": "311",
+       "q": "Which are the Commandments that contain the whole law of God?",
+       "a": "The Commandments which contain the whole law of God are these two: 1st, Thou shalt love the Lord thy God with thy whole heart, with thy whole soul, with thy whole strength, and with thy whole mind; 2d, Thou shalt love thy neighbor as thyself."
+      },
+      {
+       "t": "q",
+       "n": "312",
+       "q": "Why do these two Commandments of the love of God and of our neighbor contain the whole law of God?",
+       "a": "These two Commandments of the love of God and of our neighbor contain the whole law of God because all the other Commandments are given either to help us to keep these two, or to direct us how to shun what is opposed to them."
+      },
+      {
+       "t": "q",
+       "n": "313",
+       "q": "Which are the Commandments of God?",
+       "a": "The Commandments of God are these ten.\n\n1. I am the Lord thy God, who brought thee out of the land of Egypt, out of the house of bondage. Thou shalt not have strange gods before Me. Thou shalt not make to thyself a graven thing, nor the likeness of anything that is in heaven above, or in the earth beneath, nor of those things that are in the waters under the earth. Thou shalt not adore them, nor serve them.<br>2. Thou shalt not take the name of the Lord thy God in vain.<br>3. Remember thou keep holy the Sabbath day.<br>4. Honor thy father and thy mother.<br>5. Thou shalt not kill.<br>6. Thou shalt not commit adultery.<br>7. Thou shalt not steal.<br>8. Thou shalt not bear false witness against thy neighbor.<br>9. Thou shalt not covet thy neighbor’s wife.<br>10. Thou shalt not covet thy neighbor’s goods."
+      },
+      {
+       "t": "q",
+       "n": "314",
+       "q": "Who gave the Ten Commandments?",
+       "a": "God Himself gave the Ten Commandments to Moses on Mount Sinai, and Christ our Lord confirmed them."
+      }
+     ]
+    },
+    {
+     "path": "lesson-30",
+     "label": "Lesson Thirtieth",
+     "title": "On the First Commandment",
+     "num": "30",
+     "nav": "Lesson Thirtieth: On the First Commandment",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "315",
+       "q": "What is the first Commandment?",
+       "a": "The first Commandment is: I am the Lord thy God: thou shalt not have strange gods before Me."
+      },
+      {
+       "t": "q",
+       "n": "316",
+       "q": "How does the first Commandment help us to keep the great Commandment of the love of God?",
+       "a": "The first Commandment helps us to keep the great Commandment of the love of God because it commands us to adore God alone."
+      },
+      {
+       "t": "q",
+       "n": "317",
+       "q": "How do we adore God?",
+       "a": "We adore God by faith, hope, and charity, by prayer and sacrifice."
+      },
+      {
+       "t": "q",
+       "n": "318",
+       "q": "How may the first Commandment be broken?",
+       "a": "The first Commandment may be broken by giving to a creature the honor which belongs to God alone; by false worship; and by attributing to a creature a perfection which belongs to God alone."
+      },
+      {
+       "t": "q",
+       "n": "319",
+       "q": "Do those who make use of spells and charms, or who believe in dreams, in mediums, spiritists, fortune-tellers, and the like, sin against the first Commandment?",
+       "a": "Those who make use of spells and charms, or who believe in dreams, in mediums, spiritists, fortunetellers and the like, sin against the first Commandment, because they attribute to creatures perfections which belong to God alone."
+      },
+      {
+       "t": "q",
+       "n": "320",
+       "q": "Are sins against faith, hope and charity also sins against the first Commandment?",
+       "a": "Sins against faith, hope, and charity are also sins against the first Commandment."
+      },
+      {
+       "t": "q",
+       "n": "321",
+       "q": "How does a person sin against faith?",
+       "a": "A person sins against faith: 1st, by not trying to know what God has taught; 2d, by refusing to believe all that God has taught; 3d, by neglecting to profess his belief in what God has taught."
+      },
+      {
+       "t": "q",
+       "n": "322",
+       "q": "How do we fail to try to know what God has taught?",
+       "a": "We fail to try to know what God has taught by neglecting to learn the Christian doctrine."
+      },
+      {
+       "t": "q",
+       "n": "323",
+       "q": "Who are they who do not believe all that God has taught?",
+       "a": "They who do not believe all that God has taught are the heretics and infidels."
+      },
+      {
+       "t": "q",
+       "n": "324",
+       "q": "Who are they who neglect to profess their belief in what God has taught?",
+       "a": "They who neglect to profess their belief in what God has taught are all those who fail to acknowledge the true Church in which they really believe."
+      },
+      {
+       "t": "q",
+       "n": "325",
+       "q": "Can they who fail to profess their faith in the true Church in which they believe expect to be saved while in that state?",
+       "a": "They who fail to profess their faith in the true Church in which they believe cannot expect to be saved while in that state, for Christ has said: “Whoever shall deny Me before men, I will also deny him before My Father who is in heaven.”"
+      },
+      {
+       "t": "q",
+       "n": "326",
+       "q": "Are we obliged to make open profession of our faith?",
+       "a": "We are obliged to make open profession of our faith as often as God’s honor, our neighbor’s spiritual good, or our own requires it. “Whosoever,” says Christ, “shall confess Me before men, I will also confess him before My Father who is in heaven.”"
+      },
+      {
+       "t": "q",
+       "n": "327",
+       "q": "Which are the sins against hope?",
+       "a": "The sins against hope are presumption and despair."
+      },
+      {
+       "t": "q",
+       "n": "328",
+       "q": "What is presumption?",
+       "a": "Presumption is a rash expectation of salvation without making proper use of the necessary means to obtain it."
+      },
+      {
+       "t": "q",
+       "n": "329",
+       "q": "What is despair?",
+       "a": "Despair is the loss of hope in God’s mercy."
+      },
+      {
+       "t": "q",
+       "n": "330",
+       "q": "How do we sin against the love of God?",
+       "a": "We sin against the love of God by all sin, but particularly by mortal sin."
+      }
+     ]
+    },
+    {
+     "path": "lesson-31",
+     "label": "Lesson Thirty-First",
+     "title": "The First Commandment: on the Honor and Invocation of Saints",
+     "num": "31",
+     "nav": "Lesson Thirty-First: The First Commandment: on the Honor and Invocation of Saints",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "331",
+       "q": "Does the first Commandment forbid the honoring of the saints?",
+       "a": "The first Commandment does not forbid the honoring of the saints, but rather approves of it; because by honoring the saints, who are the chosen friends of God, we honor God Himself."
+      },
+      {
+       "t": "q",
+       "n": "332",
+       "q": "Does the first Commandment forbid us to pray to the saints?",
+       "a": "The first Commandment does not forbid us to pray to the saints."
+      },
+      {
+       "t": "q",
+       "n": "333",
+       "q": "What do we mean by praying to the saints?",
+       "a": "By praying to the saints we mean the asking of their help and prayers."
+      },
+      {
+       "t": "q",
+       "n": "334",
+       "q": "How do we know that the saints hear us?",
+       "a": "We know that the saints hear us, because they are with God, who makes our prayers known to them."
+      },
+      {
+       "t": "q",
+       "n": "335",
+       "q": "Why do we believe that the saints will help us?",
+       "a": "We believe that the saints will help us because both they and we are members of the same Church, and they love us as their brethren."
+      },
+      {
+       "t": "q",
+       "n": "336",
+       "q": "How are the saints and we members of the same Church?",
+       "a": "The saints and we are members of the same Church, because the Church in heaven and the Church on earth are one and the same Church, and all its members are in communion with one another."
+      },
+      {
+       "t": "q",
+       "n": "337",
+       "q": "What is the communion of the members of the Church called?",
+       "a": "The communion of the members of the Church is called the communion of saints."
+      },
+      {
+       "t": "q",
+       "n": "338",
+       "q": "What does the communion of saints mean?",
+       "a": "The communion of saints means the union which exists between the members of the Church on earth with one another, and with the blessed in heaven and with the suffering souls in purgatory."
+      },
+      {
+       "t": "q",
+       "n": "339",
+       "q": "What benefits are derived from the communion of saints?",
+       "a": "The following benefits are derived from the communion of saints:—the faithful on earth assist one another by their prayers and good works, and they are aided by the intercession of the saints in heaven, while both the saints in heaven and the faithful on earth help the souls in purgatory."
+      },
+      {
+       "t": "q",
+       "n": "340",
+       "q": "Does the first Commandment forbid us to honor relics?",
+       "a": "The first Commandment does not forbid us to honor relics, because relics are the bodies of the saints, or objects directly connected with them or with our Lord."
+      },
+      {
+       "t": "q",
+       "n": "341",
+       "q": "Does the first Commandment forbid the making of images?",
+       "a": "The first Commandment does forbid the making of images if they are made to be adored as gods, but it does not forbid the making of them to put us in mind of Jesus Christ, His Blessed Mother, and the saints."
+      },
+      {
+       "t": "q",
+       "n": "342",
+       "q": "Is it right to show respect to the pictures and images of Christ and His saints?",
+       "a": "It is right to show respect to the pictures and images of Christ and His saints, because they are the representations and memorials of them."
+      },
+      {
+       "t": "q",
+       "n": "343",
+       "q": "Is it allowed to pray to the crucifix or to the images and relics of the saints?",
+       "a": "It is not allowed to pray to the crucifix or images and relics of the saints, for they have no life, nor power to help us, nor sense to hear us."
+      },
+      {
+       "t": "q",
+       "n": "344",
+       "q": "Why do we pray before the crucifix and the images and relics of the saints?",
+       "a": "We pray before the crucifix and images and relics of the saints because they enliven our devotion by exciting pious affections and desires, and by reminding us of Christ and of the saints, that we may imitate their virtues."
+      }
+     ]
+    },
+    {
+     "path": "lesson-32",
+     "label": "Lesson Thirty-Second",
+     "title": "From the Second to the Fourth Commandment",
+     "num": "32",
+     "nav": "Lesson Thirty-Second: From the Second to the Fourth Commandment",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "345",
+       "q": "What is the second Commandment?",
+       "a": "The second Commandment is: Thou shalt not take the name of the Lord thy God in vain."
+      },
+      {
+       "t": "q",
+       "n": "346",
+       "q": "What are we commanded by the second Commandment?",
+       "a": "We are commanded by the second Commandment to speak with reverence of God and of the saints, and of all holy things, and to keep our lawful oaths and vows."
+      },
+      {
+       "t": "q",
+       "n": "347",
+       "q": "What is an oath?",
+       "a": "An oath is the calling upon God to witness the truth of what we say."
+      },
+      {
+       "t": "q",
+       "n": "348",
+       "q": "When may we take an oath?",
+       "a": "We may take an oath when it is ordered by lawful authority or required for God’s honor or for our own or our neighbor’s good."
+      },
+      {
+       "t": "q",
+       "n": "349",
+       "q": "What is necessary to make an oath lawful?",
+       "a": "To make an oath lawful it is necessary that what we swear to, be true, and that there be a sufficient cause for taking an oath."
+      },
+      {
+       "t": "q",
+       "n": "350",
+       "q": "What is a vow?",
+       "a": "A vow is a deliberate promise made to God to do something that is pleasing to Him."
+      },
+      {
+       "t": "q",
+       "n": "351",
+       "q": "Is it a sin not to fulfill our vows?",
+       "a": "Not to fulfill our vows is a sin, mortal or venial, according to the nature of the vow and the intention we had in making it."
+      },
+      {
+       "t": "q",
+       "n": "352",
+       "q": "What is forbidden by the second Commandment?",
+       "a": "The second Commandment forbids all false, rash, unjust, and unnecessary oaths, blasphemy, cursing, and profane words."
+      },
+      {
+       "t": "q",
+       "n": "353",
+       "q": "What is the third Commandment?",
+       "a": "The third Commandment is: Remember thou keep holy the Sabbath day."
+      },
+      {
+       "t": "q",
+       "n": "354",
+       "q": "What are we commanded by the third Commandment?",
+       "a": "By the third Commandment we are commanded to keep holy the Lord’s day and the holydays of obligation, on which we are to give our time to the service and worship of God."
+      },
+      {
+       "t": "q",
+       "n": "355",
+       "q": "How are we to worship God on Sundays and holydays of obligation?",
+       "a": "We are to worship God on Sundays and holydays of obligation by hearing Mass, by prayer, and by other good works."
+      },
+      {
+       "t": "q",
+       "n": "356",
+       "q": "Are the Sabbath day and the Sunday the same?",
+       "a": "The Sabbath day and the Sunday are not the same. The Sabbath is the seventh day of the week, and is the day which was kept holy in the Old Law; the Sunday is the first day of the week, and is the day which is kept holy in the New Law."
+      },
+      {
+       "t": "q",
+       "n": "357",
+       "q": "Why does the Church command us to keep the Sunday holy instead of the Sabbath?",
+       "a": "The Church commands us to keep the Sunday holy instead of the Sabbath because on Sunday Christ rose from the dead, and on Sunday He sent the Holy Ghost upon the Apostles."
+      },
+      {
+       "t": "q",
+       "n": "358",
+       "q": "What is forbidden by the third Commandment?",
+       "a": "The third Commandment forbids all unnecessary servile work and whatever else may hinder the due observance of the Lord’s day."
+      },
+      {
+       "t": "q",
+       "n": "359",
+       "q": "What are servile works?",
+       "a": "Servile works are those which require labor rather of body than of mind."
+      },
+      {
+       "t": "q",
+       "n": "360",
+       "q": "Are servile works on Sunday ever lawful?",
+       "a": "Servile works are lawful on Sunday when the honor of God, the good of our neighbor, or necessity requires them."
+      }
+     ]
+    },
+    {
+     "path": "lesson-33",
+     "label": "Lesson Thirty-Third",
+     "title": "From the Fourth to the Seventh Commandment",
+     "num": "33",
+     "nav": "Lesson Thirty-Third: From the Fourth to the Seventh Commandment",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "361",
+       "q": "What is the fourth Commandment?",
+       "a": "The fourth Commandment is: Honor thy father and thy mother."
+      },
+      {
+       "t": "q",
+       "n": "362",
+       "q": "What are we commanded by the fourth Commandment?",
+       "a": "We are commanded by the fourth Commandment to honor, love, and obey our parents in all that is not sin."
+      },
+      {
+       "t": "q",
+       "n": "363",
+       "q": "Are we bound to honor and obey others than our parents?",
+       "a": "We are also bound to honor and obey our bishops, pastors, magistrates, teachers, and other lawful superiors."
+      },
+      {
+       "t": "q",
+       "n": "364",
+       "q": "Have parents and superiors any duties towards those who are under their charge?",
+       "a": "It is the duty of parents and superiors to take good care of all under their charge and give them proper direction and example."
+      },
+      {
+       "t": "q",
+       "n": "365",
+       "q": "What is forbidden by the fourth Commandment?",
+       "a": "The fourth Commandment forbids all disobedience, contempt, and stubbornness towards our parents or lawful superiors."
+      },
+      {
+       "t": "q",
+       "n": "366",
+       "q": "What is the fifth Commandment?",
+       "a": "The fifth Commandment is: Thou shalt not kill."
+      },
+      {
+       "t": "q",
+       "n": "367",
+       "q": "What are we commanded by the fifth Commandment?",
+       "a": "We are commanded by the fifth Commandment to live in peace and union with our neighbor, to respect his rights, to seek his spiritual and bodily welfare, and to take proper care of our own life and health."
+      },
+      {
+       "t": "q",
+       "n": "368",
+       "q": "What is forbidden by the fifth Commandment?",
+       "a": "The fifth Commandment forbids all wilful murder, fighting, anger, hatred, revenge, and bad example."
+      },
+      {
+       "t": "q",
+       "n": "369",
+       "q": "What is the sixth Commandment?",
+       "a": "The sixth Commandment is: Thou shalt not commit adultery."
+      },
+      {
+       "t": "q",
+       "n": "370",
+       "q": "What are we commanded by the sixth Commandment?",
+       "a": "We are commanded by the sixth Commandment to be pure in thought and modest in all our looks, words, and actions."
+      },
+      {
+       "t": "q",
+       "n": "371",
+       "q": "What is forbidden by the sixth Commandment?",
+       "a": "The sixth commandment forbids all unchaste freedom with another’s wife or husband; also all immodesty with ourselves or others in looks, dress, words, or actions."
+      },
+      {
+       "t": "q",
+       "n": "372",
+       "q": "Does the sixth Commandment forbid the reading of bad and immodest books and newspapers?",
+       "a": "The sixth Commandment does forbid the reading of bad and immodest books and newspapers."
+      }
+     ]
+    },
+    {
+     "path": "lesson-34",
+     "label": "Lesson Thirty-Fourth",
+     "title": "From the Seventh to the End of the Tenth Commandment",
+     "num": "34",
+     "nav": "Lesson Thirty-Fourth: From the Seventh to the End of the Tenth Commandment",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "373",
+       "q": "What is the seventh Commandment?",
+       "a": "The seventh Commandment is: Thou shalt not steal."
+      },
+      {
+       "t": "q",
+       "n": "374",
+       "q": "What are we commanded by the seventh Commandment?",
+       "a": "By the seventh Commandment we are commanded to give to all men what belongs to them and to respect their property."
+      },
+      {
+       "t": "q",
+       "n": "375",
+       "q": "What is forbidden by the seventh Commandment?",
+       "a": "The seventh Commandment forbids all unjust taking or keeping what belongs to another."
+      },
+      {
+       "t": "q",
+       "n": "376",
+       "q": "Are we bound to restore ill-gotten goods?",
+       "a": "We are bound to restore ill-gotten goods, or the value of them, as far as we are able; otherwise we cannot be forgiven."
+      },
+      {
+       "t": "q",
+       "n": "377",
+       "q": "Are we obliged to repair the damage we have unjustly caused?",
+       "a": "We are bound to repair the damage we have unjustly caused."
+      },
+      {
+       "t": "q",
+       "n": "378",
+       "q": "What is the eighth Commandment?",
+       "a": "The eighth Commandment is: Thou shalt not bear false witness against thy neighbor."
+      },
+      {
+       "t": "q",
+       "n": "379",
+       "q": "What are we commanded by the eighth Commandment?",
+       "a": "We are commanded by the eighth Commandment to speak the truth in all things and to be careful of the honor and reputation of every one."
+      },
+      {
+       "t": "q",
+       "n": "380",
+       "q": "What is forbidden by the eighth Commandment?",
+       "a": "The eighth Commandment forbids all rash judgments, backbiting, slanders, and lies."
+      },
+      {
+       "t": "q",
+       "n": "381",
+       "q": "What must they do who have lied about their neighbor and seriously injured his character?",
+       "a": "They who have lied about their neighbor and seriously injured his character must repair the injury done as far as they are able, otherwise they will not be forgiven."
+      },
+      {
+       "t": "q",
+       "n": "382",
+       "q": "What is the ninth Commandment?",
+       "a": "The ninth Commandment is: Thou shalt not covet thy neighbor’s wife."
+      },
+      {
+       "t": "q",
+       "n": "383",
+       "q": "What are we commanded by the ninth Commandment?",
+       "a": "We are commanded by the ninth Commandment to keep ourselves pure in thought and desire."
+      },
+      {
+       "t": "q",
+       "n": "384",
+       "q": "What is forbidden by the ninth Commandment?",
+       "a": "The ninth Commandment forbids unchaste thoughts, desires of another’s wife or husband, and all other unlawful impure thoughts and desires."
+      },
+      {
+       "t": "q",
+       "n": "385",
+       "q": "Are impure thoughts and desires always sins?",
+       "a": "Impure thoughts and desires are always sins, unless they displease us and we try to banish them."
+      },
+      {
+       "t": "q",
+       "n": "386",
+       "q": "What is the tenth Commandment?",
+       "a": "The tenth Commandment is: Thou shalt not covet thy neighbor’s goods."
+      },
+      {
+       "t": "q",
+       "n": "387",
+       "q": "What are we commanded by the tenth Commandment?",
+       "a": "By the tenth Commandment we are commanded to be content with what we have, and to rejoice in our neighbor’s welfare."
+      },
+      {
+       "t": "q",
+       "n": "388",
+       "q": "What is forbidden by the tenth Commandment?",
+       "a": "The tenth Commandment forbids all desires to take or keep wrongfully what belongs to another."
+      }
+     ]
+    },
+    {
+     "path": "lesson-35",
+     "label": "Lesson Thirty-Fifth",
+     "title": "On the First and Second Commandments of the Church",
+     "num": "35",
+     "nav": "Lesson Thirty-Fifth: On the First and Second Commandments of the Church",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "389",
+       "q": "Which are the chief commandments of the Church?",
+       "a": "The chief commandments of the Church are six:\n\n1. To hear Mass on Sundays and holydays of obligation.<br>2. To fast and abstain on the days appointed.<br>3. To confess at least once a year.<br>4. To receive the Holy Eucharist during the Easter time.<br>5. To contribute to the support of our pastors.<br>6. Not to marry persons who are not Catholics, or who are related to us within the third degree of kindred, nor privately without witnesses, nor to solemnize marriage at forbidden times."
+      },
+      {
+       "t": "q",
+       "n": "390",
+       "q": "Is it a mortal sin not to hear Mass on a Sunday or a holyday of obligation?",
+       "a": "It is a mortal sin not to hear Mass on a Sunday or a holyday of obligation, unless we are excused for a serious reason. They also commit a mortal sin who, having others under their charge, hinder them from hearing Mass, without a sufficient reason."
+      },
+      {
+       "t": "q",
+       "n": "391",
+       "q": "Why were holydays instituted by the Church?",
+       "a": "Holydays were instituted by the Church to recall to our minds the great mysteries of religion and the virtues and rewards of the saints."
+      },
+      {
+       "t": "q",
+       "n": "392",
+       "q": "How should we keep the holydays of obligation?",
+       "a": "We should keep the holydays of obligation as we should keep the Sunday."
+      },
+      {
+       "t": "q",
+       "n": "393",
+       "q": "What do you mean by fast-days?",
+       "a": "By fast-days I mean days on which we are allowed but one full meal."
+      },
+      {
+       "t": "q",
+       "n": "394",
+       "q": "What do you mean by days of abstinence?",
+       "a": "By days of abstinence I mean days on which we are forbidden to eat flesh-meat, but are allowed the usual number of meals."
+      },
+      {
+       "t": "q",
+       "n": "395",
+       "q": "Why does the Church command us to fast and abstain?",
+       "a": "The Church commands us to fast and abstain, in order that we may mortify our passions and satisfy for our sins."
+      },
+      {
+       "t": "q",
+       "n": "396",
+       "q": "Why does the Church command us to abstain from flesh-meat on Fridays?",
+       "a": "The Church commands us to abstain from flesh-meat on Fridays, in honor of the day on which our Saviour died."
+      }
+     ]
+    },
+    {
+     "path": "lesson-36",
+     "label": "Lesson Thirty-Sixth",
+     "title": "On the Third, Fourth, Fifth and Sixth Commandments of the Church",
+     "num": "36",
+     "nav": "Lesson Thirty-Sixth: On the Third, Fourth, Fifth and Sixth Commandments of the Church",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "397",
+       "q": "What is meant by the command of confessing at least once a year?",
+       "a": "By the command of confessing at least once a year is meant that we are obliged, under pain of mortal sin, to go to confession within the year."
+      },
+      {
+       "t": "q",
+       "n": "398",
+       "q": "Should we confess only once a year?",
+       "a": "We should confess frequently, if we wish to lead a good life."
+      },
+      {
+       "t": "q",
+       "n": "399",
+       "q": "Should children go to Confession?",
+       "a": "Children should go to Confession when they are old enough to commit sin, which is commonly about the age of seven years."
+      },
+      {
+       "t": "q",
+       "n": "400",
+       "q": "What sin does he commit who neglects to receive Communion during the Easter time?",
+       "a": "He who neglects to receive Communion during the Easter time commits a mortal sin."
+      },
+      {
+       "t": "q",
+       "n": "401",
+       "q": "What is the Easter time?",
+       "a": "The Easter time is, in this country, the time between the first Sunday of Lent and Trinity Sunday."
+      },
+      {
+       "t": "q",
+       "n": "402",
+       "q": "Are we obliged to contribute to the support of our pastors?",
+       "a": "We are obliged to contribute to the support of our pastors, and to bear our share in the expenses of the church and school."
+      },
+      {
+       "t": "q",
+       "n": "403",
+       "q": "What is the meaning of the commandment not to marry within the third degree of kindred?",
+       "a": "The meaning of the commandment not to marry within the third degree of kindred is that no one is allowed to marry another within the third degree of blood relationship."
+      },
+      {
+       "t": "q",
+       "n": "404",
+       "q": "What is the meaning of the command not to marry privately?",
+       "a": "The command not to marry privately means that none should marry without the blessing of God’s priests or without witnesses."
+      },
+      {
+       "t": "q",
+       "n": "405",
+       "q": "What is the meaning of the precept not to solemnize marriage at forbidden times?",
+       "a": "The meaning of the precept not to solemnize marriage at forbidden times is that during Lent and Advent the marriage ceremony should not be performed with pomp or a nuptial Mass."
+      },
+      {
+       "t": "q",
+       "n": "406",
+       "q": "What is the nuptial Mass?",
+       "a": "A nuptial Mass is a Mass appointed by the Church to invoke a special blessing upon the married couple."
+      },
+      {
+       "t": "q",
+       "n": "407",
+       "q": "Should Catholics be married at a nuptial Mass?",
+       "a": "Catholics should be married at a nuptial Mass, because they thereby show greater reverence for the holy Sacrament and bring richer blessings upon their wedded life."
+      }
+     ]
+    },
+    {
+     "path": "lesson-37",
+     "label": "Lesson Thirty-Seventh",
+     "title": "On the Last Judgment and the Resurrection, Hell, Purgatory, and Heaven",
+     "num": "37",
+     "nav": "Lesson Thirty-Seventh: On the Last Judgment and the Resurrection, Hell, Purgatory, and Heaven",
+     "blocks": [
+      {
+       "t": "q",
+       "n": "408",
+       "q": "When will Christ judge us?",
+       "a": "Christ will judge us immediately after our death, and on the last day."
+      },
+      {
+       "t": "q",
+       "n": "409",
+       "q": "What is the judgment called which we have to undergo immediately after death?",
+       "a": "The judgment we have to undergo immediately after death is called the Particular Judgment."
+      },
+      {
+       "t": "q",
+       "n": "410",
+       "q": "What is the judgment called which all men have to undergo on the last day?",
+       "a": "The judgment which all men have to undergo on the last day is called the General Judgment."
+      },
+      {
+       "t": "q",
+       "n": "411",
+       "q": "Why does Christ judge men immediately after death?",
+       "a": "Christ judges men immediately after death to reward or punish them according to their deeds."
+      },
+      {
+       "t": "q",
+       "n": "412",
+       "q": "What are the rewards or punishments appointed for men’s souls after the Particular Judgment?",
+       "a": "The rewards or punishments appointed for men’s souls after the Particular Judgment are Heaven, Purgatory, and Hell."
+      },
+      {
+       "t": "q",
+       "n": "413",
+       "q": "What is Hell?",
+       "a": "Hell is a state to which the wicked are condemned, and in which they are deprived of the sight of God for all eternity, and are in dreadful torments."
+      },
+      {
+       "t": "q",
+       "n": "414",
+       "q": "What is Purgatory?",
+       "a": "Purgatory is a state in which those suffer for a time who die guilty of venial sins, or without having satisfied for the punishment due to their sins."
+      },
+      {
+       "t": "q",
+       "n": "415",
+       "q": "Can the faithful on earth help the souls in Purgatory?",
+       "a": "The faithful on earth can help the souls in Purgatory by their prayers, fasts, alms-deeds; by indulgences, and by having Masses said for them."
+      },
+      {
+       "t": "q",
+       "n": "416",
+       "q": "If every one is judged immediately after death, what need is there of a General Judgment?",
+       "a": "There is need of a General Judgment, though every one is judged immediately after death, that the providence of God, which, on earth, often permits the good to suffer and the wicked to prosper, may in the end appear just before all men."
+      },
+      {
+       "t": "q",
+       "n": "417",
+       "q": "Will our bodies share in the reward or punishment of our souls?",
+       "a": "Our bodies will share in the reward or punishment of our souls, because through the resurrection they will again be united to them."
+      },
+      {
+       "t": "q",
+       "n": "418",
+       "q": "In what state will the bodies of the just rise?",
+       "a": "The bodies of the just will rise glorious and immortal."
+      },
+      {
+       "t": "q",
+       "n": "419",
+       "q": "Will the bodies of the damned also rise?",
+       "a": "The bodies of the damned will also rise, but they will be condemned to eternal punishment."
+      },
+      {
+       "t": "q",
+       "n": "420",
+       "q": "What is Heaven?",
+       "a": "Heaven is the state of everlasting life in which we see God face to face, are made like unto Him in glory, and enjoy eternal happiness."
+      },
+      {
+       "t": "q",
+       "n": "421",
+       "q": "What words should we bear always in mind?",
+       "a": "We should bear always in mind these words of our Lord and Saviour Jesus Christ: “What doth it profit a man if he gain the whole world and suffer the loss of his own soul, or what exchange shall a man give for his soul? For the Son of man shall come in the glory of His Father with His angels; and then will He render to every man according to his works.”"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Prayers and devotions",
+   "short": "Prayers and devotions",
+   "chapters": [
+    {
+     "path": "morning-prayers",
+     "title": "Morning Prayers",
+     "blocks": [
+      {
+       "t": "p",
+       "h": "As soon as you awake, think of God. Make the Sign of the Cross and say:"
+      },
+      {
+       "t": "p",
+       "h": "+ In the name of the Father, and of the Son, and of the Holy Ghost. Amen."
+      },
+      {
+       "t": "p",
+       "h": "Then dress quickly and kneel down. Now say the Our Father, the Hail Mary, the Apostles’ Creed, the Confiteor and the Acts of Faith, Hope, Love and Contrition which you have probably memorized. If you do not know them by heart you will find them on pages 2-4."
+      },
+      {
+       "t": "p",
+       "h": "Then if you have time also say the following prayers:"
+      },
+      {
+       "t": "h",
+       "h": "To the Blessed Virgin"
+      },
+      {
+       "t": "p",
+       "h": "My Lady, and my Mother, remember I am thine; protect and defend me as thy property and possession."
+      },
+      {
+       "t": "h",
+       "h": "To Saint Joseph"
+      },
+      {
+       "t": "p",
+       "h": "Saint Joseph, model and patron of those who love the Sacred Heart of Jesus, pray for us."
+      },
+      {
+       "t": "h",
+       "h": "To the Guardian Angel"
+      },
+      {
+       "t": "bq",
+       "h": "Angel of God, my guardian dear,<br>To whom His love commits me here,<br>Ever this day be at my side,<br>To light and guard, to rule and guide. Amen."
+      },
+      {
+       "t": "p",
+       "h": "God bless Papa and Mamma. God bless Brothers and Sisters, and all my friends. God bless me, and make me a good child."
+      },
+      {
+       "t": "h",
+       "h": "For the Faithful Departed"
+      },
+      {
+       "t": "p",
+       "h": "Eternal rest give unto them, O Lord. And let perpetual light shine upon them. May they rest in peace. Amen."
+      },
+      {
+       "t": "p",
+       "h": "Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+      },
+      {
+       "t": "p",
+       "h": "Make the Sign of the Cross."
+      }
+     ]
+    },
+    {
+     "path": "evening-prayers",
+     "title": "Evening Prayers",
+     "blocks": [
+      {
+       "t": "p",
+       "h": "Never go to bed without thanking God for all the benefits you have received during the day and during your whole life. Kneel down. Make the Sign of the Cross. Then say the Our Father, Hail Mary, the Apostles’ Creed, the Confiteor, and Glory be."
+      },
+      {
+       "t": "p",
+       "h": "Now think how you have acted during the day. Are there any big sins on your soul? Any little sins? Try to tell Jesus how sorry you are for all your sins, and say the Act of Contrition (page 4)."
+      },
+      {
+       "t": "bq",
+       "h": "Jesus, Mary, Joseph, I give you my heart and my soul.<br>Jesus, Mary, Joseph, assist me in my last agony.<br>Jesus, Mary, Joseph, may I breathe forth my soul in peace with you. O my God, bless my father, mother, and all my relatives and friends. May the souls of the faithful departed, through the mercy of God, rest in peace. Amen."
+      },
+      {
+       "t": "p",
+       "h": "Bless yourself with holy water."
+      },
+      {
+       "t": "p",
+       "h": "+ In the name of the Father, and of the Son, and of the Holy Ghost. Amen."
+      }
+     ]
+    },
+    {
+     "path": "prayers-for-mass",
+     "title": "Prayers for Mass",
+     "blocks": [
+      {
+       "t": "n",
+       "h": "The Mass prayers are an arrangement of those contained in Father Finn’s “Prayer Book for Catholic Youth” (also known as Father Finn’s Boys’ and Girls’ Prayer Book). They follow closely in simplified language the spirit and liturgy of the “Ordinary of the Mass,” so that children will become readily accustomed to using the Church’s own prayers and follow the priest at the altar. The rubrics when to sit, stand or kneel at Low Mass are given.<br><br>If it is found desirable to have the children recite prayers aloud and in unison at Mass, certain parts suitable for this purpose are marked with an asterisk (*)."
+      },
+      {
+       "t": "p",
+       "h": "Remember that the church is the house of God, where the living God dwells. And where God is, His holy angels too are present. In church, therefore, be reverent and modest in your behavior, and always be in time. When you enter, bless yourself with holy water and go quietly to your seat, genuflect on your right knee and enter the pew."
+      },
+      {
+       "t": "h",
+       "h": "Prayer Before Mass"
+      },
+      {
+       "t": "p",
+       "h": "O my God, I am only a child; help me to be attentive, and to pray with all my heart during this holy Mass."
+      },
+      {
+       "t": "p",
+       "h": "The priest comes out to begin Mass."
+      },
+      {
+       "t": "p",
+       "h": "<span class=\"sc\">Stand</span>"
+      },
+      {
+       "t": "p",
+       "h": "The priest carries in his hands the chalice, covered with a cloth. The priest goes up to the middle of the altar, and sets down the chalice. Then he goes to the right side and opens the book."
+      },
+      {
+       "t": "p",
+       "h": "After that he comes down to the foot of the altar, and makes the Sign of the Cross."
+      },
+      {
+       "t": "h",
+       "h": "The Mass of the Catechumens"
+      },
+      {
+       "t": "n",
+       "h": "From the Beginning to the Offertory"
+      },
+      {
+       "t": "p",
+       "h": "<span class=\"sc\">Kneel</span>"
+      },
+      {
+       "t": "bq",
+       "h": "*In the name of the Father, and of the Son, and of the Holy Ghost. Amen.<br>*I will go in to the altar of God, to God Who gives joy to my youth.<br>*Judge me, O God. Keep me safe from all evil.<br>Glory be to the Father, and to the Son and to the Holy Ghost. As it was in the beginning, is now and ever shall be, world without end. Amen.<br>I will go in to the altar of God.<br>To God Who gives joy to my youth."
+      },
+      {
+       "t": "p",
+       "h": "Here the priest makes the Sign of the Cross."
+      },
+      {
+       "t": "bq",
+       "h": "Our help is in the name of the Lord.<br>Who made heaven and earth."
+      },
+      {
+       "t": "p",
+       "h": "The priest, bowing down, says the Confiteor. Then the altar-boys bow and say it after him. Read it as on p. 2."
+      },
+      {
+       "t": "p",
+       "h": "The priest goes up to the altar and says:"
+      },
+      {
+       "t": "p",
+       "h": "O Lord, we beg You, by the goodness of Your saints whose relics are here, and of all Your saints, to forgive us all our sins."
+      },
+      {
+       "t": "h",
+       "h": "The Introit and Kyrie Eleison"
+      },
+      {
+       "t": "p",
+       "h": "The priest goes to the right side of the altar and reads from the book. Then going back to the middle of the altar he says the Kyrie Eleison."
+      },
+      {
+       "t": "h",
+       "h": "The Gloria"
+      },
+      {
+       "t": "p",
+       "h": "Glory be to God on high, and on earth peace to men of good will. We praise You. We bless You. We glorify You. We give You thanks for Your great glory, O Lord God, heavenly King, God the Father almighty. O Lord God, Son of the Father, Who take away the sins of the world, have mercy on us. You only, O Jesus Christ, with the Holy Ghost, are most high in the Glory of God the Father. Amen."
+      },
+      {
+       "t": "p",
+       "h": "The priest turns to the people and says:"
+      },
+      {
+       "t": "bq",
+       "h": "The Lord be with you.<br>And with your spirit."
+      },
+      {
+       "t": "h",
+       "h": "The Collect"
+      },
+      {
+       "t": "p",
+       "h": "The priest goes to the right side of the altar and reads from the book."
+      },
+      {
+       "t": "p",
+       "h": "*Let us pray: Let Your grace and pity guide our hearts, we beg You, O Lord. For without You we cannot please You. Through Our Lord, Jesus Christ, Your Son, Who lives and reigns with You in the unity of the Holy Ghost, world without end. Amen."
+      },
+      {
+       "t": "h",
+       "h": "The Epistle"
+      },
+      {
+       "t": "p",
+       "h": "The Epistle is a letter. Most of these letters were written by Saint Paul. The priest now reads one of these. You may read the following:"
+      },
+      {
+       "t": "p",
+       "h": "Dear children: Be happy, be good, be brave; agree with one another, and be at peace. The grace of Our Lord Jesus Christ, God’s love, and the wisdom of the Holy Ghost be with you all. Amen."
+      },
+      {
+       "t": "p",
+       "h": "Thanks be to God."
+      },
+      {
+       "t": "p",
+       "h": "The altar-boy carries the book to the left side of the altar. The priest bows at the middle of the altar and says a prayer."
+      },
+      {
+       "t": "h",
+       "h": "The Gospel"
+      },
+      {
+       "t": "p",
+       "h": "The priest goes to the left and reads from the book."
+      },
+      {
+       "t": "p",
+       "h": "<span class=\"sc\">Stand</span>"
+      },
+      {
+       "t": "p",
+       "h": "While Jesus was speaking to the people, mothers brought their children to Him, that He might bless them. The disciples told them not to bother Jesus. But Jesus said, “Suffer the little children to come to Me and forbid them not. For of such is the kingdom of heaven.” And Jesus blessed the children."
+      },
+      {
+       "t": "p",
+       "h": "Praise be to You, O Christ."
+      },
+      {
+       "t": "p",
+       "h": "<span class=\"sc\">Sit</span>"
+      },
+      {
+       "t": "p",
+       "h": "The priest now turns back to the middle of the altar and says the Creed. You also say it (see page 2)."
+      },
+      {
+       "t": "h",
+       "h": "The Mass of the Faithful"
+      },
+      {
+       "t": "n",
+       "h": "From the Offertory to the Communion"
+      },
+      {
+       "t": "h",
+       "h": "The Offering of the Host"
+      },
+      {
+       "t": "p",
+       "h": "The priest takes the cloth off the chalice. Then he holds up a small gold plate on which is the bread, called the host."
+      },
+      {
+       "t": "p",
+       "h": "*Take, O holy Father, almighty and eternal God, this spotless host which I, Your unworthy servant, offer to You for my many sins and for all who serve You, living and dead. May it help them and me to gain eternal life."
+      },
+      {
+       "t": "p",
+       "h": "The priest goes to the right side of the altar. He pours wine and water into the chalice. Then the priest goes back to the middle of the altar and raises the chalice."
+      },
+      {
+       "t": "h",
+       "h": "The Offering of the Chalice"
+      },
+      {
+       "t": "p",
+       "h": "*We offer You, O Lord, this chalice. May it help us and all the world to gain eternal life. Amen."
+      },
+      {
+       "t": "p",
+       "h": "The priest goes to the right side of the altar to wash his hands."
+      },
+      {
+       "t": "p",
+       "h": "Returning to the middle of the altar, the priest bows down and says some prayers. Then he turns to the people and says the Orate Fratres."
+      },
+      {
+       "t": "p",
+       "h": "Now the priest prays in a low voice and then in a louder voice he says the Preface:"
+      },
+      {
+       "t": "p",
+       "h": "Truly, it is right and just that we should at all times and in all places give thanks to You, O holy Lord, Father almighty, Who, with Your only Son and the Holy Ghost are one God, one Lord. All the angels daily praise You, singing with one voice:"
+      },
+      {
+       "t": "h",
+       "h": "The Sanctus"
+      },
+      {
+       "t": "bq",
+       "h": "Holy, holy, holy Lord, God of hosts.<br>Heaven and earth are full of Your glory.<br>Hosanna in the highest."
+      },
+      {
+       "t": "p",
+       "h": "The bell is rung three times."
+      },
+      {
+       "t": "p",
+       "h": "<span class=\"sc\">Kneel</span>"
+      },
+      {
+       "t": "h",
+       "h": "The Canon"
+      },
+      {
+       "t": "n",
+       "h": "Note,—By a Decree of the Church (Aug. 4, 1922), the prayers during the Canon, i.e. from the Sanctus to the Pater Noster, must be said in silence."
+      },
+      {
+       "t": "p",
+       "h": "The priest bows low and kisses the altar."
+      },
+      {
+       "t": "p",
+       "h": "O most merciful Father, we pray You, through Jesus Christ, Your Son, Our Lord, to take and bless these gifts. We offer them to You for Your holy Catholic Church, for our Pope and Bishop and for all those in the Catholic Faith."
+      },
+      {
+       "t": "h",
+       "h": "Prayer for the Living"
+      },
+      {
+       "t": "p",
+       "h": "Be mindful, O Lord, of Your servants (name those for whom you wish to pray especially), and all who are now hearing this Mass. Hear, O Lord, the prayers they are offering for themselves, their friends and their families."
+      },
+      {
+       "t": "h",
+       "h": "The Consecration of the Host"
+      },
+      {
+       "t": "p",
+       "h": "The priest now bends low over the host and says:"
+      },
+      {
+       "t": "p",
+       "h": "<b>THIS IS MY BODY</b>"
+      },
+      {
+       "t": "p",
+       "h": "At these words, the bread is changed into the body of Our Lord. The bell rings. The priest kneels and then raises the Sacred Body of Our Lord. Now look at the Sacred Host and say: My Lord and my God. Then bow your head as the priest kneels again."
+      },
+      {
+       "t": "h",
+       "h": "The Consecration of the Wine"
+      },
+      {
+       "t": "p",
+       "h": "The priest bends over the chalice and says:"
+      },
+      {
+       "t": "p",
+       "h": "<b>THIS IS THE CHALICE OF MY BLOOD</b>"
+      },
+      {
+       "t": "p",
+       "h": "At these words, the wine becomes the Precious Blood of Our Lord. The bell rings. The priest kneels and then raises the chalice. Now the priest continues to pray silently. Look at the chalice and say: Jesus in the Blessed Sacrament, have mercy on us."
+      },
+      {
+       "t": "p",
+       "h": "The priest kneels. The bell rings again. The priest prays silently."
+      },
+      {
+       "t": "h",
+       "h": "Prayer for the Dead"
+      },
+      {
+       "t": "p",
+       "h": "Remember also, O Lord, Your servants (here name dead relatives and friends) who have gone before us with the sign of faith and sleep the sleep of peace."
+      },
+      {
+       "t": "p",
+       "h": "Now the priest says the “Pater Noster.” Say the “Our Father.”"
+      },
+      {
+       "t": "p",
+       "h": "Soon after the priest strikes his breast and says the “Agnus Dei.”"
+      },
+      {
+       "t": "h",
+       "h": "The Priest’s Communion"
+      },
+      {
+       "t": "p",
+       "h": "The priest after saying some prayers silently, takes the Sacred Host and paten in his left hand and striking his breast with the right hand says (the bell rings three times):"
+      },
+      {
+       "t": "p",
+       "h": "*O Lord, I am not worthy that You should enter under my roof. Say but the word and my soul shall be healed."
+      },
+      {
+       "t": "p",
+       "h": "The priest bows down and receives the Body of Our Lord. He remains in prayer for a short time. Then he uncovers the chalice and drinks the Sacred Blood of Our Lord."
+      },
+      {
+       "t": "h",
+       "h": "The Communion of the People"
+      },
+      {
+       "t": "p",
+       "h": "The priest now opens the tabernacle and takes out the Blessed Sacrament to give holy communion to the people. Turning to the people and holding the ciborium in his left hand, he lifts up a Sacred Host to the people in his right hand. Now say with the priest three times:"
+      },
+      {
+       "t": "p",
+       "h": "“Lord, I am not worthy that You should enter my soul; say but the word and my soul shall be healed.”"
+      },
+      {
+       "t": "h",
+       "h": "After the Communion"
+      },
+      {
+       "t": "p",
+       "h": "Having replaced the Blessed Sacrament in the tabernacle, the priest after taking water and wine, covers the chalice and goes to the right side of the altar to read from the book. Then going back to the middle he turns to the people and says:"
+      },
+      {
+       "t": "bq",
+       "h": "The Lord be with you.<br>And with your spirit."
+      },
+      {
+       "t": "p",
+       "h": "Then the priest again goes to the right side of the altar and reads:"
+      },
+      {
+       "t": "h",
+       "h": "The Prayers After Communion"
+      },
+      {
+       "t": "p",
+       "h": "*Let us pray: We have been filled with Your gifts, O Lord. Grant that they may make us clean and strong. May the gift of this divine Sacrament keep us pure, O Lord. Through the help of the Blessed Virgin, of St. Joseph, of Sts. Peter and Paul and all the saints, may it free us from all evil."
+      },
+      {
+       "t": "p",
+       "h": "The priest goes back to the middle of the altar and turning to the people says:"
+      },
+      {
+       "t": "bq",
+       "h": "The Lord be with you.<br>And with your spirit."
+      },
+      {
+       "t": "bq",
+       "h": "Go, the Mass is ended.<br>Thanks be to God."
+      },
+      {
+       "t": "h",
+       "h": "The Blessing"
+      },
+      {
+       "t": "p",
+       "h": "The priest bows down and says a prayer. Then turning to the people he blesses them saying:"
+      },
+      {
+       "t": "p",
+       "h": "May almighty God, the Father, Son, and Holy Ghost, bless you. Amen."
+      },
+      {
+       "t": "p",
+       "h": "The priest goes to the left side of the altar."
+      },
+      {
+       "t": "p",
+       "h": "<span class=\"sc\">Stand</span>"
+      },
+      {
+       "t": "bq",
+       "h": "The Lord be with you.<br>And with your spirit."
+      },
+      {
+       "t": "h",
+       "h": "The Last Gospel"
+      },
+      {
+       "t": "p",
+       "h": "The priest makes a cross on forehead, lips, and breast, and says the Gospel of St. John."
+      },
+      {
+       "t": "p",
+       "h": "Remain standing until the priest has left the sanctuary or kneels down to say the prayers after Mass."
+      }
+     ]
+    },
+    {
+     "path": "the-right-manner-of-confessing",
+     "title": "The Right Manner of Confessing",
+     "blocks": [
+      {
+       "t": "n",
+       "h": "From Father Finn’s Prayer Book for Catholic Youth."
+      },
+      {
+       "t": "h",
+       "h": "Prayer Before Examining Your Conscience"
+      },
+      {
+       "t": "p",
+       "h": "O Holy Spirit, help me to know all my sins. Help me to remember that Jesus died for me. Help me to make a good confession and I promise that I will try never to sin again."
+      },
+      {
+       "t": "p",
+       "h": "Now think of your sins."
+      },
+      {
+       "t": "h",
+       "h": "Prayer Before Entering the Confessional"
+      },
+      {
+       "t": "p",
+       "h": "O God, I am very sorry for all my sins. I promise that I will try to be good and never again to hurt You by sin. Dear Jesus, help me. Mother of God, pray that I may please Your Son by true sorrow for my sins."
+      },
+      {
+       "t": "p",
+       "h": "When your turn comes, go into the confession box. Make the Sign of the Cross and wait till the priest opens the little door. Say what you have been taught to say. Or you may say this:"
+      },
+      {
+       "t": "p",
+       "h": "Bless me, Father, for I have sinned. It is (say how long) since my last confession. Since then I have committed these sins."
+      },
+      {
+       "t": "p",
+       "h": "Now tell all your sins and how many times you committed each. If there is something you don’t know how to tell, just say, “Please help me, Father,” and the priest will help you. After you have told all your sins, say what you have been taught to say. Or you may say:"
+      },
+      {
+       "t": "p",
+       "h": "That is all, Father."
+      },
+      {
+       "t": "p",
+       "h": "In case you have no big sins to confess, it is well to end your confession with: “In my past life I sinned through anger or impurity” (or some sin that you know you did and that you are sorry for)."
+      },
+      {
+       "t": "p",
+       "h": "The priest tells you what prayers to say for a penance. Then he tells you to say the Act of Contrition. When you come out, kneel down near the altar. Say your penance at once. Then thank God for being so good to you."
+      }
+     ]
+    },
+    {
+     "path": "communion-prayers",
+     "title": "Communion Prayers",
+     "blocks": [
+      {
+       "t": "h",
+       "h": "Acts Before Communion"
+      },
+      {
+       "t": "p",
+       "h": "Act of Faith. Jesus Christ, my Sovereign Lord, I firmly believe that Thou art really present in the Holy Eucharist, and that it is Thy body, Thy blood, Thy soul, and Thy divinity that I shall receive in that Adorable Sacrament."
+      },
+      {
+       "t": "p",
+       "h": "Act of Hope. Thou hast said, O my God, that those hoping in Thee shall never be confounded. I place all my confidence in Thy promises, and I hope that, having nourished myself with Thy body on earth, I shall have the happiness of seeing and possessing Thee eternally in heaven."
+      },
+      {
+       "t": "p",
+       "h": "Act of Love. O my divine Jesus, Who hast so loved me as to nourish me with Thy adorable flesh, I love Thee with all my heart and above all things; I wish to live and die in Thy holy love."
+      },
+      {
+       "t": "p",
+       "h": "Act of Humility. My Saviour and my God, Thou art all sanctity. I am not worthy that Thou shouldst enter my heart; yet, speak but the word and my soul shall be healed."
+      },
+      {
+       "t": "p",
+       "h": "Act of Desire. My soul desires Thee, O my God! Thou art its joy and happiness. Come, O divine Jesus, come into my heart; it desires ardently to receive Thee."
+      },
+      {
+       "t": "h",
+       "h": "Acts After Communion"
+      },
+      {
+       "t": "p",
+       "h": "Act of Adoration. I adore Thee, O Jesus, as the Lamb of God immolated for the salvation of mankind. I join in the profound adoration which the angels and saints pay to Thee in heaven."
+      },
+      {
+       "t": "p",
+       "h": "Act of Thanksgiving. Lord, Thou hast looked on my unworthiness. I was sick, and Thou hast healed me. I was poor, and Thou hast bestowed upon me Thy numberless benefits. How shall I be able to thank Thee, O my Lord, for all Thy favors? I will invoke Thy holy name, and eternally sing Thy mercies."
+      },
+      {
+       "t": "p",
+       "h": "Act of Offering. What can I offer Thee, O my God, for the grace of having given Thyself to me? I consecrate to Thy glory my body, my soul, and all that I possess! Dispose of me according to Thy holy will."
+      },
+      {
+       "t": "p",
+       "h": "Act of Petition. My divine Redeemer, Thou hast taken possession of me. Do not let the enemy of my salvation ravish the precious treasure I bear in my heart. Preserve me from all sin, and defend me against temptation, that I may persevere until death in the practice of Thy holy law. Amen."
+      }
+     ]
+    },
+    {
+     "path": "the-rosary-of-the-blessed-virgin",
+     "title": "The Rosary of the Blessed Virgin",
+     "blocks": [
+      {
+       "t": "h",
+       "h": "The Five Joyful Mysteries"
+      },
+      {
+       "t": "n",
+       "h": "Assigned for Mondays and Thursdays throughout the year, the Sundays of Advent, and after Epiphany until Lent."
+      },
+      {
+       "t": "bq",
+       "h": "First Mystery. The Annunciation.<br>Second Mystery. The Visitation.<br>Third Mystery. The Nativity.<br>Fourth Mystery. The Presentation.<br>Fifth Mystery. The Finding of the Child Jesus in the Temple."
+      },
+      {
+       "t": "h",
+       "h": "The Five Sorrowful Mysteries"
+      },
+      {
+       "t": "n",
+       "h": "For Tuesdays and Fridays throughout the year, and Sundays in Lent."
+      },
+      {
+       "t": "bq",
+       "h": "First Mystery. The Prayer and Bloody Sweat of our blessed Saviour in the Garden.<br>Second Mystery. The Scourging of Jesus at the Pillar.<br>Third Mystery. The Crowning of Jesus with Thorns.<br>Fourth Mystery. Jesus Carrying His Cross.<br>Fifth Mystery. The Crucifixion."
+      },
+      {
+       "t": "h",
+       "h": "The Five Glorious Mysteries"
+      },
+      {
+       "t": "n",
+       "h": "For Wednesdays and Saturdays throughout the year, and Sundays after Easter until after Advent."
+      },
+      {
+       "t": "bq",
+       "h": "First Mystery. The Resurrection.<br>Second Mystery. The Ascension.<br>Third Mystery. The Descent of the Holy Ghost.<br>Fourth Mystery. The Assumption.<br>Fifth Mystery. The Crowning of the Blessed Virgin."
+      }
+     ]
+    },
+    {
+     "path": "the-stations-of-the-cross",
+     "title": "The Stations of the Cross",
+     "blocks": [
+      {
+       "t": "p",
+       "h": "A plenary indulgence can be gained each time one makes the Stations, subject to the usual conditions."
+      },
+      {
+       "t": "p",
+       "h": "To make the Stations and gain the indulgences, no special prayer is required. We have but to begin at the first Station and go around to the last, thinking devoutly of the Passion and Death of Christ."
+      }
+     ]
+    },
+    {
+     "path": "hymns",
+     "title": "Hymns",
+     "blocks": [
+      {
+       "t": "h",
+       "h": "Come, Holy Ghost, Creator Blest"
+      },
+      {
+       "t": "bq",
+       "h": "1. Come, Holy Ghost, Creator blest,<br>And in our hearts take up Thy rest;<br>Come with Thy grace and heavenly aid<br>To fill the hearts which Thou hast made."
+      },
+      {
+       "t": "bq",
+       "h": "2. O Comforter, to Thee we cry,<br>Thou heavenly Gift of God most high,<br>Thou Fount of life and Fire of love,<br>And sweet Anointing from above."
+      },
+      {
+       "t": "bq",
+       "h": "3. Praise we the Father and the Son,<br>And Holy Spirit with them One;<br>And may the Son on us bestow<br>The gifts that from the Spirit flow."
+      },
+      {
+       "t": "h",
+       "h": "O Salutaris"
+      },
+      {
+       "t": "bq",
+       "h": "1. O Salutaris Hostia!<br>Quae coeli pandis ostium:<br>Bella premunt hostilia,<br>Da robur, fer auxilium."
+      },
+      {
+       "t": "bq",
+       "h": "2. Uni trinoque Domino<br>Sit sempiterna gloria,<br>Qui vitam sine termino<br>Nobis donet in Patria. Amen."
+      },
+      {
+       "t": "h",
+       "h": "Tantum Ergo"
+      },
+      {
+       "t": "bq",
+       "h": "1. Tantum ergo Sacramentum<br>Veneremur cernui;<br>Et antiquum documentum<br>Novo cedat ritui;<br>Praestet fides supplementum<br>Sensuum defectui."
+      },
+      {
+       "t": "bq",
+       "h": "2. Genitori, Genitoque<br>Laus et jubilatio,<br>Salus, honor, virtus quoque<br>Sit et benedictio;<br>Procedenti ab utroque<br>Compar sit laudatio. Amen."
+      },
+      {
+       "t": "bq",
+       "h": "V. Panem de coelo praestitisti eis,<br>R. Omne delectamentum in se habentem."
+      },
+      {
+       "t": "h",
+       "h": "Adeste Fideles"
+      },
+      {
+       "t": "bq",
+       "h": "1. Adeste, fideles,<br>Laeti triumphantes;<br>Venite, venite in Bethlehem;<br>Natum videte<br>Regem Angelorum,<br>Venite, adoremus,<br>Venite, adoremus,<br>Venite, adoremus Dominum."
+      },
+      {
+       "t": "bq",
+       "h": "2. Deum de Deo,<br>Lumen de lumine,<br>Gestant puellae viscera;<br>Deum verum,<br>Genitum non factum,<br>Venite, etc."
+      },
+      {
+       "t": "bq",
+       "h": "3. Cantet nunc Io!<br>Chorus Angelorum;<br>Cantet nunc aula coelestium.<br>Gloria<br>In excelsis Deo,<br>Venite, etc."
+      },
+      {
+       "t": "bq",
+       "h": "4. Ergo, qui natus<br>Die hodierna,<br>Jesu! tibi sit gloria,<br>Patris aeterni<br>Verbum caro factum,<br>Venite, etc."
+      },
+      {
+       "t": "h",
+       "h": "Jesus, My Lord, My God"
+      },
+      {
+       "t": "n",
+       "h": "Rev. F. W. Faber"
+      },
+      {
+       "t": "bq",
+       "h": "1. Jesus, my Lord, my God, my all!<br>How can I love Thee as I ought?<br>And how revere this wondrous gift,<br>So far surpassing hope or thought?"
+      },
+      {
+       "t": "bq",
+       "h": "CHORUS.—Sweet Sacrament! we Thee adore,<br>Oh, make us love Thee more and more,<br>Oh, make us love Thee more and more."
+      },
+      {
+       "t": "bq",
+       "h": "2. Had I but Mary’s sinless heart<br>To love Thee with, my dearest King,<br>Oh, with what bursts of fervent praise<br>Thy goodness, Jesus, would I sing!"
+      },
+      {
+       "t": "h",
+       "h": "To Jesus’ Heart All Burning"
+      },
+      {
+       "t": "n",
+       "h": "Rev. A. J. Christie, S.J."
+      },
+      {
+       "t": "bq",
+       "h": "1. To Jesus’ Heart, all burning<br>With fervent love for men,<br>My heart with fondest yearning<br>Shall raise the joyful strain."
+      },
+      {
+       "t": "bq",
+       "h": "CHORUS.—While ages course along,<br>Blest be with loudest song<br>The Sacred Heart of Jesus<br>By every heart and tongue."
+      },
+      {
+       "t": "bq",
+       "h": "2. O Heart for me on fire<br>With love no man can speak,<br>My yet untold desire<br>God gives me for Thy sake."
+      },
+      {
+       "t": "bq",
+       "h": "3. Too true I have forsaken<br>Thy flock by wilful sin;<br>Yet now let me be taken<br>Back to Thy fold again."
+      },
+      {
+       "t": "h",
+       "h": "Jesus, Gentlest Saviour"
+      },
+      {
+       "t": "n",
+       "h": "Rev. F. W. Faber"
+      },
+      {
+       "t": "bq",
+       "h": "1. Jesus, gentlest Saviour!<br>God of might and power;<br>Thou Thyself art dwelling<br>In us at this hour.<br>Nature cannot hold Thee,<br>Heav’n is all too strait<br>For Thine endless glory,<br>And Thy royal state."
+      },
+      {
+       "t": "bq",
+       "h": "2. Out beyond the shining<br>Of the farthest star,<br>Thou art ever stretching<br>Infinitely far.<br>Yet the hearts of children<br>Hold what worlds cannot,<br>And the God of wonders<br>Loves the lowly spot."
+      },
+      {
+       "t": "h",
+       "h": "Jesus! Saviour of My Soul"
+      },
+      {
+       "t": "bq",
+       "h": "1. Jesus! Saviour of my soul,<br>Let me to Thy refuge fly,<br>While the nearer waters roll,<br>While the tempest still is nigh."
+      },
+      {
+       "t": "bq",
+       "h": "CHORUS.—Hide me, O my Saviour, hide<br>Till the storm of life is past;<br>Safe into Thy haven guide,<br>O receive my soul at last.<br>Jesus! Saviour of my soul,<br>Let me to Thy refuge fly;<br>Ave, Ave, Jesus mild,<br>Deign to hear Thy lowly child."
+      },
+      {
+       "t": "bq",
+       "h": "2. Other refuge have I none,<br>Hangs my helpless soul on Thee,<br>Leave, oh, leave me not alone,<br>Still support and strengthen me."
+      },
+      {
+       "t": "h",
+       "h": "Jesus, the Very Thought of Thee"
+      },
+      {
+       "t": "n",
+       "h": "Rev. E. Caswall"
+      },
+      {
+       "t": "bq",
+       "h": "1. Jesus, the very thought of Thee<br>With rapture fills my breast;<br>But sweeter far Thy Face to see,<br>And in Thy presence rest."
+      },
+      {
+       "t": "bq",
+       "h": "2. Nor voice can sing, nor heart can frame,<br>Nor can the mem’ry find<br>A sweeter sound than Thy blest Name,<br>O Saviour of mankind!"
+      },
+      {
+       "t": "bq",
+       "h": "3. Jesus, our only joy be Thou,<br>As Thou our prize wilt be;<br>O Jesus, be our glory now<br>And through eternity."
+      },
+      {
+       "t": "h",
+       "h": "What Happiness Can Equal Mine?"
+      },
+      {
+       "t": "n",
+       "h": "Rev. F. W. Faber"
+      },
+      {
+       "t": "bq",
+       "h": "1. What happiness can equal mine?<br>I’ve found the object of my love:<br>My Jesus dear, my King Divine,<br>Is come to me from heav’n above;<br>He chose my heart for His abode,<br>He there becomes my daily bread;<br>There on me flows His healing blood;<br>There with His flesh my soul is fed."
+      },
+      {
+       "t": "bq",
+       "h": "CHORUS.—What happiness can equal mine?<br>I’ve found the object of my love:<br>My Jesus dear, my King Divine,<br>Is come to me from heav’n above."
+      },
+      {
+       "t": "bq",
+       "h": "2. I am my love’s, and He is mine:<br>In me He dwells, in Him I live;<br>What greater treasures could I find?<br>And could, ye heavens, a greater give?<br>O sacred banquet, heav’nly feast!<br>O overflowing source of grace,<br>Where God the food, and man, the guest,<br>Meet and unite in sweet embrace!"
+      },
+      {
+       "t": "h",
+       "h": "The Love of Jesus"
+      },
+      {
+       "t": "bq",
+       "h": "1. O the priceless love of Jesus:<br>O the strength of grace divine;<br>All His gifts are showered upon me,<br>All His blessings may be mine.<br>He is throned in Heavenly glory<br>Where no sin nor death can be;<br>Yet He loves me in this darkness,<br>Yet He does not turn from me."
+      },
+      {
+       "t": "bq",
+       "h": "2. I am blind, and poor, and wretched,<br>By temptations sorely tried;<br>Yet His watchful care abounding<br>Keeps me ever at His side.<br>He is God and King Eternal,<br>Higher than all height can be;<br>Yet His Heart is with me always,<br>Yet He stoopeth down to me."
+      },
+      {
+       "t": "h",
+       "h": "Holy God, We Praise Thy Name"
+      },
+      {
+       "t": "n",
+       "h": "Rev. C. Walworth"
+      },
+      {
+       "t": "bq",
+       "h": "1. Holy God, we praise Thy name,<br>Lord of all, we bow before Thee!<br>All on earth Thy sceptre claim,<br>All in heav’n above adore Thee.<br>Infinite Thy vast domain,<br>Everlasting is Thy name."
+      },
+      {
+       "t": "bq",
+       "h": "2. Hark! the loud celestial hymn,<br>Angel choirs above are raising!<br>Cherubim and Seraphim,<br>In unceasing chorus praising.<br>Fill the heavens with sweet accord;<br>Holy! Holy! Holy Lord."
+      },
+      {
+       "t": "h",
+       "h": "Hail, Heavenly Queen!"
+      },
+      {
+       "t": "bq",
+       "h": "1. Hail, heavenly Queen! Hail, foamy ocean star!<br>O be our guide, diffuse thy beams afar;<br>Hail, Mother of God! above all virgins blest,<br>Hail, happy gate of heav’n’s eternal rest."
+      },
+      {
+       "t": "bq",
+       "h": "CHORUS.—Hail foamy ocean star! Hail, heav’nly Queen!<br>O be our guide to endless joys unseen."
+      },
+      {
+       "t": "bq",
+       "h": "2. “Hail, full of grace,” with Gabriel we repeat;<br>Thee, Queen of heav’n, from him we learn to greet;<br>Then give us peace which heav’n alone can give,<br>And dead thro’ Eve, thro’ Mary let us live."
+      },
+      {
+       "t": "h",
+       "h": "Mother Dear, Oh, Pray for Me"
+      },
+      {
+       "t": "bq",
+       "h": "1. Mother dear, oh, pray for me,<br>Whilst far from heav’n and thee<br>I wander in a fragile bark,<br>O’er life’s tempestuous sea;<br>O Virgin Mother, from thy throne,<br>So bright in bliss above,<br>Protect thy child and cheer my path,<br>With thy sweet smile of love."
+      },
+      {
+       "t": "bq",
+       "h": "CHORUS.—Mother dear, remember me,<br>And never cease thy care,<br>Till in heaven eternally<br>Thy love and bliss I share."
+      },
+      {
+       "t": "bq",
+       "h": "2. Mother dear, oh, pray for me,<br>Should pleasure’s siren lay<br>E’er tempt thy child to wander far<br>From virtue’s path away;<br>When thorns beset life’s devious way,<br>And darkling waters flow,<br>Then, Mary, aid thy weeping child,<br>Thyself a mother show."
+      },
+      {
+       "t": "h",
+       "h": "Ora Pro Me"
+      },
+      {
+       "t": "bq",
+       "h": "1. Ave Maria! bright and pure,<br>Hear, O hear me when I pray,<br>Pains and pleasures try the pilgrim<br>On his long and dreary way.<br>Fears and perils are around me,<br>Ave Maria! bright and pure,<br>Ore pro me, ora pro me."
+      },
+      {
+       "t": "bq",
+       "h": "2. Ave Maria! Queen of Heaven,<br>Teach, O teach me to obey,<br>Lead me on, tho’ fierce temptations<br>Stand and meet me in the way.<br>When I fail and faint, my Mother,<br>Ave Maria! bright and pure,<br>Ora pro me, ora pro me."
+      },
+      {
+       "t": "h",
+       "h": "I’ll Sing a Hymn to Mary"
+      },
+      {
+       "t": "n",
+       "h": "Rev. Fr. Wyse"
+      },
+      {
+       "t": "bq",
+       "h": "I’ll sing a hymn to Mary,<br>The Mother of my God,<br>The Virgin of all Virgins,<br>Of David’s royal blood.<br>Oh, teach me, holy Mary<br>A loving song to frame,<br>When wicked men blaspheme thee<br>To love and bless thy name."
+      },
+      {
+       "t": "bq",
+       "h": "When troubles dark afflict me<br>In sorrow and in care,<br>Thy light doth ever guide me<br>O beauteous Morning Star.<br>Lo, I’ll be ever ready<br>Thy goodly help to claim,<br>When wicked men blaspheme thee<br>I’ll love and bless thy name."
+      },
+      {
+       "t": "h",
+       "h": "Daily, Daily Sing to Mary"
+      },
+      {
+       "t": "bq",
+       "h": "1. Daily, daily sing to Mary<br>Sing, my soul, her praises due;<br>All her feasts, her actions worship,<br>With the heart’s devotion true.<br>Lost in wond’ring contemplation,<br>Be her majesty confess’d;<br>Call her Mother, call her Virgin,<br>Happy Mother, Virgin blest."
+      },
+      {
+       "t": "bq",
+       "h": "2. She is mighty to deliver;<br>Call her, trust her lovingly;<br>When the tempest rages round thee,<br>She will calm the troubled sea.<br>Gifts of heaven she has given,<br>Noble Lady, to our race;<br>She the Queen who decks her subject,<br>With the light of God’s own grace."
+      },
+      {
+       "t": "h",
+       "h": "Hymn to St. Joseph"
+      },
+      {
+       "t": "bq",
+       "h": "1. With grateful hearts we breathe to-day<br>The tender accents of our love.<br>We carol forth a little lay<br>To thee, great saint in heaven above."
+      },
+      {
+       "t": "bq",
+       "h": "CHORUS.—O Joseph dear, from thy bright throne,<br>Incline thine ear unto our prayer.<br>And o’er us all as o’er thine own,<br>Extend thy fond paternal care,<br>And o’er us all as o’er thine own,<br>Extend thy fond paternal care,<br>Extend thy fond paternal care."
+      },
+      {
+       "t": "bq",
+       "h": "2. More favored than earth’s greatest king.<br>Thou wert the guardian of that Child,<br>Around whose crib full choirs did sing,<br>With cadenced voices soft and mild."
+      },
+      {
+       "t": "h",
+       "h": "Dear Guardian of Mary"
+      },
+      {
+       "t": "n",
+       "h": "Rev. F. W. Faber"
+      },
+      {
+       "t": "bq",
+       "h": "1. Dear Guardian of Mary! dear nurse of her child!<br>Life’s ways are full weary, the desert is wild;<br>Bleak sands are all round us, no home can we see;<br>Sweet Spouse of our Lady! we lean upon thee."
+      },
+      {
+       "t": "bq",
+       "h": "2. For thou to the pilgrim art father and guide,<br>And Jesus and Mary felt safe at thy side;<br>Ah! blessed Saint Joseph, how safe should I be,<br>Sweet Spouse of our Lady! if thou wert with me."
+      },
+      {
+       "t": "h",
+       "h": "Dear Angel, Ever at My Side"
+      },
+      {
+       "t": "n",
+       "h": "Rev. F. W. Faber"
+      },
+      {
+       "t": "bq",
+       "h": "1. Dear Angel, ever at my side,<br>How loving must thou be,<br>To leave thy home in heaven to guide<br>A little child like me."
+      },
+      {
+       "t": "bq",
+       "h": "2. Thy beautiful and shining face<br>I see not, though so near;<br>The sweetness of thy soft, low voice<br>I am too deaf to hear."
+      },
+      {
+       "t": "h",
+       "h": "Hymn at the Communion"
+      },
+      {
+       "t": "bq",
+       "h": "O Lord, I am not worthy<br>That Thou shouldst come to me,<br>But speak the words of comfort,<br>My spirit healed shall be."
+      },
+      {
+       "t": "bq",
+       "h": "And humbly I’ll receive Thee,<br>The bridegroom of my soul,<br>No more by sin to grieve Thee,<br>Or fly Thy sweet control."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

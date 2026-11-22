@@ -1,0 +1,261 @@
+{
+ "_about": "Exact text replacements applied to pg8300.txt before parsing (each must match once). Missing verses were supplied from the 1914 John Murphy Co. printing (Archive.org items holybibletransla00balt and holybibletransl00balt, two scans that agree). Psalms 9 and 113 are continued past their restart (as in other Douay Bibles).",
+ "continue": [
+  [
+   "Psalms",
+   9,
+   21
+  ],
+  [
+   "Psalms",
+   113,
+   8
+  ]
+ ],
+ "replace": [
+  [
+   "\n4 Kings 11\n",
+   "\n4 Kings Chapter 11\n"
+  ],
+  [
+   "Job Chapter 39 The wonders",
+   "Job Chapter 39\n\nThe wonders"
+  ],
+  [
+   "Ecclesiasticus Chapte 48",
+   "Ecclesiasticus Chapter 48"
+  ],
+  [
+   "1 Machabees Chapter 2.\n",
+   "1 Machabees Chapter 2\n"
+  ],
+  [
+   "who dwelleth on high: 6 and looketh\ndown",
+   "who dwelleth on high:\n\n112:6. And looketh\ndown"
+  ],
+  [
+   "\n118: 41. Let thy mercy",
+   "\n118:41. Let thy mercy"
+  ],
+  [
+   "3:2. Many say to my soul: There is no salavation",
+   "3:2. Why, O Lord, are they multiplied that afflict me? many are they who rise up against me.\n\n3:3. Many say to my soul: There is no salvation"
+  ],
+  [
+   "\n\n3:55. Blessed art thou that beholdest",
+   "\n\n3:54. Blessed art thou on the throne of thy kingdom, and exceedingly to be praised, and exalted above all for ever.\n\n3:55. Blessed art thou that beholdest"
+  ],
+  [
+   "\n\n3:76. O all ye things that spring",
+   "\n\n3:75. O ye mountains and hills, bless the Lord: praise and exalt him above all for ever.\n\n3:76. O all ye things that spring"
+  ],
+  [
+   "\n\n9:22. To the weak I became weak",
+   "\n\n9:21. To them that are under the law, as if I were under the law, (whereas myself was not under the law,) that I might gain them that were under the law. To them that were without the law, as if I were without the law, (whereas I was not without the law of God, but was in the law of Christ,) that I might gain them that were without the law.\n\n9:22. To the weak I became weak"
+  ],
+  [
+   "\n\n2:14. For you, brethren, are become followers",
+   "\n\n2:13. Therefore, we also give thanks to God without ceasing: because, that when you had received of us the word of the hearing of God, you received it not as the word of men, but (as it is indeed) the word of God, who worketh in you that have believed.\n\n2:14. For you, brethren, are become followers"
+  ],
+  [
+   "\n\n5:11. But the younger widows avoid.",
+   "\n\n5:10. Having testimony for her good works, if she have brought up children, if she have received to harbour, if she have washed the saints' feet, if she have ministered to them that suffer tribulation, if she have diligently followed every good work.\n\n5:11. But the younger widows avoid."
+  ],
+  [
+   "\n\n1:11. Dearly beloved, follow not",
+   "\n\n1:10. For this cause, if I come, I will advertise his works which he doth, with malicious words prating against us. And as if these things were not enough for him, neither doth he himself receive the brethren, and them that do receive them he forbiddeth, and casteth out of the church.\n\n1:11. Dearly beloved, follow not"
+  ],
+  [
+   "\n\n3:64. Then they sounded",
+   "\n\n3:54. Then they sounded"
+  ],
+  [
+   "\n\n3:66. And after this, Judas",
+   "\n\n3:55. And after this, Judas"
+  ],
+  [
+   "\n\n3:66. And he said to them that were building",
+   "\n\n3:56. And he said to them that were building"
+  ],
+  [
+   "\n\n3:67. So they removed the camp",
+   "\n\n3:57. So they removed the camp"
+  ],
+  [
+   "\n\n3:68. And Judas said: Gird",
+   "\n\n3:58. And Judas said: Gird"
+  ],
+  [
+   "\n\n18:26. And to these the destroyer",
+   "\n\n18:25. And to these the destroyer"
+  ],
+  [
+   "foolish.\n\n12:12. He that is delighted in passing",
+   "foolish. He that is delighted in passing"
+  ],
+  [
+   "horsemen.  32 Strike them",
+   "horsemen.\n\n4:32. Strike them"
+  ]
+ ],
+ "words": {
+  "waaters": "waters",
+  "cursh": "crush",
+  "recieved": "received",
+  "distintion": "distinction",
+  "partiarchs": "patriarchs",
+  "deliverdd": "delivered",
+  "betweeen": "between",
+  "fahter": "father",
+  "connot": "cannot",
+  "accompained": "accompanied",
+  "fferings": "offerings",
+  "forboding": "foreboding",
+  "waranted": "warranted",
+  "becuase": "because",
+  "apppeared": "appeared",
+  "thelr": "their",
+  "measnre": "measure",
+  "abaomination": "abomination",
+  "beetween": "between",
+  "comsume": "consume",
+  "deligently": "diligently",
+  "comandments": "commandments",
+  "aaccomplish": "accomplish",
+  "commmandments": "commandments",
+  "dewlleth": "dwelleth",
+  "commmanded": "commanded",
+  "bretheren": "brethren",
+  "comanded": "commanded",
+  "valient": "valiant",
+  "trurmpets": "trumpets",
+  "bescech": "beseech",
+  "folllowed": "followed",
+  "ouur": "our",
+  "jndgment": "judgment",
+  "conntry": "country",
+  "monntain": "mountain",
+  "honse": "house",
+  "takiug": "taking",
+  "daughtor": "daughter",
+  "llve": "live",
+  "prople": "people",
+  "preahing": "preaching",
+  "comandment": "commandment",
+  "indeath": "in death",
+  "lpraise": "praise",
+  "lpeople": "people",
+  "lmy": "my",
+  "lpay": "pay",
+  "lparted": "parted",
+  "lprinces": "princes",
+  "lmorning": "morning",
+  "lprayer": "prayer",
+  "inthee": "in thee",
+  "deciet": "deceit",
+  "preparatgion": "preparation",
+  "nortaken": "nor taken",
+  "rotector": "protector",
+  "seerved": "served",
+  "outof": "out of",
+  "belssings": "blessings",
+  "belss": "bless",
+  "andthrough": "and through",
+  "themild": "the mild",
+  "andmy": "and my",
+  "wrougth": "wrought",
+  "fefuge": "refuge",
+  "eencompassed": "encompassed",
+  "prophetecally": "prophetically",
+  "snae": "snare",
+  "ukpon": "upon",
+  "andlet": "and let",
+  "ukp": "up",
+  "bcome": "become",
+  "sorrowfull": "sorrowful",
+  "isno": "is no",
+  "ultiplied": "multiplied",
+  "meditqation": "meditation",
+  "vantiy": "vanity",
+  "upheldme": "upheld me",
+  "hismercy": "his mercy",
+  "troubleme": "trouble me",
+  "strrength": "strength",
+  "pralise": "praise",
+  "aflict": "afflict",
+  "kus": "us",
+  "thesethings": "these things",
+  "kunto": "unto",
+  "gneerations": "generations",
+  "heraven": "heaven",
+  "befoer": "before",
+  "toegther": "together",
+  "rrisen": "risen",
+  "arelabour": "are labour",
+  "ofmen": "of men",
+  "everning": "evening",
+  "deceitfnl": "deceitful",
+  "beantiful": "beautiful",
+  "rightous": "righteous",
+  "iniqnity": "iniquity",
+  "dealiug": "dealing",
+  "danghter": "daughter",
+  "girdcd": "girded",
+  "comitteth": "committeth",
+  "prohet": "prophet",
+  "protion": "portion",
+  "cound": "could",
+  "borken": "broken",
+  "pwoer": "power",
+  "wheich": "which",
+  "citits": "cities",
+  "thecovenant": "the covenant",
+  "returnm": "return",
+  "haave": "have",
+  "thelearned": "the learned",
+  "andwith": "and with",
+  "ansd": "and",
+  "shakll": "shall",
+  "waitedth": "waiteth",
+  "bery": "very",
+  "kup": "up",
+  "dreagon": "dragon",
+  "becsuse": "because",
+  "inheritane": "inheritance",
+  "zealons": "zealous",
+  "overfiow": "overflow",
+  "sleve": "sieve",
+  "drunkeness": "drunkenness",
+  "notlie": "not lie",
+  "convenanted": "covenanted",
+  "therin": "therein",
+  "seige": "siege",
+  "beseiged": "besieged",
+  "devonr": "devour",
+  "shalll": "shall",
+  "excercise": "exercise",
+  "continne": "continue",
+  "mountuins": "mountains",
+  "hononrably": "honourably",
+  "youug": "young",
+  "comne": "come",
+  "comdemnation": "condemnation",
+  "sacarament": "sacrament",
+  "profitedus": "profited us",
+  "grievious": "grievous",
+  "thelaw": "the law",
+  "houourable": "honourable",
+  "circumscision": "circumcision",
+  "cannnot": "cannot",
+  "scantal": "scandal",
+  "repove": "reprove",
+  "inposed": "imposed",
+  "vear": "year",
+  "furn": "turn",
+  "woofthread": "woof thread",
+  "courageagainst": "courage against",
+  "overagainst": "over against",
+  "manchild": "man child",
+  "king’sservants": "king’s servants"
+ }
+}

@@ -15,7 +15,7 @@
    Blocks: { t: "p" | "h" | "bq" | "n", h: html }    paragraph, sub-heading, set-off lines, note
            { t: "v", n, h }                          a Bible verse
            { t: "q", n, q, a }                       a catechism question and answer (a may hold several paragraphs, split by \n\n)
-   Text fields hold plain text with only <i>, <b>, <br> and <span class="sc"> allowed. */
+   Text fields hold plain text with only <i>, <b>, <sup> (footnote numbers), <br> and <span class="sc"> allowed. */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -25,7 +25,7 @@ const arg = (name, dflt) => { const i = process.argv.indexOf(name); return i > 0
 const BOOKS = arg('--books', path.join(root, 'library', 'books'));
 const PUBLIC = arg('--public', path.join(root, 'public'));
 const OUT = path.join(PUBLIC, 'library');
-const VERSION = '2026112202';            // change when library.css or a library script changes
+const VERSION = '2026112203';            // change when library.css or a library script changes
 
 /* ---------- the site's own header and footer, taken from the Resources page so they never drift ---------- */
 const shell = fs.readFileSync(path.join(PUBLIC, 'resources.html'), 'utf8');
@@ -42,9 +42,8 @@ if (!STYLES || !HEADER.includes('/library/')) throw new Error('resources.html mu
 
 /* ---------- small helpers ---------- */
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const ALLOWED = /<(\/?(?:i|b)|br|span class="sc"|\/span)>/g;
 /* Text from a book file: escape everything, then let the few allowed tags back in. */
-const rich = s => esc(s).replace(/&lt;(\/?(?:i|b)|br|span class=&quot;sc&quot;|\/span)&gt;/g, (m, t) => '<' + t.replace(/&quot;/g, '"') + '>');
+const rich = s => esc(s).replace(/&lt;(\/?(?:i|b|sup)|br|span class=&quot;sc&quot;|\/span)&gt;/g, (m, t) => '<' + (t === 'sup' ? 'sup data-pagefind-ignore' : t).replace(/&quot;/g, '"') + '>');
 const plain = s => String(s).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const clip = (s, n) => { s = plain(s); if (s.length <= n) return s; s = s.slice(0, n); return s.slice(0, s.lastIndexOf(' ')).replace(/[,;:]$/, '') + '…'; };
 
@@ -138,7 +137,8 @@ for (const book of books) {
     const full = c.nav || [c.label, c.title].filter(Boolean).join(': ');
     const sectionUrl = s.page ? `${bookUrl}${s.slug}/` : bookUrl;
     const crumbs = `<a href="/library/">The Library</a><span aria-hidden="true"> &middot; </span><a href="${bookUrl}">${esc(book.short || book.title)}</a>`
-      + (s.page ? '' : (s.title && book.sections.length > 1 ? `<span aria-hidden="true"> &middot; </span>${esc(s.short || s.title)}` : ''));
+      + (s.page ? `<span aria-hidden="true"> &middot; </span><a href="${sectionUrl}">${esc(s.short || s.title)}</a>`
+        : (s.title && book.sections.length > 1 ? `<span aria-hidden="true"> &middot; </span>${esc(s.short || s.title)}` : ''));
     const side = book.kind === 'bible'
       ? `<h2><a href="${sectionUrl}">${esc(s.title)}</a></h2><ol class="lib-nums">${s.chapters.map(x => `<li><a href="${bookUrl}${x.path}/"${x === c ? ' aria-current="page"' : ''}>${esc(x.num || x.label)}</a></li>`).join('')}</ol>`
       : `<h2>${esc(s.title || book.title)}</h2><ol class="lib-toc">${s.chapters.map(x => `<li><a href="${bookUrl}${x.path}/"${x === c ? ' aria-current="page"' : ''}>${x.label && x.title ? `<span>${esc(x.label)}</span> ` : ''}${esc(x.title || x.label)}</a></li>`).join('')}</ol>`;

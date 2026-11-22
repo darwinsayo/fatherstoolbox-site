@@ -58,6 +58,8 @@ html[data-lib-theme=night] .lib-text h2{color:var(--lapis)}
 .lib-text blockquote{margin:0 0 1em;padding-left:1.25em;border-left:3px solid var(--gold);font-style:italic}
 .lib-text blockquote i{font-style:normal}
 .lib-text .sc{font-variant-caps:small-caps;letter-spacing:.03em}
+.lib-text sup{font-size:.7em;line-height:0;color:var(--rubric);font-variant-numeric:lining-nums;margin-left:.08em}
+.lib-note sup{font-size:.75em;margin-left:0}
 .lib-note{font-size:.86em;line-height:1.5;color:var(--ink-soft);padding-left:1.25em;border-left:1px solid var(--gold)}
 /* Scripture: a verse to a line, with its number in the margin colour of a rubric */
 .lib-v{margin:0 0 .5em!important;padding-left:2.2em;text-indent:-2.2em}
