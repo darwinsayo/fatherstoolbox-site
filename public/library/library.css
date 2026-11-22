@@ -198,10 +198,21 @@ html[data-lib-theme=night] .lib-hl-item{border-bottom-color:rgba(255,255,255,.14
 .lib-cover-rule{width:2.2rem;height:1px;background:var(--gold)}
 .lib-cover-author{font-size:.82rem;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-lit)}
 @media (max-width:760px){
-  .lib-resource{grid-template-columns:7rem minmax(0,1fr)}
+  .lib-resource{grid-template-columns:7rem minmax(0,1fr);gap:1.25rem 1.5rem;align-items:start}
   .lib-resource .resource-links{grid-column:1/-1}
   .lib-cover{width:7rem}
   .lib-cover-title{font-size:.95rem}.lib-cover-long .lib-cover-title{font-size:.82rem}
   .lib-cover-author{font-size:.66rem}
   .lib-cover-frame{padding:.6rem .35rem;gap:.5rem}
+}
+
+/* phones: smaller cover, tighter card, title that fits beside the cover */
+@media (max-width:520px){
+  .lib-resource{grid-template-columns:5.6rem minmax(0,1fr);gap:1rem 1.1rem;padding:1.2rem}
+  .lib-cover{width:5.6rem;padding:.4rem}
+  .lib-cover-frame{padding:.45rem .25rem;gap:.35rem}
+  .lib-cover-title{font-size:.72rem}.lib-cover-long .lib-cover-title{font-size:.64rem}
+  .lib-cover-author{font-size:.5rem}
+  .lib-resource .resource-main h2{font-size:1.55rem;margin:.35rem 0 .4rem;overflow-wrap:anywhere}
+  .lib-resource .resource-main p{font-size:1.08rem}
 }
