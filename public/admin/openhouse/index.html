@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Open House headcount | Father&rsquo;s Tool Box</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css?v=2026111701">
+<style>
+body{background:var(--stone)}
+.adm{max-width:960px;margin:0 auto;padding:clamp(2rem,6vw,4rem) 1rem 4rem}
+.adm h1{margin:.2rem 0 .3rem;font-size:clamp(2rem,6vw,2.8rem)}
+.adm h2{margin:0 0 .6rem;font-size:1.5rem}
+.adm .sub{color:var(--ink-soft);font-style:italic;margin:0 0 1.6rem}
+.adm .panel{background:var(--vellum);border:1px solid var(--stone-deep);border-radius:3px;padding:1.4rem 1.5rem;margin:0 0 1.4rem;box-shadow:0 18px 40px -30px rgba(35,31,28,.45)}
+.adm form{padding:0;box-shadow:none;background:none;display:flex;flex-wrap:wrap;gap:1rem;align-items:end}
+.adm form .field{flex:1;min-width:14rem}
+.adm .row{display:flex;flex-wrap:wrap;gap:.8rem 1rem;align-items:center}
+.adm .status{margin:.6rem 0 0;font-style:italic;color:var(--ink-soft)}.adm .status.err{color:var(--rubric)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.8rem;text-align:center}
+.stat{border-top:3px solid var(--gold);padding:.6rem .4rem 0}
+.stat b{display:block;font-size:2.6rem;font-weight:500;line-height:1.1;color:var(--lapis-deep);font-variant-numeric:lining-nums}
+.stat span{font-variant-caps:all-small-caps;letter-spacing:.1em;color:var(--ink-soft)}
+.stat.total b{color:var(--rubric)}
+.diet{margin:0;padding-left:1.2rem}.diet li{margin:.2rem 0}
+.adm table{width:100%;border-collapse:collapse;font-size:1.05rem}
+.adm th{font-variant-caps:all-small-caps;letter-spacing:.1em;text-align:left;color:var(--ink-soft);font-weight:500;border-bottom:1px solid var(--stone-deep);padding:.3rem .4rem}
+.adm td{padding:.4rem;border-bottom:1px solid var(--stone-deep);overflow-wrap:anywhere;vertical-align:top}
+.adm td.n{text-align:center;font-variant-numeric:lining-nums}
+.adm .tablewrap{overflow-x:auto}
+.adm .del{font:inherit;font-size:.95rem;background:none;border:1px solid var(--stone-deep);border-radius:2px;color:var(--rubric);padding:.1rem .5rem;cursor:pointer}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main class="adm">
+<p class="rubric">St. Cecilia &middot; Father Harry&rsquo;s Open House</p>
+<h1>RSVP headcount</h1>
+<p class="sub">Private page. Not linked from the site. Sunday, December 13, Urlage Hall. RSVPs requested by December 8.</p>
+
+<section class="panel" id="login">
+<form id="login-form"><div class="field"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div><button class="btn btn-red" type="submit">Open</button></form>
+<p class="status" id="login-status" role="status"></p>
+</section>
+
+<div id="app" hidden>
+<section class="panel">
+<div class="stats">
+<div class="stat total"><b id="t-people">0</b><span>people coming</span></div>
+<div class="stat"><b id="t-adults">0</b><span>adults</span></div>
+<div class="stat"><b id="t-children">0</b><span>children</span></div>
+<div class="stat"><b id="t-replies">0</b><span>replies</span></div>
+</div>
+<div class="row" style="margin-top:1.2rem"><button class="btn btn-plain" id="csv" type="button">Download RSVPs (CSV)</button><button class="btn btn-plain" id="reload" type="button">Refresh</button></div>
+<p class="status" id="app-status" role="status"></p>
+</section>
+<section class="panel"><h2 id="diet-head">Allergies and dietary needs</h2><ul class="diet" id="diet"></ul><p class="status" id="diet-none" hidden>None so far.</p></section>
+<section class="panel"><h2>All replies</h2><div class="tablewrap"><table><thead><tr><th>Name</th><th>Adults</th><th>Children</th><th>Dietary</th><th>Email</th><th>Phone</th><th>Received</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><p class="status" id="rows-none" hidden>No RSVPs yet.</p></section>
+</div>
+</main>
+<script>
+(function(){
+var pw='',ep='/api/admin/openhouse';
+var $=function(i){return document.getElementById(i)};
+function say(el,msg,err){el.textContent=msg;el.className='status'+(err?' err':'')}
+function api(opts){opts=opts||{};opts.headers=Object.assign({'x-admin-password':pw},opts.headers||{});opts.cache='no-store';return fetch(ep+(opts.q||''),opts)}
+function when(utc){var d=new Date(String(utc).replace(' ','T')+'Z');return isNaN(d)?utc:d.toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}
+function cell(tr,v,cls){var td=document.createElement('td');if(cls)td.className=cls;td.textContent=v;tr.appendChild(td);return td}
+function render(d){
+  $('t-people').textContent=d.totals.people;$('t-adults').textContent=d.totals.adults;$('t-children').textContent=d.totals.children;$('t-replies').textContent=d.totals.replies;
+  var diet=d.rsvps.filter(function(r){return r.dietary}),ul=$('diet');ul.textContent='';
+  $('diet-head').textContent='Allergies and dietary needs ('+diet.length+')';$('diet-none').hidden=diet.length>0;
+  diet.forEach(function(r){var li=document.createElement('li'),b=document.createElement('b');b.textContent=r.name;li.appendChild(b);li.appendChild(document.createTextNode(' ('+(r.adults+r.children)+'): '+r.dietary));ul.appendChild(li)});
+  var tb=$('rows');tb.textContent='';$('rows-none').hidden=d.rsvps.length>0;
+  d.rsvps.slice().reverse().forEach(function(r){var tr=document.createElement('tr');
+    cell(tr,r.name+(r.note?' ('+r.note+')':''));cell(tr,r.adults,'n');cell(tr,r.children,'n');cell(tr,r.dietary);cell(tr,r.email);cell(tr,r.phone);cell(tr,when(r.created_at));
+    var b=document.createElement('button');b.className='del';b.type='button';b.textContent='Remove';b.addEventListener('click',function(){remove(r)});cell(tr,'').appendChild(b);tb.appendChild(tr)});
+}
+function load(){return api().then(function(r){return r.json().then(function(j){if(!r.ok)throw j;return j})}).then(render)}
+function remove(r){if(!confirm('Remove the RSVP from '+r.name+'? Use this for duplicates.'))return;
+  api({method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'delete',id:r.id})}).then(function(x){return x.json().then(function(j){if(!x.ok)throw j})}).then(load).catch(function(j){say($('app-status'),(j&&j.error)||'Could not remove.',true)})}
+$('login-form').addEventListener('submit',function(e){e.preventDefault();pw=$('pw').value;say($('login-status'),'Checking…');
+  load().then(function(){$('login').hidden=true;$('app').hidden=false;$('pw').value=''}).catch(function(j){pw='';say($('login-status'),(j&&j.error)||'Could not connect.',true)})});
+$('reload').addEventListener('click',function(){say($('app-status'),'');load().catch(function(j){say($('app-status'),(j&&j.error)||'Could not refresh.',true)})});
+$('csv').addEventListener('click',function(){say($('app-status'),'');api({q:'?format=csv'}).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(bl){
+  var a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download='open-house-rsvps.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},2000)}).catch(function(){say($('app-status'),'Could not download.',true)})});
+})();
+</script>
+</body>
+</html>
