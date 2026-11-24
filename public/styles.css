@@ -56,7 +56,7 @@ h1 em,h2 em{font-style:normal;color:inherit;font-weight:inherit}
 /* Header */
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-size:1.85rem;font-weight:500;font-variant-caps:small-caps;letter-spacing:.06em;white-space:nowrap}
-.brand svg{width:67px;height:58px;flex:none}
+.brand svg{width:67px;height:58px;flex:none;overflow:visible}
 /* Christmas holly on the toolbox: shown by liturgy.js from the week of Christ the King to the Baptism of the Lord */
 .brand .holly{display:none}
 html[data-christmas] .brand .holly{display:inline}
