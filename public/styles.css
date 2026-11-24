@@ -60,6 +60,10 @@ h1 em,h2 em{font-style:normal;color:inherit;font-weight:inherit}
 /* Christmas holly on the toolbox: shown by liturgy.js from the week of Christ the King to the Baptism of the Lord */
 .brand .holly{display:none}
 html[data-christmas] .brand .holly{display:inline}
+/* The Christmas lights blink gently, each bulb on its own beat. Off for people who ask for less motion. */
+.brand .bulb{animation:bulb-blink 2.2s ease-in-out infinite}
+@keyframes bulb-blink{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.brand .bulb{animation:none}}
 footer .brand{font-size:1.45rem}
 footer .brand svg{width:55px;height:47px}
 nav ul{list-style:none;display:flex;gap:2rem;align-items:baseline;margin:0;padding:0}
