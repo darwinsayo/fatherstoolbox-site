@@ -103,6 +103,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .xm-sticky.off{opacity:0;transform:translateY(130%);pointer-events:none}
 .xm-hero{padding-bottom:2rem}.xm-wreath{width:130px}.xm-kicker{margin-bottom:1.1rem}}
 @media print{.xm-sticky{display:none}}
+/* Tighter vertical rhythm (less empty space, less scrolling). */
+.xm-hero{padding:clamp(1.4rem,4vw,2.6rem) 0 clamp(1.8rem,4.5vw,3rem)}
+.xm-kicker{margin-bottom:1.1rem}
+.xm-rule{margin:.9rem auto}
+.xm-line{margin-top:.6rem}.xm-cheer{margin-top:.8rem}.xm-cta{margin-top:1rem}
+.xm-rsvp{padding:clamp(1.8rem,4.5vw,3rem) 0 clamp(2rem,5vw,3.2rem)}
+.xm-rsvp form{gap:1.15rem 1.6rem;padding:clamp(1.4rem,3.5vw,2.4rem)}
+.xm-rsvp textarea{min-height:3.8rem}
+.xm-rsvp .rsvp-head svg{width:52px;margin-bottom:.2rem}
+.xm-rsvp .rsvp-tally{margin-top:.7rem}
+.xm-details .wrap{padding-block:clamp(1.8rem,4.5vw,3rem)}
+.xm-concert{margin-top:clamp(1.4rem,3.5vw,2.2rem)}
+.xm-foot .wrap{padding-block:1.2rem}
+@media (max-width:720px){
+.xm-rsvp form{grid-template-columns:1fr 1fr;gap:1rem 1.2rem}
+.xm-rsvp form>.field:not(.full):not(:has(#rsvp-adults)):not(:has(#rsvp-children)){grid-column:1/-1}
+.xm-cols{gap:1rem}.xm-col+.xm-col{padding-top:1rem}
+.xm-hero{padding-bottom:1.6rem}.xm-wreath{width:112px}.xm-kicker{margin-bottom:.9rem}}
+@media (max-width:560px){.xm-kicker{font-size:.92rem;letter-spacing:.1em}}
 </style>
 </head>
 <body>
