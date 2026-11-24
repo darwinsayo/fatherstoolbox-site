@@ -21,6 +21,9 @@
   var n=new Date(),today=new Date(n.getFullYear(),n.getMonth(),n.getDate()),s=season(today);
   if(typeof module!=="undefined"){module.exports={season:season,easter:easter};return}
   document.documentElement.dataset.season=s[1];
+  // Holly on the logo from the Monday after Christ the King through the Baptism of the Lord.
+  var hy=today.getFullYear();
+  if(today>=add(advent1(hy),-6)||today<=baptism(hy)) document.documentElement.dataset.christmas="";
   document.querySelectorAll("[data-season-name]").forEach(function(el){el.textContent=s[0]});
   // Draw this liturgical year to scale (First Sunday of Advent to the next), with a marker for today.
   var bar=document.querySelector(".yearbar");

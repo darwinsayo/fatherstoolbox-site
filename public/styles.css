@@ -56,9 +56,12 @@ h1 em,h2 em{font-style:normal;color:inherit;font-weight:inherit}
 /* Header */
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-size:1.85rem;font-weight:500;font-variant-caps:small-caps;letter-spacing:.06em;white-space:nowrap}
-.brand svg{width:84px;height:54px;flex:none}
+.brand svg{width:67px;height:58px;flex:none}
+/* Christmas holly on the toolbox: shown by liturgy.js from the week of Christ the King to the Baptism of the Lord */
+.brand .holly{display:none}
+html[data-christmas] .brand .holly{display:inline}
 footer .brand{font-size:1.45rem}
-footer .brand svg{width:68px;height:44px}
+footer .brand svg{width:55px;height:47px}
 nav ul{list-style:none;display:flex;gap:2rem;align-items:baseline;margin:0;padding:0}
 nav a{white-space:nowrap;text-decoration:none;font-size:1.15rem;font-variant-caps:all-small-caps;letter-spacing:.1em;padding:.3rem 0;border-bottom:1px solid transparent}
 nav a:hover{color:var(--lapis);border-bottom-color:currentColor}
@@ -250,7 +253,7 @@ footer .wrap{padding-block:2.6rem 2.2rem}
   body{font-size:1.15rem}
   .wrap{width:calc(100% - 2.5rem)}
   .site-header .wrap{flex-direction:column;gap:.6rem;padding-block:1rem}
-  .brand{font-size:1.5rem;gap:.6rem}.brand svg{width:64px;height:41px}
+  .brand{font-size:1.5rem;gap:.6rem}.brand svg{width:51px;height:44px}
   nav ul{gap:.35rem .9rem;flex-wrap:wrap;justify-content:center}nav a{font-size:1.02rem;letter-spacing:.05em}
   .site-header nav{position:relative}
   .site-header .has-menu{position:static}
