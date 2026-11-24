@@ -84,6 +84,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .xm-rsvp .rsvp-by{margin:.35rem 0 0;font-variant-caps:all-small-caps;letter-spacing:.18em;color:var(--claret);font-size:1.1rem}
 .xm-rsvp .form-note{margin:0;font-style:italic;font-size:1.02rem;color:var(--ink-soft)}
 .xm-foot a{color:inherit;text-decoration-color:var(--gold-lit)}
+/* RSVP tally: deadline countdown, plus the guest count once /api/openhouse-count returns one (20+ guests). */
+.xm-rsvp .rsvp-tally{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:.2rem 0;max-width:30em;margin:.95rem auto 0;padding:.5rem 1rem;border-top:1px solid rgba(184,145,58,.6);border-bottom:1px solid rgba(184,145,58,.6);color:var(--pine);font-size:1.12rem;line-height:1.35}
+.xm-rsvp .rsvp-tally[hidden],.xm-rsvp .rsvp-tally [hidden]{display:none}
+.xm-rsvp .tally-count b{font-size:1.6rem;font-weight:600;color:var(--claret);font-variant-numeric:lining-nums;margin-right:.08em}
+.xm-rsvp .tally-days{font-variant-caps:all-small-caps;letter-spacing:.14em;font-size:1.12rem}
+.xm-rsvp .tally-count:not([hidden])+.tally-days::before{content:"";display:inline-block;width:.4em;height:.4em;margin:0 .9rem .18em;background:var(--gold);transform:rotate(45deg)}
+@media (max-width:560px){.xm-rsvp .tally-count:not([hidden])+.tally-days{flex-basis:100%}.xm-rsvp .tally-count:not([hidden])+.tally-days::before{display:none}}
+@media (prefers-reduced-motion:no-preference){.xm-rsvp .tally-count.fresh{animation:tally-in .7s ease-out both}@keyframes tally-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}}
 </style>
 </head>
 <body>
@@ -129,7 +137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="xm-rsvp" id="rsvp"><div class="wrap">
 <form id="rsvp-form" class="rsvp" action="/api/rsvp" method="post">
 <input type="hidden" name="parish" value="st-cecilia"><input type="hidden" name="event" value="parish-open-house">
-<div class="full rsvp-head"><svg viewBox="0 0 100 60" aria-hidden="true"><g><path d="M0 0Q4 -3.1 8 -10Q12 -6.2 16 -14.1Q20 -7.2 24 -14.1Q28 -6.2 32 -10Q36 -3.1 40 0Q4 3.1 0 0Q36 3.1 32 10Q28 6.2 24 14.1Q20 7.2 16 14.1Q12 6.2 8 10Z" transform="translate(48 32) rotate(-160)" fill="#1f5a3d"/><path d="M48 32 10 22" stroke="#123826" stroke-width=".9" fill="none"/><path d="M0 0Q4 -3.1 8 -10Q12 -6.2 16 -14.1Q20 -7.2 24 -14.1Q28 -6.2 32 -10Q36 -3.1 40 0Q4 3.1 0 0Q36 3.1 32 10Q28 6.2 24 14.1Q20 7.2 16 14.1Q12 6.2 8 10Z" transform="translate(52 32) rotate(-20)" fill="#2b6b4a"/><path d="M52 32 90 22" stroke="#174630" stroke-width=".9" fill="none"/><circle cx="45" cy="36" r="5.2" fill="#8c1c2e"/><circle cx="43.4" cy="34.2" r="1.4" fill="#d9707f" opacity=".7"/><circle cx="55" cy="36" r="5.2" fill="#8c1c2e"/><circle cx="53.4" cy="34.2" r="1.4" fill="#d9707f" opacity=".7"/><circle cx="50" cy="28" r="5.2" fill="#8c1c2e"/><circle cx="48.4" cy="26.2" r="1.4" fill="#d9707f" opacity=".7"/></g></svg><h2>Kindly reply</h2><p class="rsvp-sub">Please let us know how many are coming so we can plan the food.</p><p class="rsvp-by">Please reply by December 8</p></div>
+<div class="full rsvp-head"><svg viewBox="0 0 100 60" aria-hidden="true"><g><path d="M0 0Q4 -3.1 8 -10Q12 -6.2 16 -14.1Q20 -7.2 24 -14.1Q28 -6.2 32 -10Q36 -3.1 40 0Q4 3.1 0 0Q36 3.1 32 10Q28 6.2 24 14.1Q20 7.2 16 14.1Q12 6.2 8 10Z" transform="translate(48 32) rotate(-160)" fill="#1f5a3d"/><path d="M48 32 10 22" stroke="#123826" stroke-width=".9" fill="none"/><path d="M0 0Q4 -3.1 8 -10Q12 -6.2 16 -14.1Q20 -7.2 24 -14.1Q28 -6.2 32 -10Q36 -3.1 40 0Q4 3.1 0 0Q36 3.1 32 10Q28 6.2 24 14.1Q20 7.2 16 14.1Q12 6.2 8 10Z" transform="translate(52 32) rotate(-20)" fill="#2b6b4a"/><path d="M52 32 90 22" stroke="#174630" stroke-width=".9" fill="none"/><circle cx="45" cy="36" r="5.2" fill="#8c1c2e"/><circle cx="43.4" cy="34.2" r="1.4" fill="#d9707f" opacity=".7"/><circle cx="55" cy="36" r="5.2" fill="#8c1c2e"/><circle cx="53.4" cy="34.2" r="1.4" fill="#d9707f" opacity=".7"/><circle cx="50" cy="28" r="5.2" fill="#8c1c2e"/><circle cx="48.4" cy="26.2" r="1.4" fill="#d9707f" opacity=".7"/></g></svg><h2>Kindly reply</h2><p class="rsvp-sub">Please let us know how many are coming so we can plan the food.</p><p class="rsvp-by">Please reply by December 8</p><p class="rsvp-tally" id="rsvp-tally" hidden><span class="tally-count" hidden><b></b> <span></span></span><span class="tally-days"></span></p></div>
 <div class="field full"><label for="rsvp-name">Name</label><input id="rsvp-name" name="name" autocomplete="name" required maxlength="120" placeholder="e.g. The Smith family"></div>
 <div class="field"><label for="rsvp-adults">Adults</label><select id="rsvp-adults" name="adults"><option>0</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
 <div class="field"><label for="rsvp-children">Children</label><select id="rsvp-children" name="children"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
@@ -156,13 +164,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="/liturgy.js?v=20261114"></script>
 <script src="/menu.js?v=2026111403" defer></script>
 <script>
+/* RSVP tally. Days left to reply (Eastern time, through Dec 8), and the number of guests coming,
+   which /api/openhouse-count returns only once it reaches 20 (SHOW_AFTER in that file).
+   To preview: ?preview-guests=42 shows a made-up count, ?preview-date=2026-12-08 a different day. */
+(()=>{const t=document.getElementById('rsvp-tally');if(!t)return;
+const c=t.querySelector('.tally-count'),dEl=t.querySelector('.tally-days'),q=new URLSearchParams(location.search);
+const today=q.get('preview-date')||new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date());
+const [y,m,d]=today.split('-').map(Number),left=Math.round((Date.UTC(2026,11,8)-Date.UTC(y,m-1,d))/864e5);
+dEl.textContent=left>1?left+' days left to reply':left===1?'1 day left to reply':left===0?'Today is the last day to reply':'';
+dEl.hidden=!dEl.textContent;
+const show=n=>{if(Number.isInteger(n)&&n>0){const was=c.hidden;c.querySelector('b').textContent=n;c.querySelector('span').textContent=n===1?'guest is coming so far':'guests are coming so far';c.hidden=false;if(was)c.classList.add('fresh')}t.hidden=c.hidden&&dEl.hidden};
+show(null);
+window.rsvpTally=fresh=>{const p=q.get('preview-guests');if(p!==null)return show(parseInt(p,10));
+fetch('/api/openhouse-count'+(fresh?'?t='+Date.now():'')).then(r=>r.ok?r.json():{}).then(j=>show(j.guests)).catch(()=>{})};
+rsvpTally()})();
+</script>
+<script>
 const f=document.getElementById('rsvp-form');
 const s=f.querySelector('.form-status'),b=f.querySelector('button');
 f.addEventListener('submit',async e=>{e.preventDefault();s.className='form-status';
 if(+f.adults.value+ +f.children.value<1){s.classList.add('err');s.textContent='Please tell us how many are coming.';return}
 s.textContent='Sending\u2026';b.disabled=true;
 try{const r=await fetch(f.action,{method:'POST',body:new FormData(f)});if(!r.ok)throw 0;
-f.reset();s.classList.add('ok');s.textContent='Thank you. Your Open House RSVP has been received. We look forward to seeing you on December 13. God bless you.'}
+f.reset();window.rsvpTally&&rsvpTally(1);s.classList.add('ok');s.textContent='Thank you. Your Open House RSVP has been received. We look forward to seeing you on December 13. God bless you.'}
 catch{s.classList.add('err');s.textContent='Sorry, something went wrong. Please try again in a moment.'}
 b.disabled=false});
 </script>
