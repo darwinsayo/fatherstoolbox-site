@@ -68,6 +68,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .adv-foot{background:var(--adv);color:#fff}
 .adv-foot .wrap{padding-block:1.6rem;display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between;align-items:center}
 .adv-foot p{margin:0}
+.adv-contact a{white-space:nowrap;color:#fff;text-decoration:none;border-bottom:1px solid var(--gold-lit)}.adv-contact a:hover,.adv-contact a:focus-visible{color:var(--gold-lit)}.adv-contact span{color:var(--gold-lit);margin:0 .35rem}
+.adv-support{margin:1.6rem 0 0;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.adv-support-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:56px;padding:.8rem 2.2rem;border-radius:99px;background:linear-gradient(#f3d98c,#d9ae4f);color:#2a1240;border:1px solid #b8913a;box-shadow:0 10px 24px -12px rgba(42,18,64,.6);font-weight:600;font-size:clamp(1.2rem,3.6vw,1.45rem);letter-spacing:.06em;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.adv-support-btn svg{width:1.3em;height:1.3em;flex:none}
+.adv-support-btn:hover,.adv-support-btn:focus-visible{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(42,18,64,.7);background:linear-gradient(#f7e3a4,#e1b95c)}
+.adv-support-btn:focus-visible{outline:3px solid var(--adv);outline-offset:3px}
+.adv-support-note{font-style:italic;color:var(--ink-soft);text-align:center}
+@media (max-width:560px){.adv-support-btn{width:100%;padding:.8rem 1rem;letter-spacing:.02em;font-size:1.25rem;white-space:nowrap}}
+@media (prefers-reduced-motion:reduce){.adv-support-btn{transition:none}}
 .adv-bring{color:var(--gold-lit);font-variant-caps:all-small-caps;letter-spacing:.2em;font-size:1.2rem}
 .ph{background:rgba(232,200,119,.45);border-bottom:1px dashed var(--gold);padding:0 .15em;color:inherit}
 .adv-foot .ph{background:rgba(255,255,255,.18);border-bottom-color:var(--gold-lit)}
@@ -106,9 +115,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   Event "advent-lessons-carols" of parish "st-cecilia" (listed in /events.json). No RSVP here: the concert needs none.
   The Parish Open House that follows is its own event page with the RSVP form (../parish-open-house/).
   Anything highlighted in yellow is still a placeholder (class="ph"): replace the text and delete class="ph".
-  Still needed: the website, phone and email in the purple footer band, and delete the yellow "Draft" strip.
 -->
-<p class="ev-note"><a href="/events/">Events</a> &rsaquo; <a href="/parishes/st-cecilia/">St. Cecilia, Independence</a> &nbsp;&middot;&nbsp; <strong>Draft.</strong> Highlighted text is a placeholder and will be replaced.</p>
+<p class="ev-note"><a href="/events/">Events</a> &rsaquo; <a href="/parishes/st-cecilia/">St. Cecilia, Independence</a></p>
 <section class="adv-hero"><div class="wrap-adv">
 <p class="adv-kicker">Gaudete Sunday<b aria-hidden="true">&#10022;</b>Third Sunday of Advent</p>
 <div class="arch">
@@ -140,6 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="adv-when">Sunday, December 13, 2026 <span>&middot;</span> 6:00 PM</p>
 <p class="adv-where">St. Cecilia Church &middot; 5313 Madison Pike, Independence, KY</p>
 <p class="adv-free">Free and open to all &middot; No RSVP needed: just come &middot; Free-will offering for our music programs and a new piano</p>
+<p class="adv-support"><a class="adv-support-btn" href="https://www.givecentral.org/customizable-online-giving/1490/event/48999" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" fill="currentColor"/><circle cx="18" cy="16" r="3" fill="currentColor"/></svg>Support the Music Program<span class="sr-only"> (opens in a new tab)</span></a><span class="adv-support-note">Your gift helps our music programs and a new piano. Thank you!</span></p>
 <!-- OPEN HOUSE BOX: hidden until Fr. Harry announces it at the Masses, Nov 28-29.
      To show it again, delete the two lines that start or end with SHOW-OPEN-HOUSE. -->
 <!-- SHOW-OPEN-HOUSE: delete this line
@@ -161,7 +170,7 @@ delete this line: SHOW-OPEN-HOUSE -->
 
 <section class="adv-foot"><div class="wrap">
 <p class="adv-bring">Bring a friend. Bring the whole family.</p>
-<p><span class="ph">Website &middot; phone &middot; email</span></p>
+<p class="adv-contact"><a href="/adventcarols">fatherstoolbox.com/adventcarols</a> <span aria-hidden="true">&middot;</span> <a href="tel:+18593634311">(859) 363-4311</a> <span aria-hidden="true">&middot;</span> <a href="mailto:music@stcindependence.org">music@stcindependence.org</a></p>
 </div></section>
 </main>
 <footer><div class="wrap">
