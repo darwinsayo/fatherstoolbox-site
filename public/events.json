@@ -1,5 +1,5 @@
 {
-  "_help": "To add a parish, add it under parishes. To add an event, add it under events: copy an existing event page folder to /parishes/<parish>/events/<event>/, then add a matching entry here. date is YYYY-MM-DD (events drop off the lists the day after). Add \"rsvp\": true when the page has an RSVP form, so the list button says \"Details and RSVP\". Add \"hidden\": true to keep an event off the lists (its page still works by direct link); delete that line to show it again.",
+  "_help": "To add a parish, add it under parishes. To add an event, add it under events: copy an existing event page folder to /parishes/<parish>/events/<event>/, then add a matching entry here. date is YYYY-MM-DD (events drop off the lists the day after). Add \"rsvp\": true when the page has an RSVP form, so the list button says \"Details and RSVP\".",
   "parishes": [
     {
       "slug": "st-cecilia",
@@ -35,8 +35,7 @@
       "when": "Sunday, December 13, 2026. Advent Lessons & Carols at 6 PM in the church; open house to follow in Urlage Hall",
       "where": "Urlage Hall, St. Cecilia Church, Independence, KY",
       "summary": "Finger food, refreshments and fellowship after Advent Lessons & Carols. All are welcome; please RSVP by December 8.",
-      "rsvp": true,
-      "hidden": true
+      "rsvp": true
     }
   ]
 }

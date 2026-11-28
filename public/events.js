@@ -7,7 +7,7 @@
   fetch('/events.json').then(function(r){return r.json()}).then(function(d){
     var names={};d.parishes.forEach(function(p){names[p.slug]=p});
     var today=new Date().toISOString().slice(0,10);
-    var evs=d.events.filter(function(e){return !e.hidden&&e.date>=today&&(!only||e.parish===only)}).sort(function(a,b){return a.date<b.date?-1:1});
+    var evs=d.events.filter(function(e){return e.date>=today&&(!only||e.parish===only)}).sort(function(a,b){return a.date<b.date?-1:1});
     if(filter){d.parishes.forEach(function(p){var o=document.createElement('option');o.value=p.slug;o.textContent=p.name+', '+p.place;filter.appendChild(o)});
       var q=new URLSearchParams(location.search).get('parish');if(q)filter.value=q;}
     function draw(){
